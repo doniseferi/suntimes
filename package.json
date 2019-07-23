@@ -4,7 +4,7 @@
   "description": "A lightweight JavaScript library offering astronomical observational data on the sun",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc mocha --require @babel/register -R nyan src/**/*.tests.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,10 @@
   "bugs": {
     "url": "https://github.com/doniseferi/sun/issues"
   },
-  "homepage": "https://github.com/doniseferi/sun#readme"
+  "homepage": "https://github.com/doniseferi/sun#readme",
+  "devDependencies": {
+    "@babel/register": "^7.5.5",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1"
+  }
 }
