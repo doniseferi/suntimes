@@ -1,0 +1,28 @@
+{
+  "name": "sun",
+  "version": "1.0.0",
+  "description": "A lightweight JavaScript library offering astronomical observational data on the sun",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doniseferi/sun.git"
+  },
+  "keywords": [
+    "sun",
+    "equationOfTime",
+    "sunrise",
+    "sunset",
+    "solar",
+    "declination",
+    "maths"
+  ],
+  "author": "Edonis Seferi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/doniseferi/sun/issues"
+  },
+  "homepage": "https://github.com/doniseferi/sun#readme"
+}
