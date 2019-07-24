@@ -13,4 +13,9 @@ suite('Declination of the sun', () => {
       expect(difference).to.be.within(0, 0.4);
     });
   });
+  test('', () => {
+    expect(() => declinationOfTheSun(null)).to.throw('Please provide a valid date');
+    expect(() => declinationOfTheSun(undefined)).to.throw('Please provide a valid date');
+    expect(() => declinationOfTheSun()).to.throw('Please provide a valid date');
+  });
 });

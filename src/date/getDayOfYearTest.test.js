@@ -29,8 +29,8 @@ suite('Get day of the year', () => {
     });
   });
   test('throws exception when an invalid date is passed', () => {
-    assert.throw(() => getDayOfTheYear(undefined));
-    assert.throw(() => getDayOfTheYear(null));
-    assert.throw(() => getDayOfTheYear());
+    assert.throw(() => getDayOfTheYear(undefined), 'Please provide a valid date');
+    assert.throw(() => getDayOfTheYear(null), 'Please provide a valid date');
+    assert.throw(() => getDayOfTheYear(), 'Please provide a valid date');
   });
 });

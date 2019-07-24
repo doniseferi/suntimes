@@ -1,6 +1,6 @@
 const getDayOfTheYear = date => {
   if (!date) {
-    throw new Error('Please provide a valide date');
+    throw new Error('Please provide a valid date');
   }
 
   const start = new Date(date.getFullYear(), 0, 0);

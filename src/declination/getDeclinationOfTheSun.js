@@ -1,5 +1,8 @@
 const declinationOfTheSunBuilder = (sine, cosine, arcsine, getDayOfTheYear) => {
   const getDeclinationOfTheSun = date => {
+    if (!date) {
+      throw new Error('Please provide a valid date');
+    }
     const approxDaysAfterDecemberSolstice = getDayOfTheYear(date) - 1;
     const declinationOfTheSunInRadians = declinationOfTheSunAlgorithm(
       approxDaysAfterDecemberSolstice
