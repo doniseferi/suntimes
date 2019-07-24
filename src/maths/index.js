@@ -1,4 +1,4 @@
-import { degreesToRadians, radiansToDegrees } from './angleMaths';
+import { degreesToRadians, radiansToDegrees } from './angleConversions';
 import trigonometryBuilder from './trigonometry';
 
 const builder = trigonometryBuilder(degreesToRadians, radiansToDegrees);
