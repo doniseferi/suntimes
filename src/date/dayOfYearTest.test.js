@@ -28,4 +28,8 @@ suite('Day of the year', () => {
       assert.equal(actualDayOfTheYear, expectedDayOfTheYear);
     });
   });
+  test('throws exception when an invalid date is passed', () => {
+    assert.throw(() => getDayOfTheYear(undefined));
+    assert.throw(() => getDayOfTheYear(null));
+  });
 });

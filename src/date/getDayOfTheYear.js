@@ -1,4 +1,8 @@
 const getDayOfTheYear = date => {
+  if (!date) {
+    throw new Error('Please provide a valide date');
+  }
+
   const start = new Date(date.getFullYear(), 0, 0);
   const diff =
     date -
