@@ -16,4 +16,9 @@ suite('Equation of time', () => {
       expect(difference).to.be.within(0, 4);
     });
   });
+  test('throws an exception when an invalid date is passed in', () => {
+    expect(() => equationOfTime(null)).to.throw('Please provide a valid date');
+    expect(() => equationOfTime(undefined)).to.throw('Please provide a valid date');
+    expect(() => equationOfTime()).to.throw('Please provide a valid date');
+  });
 });

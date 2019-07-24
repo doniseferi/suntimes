@@ -1,4 +1,7 @@
 const equationOfTime = date => {
+  if (!date) {
+    throw new Error('Please provide a valid date');
+  }
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
   const day = date.getDate();
