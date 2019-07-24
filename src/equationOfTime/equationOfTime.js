@@ -1,19 +1,14 @@
 const equationOfTime = date => {
-  const YYYY = date.getFullYear();
-
-  const MM = date.getMonth() + 1;
-
-  const DD = date.getDate();
-
-  const HH = date.getHours();
-
-  const MMin = date.getMinutes();
-
-  const TimeZone = date.getTimezoneOffset() / 60;
-  const aaa = 367 * YYYY - 730531.5;
-  const bbb = toNegativeInt((7 * toInt(YYYY + (MM + 9) / 12)) / 4);
-  const ccc = toInt((275 * MM) / 9) + DD;
-  const dToday = (HH + MMin / 60 - TimeZone) / 24;
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const hour = date.getHours();
+  const minutes = date.getMinutes();
+  const timeZone = date.getTimezoneOffset() / 60;
+  const aaa = 367 * year - 730531.5;
+  const bbb = toNegativeInt((7 * toInt(year + (month + 9) / 12)) / 4);
+  const ccc = toInt((275 * month) / 9) + day;
+  const dToday = (hour + minutes / 60 - timeZone) / 24;
   const dDays2000 = aaa + bbb + ccc + dToday;
   const cycle = toInt(dDays2000 / 365.25);
   const oThetaRad = 0.0172024 * (dDays2000 - 365.25 * cycle);
