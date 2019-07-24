@@ -1,6 +1,6 @@
-import declinationOfTheSunBuilder from "./getDeclinationOfTheSun";
-import { sine, cosine, arcsine } from "../maths/index";
-import getDayOfTheYear from "../date/index";
+import declinationOfTheSunBuilder from './getDeclinationOfTheSun';
+import { sine, cosine, arcsine } from '../maths/index';
+import getDayOfTheYear from '../date/index';
 
 const builder = declinationOfTheSunBuilder(
   sine,

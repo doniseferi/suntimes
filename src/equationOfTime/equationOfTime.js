@@ -1,10 +1,15 @@
 const equationOfTime = date => {
-  const YYYY = date.getFullYear(),
-    MM = date.getMonth() + 1,
-    DD = date.getDate(),
-    HH = date.getHours(),
-    MMin = date.getMinutes(),
-    TimeZone = date.getTimezoneOffset() / 60;
+  const YYYY = date.getFullYear();
+
+  const MM = date.getMonth() + 1;
+
+  const DD = date.getDate();
+
+  const HH = date.getHours();
+
+  const MMin = date.getMinutes();
+
+  const TimeZone = date.getTimezoneOffset() / 60;
   const aaa = 367 * YYYY - 730531.5;
   const bbb = toNegativeInt((7 * toInt(YYYY + (MM + 9) / 12)) / 4);
   const ccc = toInt((275 * MM) / 9) + DD;

@@ -1,10 +1,10 @@
-import { suite, test } from "mocha";
-import { expect } from "chai";
-import declinationOfTheSunTestData from "./declinationOfTheSunTestData.json";
-import declinationOfTheSun from "./index";
+import { suite, test } from 'mocha';
+import { expect } from 'chai';
+import declinationOfTheSunTestData from './declinationOfTheSunTestData.json';
+import declinationOfTheSun from './index';
 
-suite("Declination of the sun", () => {
-  test("returns the correct value in degrees within +/- 0.4 degree accuracy", () => {
+suite('Declination of the sun', () => {
+  test('returns the correct value in degrees within +/- 0.4 degree accuracy', () => {
     declinationOfTheSunTestData.forEach(data => {
       const { date, declination } = data;
       const result = declinationOfTheSun(new Date(date));
