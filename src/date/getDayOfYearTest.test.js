@@ -4,7 +4,7 @@ import getDayOfTheYear from './index';
 import getAllDatesForYear from './dateTestUtilities';
 import testData from './getDayOfTheYearTestData';
 
-suite('Day of the year', () => {
+suite('Get day of the year', () => {
   test('returns the correct day of the year', () => {
     testData.forEach(data => {
       const { date, expectedDayOfTheYear } = data;
@@ -31,5 +31,6 @@ suite('Day of the year', () => {
   test('throws exception when an invalid date is passed', () => {
     assert.throw(() => getDayOfTheYear(undefined));
     assert.throw(() => getDayOfTheYear(null));
+    assert.throw(() => getDayOfTheYear());
   });
 });
