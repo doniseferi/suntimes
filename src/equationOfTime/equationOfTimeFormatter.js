@@ -1,5 +1,5 @@
 const equationOfTimeFormatter = eot => {
-  if (!eot || isNaN(eot)) {
+  if (isNaN(eot) || typeof eot !== 'number') {
     throw new Error('Please provide the numeric value for the equation of time.');
   }
   return parseEoT(eot);
