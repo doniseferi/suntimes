@@ -1,4 +1,18 @@
 const declinationOfTheSunBuilder = (sine, cosine, arcsine, getDayOfTheYear) => {
+  const errorMessage = (method) => `Please provide a method for ${method}.`;
+  if (!sine) {
+    throw new Error(errorMessage('sine'));
+  }
+  if (!cosine) {
+    throw new Error(errorMessage('cosine'));
+  }
+  if (!arcsine) {
+    throw new Error(errorMessage('arcsine'));
+  }
+  if (!getDayOfTheYear) {
+    throw new Error(errorMessage('getDayOfTheYear'));
+  }
+
   const getDeclinationOfTheSun = date => {
     if (!date) {
       throw new Error('Please provide a valid date');

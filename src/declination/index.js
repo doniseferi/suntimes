@@ -12,3 +12,4 @@ const builder = declinationOfTheSunBuilder(
 const getDeclinationOfTheSun = builder.getDeclinationOfTheSun;
 
 export default getDeclinationOfTheSun;
+export { declinationOfTheSunBuilder };
