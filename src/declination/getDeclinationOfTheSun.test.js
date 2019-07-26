@@ -1,5 +1,5 @@
 import { suite, test } from 'mocha';
-import { expect } from 'chai';
+import { assert } from 'chai';
 import declinationOfTheSunTestData from './declinationOfTheSunTestData.json';
 import getDeclinationOfTheSun, { declinationOfTheSunBuilder } from './index';
 
@@ -10,29 +10,30 @@ suite('Declination of the sun', () => {
       const result = getDeclinationOfTheSun(new Date(date));
       const set = [result, declination];
       const difference = Math.max.apply(null, set) - Math.min.apply(null, set);
-      expect(difference).to.be.within(0, 0.4);
+      assert.closeTo(difference, 0, 0.4);
     });
   });
   test('returns the number', () => {
     const value = getDeclinationOfTheSun(new Date(Date.now()));
-    expect(value).to.be.a('number');
+    assert.typeOf(value, 'number');
   });
   test('throws an error if an ivnalid date is passed in', () => {
-    expect(() => getDeclinationOfTheSun(null)).to.throw('Please provide a valid date');
-    expect(() => getDeclinationOfTheSun(undefined)).to.throw('Please provide a valid date');
-    expect(() => getDeclinationOfTheSun()).to.throw('Please provide a valid date');
+    const expectedErrorMessage = 'Please provide a valid date';
+    assert.throws(() => getDeclinationOfTheSun(null), expectedErrorMessage);
+    assert.throws(() => getDeclinationOfTheSun(undefined), expectedErrorMessage);
+    assert.throws(() => getDeclinationOfTheSun(), expectedErrorMessage);
   });
 });
 suite('Declination Of The Sun Builder', () => {
   test('thows an exception if you do not pass in all parameters', () => {
     const stub = () => 1;
-    expect(() => declinationOfTheSunBuilder(null, stub, stub, stub)).to.throw();
-    expect(() => declinationOfTheSunBuilder(stub, null, stub, stub)).to.throw();
-    expect(() => declinationOfTheSunBuilder(stub, stub, null, stub)).to.throw();
-    expect(() => declinationOfTheSunBuilder(stub, stub, stub, null)).to.throw();
+    assert.throws(() => declinationOfTheSunBuilder(null, stub, stub, stub), 'Please provide a method for sine.');
+    assert.throws(() => declinationOfTheSunBuilder(stub, null, stub, stub), 'Please provide a method for cosine.');
+    assert.throws(() => declinationOfTheSunBuilder(stub, stub, null, stub), 'Please provide a method for arcsine.');
+    assert.throws(() => declinationOfTheSunBuilder(stub, stub, stub, null), 'Please provide a method for getDayOfTheYear.');
   });
   test('returns a get declination of the sun method', () => {
     const stub = () => 1;
-    expect(() => declinationOfTheSunBuilder(stub, stub, stub, stub).getDeclinationOfTheSun).to.be.a('function');
+    assert.typeOf(() => declinationOfTheSunBuilder(stub, stub, stub, stub).getDeclinationOfTheSun, 'function');
   });
 });

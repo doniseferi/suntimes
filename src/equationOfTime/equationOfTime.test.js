@@ -1,5 +1,5 @@
 import { suite, test } from 'mocha';
-import { expect } from 'chai';
+import { assert } from 'chai';
 import { equationOfTime } from './index';
 import equationOfTimeTestData from './equationOfTimeTestData.json';
 
@@ -13,12 +13,13 @@ suite('Equation of time', () => {
       const actualInSeconds = actual * 60;
       const set = [expected, actualInSeconds];
       const difference = Math.max.apply(null, set) - Math.min.apply(null, set);
-      expect(difference).to.be.within(0, 4);
+      assert.closeTo(difference, 0, 3.99);
     });
   });
   test('throws an exception when an invalid date is passed in', () => {
-    expect(() => equationOfTime(null)).to.throw('Please provide a valid date');
-    expect(() => equationOfTime(undefined)).to.throw('Please provide a valid date');
-    expect(() => equationOfTime()).to.throw('Please provide a valid date');
+    const expectedErrorMessage = 'Please provide a valid date';
+    assert.throws(() => equationOfTime(null), expectedErrorMessage);
+    assert.throws(() => equationOfTime(undefined), expectedErrorMessage);
+    assert.throws(() => equationOfTime(), expectedErrorMessage);
   });
 });
