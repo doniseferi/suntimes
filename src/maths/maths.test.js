@@ -1,20 +1,12 @@
 import { describe, test } from 'mocha';
 import { assert } from 'chai';
-import trigonometryBuilder, { sine, cosine, arcsine, arccosine } from './index';
+import { sine, cosine, arcsine, arccosine } from './index';
 import { degreesToRadians, radiansToDegrees } from './angleConversions';
 
 const _1DegInRadians = 0.017453292519943295;
 const _1RadInDegrees = 57.29577951308232;
 
-describe('Trigonometry', () => {
-  test('1 degree equals 0.01745rad', () => {
-    assert.equal(degreesToRadians(1), _1DegInRadians);
-  });
-  test('1 radian equals 57.296Deg', () => {
-    assert.equal(radiansToDegrees(1), _1RadInDegrees);
-  });
-});
-describe('', () => {
+describe('Trigonometry objects', () => {
   test('sine is equal to built in Math objects sin method', () => {
     const result = sine(1);
     const expected = Math.sin(_1DegInRadians);
@@ -38,17 +30,12 @@ describe('', () => {
     assert.equal(resultInRadians, expected);
   });
 });
-describe('Builder', () => {
-  test('accepts custom degrees converter', () => {
-    const service = trigonometryBuilder(throwError, null);
-    assert.throws(() => service.sine(1));
+
+describe('Angle conversions', () => {
+  test('converts 1 degree to 0.01745rad', () => {
+    assert.equal(degreesToRadians(1), _1DegInRadians);
   });
-  test('accepts custom radians converter', () => {
-    const service = trigonometryBuilder(null, throwError);
-    assert.throws(() => service.arcsine(1));
+  test('converts 1 radian to 57.296deg', () => {
+    assert.equal(radiansToDegrees(1), _1RadInDegrees);
   });
 });
-
-const throwError = () => {
-  throw new Error();
-};

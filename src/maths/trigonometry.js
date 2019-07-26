@@ -1,4 +1,11 @@
 const trigonometryBuilder = (degreesToRadians, radiansToDegrees) => {
+  if (!degreesToRadians || degreesToRadians === null || degreesToRadians === undefined) {
+    throw new Error('degrees to radians');
+  }
+  if (!radiansToDegrees || radiansToDegrees === null || radiansToDegrees === undefined) {
+    throw new Error('radians to degrees');
+  }
+
   const sine = degrees => Math.sin(degreesToRadians(degrees));
   const cosine = degrees => Math.cos(degreesToRadians(degrees));
   const arcsine = x => radiansToDegrees(Math.asin(x));
