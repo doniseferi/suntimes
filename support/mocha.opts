@@ -1,5 +1,5 @@
 --timeout 999999
 --colors
---require @babel/register 
+--require @babel/register
 --R nyan
 src/**/*.test.js
