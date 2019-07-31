@@ -1,7 +1,7 @@
 import { sine, cosine, arccosine } from '../maths/index';
 import getDeclinationOfTheSun from '../declination/index';
 import equationOfTime from '../equationOfTime/index';
-import timeDifferenceBetweenSolarNoonBuilder from './timeDifferenceFromSolarNoon';
+import timeDifferenceBetweenSolarNoonBuilder from './sunriseAndSunset';
 import getMiddayBuilder from './getMidday';
 
 const timeDifferenceBuilder = timeDifferenceBetweenSolarNoonBuilder(
