@@ -1,24 +1,12 @@
 import { sine, cosine, arccosine } from '../maths/index';
 import getDeclinationOfTheSun from '../declination/index';
-import equationOfTime from '../equationOfTime/index';
-import timeDifferenceBetweenSolarNoonBuilder from './sunriseAndSunset';
-import getMiddayBuilder from './getMidday';
+import sunriseAndSunsetBuilder from './sunriseAndSunset';
 
-const timeDifferenceBuilder = timeDifferenceBetweenSolarNoonBuilder(
-  sine,
-  cosine,
-  arccosine,
-  getDeclinationOfTheSun
-);
-const timeDifferenceBetweenSolarNoon =
-  timeDifferenceBuilder.timeDifferenceBetweenSolarNoon;
-
-const middayBuilder = getMiddayBuilder(equationOfTime);
-const getMidday = middayBuilder.getMidday;
+const sunriseSunsetBuilder = sunriseAndSunsetBuilder(sine, cosine, arccosine, getDeclinationOfTheSun);
+const getSunriseTime = sunriseSunsetBuilder.sunrise;
+const getSunsetTime = sunriseSunsetBuilder.sunset;
 
 export {
-  timeDifferenceBetweenSolarNoonBuilder,
-  timeDifferenceBetweenSolarNoon,
-  middayBuilder,
-  getMidday
+  getSunriseTime,
+  getSunsetTime
 };
