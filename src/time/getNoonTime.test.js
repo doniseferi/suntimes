@@ -9,28 +9,29 @@ suite('Get sunrise', () => {
     const superSet = [];
     const passed = [];
     januaryNoonExpected.forEach(expected => {
-      const { ExpectedTime, Longitude } = expected;
-      const actual = getNoonTime(new Date(2019, 0, 1), Longitude);
-      const expectedInHours = timeToHours(ExpectedTime.split(' ')[1]);
+      const expectedTime = expected.ExpectedTime;
+      const longitude = expected.Longitude;
+      const actual = hoursToMiutes(getNoonTime(new Date(2019, 0, 1), longitude));
+      const expectedInHours = hoursToMiutes(timeToHours(expectedTime.split(' ')[1]));
       const set = [actual, expectedInHours];
       const difference = Math.max.apply(null, set) - Math.min.apply(null, set);
-      if (difference > 0.1) {
-        superSet.push(JSON.stringify({
-          actual,
-          expectedInHours,
-          difference
-        }));
+      if (difference > 1) {
+        superSet.push(model(set, difference, expected));
       } else {
-        passed.push(JSON.stringify([{
-          actual,
-          expectedInHours,
-          difference
-        }]));
+        passed.push(model(set, difference, expected));
       }
     });
     write(superSet, 'failed.json');
     write(passed, 'passed.json');
   });
+
+  const model = (set, difference, expected) => {
+    return JSON.stringify({
+      set,
+      difference,
+      expected
+    });
+  };
 
   const write = (superSet, name) => fs.writeFile(name, superSet, (e) => console.log(e));
 
@@ -43,14 +44,16 @@ suite('Get sunrise', () => {
     return hours + minutes + seconds;
   };
 
-  const time = (decimal) => {
-    const minutesInPercentage = decimal % 1;
-    const minutes = minutesInPercentage * 60;
-    const secondsInPercentage = minutes % 1;
-    const seconds = secondsInPercentage * 60;
-    const miliSecondsInPercentage = seconds % 1;
-    const miliSeconds = miliSecondsInPercentage * 1000;
+  const hoursToMiutes = (hours) => hours * 60;
 
-    return `${parseInt(decimal)}:${parseInt(minutes)}:${parseInt(seconds)}:${parseInt(miliSeconds)}`;
-  };
+  // const time = (decimal) => {
+  //   const minutesInPercentage = decimal % 1;
+  //   const minutes = minutesInPercentage * 60;
+  //   const secondsInPercentage = minutes % 1;
+  //   const seconds = secondsInPercentage * 60;
+  //   const miliSecondsInPercentage = seconds % 1;
+  //   const miliSeconds = miliSecondsInPercentage * 1000;
+
+  //   return `${parseInt(decimal)}:${parseInt(minutes)}:${parseInt(seconds)}:${parseInt(miliSeconds)}`;
+  // };
 });
