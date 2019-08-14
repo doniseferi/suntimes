@@ -8,9 +8,9 @@ suite('Get Noon Time', () => {
     januaryNoonExpected.forEach(expected => {
       const expectedTime = expected.ExpectedTime;
       const longitude = expected.Longitude;
-      const actual = hoursToMiutes(getNoonTime(new Date(2019, 0, 1), longitude));
-      const expectedInHours = hoursToMiutes(timeToHours(expectedTime.split(' ')[1]));
-      const set = [actual, expectedInHours];
+      const actualTimeInMinutes = hoursToMiutes(getNoonTime(new Date(2019, 0, 1), longitude));
+      const expectedTimeInMinutes = hoursToMiutes(timeToHours(expectedTime.split(' ')[1]));
+      const set = [actualTimeInMinutes, expectedTimeInMinutes];
       const difference = Math.max.apply(null, set) - Math.min.apply(null, set);
       assert.closeTo(difference, 0, 1);
     });
