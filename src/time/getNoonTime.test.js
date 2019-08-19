@@ -9,9 +9,9 @@ suite('Get Noon Time', () => {
       const expectedTime = new Date(expected.ExpectedTime);
       const targetDate = new Date(2019, 0, 1);
       const actualTime = getNoonTime(targetDate, expected.Longitude);
-      const difference = Math.abs(expectedTime - actualTime);
-      const differenceInMinutes = Math.round(((difference % 86400000) % 3600000) / 60000);
-      assert.closeTo(differenceInMinutes, 0, 1);
+      const differenceInMiliseconds = Math.abs(expectedTime - actualTime);
+      const differenceInSeconds = Math.round(((differenceInMiliseconds % 86400000) % 3600000) / 60000);
+      assert.closeTo(differenceInSeconds, 0, 60);
     });
   });
 });
