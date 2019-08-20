@@ -4,9 +4,9 @@ const getNoonTimeBuilder = (equationOfTime) => {
   };
 
   const toDate = (date, decimalTimeInHours) => {
-    const day = date.getDate();
-    const month = date.getMonth();
-    const year = date.getFullYear();
+    const day = date.getUTCDate();
+    const month = date.getUTCMonth();
+    const year = date.getUTCFullYear();
 
     const hour = decimalTimeInHours;
     const minutesInPercentage = decimalTimeInHours % 1;
@@ -15,7 +15,8 @@ const getNoonTimeBuilder = (equationOfTime) => {
     const seconds = secondsInPercentage * 60;
     const miliSecondsInPercentage = seconds % 1;
     const miliSeconds = miliSecondsInPercentage * 1000;
-    return new Date(year, month, day, hour, minutes, seconds, miliSeconds);
+
+    return new Date(Date.UTC(year, month, day, hour, minutes, seconds, miliSeconds));
   };
 
   return Object.freeze({
