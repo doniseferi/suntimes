@@ -8,8 +8,7 @@ suite('Declination of the sun', () => {
     declinationOfTheSunTestData.forEach(data => {
       const { date, declination } = data;
       const result = getDeclinationOfTheSun(new Date(date));
-      const set = [result, declination];
-      const difference = Math.max.apply(null, set) - Math.min.apply(null, set);
+      const difference = result - declination;
       assert.closeTo(difference, 0, 0.4);
     });
   });
