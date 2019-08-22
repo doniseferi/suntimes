@@ -1,7 +1,7 @@
 import { suite, test } from 'mocha';
 import { assert } from 'chai';
 import { equationOfTimeFormatter } from './index';
-import testData from './equationOfTimeFormatterTestData';
+import testData from './testData/equationOfTimeFormatterTestData.json';
 
 suite('Equation of time formatter', () => {
   test('returns the expected hours value', () => {

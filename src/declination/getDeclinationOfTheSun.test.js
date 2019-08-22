@@ -1,6 +1,6 @@
 import { suite, test } from 'mocha';
 import { assert } from 'chai';
-import declinationOfTheSunTestData from './declinationOfTheSunTestData.json';
+import declinationOfTheSunTestData from './testData/declinationOfTheSunTestData.json';
 import getDeclinationOfTheSun, { declinationOfTheSunBuilder } from './index';
 
 suite('Declination of the sun', () => {

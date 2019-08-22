@@ -2,13 +2,13 @@ import { suite, test } from 'mocha';
 import { assert } from 'chai';
 import getDayOfTheYear from './index';
 import getAllDatesForYear from './dateTestUtilities';
-import testData from './getDayOfTheYearTestData';
+import testData from './testData/getDayOfTheYearTestData.json';
 
 suite('Get day of the year', () => {
   test('returns the correct day of the year', () => {
     testData.forEach(data => {
       const { date, expectedDayOfTheYear } = data;
-      const actualDayOfTheYearResult = getDayOfTheYear(date);
+      const actualDayOfTheYearResult = getDayOfTheYear(new Date(date));
       assert.equal(actualDayOfTheYearResult, expectedDayOfTheYear);
     });
   });
