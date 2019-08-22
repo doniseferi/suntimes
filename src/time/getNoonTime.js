@@ -4,9 +4,9 @@ const getNoonTimeBuilder = (equationOfTime) => {
   };
 
   const toDate = (date, decimalTimeInHours) => {
-    const day = date.getUTCDate();
-    const month = date.getUTCMonth();
-    const year = date.getUTCFullYear();
+    const day = date.getDate();
+    const month = date.getMonth();
+    const year = date.getFullYear();
 
     const hour = decimalTimeInHours;
     const minutesInPercentage = decimalTimeInHours % 1;
