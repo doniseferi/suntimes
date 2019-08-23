@@ -1,0 +1,202 @@
+[
+    {
+        "Country": "Niue",
+        "City": "Alofi",
+        "Latitude": -19.0167,
+        "Longitude": -169.9167,
+        "ExpectedTimeUtc": "2019-07-01T17:53:28.000Z",
+        "Offset": -11.0
+    },
+    {
+        "Country": "French Polynesia",
+        "City": "Papeete",
+        "Latitude": -17.5334,
+        "Longitude": -149.5667,
+        "ExpectedTimeUtc": "2019-07-01T16:29:16.000Z",
+        "Offset": -10.0
+    },
+    {
+        "Country": "Pitcairn Islands",
+        "City": "Adamstown",
+        "Latitude": -25.0667,
+        "Longitude": -130.0833,
+        "ExpectedTimeUtc": "2019-07-01T15:26:08.000Z",
+        "Offset": -8.0
+    },
+    {
+        "Country": "United States",
+        "City": "Kodiak",
+        "Latitude": 57.7934,
+        "Longitude": -152.4059,
+        "ExpectedTimeUtc": "2019-07-01T13:13:33.000Z",
+        "Offset": -8.0
+    },
+    {
+        "Country": "Mexico",
+        "City": "Nacozari de Garcia",
+        "Latitude": 30.42,
+        "Longitude": -109.65,
+        "ExpectedTimeUtc": "2019-07-01T12:20:03.000Z",
+        "Offset": -7.0
+    },
+    {
+        "Country": "Mexico",
+        "City": "Mexico City",
+        "Latitude": 19.4424,
+        "Longitude": -99.131,
+        "ExpectedTimeUtc": "2019-07-01T12:01:48.000Z",
+        "Offset": -5.0
+    },
+    {
+        "Country": "Panama",
+        "City": "Panama City",
+        "Latitude": 8.968,
+        "Longitude": -79.533,
+        "ExpectedTimeUtc": "2019-07-01T11:02:49.000Z",
+        "Offset": -5.0
+    },
+    {
+        "Country": "Saint Lucia",
+        "City": "Castries",
+        "Latitude": 14.002,
+        "Longitude": -61.0,
+        "ExpectedTimeUtc": "2019-07-01T09:39:36.000Z",
+        "Offset": -4.0
+    },
+    {
+        "Country": "Brazil",
+        "City": "Brasilia",
+        "Latitude": -15.7833,
+        "Longitude": -47.9161,
+        "ExpectedTimeUtc": "2019-07-01T09:39:23.000Z",
+        "Offset": -3.0
+    },
+    {
+        "Country": "Saint Pierre And Miquelon",
+        "City": "Saint-Pierre",
+        "Latitude": 46.7811,
+        "Longitude": -56.1764,
+        "ExpectedTimeUtc": "2019-07-01T07:54:27.000Z",
+        "Offset": -2.0
+    },
+    {
+        "Country": "Cabo Verde",
+        "City": "Praia",
+        "Latitude": 14.9167,
+        "Longitude": -23.5167,
+        "ExpectedTimeUtc": "2019-07-01T07:07:57.000Z",
+        "Offset": -1.0
+    },
+    {
+        "Country": "Kosovo",
+        "City": "Pristina",
+        "Latitude": 42.6666,
+        "Longitude": 21.1724,
+        "ExpectedTimeUtc": "2019-07-01T03:00:56.000Z",
+        "Offset": 2.0
+    },
+    {
+        "Country": "West Bank",
+        "City": "Al Quds",
+        "Latitude": 31.7764,
+        "Longitude": 35.2269,
+        "ExpectedTimeUtc": "2019-07-01T02:37:02.000Z",
+        "Offset": 3.0
+    },
+    {
+        "Country": "Yemen",
+        "City": "Sanaa",
+        "Latitude": 15.3547,
+        "Longitude": 44.2066,
+        "ExpectedTimeUtc": "2019-07-01T02:36:11.000Z",
+        "Offset": 3.0
+    },
+    {
+        "Country": "Mauritius",
+        "City": "Port Louis",
+        "Latitude": -20.1666,
+        "Longitude": 57.5,
+        "ExpectedTimeUtc": "2019-07-01T02:45:57.000Z",
+        "Offset": 4.0
+    },
+    {
+        "Country": "Maldives",
+        "City": "Male",
+        "Latitude": 4.1667,
+        "Longitude": 73.4999,
+        "ExpectedTimeUtc": "2019-07-01T00:58:58.000Z",
+        "Offset": 5.0
+    },
+    {
+        "Country": "Kazakhstan",
+        "City": "Astana",
+        "Latitude": 51.1811,
+        "Longitude": 71.4278,
+        "ExpectedTimeUtc": "2019-06-30T23:03:47.000Z",
+        "Offset": 6.0
+    },
+    {
+        "Country": "Laos",
+        "City": "Vientiane",
+        "Latitude": 17.9667,
+        "Longitude": 102.6,
+        "ExpectedTimeUtc": "2019-06-30T22:38:36.000Z",
+        "Offset": 7.0
+    },
+    {
+        "Country": "Mongolia",
+        "City": "Ulaanbaatar",
+        "Latitude": 47.9167,
+        "Longitude": 106.9166,
+        "ExpectedTimeUtc": "2019-06-30T20:57:50.000Z",
+        "Offset": 8.0
+    },
+    {
+        "Country": "Palau",
+        "City": "Ngerulmud",
+        "Latitude": 7.5,
+        "Longitude": 134.6242,
+        "ExpectedTimeUtc": "2019-06-30T20:49:38.000Z",
+        "Offset": 9.0
+    },
+    {
+        "Country": "Papua New Guinea",
+        "City": "Port Moresby",
+        "Latitude": -9.4647,
+        "Longitude": 147.1925,
+        "ExpectedTimeUtc": "2019-06-30T20:28:35.000Z",
+        "Offset": 10.0
+    },
+    {
+        "Country": "New Caledonia",
+        "City": "Noumea",
+        "Latitude": -22.2625,
+        "Longitude": 166.4443,
+        "ExpectedTimeUtc": "2019-06-30T19:35:15.000Z",
+        "Offset": 11.0
+    },
+    {
+        "Country": "Marshall Islands",
+        "City": "Majuro",
+        "Latitude": 7.103,
+        "Longitude": 171.38,
+        "ExpectedTimeUtc": "2019-06-30T18:23:17.000Z",
+        "Offset": 12.0
+    },
+    {
+        "Country": "New Zealand",
+        "City": "Wellington",
+        "Latitude": -41.3,
+        "Longitude": 174.7833,
+        "ExpectedTimeUtc": "2019-06-30T19:48:37.000Z",
+        "Offset": 12.0
+    },
+    {
+        "Country": "Samoa",
+        "City": "Apia",
+        "Latitude": -13.8415,
+        "Longitude": -171.7386,
+        "ExpectedTimeUtc": "2019-07-01T17:51:11.000Z",
+        "Offset": 13.0
+    }
+]
