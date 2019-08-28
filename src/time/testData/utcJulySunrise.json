@@ -198,5 +198,85 @@
         "Longitude": -171.7386,
         "ExpectedTimeUtc": "2019-07-01T17:51:11.000Z",
         "Offset": 13.0
-    }
+    },
+        {
+            "Country": "Nicaragua",
+            "City": "Managua",
+            "Latitude": 12.153,
+            "Longitude": -86.2685,
+            "ExpectedTimeUtc": "2019-07-01T11:24:05.000Z",
+            "Offset": -6.0
+        },
+        {
+            "Country": "Canada",
+            "City": "Trepassey",
+            "Latitude": 46.737,
+            "Longitude": -53.3633,
+            "ExpectedTimeUtc": "2019-07-01T07:43:23.000Z",
+            "Offset": -2.5
+        },
+        {
+            "Country": "Liberia",
+            "City": "Monrovia",
+            "Latitude": 6.3106,
+            "Longitude": -10.8048,
+            "ExpectedTimeUtc": "2019-07-01T06:32:31.000Z",
+            "Offset": 0.0
+        },
+        {
+            "Country": "Morocco",
+            "City": "Rabat",
+            "Latitude": 34.0253,
+            "Longitude": -6.8361,
+            "ExpectedTimeUtc": "2019-07-01T05:19:30.000Z",
+            "Offset": 1.0
+        },
+        {
+            "Country": "Afghanistan",
+            "City": "Kabul",
+            "Latitude": 34.5167,
+            "Longitude": 69.1833,
+            "ExpectedTimeUtc": "2019-07-01T00:14:01.000Z",
+            "Offset": 4.5
+        },
+        {
+            "Country": "Sri Lanka",
+            "City": "Colombo",
+            "Latitude": 6.932,
+            "Longitude": 79.8578,
+            "ExpectedTimeUtc": "2019-07-01T00:28:44.000Z",
+            "Offset": 5.5
+        },
+        {
+            "Country": "Nepal",
+            "City": "Kathmandu",
+            "Latitude": 27.7167,
+            "Longitude": 85.3166,
+            "ExpectedTimeUtc": "2019-06-30T23:27:21.000Z",
+            "Offset": 5.75
+        },
+        {
+            "Country": "Burma",
+            "City": "Rangoon",
+            "Latitude": 16.7834,
+            "Longitude": 96.1667,
+            "ExpectedTimeUtc": "2019-06-30T23:06:36.000Z",
+            "Offset": 6.5
+        },
+        {
+            "Country": "Australia",
+            "City": "Kingoonya",
+            "Latitude": -30.8996,
+            "Longitude": 135.3,
+            "ExpectedTimeUtc": "2019-06-30T21:58:26.000Z",
+            "Offset": 9.5
+        },
+        {
+            "Country": "New Zealand",
+            "City": "Waitangi",
+            "Latitude": -44.0263,
+            "Longitude": -176.3696,
+            "ExpectedTimeUtc": "2019-07-01T19:21:10.000Z",
+            "Offset": 12.75
+        }
 ]
