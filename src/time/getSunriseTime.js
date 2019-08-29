@@ -1,6 +1,8 @@
-const getNoonTimeBuilder = (equationOfTime) => {
-  const getNoonTimeInDecimal = (date, longitude) => {
-    return 12 - (longitude / 15 + equationOfTime(date).hours);
+const getSunriseTimeBuilder = (getTimeSinceSolarNoon, getNoonTimeInDecimal) => {
+  const getSunriseTimeInHours = (date, latitude, longitude) => {
+    const solarNoon = getNoonTimeInDecimal(date, longitude);
+    const t = getTimeSinceSolarNoon(date, latitude, -0.833);
+    return solarNoon - t;
   };
 
   const toDate = (date, decimalTimeInHours) => {
@@ -20,9 +22,8 @@ const getNoonTimeBuilder = (equationOfTime) => {
   };
 
   return Object.freeze({
-    getNoonTime: (date, longitude) => toDate(date, getNoonTimeInDecimal(date, longitude)),
-    getNoonTimeInDecimal: (date, longitude) => getNoonTimeInDecimal(date, longitude)
+    getSunriseTime: (date, latitude, longitude) => toDate(date, getSunriseTimeInHours(date, latitude, longitude))
   });
 };
 
-export default getNoonTimeBuilder;
+export default getSunriseTimeBuilder;
