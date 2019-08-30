@@ -3,3 +3,4 @@
 --require @babel/register
 --R nyan
 src/**/*.test.js
+--full-trace
