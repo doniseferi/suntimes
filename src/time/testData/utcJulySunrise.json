@@ -128,14 +128,6 @@
         "Offset": 5.0
     },
     {
-        "Country": "Kazakhstan",
-        "City": "Astana",
-        "Latitude": 51.1811,
-        "Longitude": 71.4278,
-        "ExpectedTimeUtc": "2019-06-30T23:03:47.000Z",
-        "Offset": 6.0
-    },
-    {
         "Country": "Laos",
         "City": "Vientiane",
         "Latitude": 17.9667,

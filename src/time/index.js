@@ -16,7 +16,10 @@ const getTimeSinceSolarNoon = timeSinceSolarNoonBuilder(
   getDeclinationOfTheSun).timeSinceSolarNoon;
 const getNoonTime = getNoonTimeBuilder(equationOfTime).getNoonTime;
 const getNoonTimeInDecimal = getNoonTimeBuilder(equationOfTime).getNoonTimeInDecimal;
-const getSunriseTime = getSunriseTimeBuilder(getTimeSinceSolarNoon, getNoonTimeInDecimal).getSunriseTime;
+const getSunriseTime = getSunriseTimeBuilder(
+  getTimeSinceSolarNoon,
+  getNoonTimeInDecimal
+).getSunriseTime;
 
 export {
   getNoonTime,

@@ -4,12 +4,12 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Mocha Test All with Options",
+            "name": "Mocha All",
             "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
             "args": [
-                "--opts", 
+                "--opts",
                 "${workspaceFolder}/support/mocha.opts",
-                "${workspaceFolder}/src/**/*.test.js"
+                "'${workspaceFolder}/{,!(node_modules)/}*/*.test.js'"
             ],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen"
@@ -20,10 +20,8 @@
             "name": "Mocha Current File",
             "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
             "args": [
-                "--timeout 999999",
-                "--colors",
-                "--require @babel/register",
-                "--R nyan",
+                "--opts",
+                "${workspaceFolder}/support/mocha.opts",
                 "${file}"
             ],
             "console": "integratedTerminal",
