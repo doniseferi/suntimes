@@ -1,6 +1,6 @@
 import { suite, test } from 'mocha';
 import { assert } from 'chai';
-import { getNoonTime } from './index';
+import { getNoonDateTime } from './index';
 import januaryNoonExpected from './testData/utcJanNoon.json';
 import julyNoonExpected from './testData/utcJulyNoon.json';
 
@@ -9,7 +9,7 @@ suite('Get Noon Time', () => {
     januaryNoonExpected.forEach(expected => {
       const expectedTime = new Date(expected.ExpectedTimeUtc);
       const targetDate = new Date(2019, 0, 1);
-      const actualTime = getNoonTime(targetDate, expected.Longitude);
+      const actualTime = getNoonDateTime(targetDate, expected.Longitude);
       const differenceInSeconds =
         (expectedTime.getTime() - actualTime.getTime()) / 1000;
       assert.closeTo(differenceInSeconds, 0, 60);
@@ -20,7 +20,7 @@ suite('Get Noon Time', () => {
     julyNoonExpected.forEach(expected => {
       const expectedTime = new Date(expected.ExpectedTimeUtc);
       const targetDate = new Date(2019, 6, 1);
-      const actualTime = getNoonTime(targetDate, expected.Longitude);
+      const actualTime = getNoonDateTime(targetDate, expected.Longitude);
       const differenceInSeconds =
         (expectedTime.getTime() - actualTime.getTime()) / 1000;
       assert.closeTo(differenceInSeconds, 0, 60);

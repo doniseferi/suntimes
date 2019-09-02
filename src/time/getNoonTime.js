@@ -1,5 +1,5 @@
 const getNoonTimeBuilder = (equationOfTime) => {
-  const getNoonTimeInDecimal = (date, longitude) => {
+  const getNoonTime = (date, longitude) => {
     return 12 - (longitude / 15 + equationOfTime(date).hours);
   };
 
@@ -20,8 +20,8 @@ const getNoonTimeBuilder = (equationOfTime) => {
   };
 
   return Object.freeze({
-    getNoonTime: (date, longitude) => toDate(date, getNoonTimeInDecimal(date, longitude)),
-    getNoonTimeInDecimal: (date, longitude) => getNoonTimeInDecimal(date, longitude)
+    getNoonDateTime: (date, longitude) => toDate(date, getNoonTime(date, longitude)),
+    getNoonTime: (date, longitude) => getNoonTime(date, longitude)
   });
 };
 

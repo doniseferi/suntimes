@@ -2,27 +2,33 @@ import equationOfTime from '../equationOfTime/index';
 import getNoonTimeBuilder from './getNoonTime';
 import getSunriseTimeBuilder from './getSunriseTime';
 import getDeclinationOfTheSun from '../declination/index';
+import getHourCircleBuilder from './getHourAngle';
 import {
   sine,
   cosine,
   arccosine
 } from '../maths/index';
-import timeSinceSolarNoonBuilder from './getTimeSinceSolarNoon';
 
-const getTimeSinceSolarNoon = timeSinceSolarNoonBuilder(
+const timeBuilder = getHourCircleBuilder(
   sine,
   cosine,
   arccosine,
-  getDeclinationOfTheSun).timeSinceSolarNoon;
-const getNoonTime = getNoonTimeBuilder(equationOfTime).getNoonTime;
-const getNoonTimeInDecimal = getNoonTimeBuilder(equationOfTime).getNoonTimeInDecimal;
+  getDeclinationOfTheSun);
+const hourAngle = timeBuilder.hourAngle;
+const getHourCircle = timeBuilder.getHourCircle;
+
+const noonTimeBuilder = getNoonTimeBuilder(equationOfTime);
+const getNoonTime = noonTimeBuilder.getNoonTime;
+const getNoonDateTime = noonTimeBuilder.getNoonDateTime;
+
 const getSunriseTime = getSunriseTimeBuilder(
-  getTimeSinceSolarNoon,
-  getNoonTimeInDecimal
-).getSunriseTime;
+  getNoonTime,
+  getHourCircle,
+  hourAngle
+).getSunriseDateTime;
 
 export {
-  getNoonTime,
+  getNoonDateTime,
   getNoonTimeBuilder,
   getSunriseTime,
   getSunriseTimeBuilder

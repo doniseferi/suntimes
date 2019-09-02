@@ -114,9 +114,9 @@
     {
         "Country": "Mauritius",
         "City": "Port Louis",
-        "Latitude": -20.1666,
-        "Longitude": 57.5,
-        "ExpectedTimeUtc": "2019-01-01T01:32:10.000Z",
+        "Latitude": -20.16194,
+        "Longitude": 57.49889,
+        "ExpectedTimeUtc": "2019-01-01T01:33:00.000Z",
         "Offset": 4.0
     },
     {

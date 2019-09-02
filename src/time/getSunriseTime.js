@@ -1,20 +1,18 @@
-const getSunriseTimeBuilder = (getTimeSinceSolarNoon, getNoonTimeInDecimal) => {
-  const getSunriseTimeInHours = (date, latitude, longitude, elevationInMeters = 0) => {
-    // https://kosherjava.com/zmanim/docs/api/src-html/net/sourceforge/zmanim/util/AstronomicalCalculator.html
-    const correction = 0.0347 * Math.sqrt(elevationInMeters);
-    const angle = -0.833 + correction;
-    const solarNoon = getNoonTimeInDecimal(date, longitude);
-    const t = getTimeSinceSolarNoon(date, latitude, angle);
-    return solarNoon - t;
+const getSunriseTimeBuilder = (getNoonTime, getHourCircle) => {
+  const getSunriseTime = (date, latitude, longitude) => {
+    const solarNoon = getNoonTime(date, longitude);
+    const angle = -0.833333333;
+    const hourCircle = getHourCircle(date, latitude, angle);
+    return solarNoon - hourCircle;
   };
 
-  const toDate = (date, decimalTimeInHours) => {
+  const toDate = (date, hourCircle) => {
     const day = date.getDate();
     const month = date.getMonth();
     const year = date.getFullYear();
 
-    const hour = decimalTimeInHours;
-    const minutesInPercentage = decimalTimeInHours % 1;
+    const hour = hourCircle;
+    const minutesInPercentage = hourCircle % 1;
     const minutes = minutesInPercentage * 60;
     const secondsInPercentage = minutes % 1;
     const seconds = secondsInPercentage * 60;
@@ -25,10 +23,10 @@ const getSunriseTimeBuilder = (getTimeSinceSolarNoon, getNoonTimeInDecimal) => {
   };
 
   return Object.freeze({
-    getSunriseTime: (date, latitude, longitude, elevationInMeters = 0) =>
+    getSunriseDateTime: (date, latitude, longitude) =>
       toDate(
         date,
-        getSunriseTimeInHours(date, latitude, longitude, elevationInMeters)
+        getSunriseTime(date, latitude, longitude)
       )
   });
 };
