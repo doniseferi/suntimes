@@ -3,13 +3,13 @@ const getNoonTimeBuilder = (equationOfTime) => {
     return 12 - (longitude / 15 + equationOfTime(date).hours);
   };
 
-  const toDate = (date, decimalTimeInHours) => {
+  const toDate = (date, decimalHour) => {
     const day = date.getDate();
     const month = date.getMonth();
     const year = date.getFullYear();
 
-    const hour = decimalTimeInHours;
-    const minutesInPercentage = decimalTimeInHours % 1;
+    const hour = decimalHour;
+    const minutesInPercentage = decimalHour % 1;
     const minutes = minutesInPercentage * 60;
     const secondsInPercentage = minutes % 1;
     const seconds = secondsInPercentage * 60;
