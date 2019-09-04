@@ -8,9 +8,9 @@ const hoursToTime = (scientificDecimalTime) => {
   const hours = parseInt(scientificDecimalTime);
   const minutes = parseInt(minutesInDecimal);
   const seconds = parseInt(secondsInDecimal);
-  const millisecond = parseInt(millisecondInDecimal);
+  const milliseconds = parseInt(millisecondInDecimal);
 
-  return { hours, minutes, seconds, millisecond };
+  return { hours, minutes, seconds, milliseconds };
 };
 
 const toTimeUnit = (decimalValue, unitBase) => (decimalValue % 1) * unitBase;
