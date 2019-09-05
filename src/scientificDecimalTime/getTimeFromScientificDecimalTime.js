@@ -1,4 +1,8 @@
 const hoursToTime = (scientificDecimalTime) => {
+  if (scientificDecimalTime < 0) {
+    throw new Error('Only positive numbers can be formatted');
+  }
+
   const sexagesimal = 60;
   const thousandth = 1000;
   const minutesInDecimal = toTimeUnit(scientificDecimalTime, sexagesimal);
