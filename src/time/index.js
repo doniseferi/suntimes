@@ -4,6 +4,7 @@ import getSunriseTimeBuilder from './getSunriseTime';
 import getSunsetTimeBuilder from './getSunsetTime';
 import getDeclinationOfTheSun from '../declination/index';
 import getHourCircleBuilder from './getHourAngle';
+import { getUtcDateTimeFromScientificDecimalTime } from '../conversions/index';
 import {
   sine,
   cosine,
@@ -23,7 +24,8 @@ const getNoonDateTime = noonTimeBuilder.getNoonDateTime;
 
 const getSunriseTime = getSunriseTimeBuilder(
   getNoonTime,
-  getHourCircle
+  getHourCircle,
+  getUtcDateTimeFromScientificDecimalTime
 ).getSunriseDateTime;
 
 const getSunsetTime = getSunsetTimeBuilder(
