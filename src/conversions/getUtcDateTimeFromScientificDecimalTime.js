@@ -7,11 +7,11 @@ const getUtcDateTimeFromScientificDecimalTimeBuilder = (getTimeFromScientificDec
       hours,
       minutes,
       seconds,
-      miliSeconds
+      milliseconds
     } = getTimeFromScientificDecimalTime(decimalTime);
 
     return new Date(
-      Date.UTC(year, month, day, hours, minutes, seconds, miliSeconds)
+      Date.UTC(year, month, day, hours, minutes, seconds, milliseconds)
     );
   };
 

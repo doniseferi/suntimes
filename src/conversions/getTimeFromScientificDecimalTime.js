@@ -1,6 +1,6 @@
 const hoursToTime = (scientificDecimalTime) => {
-  if (scientificDecimalTime < 0) {
-    throw new Error('Only positive numbers can be formatted');
+  if (!scientificDecimalTime || isNaN(scientificDecimalTime)) {
+    throw new Error('Value is either null, undefined or not a number.');
   }
 
   const sexagesimal = 60;

@@ -57,10 +57,10 @@ suite('Scientific decimal time to time', () => {
     assert.equal(actual.milliseconds, 600);
   });
 
-  test('throws an exception if the decimal is negative', () => {
-    assert.throws(() => getTimeFromScientificDecimalTime(-0.01));
-    assert.throws(() => getTimeFromScientificDecimalTime(-1.01));
-    assert.throws(() => getTimeFromScientificDecimalTime(-10.01));
-    assert.throws(() => getTimeFromScientificDecimalTime(-100.01));
+  test('throws an exception when the value is null, undefined or not a number', () => {
+    assert.throws(() => getTimeFromScientificDecimalTime(null));
+    assert.throws(() => getTimeFromScientificDecimalTime(undefined));
+    assert.throws(() => getTimeFromScientificDecimalTime('One'));
+    assert.throws(() => getTimeFromScientificDecimalTime(''));
   });
 });

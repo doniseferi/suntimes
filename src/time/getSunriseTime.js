@@ -1,4 +1,4 @@
-const getSunriseTimeBuilder = (getNoonTime, getHourCircle, decimalTimeToUtcDateTime = null) => {
+const getSunriseTimeBuilder = (getNoonTime, getHourCircle, decimalTimeToUtcDateTime) => {
   const getSunriseTime = (date, latitude, longitude) => {
     const solarNoon = getNoonTime(date, longitude);
     const angle = -0.833333333;
