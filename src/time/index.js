@@ -43,5 +43,6 @@ export {
   getSunsetTimeBuilder,
   getNoonDateTime,
   getSunriseTime,
-  getSunsetTime
+  getSunsetTime,
+  getHourAngle
 };

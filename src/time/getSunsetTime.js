@@ -5,8 +5,8 @@ const getSunrsetTimeBuilder = (
 ) => {
   const getSunsetTime = (date, latitude, longitude) => {
     const solarNoon = getNoonTime(date, longitude);
-    const angle = -0.833333333;
-    const hourAngle = getHourAngle(date, latitude, angle);
+    const sunsetAngleOfSunOnHorizon = -0.833333333;
+    const hourAngle = getHourAngle(date, latitude, sunsetAngleOfSunOnHorizon);
     return solarNoon + hourAngle;
   };
 
