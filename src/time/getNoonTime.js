@@ -1,7 +1,6 @@
 const getNoonTimeBuilder = (equationOfTime, decimalTimeToUtcDateTime) => {
-  const getNoonTime = (date, longitude) => {
-    return 12 - (longitude / 15 + equationOfTime(date).hours);
-  };
+  const getNoonTime = (date, longitude) =>
+    (12 - (longitude / 15 + equationOfTime(date).hours));
 
   return Object.freeze({
     getNoonDateTime: (date, longitude) =>
