@@ -1,4 +1,4 @@
-const getSunrsetTimeBuilder = (
+const getSunsetTimeBuilder = (
   getNoonTime,
   getHourAngle,
   decimalTimeToUtcDateTime
@@ -16,4 +16,4 @@ const getSunrsetTimeBuilder = (
   });
 };
 
-export default getSunrsetTimeBuilder;
+export default getSunsetTimeBuilder;

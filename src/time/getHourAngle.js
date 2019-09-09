@@ -6,7 +6,7 @@ const getHourAngleBuilder = (
 ) => {
   const getHourAngleInTime = (date, latitude, angle) => {
     const declinationOfTheSun = getDeclinationOfTheSun(date);
-    const top = sine(angle) - ((sine(latitude) * sine(declinationOfTheSun)));
+    const top = sine(angle) - sine(latitude) * sine(declinationOfTheSun);
     const bottom = cosine(latitude) * cosine(declinationOfTheSun);
 
     return 0.06666666666666667 * arccosine(top / bottom);
