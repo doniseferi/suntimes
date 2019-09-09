@@ -1,10 +1,10 @@
-const getHourCircleBuilder = (
+const getHourAngleBuilder = (
   sine,
   cosine,
   arccosine,
   getDeclinationOfTheSun
 ) => {
-  const getHourCircleInTime = (date, latitude, angle) => {
+  const getHourAngleInTime = (date, latitude, angle) => {
     const declinationOfTheSun = getDeclinationOfTheSun(date);
     const top = sine(angle) - ((sine(latitude) * sine(declinationOfTheSun)));
     const bottom = cosine(latitude) * cosine(declinationOfTheSun);
@@ -13,8 +13,8 @@ const getHourCircleBuilder = (
   };
 
   return Object.freeze({
-    getHourCircle: (date, latitude, angle) => getHourCircleInTime(date, latitude, angle)
+    getHourAngle: (date, latitude, angle) => getHourAngleInTime(date, latitude, angle)
   });
 };
 
-export default getHourCircleBuilder;
+export default getHourAngleBuilder;
