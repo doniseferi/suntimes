@@ -96,6 +96,14 @@
         "Offset": 1.0
     },
     {
+        "Country": "England",
+        "City": "London",
+        "Latitude": 51.515972,
+        "Longitude": -0.174943,
+        "ExpectedTimeUtc": "2019-01-01T08:06:00.000Z",
+        "Offset": 0.0
+    },
+    {
         "Country": "West Bank",
         "City": "Al Quds",
         "Latitude": 31.7764,

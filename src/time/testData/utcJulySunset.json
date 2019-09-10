@@ -216,6 +216,14 @@
         "Offset": 0.0
     },
     {
+        "Country": "England",
+        "City": "London",
+        "Latitude": 51.515972,
+        "Longitude": -0.174943,
+        "ExpectedTimeUtc": "2019-07-01T20:21:00.000Z",
+        "Offset": 1.0
+    },
+    {
         "Country": "Morocco",
         "City": "Rabat",
         "Latitude": 34.0253,
