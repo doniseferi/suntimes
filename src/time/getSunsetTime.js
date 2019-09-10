@@ -1,7 +1,7 @@
 const getSunsetTimeBuilder = (
   getNoonTime,
   getHourAngle,
-  decimalTimeToUtcDateTime
+  toUtcDateTime
 ) => {
   const getSunsetTime = (date, latitude, longitude) => {
     const solarNoon = getNoonTime(date, longitude);
@@ -12,7 +12,7 @@ const getSunsetTimeBuilder = (
 
   return Object.freeze({
     getSunsetDecimalTime: (date, latitude, longitude) => getSunsetTime(date, latitude, longitude),
-    getSunsetDateTime: (date, latitude, longitude) => decimalTimeToUtcDateTime(date, getSunsetTime(date, latitude, longitude))
+    getSunsetDateTime: (date, latitude, longitude) => toUtcDateTime(date, getSunsetTime(date, latitude, longitude))
   });
 };
 

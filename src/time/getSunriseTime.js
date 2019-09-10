@@ -1,4 +1,4 @@
-const getSunriseTimeBuilder = (getNoonTime, getHourAngle, decimalTimeToUtcDateTime) => {
+const getSunriseTimeBuilder = (getNoonTime, getHourAngle, toUtcDateTime) => {
   const getSunriseTime = (date, latitude, longitude) => {
     const solarNoon = getNoonTime(date, longitude);
     const sunriseAngleOfSunOnHorizon = -0.833333333;
@@ -8,7 +8,7 @@ const getSunriseTimeBuilder = (getNoonTime, getHourAngle, decimalTimeToUtcDateTi
 
   return Object.freeze({
     getSunriseDecimalTime: (date, latitude, longitude) => getSunriseTime(date, latitude, longitude),
-    getSunriseDateTime: (date, latitude, longitude) => decimalTimeToUtcDateTime(date, getSunriseTime(date, latitude, longitude))
+    getSunriseDateTime: (date, latitude, longitude) => toUtcDateTime(date, getSunriseTime(date, latitude, longitude))
   });
 };
 

@@ -1,9 +1,11 @@
 const getTwilightTimeBuilder = (
   getNoonTime,
   getHourAngle,
-  decimalTimeToUtcDateTime
+  toUtcDateTime
 ) => {
-  const raiseException = (dependency) => { throw new Error(`Please satisfy a dependecy for ${dependency}`); };
+  const raiseException = (dependency) => {
+    throw new Error(`Please satisfy a dependecy for ${dependency}`);
+  };
 
   if (!getNoonTime) {
     raiseException(getNoonTime);
@@ -11,14 +13,17 @@ const getTwilightTimeBuilder = (
   if (!getHourAngle) {
     raiseException(getHourAngle);
   }
-  if (!decimalTimeToUtcDateTime) {
-    raiseException(decimalTimeToUtcDateTime);
+  if (!toUtcDateTime) {
+    raiseException(toUtcDateTime);
   }
 
   const horizon = 0.57;
   const civilAngle = 6;
   const nauticalAngle = 12;
   const astronomicalAngle = 18;
+
+  const getTime = (twilightAngle, date, latitude, longitude) =>
+    getNoonTime(date, longitude) + getHourAngle(date, latitude, twilightAngle);
 
   const getTilightCivilEndTime = (date, latitude, longitude) =>
     getTime(horizon, date, latitude, longitude);
@@ -38,52 +43,29 @@ const getTwilightTimeBuilder = (
   const getTilightAstronomicalStartTime = (date, latitude, longitude) =>
     getTime(astronomicalAngle, date, latitude, longitude);
 
-  const getTwilightTime = (date, latitude, longitude) => {
-    const astronomicalStartTime = getTilightAstronomicalStartTime(
-      date,
-      latitude,
-      longitude
-    );
-    const getTilightAstronomicalEndTime = getTilightAstronomicalEndTime(
-      date,
-      latitude,
-      longitude
-    );
-    const getTilightNauticalStartTime = getTilightNauticalStartTime(
-      date,
-      latitude,
-      longitude
-    );
-    const getTilightNauticalStartTime = getTilightNauticalStartTime(
-      date,
-      latitude,
-      longitude
-    );
-    const getTilightCivilStartTime = getTilightCivilStartTime(
-      date,
-      latitude,
-      longitude
-    );
-        const getTilightCivilEndTime = getTilightCivilEndTime(
-          date,
-          latitude,
-          longitude
-        );
+  const astronomicalStartScientificDateTime = (date, latitude, longitude) =>
+    toUtcDateTime(date, astronomicalStartScientificDecimalTime(date, latitude, longitude));
 
-    return {
-      twilightStartDateTime
-    };
-  };
+  const astronomicalEndScientificDateTime = (date, latitude, longitude) =>
+    toUtcDateTime(date, astronomicalEndScientificDecimalTime(date, latitude, longitude));
 
-  const getTime = (twilightAngle, date, latitude, longitude) =>
-    getNoonTime(date, longitude) + getHourAngle(date, latitude, twilightAngle);
+  const nauticalStartScientificDateTime = (date, latitude, longitude) =>
+    toUtcDateTime(date, nauticalStartScientificDecimalTime(date, latitude, longitude));
 
-  return Object.freeze({
-    getTwilightDecimalTime: (date, latitude, longitude) =>
-      getTwilightTime(date, latitude, longitude),
-    getTwilightDateTime: (date, latitude, longitude) =>
-      getTwilightTime(date, latitude, longitude)
-  });
+  const nauticalEndScientificDateTime = (date, latitude, longitude) =>
+    toUtcDateTime(date, nauticalEndScientificDecimalTime(date, latitude, longitude));
+
+  const civilStartScientificDateTime = (date, latitude, longitude) =>
+    toUtcDateTime(date, civilStartScientificDecimalTime(date, latitude, longitude));
+
+  const civilEndScientificDateTime = (date, latitude, longitude) =>
+    toUtcDateTime(date, civilEndScientificDecimalTime(date, latitude, longitude));
+};
+
+
+return Object.freeze({
+
+});
 };
 
 export default getTwilightTimeBuilder;
