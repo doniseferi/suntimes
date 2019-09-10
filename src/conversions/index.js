@@ -1,12 +1,11 @@
-import getTimeFromScientificDecimalTime from './getTimeFromScientificDecimalTime';
-import getUtcDateTimeFromScientificDecimalTimeBuilder from './getUtcDateTimeFromScientificDecimalTime';
+import toTime from './toTime';
+import toUtcDateTimeBuilder from './toUtcDateTime';
 
-const getUtcDateTimeFromScientificDecimalTime = getUtcDateTimeFromScientificDecimalTimeBuilder(
-  getTimeFromScientificDecimalTime
-).getUtcDateTimeFromScientificDecimalTime;
+const toUtcDateTime = toUtcDateTimeBuilder(toTime)
+  .toUtcDateTime;
 
 export {
-  getUtcDateTimeFromScientificDecimalTime,
-  getTimeFromScientificDecimalTime,
-  getUtcDateTimeFromScientificDecimalTimeBuilder
+  toUtcDateTimeBuilder,
+  toTime,
+  toUtcDateTime
 };

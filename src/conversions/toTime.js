@@ -1,4 +1,4 @@
-const hoursToTime = (scientificDecimalTime) => {
+const toTime = (scientificDecimalTime) => {
   if (!scientificDecimalTime || isNaN(scientificDecimalTime)) {
     throw new Error('Value is either null, undefined or not a number.');
   }
@@ -19,4 +19,4 @@ const hoursToTime = (scientificDecimalTime) => {
 
 const toTimeUnit = (decimalValue, unitBase) => (decimalValue % 1) * unitBase;
 
-export default hoursToTime;
+export default toTime;

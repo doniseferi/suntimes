@@ -1,6 +1,6 @@
 import equationOfTime from '../equationOfTime/index';
 import getDeclinationOfTheSun from '../declination/index';
-import { getUtcDateTimeFromScientificDecimalTime } from '../conversions/index';
+import { toUtcDateTime } from '../conversions/index';
 import {
   sine,
   cosine,
@@ -20,7 +20,7 @@ const getHourAngle = timeBuilder.getHourAngle;
 
 const noonTimeBuilder = getNoonTimeBuilder(
   equationOfTime,
-  getUtcDateTimeFromScientificDecimalTime
+  toUtcDateTime
 );
 const noonTime = noonTimeBuilder.getNoonTime;
 const getNoonDateTime = noonTimeBuilder.getNoonDateTime;
@@ -28,13 +28,13 @@ const getNoonDateTime = noonTimeBuilder.getNoonDateTime;
 const getSunriseTime = getSunriseTimeBuilder(
   noonTime,
   getHourAngle,
-  getUtcDateTimeFromScientificDecimalTime
+  toUtcDateTime
 ).getSunriseDateTime;
 
 const getSunsetTime = getSunsetTimeBuilder(
   noonTime,
   getHourAngle,
-  getUtcDateTimeFromScientificDecimalTime
+  toUtcDateTime
 ).getSunsetDateTime;
 
 export {
