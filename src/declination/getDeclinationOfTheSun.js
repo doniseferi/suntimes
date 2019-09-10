@@ -1,5 +1,5 @@
 const declinationOfTheSunBuilder = (sine, cosine, arcsine, getDayOfTheYear) => {
-  const errorMessage = (method) => `Please provide a method for ${method}.`;
+  const errorMessage = (functionName) => `Please provide a function for ${functionName}.`;
   if (!sine) {
     throw new Error(errorMessage('sine'));
   }

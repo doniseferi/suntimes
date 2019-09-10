@@ -10,6 +10,7 @@ import getNoonTimeBuilder from './getNoonTime';
 import getSunriseTimeBuilder from './getSunriseTime';
 import getSunsetTimeBuilder from './getSunsetTime';
 import getHourAngleBuilder from './getHourAngle';
+import getTwilightTimeBuilder from './getTwilightTime';
 
 const timeBuilder = getHourAngleBuilder(
   sine,
@@ -31,6 +32,12 @@ const getSunriseTime = getSunriseTimeBuilder(
   toUtcDateTime
 ).getSunriseDateTime;
 
+const getTwilightTime = getTwilightTimeBuilder(
+  noonTime,
+  getHourAngle,
+  toUtcDateTime
+).getTwilightDateTime;
+
 const getSunsetTime = getSunsetTimeBuilder(
   noonTime,
   getHourAngle,
@@ -44,5 +51,6 @@ export {
   getNoonDateTime,
   getSunriseTime,
   getSunsetTime,
+  getTwilightTime,
   getHourAngle
 };

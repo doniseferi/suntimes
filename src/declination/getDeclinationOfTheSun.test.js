@@ -26,12 +26,12 @@ suite('Declination of the sun', () => {
 suite('Declination Of The Sun Builder', () => {
   test('thows an exception if you do not pass in all parameters', () => {
     const stub = () => 1;
-    assert.throws(() => declinationOfTheSunBuilder(null, stub, stub, stub), 'Please provide a method for sine.');
-    assert.throws(() => declinationOfTheSunBuilder(stub, null, stub, stub), 'Please provide a method for cosine.');
-    assert.throws(() => declinationOfTheSunBuilder(stub, stub, null, stub), 'Please provide a method for arcsine.');
-    assert.throws(() => declinationOfTheSunBuilder(stub, stub, stub, null), 'Please provide a method for getDayOfTheYear.');
+    assert.throws(() => declinationOfTheSunBuilder(null, stub, stub, stub), 'Please provide a function for sine.');
+    assert.throws(() => declinationOfTheSunBuilder(stub, null, stub, stub), 'Please provide a function for cosine.');
+    assert.throws(() => declinationOfTheSunBuilder(stub, stub, null, stub), 'Please provide a function for arcsine.');
+    assert.throws(() => declinationOfTheSunBuilder(stub, stub, stub, null), 'Please provide a function for getDayOfTheYear.');
   });
-  test('returns a get declination of the sun method', () => {
+  test('returns a get declination of the sun function', () => {
     const stub = () => 1;
     assert.typeOf(() => declinationOfTheSunBuilder(stub, stub, stub, stub).getDeclinationOfTheSun, 'function');
   });
