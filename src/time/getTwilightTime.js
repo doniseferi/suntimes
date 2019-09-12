@@ -17,55 +17,67 @@ const getTwilightTimeBuilder = (
     raiseException(toUtcDateTime);
   }
 
-  const horizon = 0.57;
-  const civilAngle = 6;
-  const nauticalAngle = 12;
-  const astronomicalAngle = 18;
+  const horizon = -0.57;
+  const civilAngle = -6;
+  const nauticalAngle = -12;
+  const astronomicalAngle = -18;
 
-  const getTime = (twilightAngle, date, latitude, longitude) =>
-    getNoonTime(date, longitude) + getHourAngle(date, latitude, twilightAngle);
+  const getScientificDecimalTime = (angle, date, latitude, longitude) => {
+    const solarNoon = getNoonTime(date, longitude);
+    const hourAngleAtSunrise = getHourAngle(date, latitude, angle);
+    return solarNoon - hourAngleAtSunrise;
+  };
 
-  const getTilightCivilEndTime = (date, latitude, longitude) =>
-    getTime(horizon, date, latitude, longitude);
+  const getTwilightCivilStartTime = (date, latitude, longitude) =>
+    getScientificDecimalTime(civilAngle, date, latitude, longitude);
 
-  const getTilightCivilStartTime = (date, latitude, longitude) =>
-    getTime(civilAngle, date, latitude, longitude);
+  const getTwilightCivilEndTime = (date, latitude, longitude) =>
+    getScientificDecimalTime(horizon, date, latitude, longitude);
 
-  const getTilightNauticalEndTime = (date, latitude, longitude) =>
-    getTime(civilAngle, date, latitude, longitude);
+  const getTwilightNauticalEndTime = (date, latitude, longitude) =>
+    getScientificDecimalTime(civilAngle, date, latitude, longitude);
 
-  const getTilightNauticalStartTime = (date, latitude, longitude) =>
-    getTime(nauticalAngle, date, latitude, longitude);
+  const getTwilightNauticalStartTime = (date, latitude, longitude) =>
+    getScientificDecimalTime(nauticalAngle, date, latitude, longitude);
 
-  const getTilightAstronomicalEndTime = (date, latitude, longitude) =>
-    getTime(nauticalAngle, date, latitude, longitude);
+  const getTwilightAstronomicalEndTime = (date, latitude, longitude) =>
+    getScientificDecimalTime(nauticalAngle, date, latitude, longitude);
 
-  const getTilightAstronomicalStartTime = (date, latitude, longitude) =>
-    getTime(astronomicalAngle, date, latitude, longitude);
+  const getTwilightAstronomicalStartTime = (date, latitude, longitude) =>
+    getScientificDecimalTime(astronomicalAngle, date, latitude, longitude);
 
-  const astronomicalStartScientificDateTime = (date, latitude, longitude) =>
-    toUtcDateTime(date, astronomicalStartScientificDecimalTime(date, latitude, longitude));
+  const getTwilightCivilStartDateTime = (date, latitude, longitude) =>
+    toUtcDateTime(date, getTwilightCivilStartTime(civilAngle, date, latitude, longitude));
 
-  const astronomicalEndScientificDateTime = (date, latitude, longitude) =>
-    toUtcDateTime(date, astronomicalEndScientificDecimalTime(date, latitude, longitude));
+  const getTwilightCivilEndDateTime = (date, latitude, longitude) =>
+    toUtcDateTime(date, getTwilightCivilEndTime(horizon, date, latitude, longitude));
 
-  const nauticalStartScientificDateTime = (date, latitude, longitude) =>
-    toUtcDateTime(date, nauticalStartScientificDecimalTime(date, latitude, longitude));
+  const getTwilightNauticalEndDateTime = (date, latitude, longitude) =>
+    toUtcDateTime(date, getTwilightNauticalEndTime(civilAngle, date, latitude, longitude));
 
-  const nauticalEndScientificDateTime = (date, latitude, longitude) =>
-    toUtcDateTime(date, nauticalEndScientificDecimalTime(date, latitude, longitude));
+  const getTwilightNauticalStartDateTime = (date, latitude, longitude) =>
+    toUtcDateTime(date, getTwilightNauticalStartTime(nauticalAngle, date, latitude, longitude));
 
-  const civilStartScientificDateTime = (date, latitude, longitude) =>
-    toUtcDateTime(date, civilStartScientificDecimalTime(date, latitude, longitude));
+  const getTwilightAstronomicalEndDateTime = (date, latitude, longitude) =>
+    toUtcDateTime(date, getTwilightAstronomicalEndTime(date, latitude, longitude));
 
-  const civilEndScientificDateTime = (date, latitude, longitude) =>
-    toUtcDateTime(date, civilEndScientificDecimalTime(date, latitude, longitude));
-};
+  const getTwilightAstronomicalStartDateTime = (date, latitude, longitude) =>
+    toUtcDateTime(date, getTwilightAstronomicalStartTime(date, latitude, longitude));
 
-
-return Object.freeze({
-
-});
+  return Object.freeze({
+    getTwilightCivilStartDateTime: (date, latitude, longitude) => getTwilightCivilStartDateTime(date, latitude, longitude),
+    getTwilightCivilEndDateTime: (date, latitude, longitude) => getTwilightCivilEndDateTime(date, latitude, longitude),
+    getTwilightCivilStartDecimalTime: (date, latitude, longitude) => getTwilightCivilStartTime(date, latitude, longitude),
+    getTwilightCivilEndDecimalTime: (date, latitude, longitude) => getTwilightCivilEndTime(date, latitude, longitude),
+    getTwilightNauticalStartDateTime: (date, latitude, longitude) => getTwilightNauticalStartDateTime(date, latitude, longitude),
+    getTwilightNauticalEndDateTime: (date, latitude, longitude) => getTwilightNauticalEndDateTime(date, latitude, longitude),
+    getTwilightNauticalStartDecimalTime: (date, latitude, longitude) => getTwilightNauticalStartTime(date, latitude, longitude),
+    getTwilightNauticalEndDecimalTime: (date, latitude, longitude) => getTwilightNauticalEndTime(date, latitude, longitude),
+    getTwilightAstronomicalStartDateTime: (date, latitude, longitude) => getTwilightAstronomicalStartDateTime(date, latitude, longitude),
+    getTwilightAstronomicalEndDateTime: (date, latitude, longitude) => getTwilightAstronomicalEndDateTime(date, latitude, longitude),
+    getTwilightAstronomicalStartDecimalTime: (date, latitude, longitude) => getTwilightAstronomicalStartTime(date, latitude, longitude),
+    getTwilightAstronomicalEndDecimalTime: (date, latitude, longitude) => getTwilightAstronomicalEndTime(date, latitude, longitude)
+  });
 };
 
 export default getTwilightTimeBuilder;
