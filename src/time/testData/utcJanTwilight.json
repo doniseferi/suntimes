@@ -5,12 +5,12 @@
     "Latitude": -19.0167,
     "Longitude": -169.9167,
     "Offset": -11.0,
-    "AstronomicalDawn": "2022-01-01T15:24:13.000Z",
-    "AstronomicalDusk": "2022-01-01T07:24:32.000Z",
-    "CivilDawn": "2022-01-01T16:22:45.000Z",
-    "CivilDusk": "2022-01-01T06:25:56.000Z",
-    "NauticalDawn": "2022-01-01T15:53:56.000Z",
-    "NauticalDusk": "2022-01-01T06:54:47.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T15:24:13.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T07:24:32.000Z",
+    "CivilDawnUtc": "2022-01-01T16:22:45.000Z",
+    "CivilDuskUtc": "2022-01-01T06:25:56.000Z",
+    "NauticalDawnUtc": "2022-01-01T15:53:56.000Z",
+    "NauticalDuskUtc": "2022-01-01T06:54:47.000Z"
   },
   {
     "Country": "French Polynesia",
@@ -18,12 +18,12 @@
     "Latitude": -17.5334,
     "Longitude": -149.5667,
     "Offset": -10.0,
-    "AstronomicalDawn": "2022-01-01T14:06:46.000Z",
-    "AstronomicalDusk": "2022-01-01T05:59:06.000Z",
-    "CivilDawn": "2022-01-01T15:04:27.000Z",
-    "CivilDusk": "2022-01-01T05:01:23.000Z",
-    "NauticalDawn": "2022-01-01T14:36:01.000Z",
-    "NauticalDusk": "2022-01-01T05:29:50.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T14:06:46.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T05:59:06.000Z",
+    "CivilDawnUtc": "2022-01-01T15:04:27.000Z",
+    "CivilDuskUtc": "2022-01-01T05:01:23.000Z",
+    "NauticalDawnUtc": "2022-01-01T14:36:01.000Z",
+    "NauticalDuskUtc": "2022-01-01T05:29:50.000Z"
   },
   {
     "Country": "United States",
@@ -31,12 +31,12 @@
     "Latitude": 57.7934,
     "Longitude": -152.4059,
     "Offset": -9.0,
-    "AstronomicalDawn": "2022-01-01T16:24:22.000Z",
-    "AstronomicalDusk": "2022-01-01T04:03:31.000Z",
-    "CivilDawn": "2022-01-01T18:03:59.000Z",
-    "CivilDusk": "2022-01-01T02:23:46.000Z",
-    "NauticalDawn": "2022-01-01T17:12:11.000Z",
-    "NauticalDusk": "2022-01-01T03:15:39.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T16:24:22.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T04:03:31.000Z",
+    "CivilDawnUtc": "2022-01-01T18:03:59.000Z",
+    "CivilDuskUtc": "2022-01-01T02:23:46.000Z",
+    "NauticalDawnUtc": "2022-01-01T17:12:11.000Z",
+    "NauticalDuskUtc": "2022-01-01T03:15:39.000Z"
   },
   {
     "Country": "Pitcairn Islands",
@@ -44,12 +44,12 @@
     "Latitude": -25.0667,
     "Longitude": -130.0833,
     "Offset": -8.0,
-    "AstronomicalDawn": "2022-01-01T12:26:25.000Z",
-    "AstronomicalDusk": "2022-01-01T05:03:37.000Z",
-    "CivilDawn": "2022-01-01T13:29:34.000Z",
-    "CivilDusk": "2022-01-01T04:00:24.000Z",
-    "NauticalDawn": "2022-01-01T12:58:44.000Z",
-    "NauticalDusk": "2022-01-01T04:31:16.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T12:26:25.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T05:03:37.000Z",
+    "CivilDawnUtc": "2022-01-01T13:29:34.000Z",
+    "CivilDuskUtc": "2022-01-01T04:00:24.000Z",
+    "NauticalDawnUtc": "2022-01-01T12:58:44.000Z",
+    "NauticalDuskUtc": "2022-01-01T04:31:16.000Z"
   },
   {
     "Country": "Mexico",
@@ -57,12 +57,12 @@
     "Latitude": 30.42,
     "Longitude": -109.65,
     "Offset": -7.0,
-    "AstronomicalDawn": "2022-01-01T12:51:07.000Z",
-    "AstronomicalDusk": "2022-01-01T01:54:58.000Z",
-    "CivilDawn": "2022-01-01T13:50:19.000Z",
-    "CivilDusk": "2022-01-01T00:55:43.000Z",
-    "NauticalDawn": "2022-01-01T13:20:25.000Z",
-    "NauticalDusk": "2022-01-01T01:25:39.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T12:51:07.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T01:54:58.000Z",
+    "CivilDawnUtc": "2022-01-01T13:50:19.000Z",
+    "CivilDuskUtc": "2022-01-01T00:55:43.000Z",
+    "NauticalDawnUtc": "2022-01-01T13:20:25.000Z",
+    "NauticalDuskUtc": "2022-01-01T01:25:39.000Z"
   },
   {
     "Country": "Mexico",
@@ -70,12 +70,12 @@
     "Latitude": 19.4424,
     "Longitude": -99.131,
     "Offset": -6.0,
-    "AstronomicalDawn": "2022-01-01T11:53:40.000Z",
-    "AstronomicalDusk": "2022-01-01T01:28:19.000Z",
-    "CivilDawn": "2022-01-01T12:47:59.000Z",
-    "CivilDusk": "2022-01-01T00:33:58.000Z",
-    "NauticalDawn": "2022-01-01T12:20:40.000Z",
-    "NauticalDusk": "2022-01-01T01:01:18.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T11:53:40.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T01:28:19.000Z",
+    "CivilDawnUtc": "2022-01-01T12:47:59.000Z",
+    "CivilDuskUtc": "2022-01-01T00:33:58.000Z",
+    "NauticalDawnUtc": "2022-01-01T12:20:40.000Z",
+    "NauticalDuskUtc": "2022-01-01T01:01:18.000Z"
   },
   {
     "Country": "Panama",
@@ -83,12 +83,12 @@
     "Latitude": 8.968,
     "Longitude": -79.533,
     "Offset": -5.0,
-    "AstronomicalDawn": "2022-01-01T10:19:30.000Z",
-    "AstronomicalDusk": "2022-01-01T00:25:43.000Z",
-    "CivilDawn": "2022-01-01T11:11:51.000Z",
-    "CivilDusk": "2022-01-01T23:33:51.000Z",
-    "NauticalDawn": "2022-01-01T10:45:38.000Z",
-    "NauticalDusk": ""
+    "AstronomicalDawnUtc": "2022-01-01T10:19:30.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T00:25:43.000Z",
+    "CivilDawnUtc": "2022-01-01T11:11:51.000Z",
+    "CivilDuskUtc": "2022-01-01T23:33:51.000Z",
+    "NauticalDawnUtc": "2022-01-01T10:45:38.000Z",
+    "NauticalDuskUtc": ""
   },
   {
     "Country": "Saint Lucia",
@@ -96,12 +96,12 @@
     "Latitude": 14.002,
     "Longitude": -61.0,
     "Offset": -4.0,
-    "AstronomicalDawn": "2022-01-01T09:13:07.000Z",
-    "AstronomicalDusk": "2022-01-01T23:04:16.000Z",
-    "CivilDawn": "2022-01-01T10:06:08.000Z",
-    "CivilDusk": "2022-01-01T22:11:16.000Z",
-    "NauticalDawn": "2022-01-01T09:39:31.000Z",
-    "NauticalDusk": "2022-01-01T22:37:52.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T09:13:07.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T23:04:16.000Z",
+    "CivilDawnUtc": "2022-01-01T10:06:08.000Z",
+    "CivilDuskUtc": "2022-01-01T22:11:16.000Z",
+    "NauticalDawnUtc": "2022-01-01T09:39:31.000Z",
+    "NauticalDuskUtc": "2022-01-01T22:37:52.000Z"
   },
   {
     "Country": "Canada",
@@ -109,12 +109,12 @@
     "Latitude": 46.737,
     "Longitude": -53.3633,
     "Offset": -3.5,
-    "AstronomicalDawn": "2022-01-01T09:29:14.000Z",
-    "AstronomicalDusk": "2022-01-01T21:47:02.000Z",
-    "CivilDawn": "2022-01-01T10:44:26.000Z",
-    "CivilDusk": "2022-01-01T20:31:50.000Z",
-    "NauticalDawn": "2022-01-01T10:06:02.000Z",
-    "NauticalDusk": "2022-01-01T21:10:14.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T09:29:14.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T21:47:02.000Z",
+    "CivilDawnUtc": "2022-01-01T10:44:26.000Z",
+    "CivilDuskUtc": "2022-01-01T20:31:50.000Z",
+    "NauticalDawnUtc": "2022-01-01T10:06:02.000Z",
+    "NauticalDuskUtc": "2022-01-01T21:10:14.000Z"
   },
   {
     "Country": "Saint Pierre And Miquelon",
@@ -122,12 +122,12 @@
     "Latitude": 46.7811,
     "Longitude": -56.1764,
     "Offset": -3.0,
-    "AstronomicalDawn": "2022-01-01T09:40:33.000Z",
-    "AstronomicalDusk": "2022-01-01T21:58:14.000Z",
-    "CivilDawn": "2022-01-01T10:55:50.000Z",
-    "CivilDusk": "2022-01-01T20:42:57.000Z",
-    "NauticalDawn": "2022-01-01T10:17:23.000Z",
-    "NauticalDusk": "2022-01-01T21:21:24.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T09:40:33.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T21:58:14.000Z",
+    "CivilDawnUtc": "2022-01-01T10:55:50.000Z",
+    "CivilDuskUtc": "2022-01-01T20:42:57.000Z",
+    "NauticalDawnUtc": "2022-01-01T10:17:23.000Z",
+    "NauticalDuskUtc": "2022-01-01T21:21:24.000Z"
   },
   {
     "Country": "Brazil",
@@ -135,12 +135,12 @@
     "Latitude": -15.7833,
     "Longitude": -47.9161,
     "Offset": -2.0,
-    "AstronomicalDawn": "2022-01-01T07:24:30.000Z",
-    "AstronomicalDusk": "2022-01-01T23:08:10.000Z",
-    "CivilDawn": "2022-01-01T08:21:16.000Z",
-    "CivilDusk": "2022-01-01T22:11:25.000Z",
-    "NauticalDawn": "2022-01-01T07:53:15.000Z",
-    "NauticalDusk": "2022-01-01T22:39:26.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T07:24:30.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T23:08:10.000Z",
+    "CivilDawnUtc": "2022-01-01T08:21:16.000Z",
+    "CivilDuskUtc": "2022-01-01T22:11:25.000Z",
+    "NauticalDawnUtc": "2022-01-01T07:53:15.000Z",
+    "NauticalDuskUtc": "2022-01-01T22:39:26.000Z"
   },
   {
     "Country": "Cabo Verde",
@@ -148,12 +148,12 @@
     "Latitude": 14.9167,
     "Longitude": -23.5167,
     "Offset": -1.0,
-    "AstronomicalDawn": "2022-01-01T06:44:30.000Z",
-    "AstronomicalDusk": "2022-01-01T20:32:55.000Z",
-    "CivilDawn": "2022-01-01T07:37:42.000Z",
-    "CivilDusk": "2022-01-01T19:39:43.000Z",
-    "NauticalDawn": "2022-01-01T07:11:00.000Z",
-    "NauticalDusk": "2022-01-01T20:06:26.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T06:44:30.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T20:32:55.000Z",
+    "CivilDawnUtc": "2022-01-01T07:37:42.000Z",
+    "CivilDuskUtc": "2022-01-01T19:39:43.000Z",
+    "NauticalDawnUtc": "2022-01-01T07:11:00.000Z",
+    "NauticalDuskUtc": "2022-01-01T20:06:26.000Z"
   },
   {
     "Country": "England",
@@ -161,12 +161,12 @@
     "Latitude": 51.515972,
     "Longitude": -0.174943,
     "Offset": 0.0,
-    "AstronomicalDawn": "2022-01-01T06:04:06.000Z",
-    "AstronomicalDusk": "2022-01-01T18:06:32.000Z",
-    "CivilDawn": "2022-01-01T07:27:41.000Z",
-    "CivilDusk": "2022-01-01T16:42:57.000Z",
-    "NauticalDawn": "2022-01-01T06:44:45.000Z",
-    "NauticalDusk": "2022-01-01T17:25:53.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T06:04:06.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T18:06:32.000Z",
+    "CivilDawnUtc": "2022-01-01T07:27:41.000Z",
+    "CivilDuskUtc": "2022-01-01T16:42:57.000Z",
+    "NauticalDawnUtc": "2022-01-01T06:44:45.000Z",
+    "NauticalDuskUtc": "2022-01-01T17:25:53.000Z"
   },
   {
     "Country": "Kosovo",
@@ -174,12 +174,12 @@
     "Latitude": 42.6666,
     "Longitude": 21.1724,
     "Offset": 1.0,
-    "AstronomicalDawn": "2022-01-01T04:24:58.000Z",
-    "AstronomicalDusk": "2022-01-01T16:54:49.000Z",
-    "CivilDawn": "2022-01-01T05:34:45.000Z",
-    "CivilDusk": "2022-01-01T15:45:03.000Z",
-    "NauticalDawn": "2022-01-01T04:59:15.000Z",
-    "NauticalDusk": "2022-01-01T16:20:33.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T04:24:58.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T16:54:49.000Z",
+    "CivilDawnUtc": "2022-01-01T05:34:45.000Z",
+    "CivilDuskUtc": "2022-01-01T15:45:03.000Z",
+    "NauticalDawnUtc": "2022-01-01T04:59:15.000Z",
+    "NauticalDuskUtc": "2022-01-01T16:20:33.000Z"
   },
   {
     "Country": "West Bank",
@@ -187,12 +187,12 @@
     "Latitude": 31.7764,
     "Longitude": 35.2269,
     "Offset": 2.0,
-    "AstronomicalDawn": "2022-01-01T03:13:22.000Z",
-    "AstronomicalDusk": "2022-01-01T16:13:57.000Z",
-    "CivilDawn": "2022-01-01T04:13:27.000Z",
-    "CivilDusk": "2022-01-01T15:13:53.000Z",
-    "NauticalDawn": "2022-01-01T03:43:05.000Z",
-    "NauticalDusk": "2022-01-01T15:44:15.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T03:13:22.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T16:13:57.000Z",
+    "CivilDawnUtc": "2022-01-01T04:13:27.000Z",
+    "CivilDuskUtc": "2022-01-01T15:13:53.000Z",
+    "NauticalDawnUtc": "2022-01-01T03:43:05.000Z",
+    "NauticalDuskUtc": "2022-01-01T15:44:15.000Z"
   },
   {
     "Country": "Yemen",
@@ -200,12 +200,12 @@
     "Latitude": 15.3547,
     "Longitude": 44.2066,
     "Offset": 3.0,
-    "AstronomicalDawn": "2022-01-01T02:14:11.000Z",
-    "AstronomicalDusk": "2022-01-01T16:01:17.000Z",
-    "CivilDawn": "2022-01-01T03:07:29.000Z",
-    "CivilDusk": "2022-01-01T15:07:59.000Z",
-    "NauticalDawn": "2022-01-01T02:40:43.000Z",
-    "NauticalDusk": "2022-01-01T15:34:45.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T02:14:11.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T16:01:17.000Z",
+    "CivilDawnUtc": "2022-01-01T03:07:29.000Z",
+    "CivilDuskUtc": "2022-01-01T15:07:59.000Z",
+    "NauticalDawnUtc": "2022-01-01T02:40:43.000Z",
+    "NauticalDuskUtc": "2022-01-01T15:34:45.000Z"
   },
   {
     "Country": "Iran",
@@ -213,12 +213,12 @@
     "Latitude": 35.6719,
     "Longitude": 51.4243,
     "Offset": 3.5,
-    "AstronomicalDawn": "2022-01-01T02:13:59.000Z",
-    "AstronomicalDusk": "2022-01-01T15:03:43.000Z",
-    "CivilDawn": "2022-01-01T03:16:53.000Z",
-    "CivilDusk": "2022-01-01T14:00:49.000Z",
-    "NauticalDawn": "2022-01-01T02:45:02.000Z",
-    "NauticalDusk": "2022-01-01T14:32:41.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T02:13:59.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T15:03:43.000Z",
+    "CivilDawnUtc": "2022-01-01T03:16:53.000Z",
+    "CivilDuskUtc": "2022-01-01T14:00:49.000Z",
+    "NauticalDawnUtc": "2022-01-01T02:45:02.000Z",
+    "NauticalDuskUtc": "2022-01-01T14:32:41.000Z"
   },
   {
     "Country": "Mauritius",
@@ -226,12 +226,12 @@
     "Latitude": -20.1666,
     "Longitude": 57.5,
     "Offset": 4.0,
-    "AstronomicalDawn": "2022-01-01T00:10:53.000Z",
-    "AstronomicalDusk": "2022-01-01T16:18:12.000Z",
-    "CivilDawn": "2022-01-01T01:10:12.000Z",
-    "CivilDusk": "2022-01-01T15:18:53.000Z",
-    "NauticalDawn": "2022-01-01T00:41:03.000Z",
-    "NauticalDusk": "2022-01-01T15:48:02.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T00:10:53.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T16:18:12.000Z",
+    "CivilDawnUtc": "2022-01-01T01:10:12.000Z",
+    "CivilDuskUtc": "2022-01-01T15:18:53.000Z",
+    "NauticalDawnUtc": "2022-01-01T00:41:03.000Z",
+    "NauticalDuskUtc": "2022-01-01T15:48:02.000Z"
   },
   {
     "Country": "Afghanistan",
@@ -239,12 +239,12 @@
     "Latitude": 34.5167,
     "Longitude": 69.1833,
     "Offset": 4.5,
-    "AstronomicalDawn": "2022-01-01T01:01:20.000Z",
-    "AstronomicalDusk": "2022-01-01T13:54:16.000Z",
-    "CivilDawn": "2022-01-01T02:03:20.000Z",
-    "CivilDusk": "2022-01-01T12:52:15.000Z",
-    "NauticalDawn": "2022-01-01T01:31:56.000Z",
-    "NauticalDusk": "2022-01-01T13:23:39.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T01:01:20.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T13:54:16.000Z",
+    "CivilDawnUtc": "2022-01-01T02:03:20.000Z",
+    "CivilDuskUtc": "2022-01-01T12:52:15.000Z",
+    "NauticalDawnUtc": "2022-01-01T01:31:56.000Z",
+    "NauticalDuskUtc": "2022-01-01T13:23:39.000Z"
   },
   {
     "Country": "Maldives",
@@ -252,12 +252,12 @@
     "Latitude": 4.1667,
     "Longitude": 73.4999,
     "Offset": 5.0,
-    "AstronomicalDawn": "2022-01-01T23:59:48.000Z",
-    "AstronomicalDusk": "2022-01-01T14:21:43.000Z",
-    "CivilDawn": "2022-01-01T00:51:30.000Z",
-    "CivilDusk": "2022-01-01T13:29:33.000Z",
-    "NauticalDawn": "2022-01-01T00:25:25.000Z",
-    "NauticalDusk": "2022-01-01T13:55:38.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T23:59:48.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T14:21:43.000Z",
+    "CivilDawnUtc": "2022-01-01T00:51:30.000Z",
+    "CivilDuskUtc": "2022-01-01T13:29:33.000Z",
+    "NauticalDawnUtc": "2022-01-01T00:25:25.000Z",
+    "NauticalDuskUtc": "2022-01-01T13:55:38.000Z"
   },
   {
     "Country": "Sri Lanka",
@@ -265,12 +265,12 @@
     "Latitude": 6.9,
     "Longitude": 79.95,
     "Offset": 5.5,
-    "AstronomicalDawn": "2022-01-01T23:38:31.000Z",
-    "AstronomicalDusk": "2022-01-01T13:51:22.000Z",
-    "CivilDawn": "2022-01-01T00:30:16.000Z",
-    "CivilDusk": "2022-01-01T12:59:09.000Z",
-    "NauticalDawn": "2022-01-01T00:04:08.000Z",
-    "NauticalDusk": "2022-01-01T13:25:17.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T23:38:31.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T13:51:22.000Z",
+    "CivilDawnUtc": "2022-01-01T00:30:16.000Z",
+    "CivilDuskUtc": "2022-01-01T12:59:09.000Z",
+    "NauticalDawnUtc": "2022-01-01T00:04:08.000Z",
+    "NauticalDuskUtc": "2022-01-01T13:25:17.000Z"
   },
   {
     "Country": "India",
@@ -278,12 +278,12 @@
     "Latitude": 28.6,
     "Longitude": 77.2,
     "Offset": 5.5,
-    "AstronomicalDawn": "2022-01-01T00:21:03.000Z",
-    "AstronomicalDusk": "2022-01-01T13:30:23.000Z",
-    "CivilDawn": "2022-01-01T01:19:13.000Z",
-    "CivilDusk": "2022-01-01T12:32:13.000Z",
-    "NauticalDawn": "2022-01-01T00:49:51.000Z",
-    "NauticalDusk": "2022-01-01T13:01:35.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T00:21:03.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T13:30:23.000Z",
+    "CivilDawnUtc": "2022-01-01T01:19:13.000Z",
+    "CivilDuskUtc": "2022-01-01T12:32:13.000Z",
+    "NauticalDawnUtc": "2022-01-01T00:49:51.000Z",
+    "NauticalDuskUtc": "2022-01-01T13:01:35.000Z"
   },
   {
     "Country": "Nepal",
@@ -291,12 +291,12 @@
     "Latitude": 27.7167,
     "Longitude": 85.3166,
     "Offset": 5.75,
-    "AstronomicalDawn": "2022-01-01T23:47:39.000Z",
-    "AstronomicalDusk": "2022-01-01T12:59:08.000Z",
-    "CivilDawn": "2022-01-01T00:45:03.000Z",
-    "CivilDusk": "2022-01-01T12:01:26.000Z",
-    "NauticalDawn": "2022-01-01T00:15:56.000Z",
-    "NauticalDusk": "2022-01-01T12:30:33.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T23:47:39.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T12:59:08.000Z",
+    "CivilDawnUtc": "2022-01-01T00:45:03.000Z",
+    "CivilDuskUtc": "2022-01-01T12:01:26.000Z",
+    "NauticalDawnUtc": "2022-01-01T00:15:56.000Z",
+    "NauticalDuskUtc": "2022-01-01T12:30:33.000Z"
   },
   {
     "Country": "Kazakhstan",
@@ -304,12 +304,12 @@
     "Latitude": 51.1811,
     "Longitude": 71.4278,
     "Offset": 6.0,
-    "AstronomicalDawn": "2022-01-01T01:17:07.000Z",
-    "AstronomicalDusk": "2022-01-01T13:20:30.000Z",
-    "CivilDawn": "2022-01-01T02:40:03.000Z",
-    "CivilDusk": "2022-01-01T11:57:35.000Z",
-    "NauticalDawn": "2022-01-01T01:57:28.000Z",
-    "NauticalDusk": "2022-01-01T12:40:09.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T01:17:07.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T13:20:30.000Z",
+    "CivilDawnUtc": "2022-01-01T02:40:03.000Z",
+    "CivilDuskUtc": "2022-01-01T11:57:35.000Z",
+    "NauticalDawnUtc": "2022-01-01T01:57:28.000Z",
+    "NauticalDuskUtc": "2022-01-01T12:40:09.000Z"
   },
   {
     "Country": "Burma",
@@ -317,12 +317,12 @@
     "Latitude": 19.7666,
     "Longitude": 96.1186,
     "Offset": 6.5,
-    "AstronomicalDawn": "2022-01-01T22:53:18.000Z",
-    "AstronomicalDusk": "2022-01-01T12:27:06.000Z",
-    "CivilDawn": "2022-01-01T23:47:42.000Z",
-    "CivilDusk": "2022-01-01T11:32:40.000Z",
-    "NauticalDawn": "2022-01-01T23:20:20.000Z",
-    "NauticalDusk": "2022-01-01T12:00:03.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T22:53:18.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T12:27:06.000Z",
+    "CivilDawnUtc": "2022-01-01T23:47:42.000Z",
+    "CivilDuskUtc": "2022-01-01T11:32:40.000Z",
+    "NauticalDawnUtc": "2022-01-01T23:20:20.000Z",
+    "NauticalDuskUtc": "2022-01-01T12:00:03.000Z"
   },
   {
     "Country": "Laos",
@@ -330,12 +330,12 @@
     "Latitude": 17.9667,
     "Longitude": 102.6,
     "Offset": 7.0,
-    "AstronomicalDawn": "2022-01-01T22:24:46.000Z",
-    "AstronomicalDusk": "2022-01-01T12:03:47.000Z",
-    "CivilDawn": "2022-01-01T23:18:40.000Z",
-    "CivilDusk": "2022-01-01T11:09:51.000Z",
-    "NauticalDawn": "2022-01-01T22:51:35.000Z",
-    "NauticalDusk": "2022-01-01T11:36:57.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T22:24:46.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T12:03:47.000Z",
+    "CivilDawnUtc": "2022-01-01T23:18:40.000Z",
+    "CivilDuskUtc": "2022-01-01T11:09:51.000Z",
+    "NauticalDawnUtc": "2022-01-01T22:51:35.000Z",
+    "NauticalDuskUtc": "2022-01-01T11:36:57.000Z"
   },
   {
     "Country": "Mongolia",
@@ -343,12 +343,12 @@
     "Latitude": 47.9167,
     "Longitude": 106.9166,
     "Offset": 8.0,
-    "AstronomicalDawn": "2022-01-01T22:49:59.000Z",
-    "AstronomicalDusk": "2022-01-01T11:03:44.000Z",
-    "CivilDawn": "2022-01-01T00:06:58.000Z",
-    "CivilDusk": "2022-01-01T09:46:39.000Z",
-    "NauticalDawn": "2022-01-01T23:27:37.000Z",
-    "NauticalDusk": "2022-01-01T10:26:04.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T22:49:59.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T11:03:44.000Z",
+    "CivilDawnUtc": "2022-01-01T00:06:58.000Z",
+    "CivilDuskUtc": "2022-01-01T09:46:39.000Z",
+    "NauticalDawnUtc": "2022-01-01T23:27:37.000Z",
+    "NauticalDuskUtc": "2022-01-01T10:26:04.000Z"
   },
   {
     "Country": "Palau",
@@ -356,12 +356,12 @@
     "Latitude": 7.5,
     "Longitude": 134.6242,
     "Offset": 9.0,
-    "AstronomicalDawn": "2022-01-01T20:00:43.000Z",
-    "AstronomicalDusk": "2022-01-01T10:11:38.000Z",
-    "CivilDawn": "2022-01-01T20:52:56.000Z",
-    "CivilDusk": "2022-01-01T09:19:23.000Z",
-    "NauticalDawn": "2022-01-01T20:26:48.000Z",
-    "NauticalDusk": "2022-01-01T09:45:32.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T20:00:43.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T10:11:38.000Z",
+    "CivilDawnUtc": "2022-01-01T20:52:56.000Z",
+    "CivilDuskUtc": "2022-01-01T09:19:23.000Z",
+    "NauticalDawnUtc": "2022-01-01T20:26:48.000Z",
+    "NauticalDuskUtc": "2022-01-01T09:45:32.000Z"
   },
   {
     "Country": "Australia",
@@ -369,12 +369,12 @@
     "Latitude": -14.4666,
     "Longitude": 132.2666,
     "Offset": 9.5,
-    "AstronomicalDawn": "2022-01-01T19:27:21.000Z",
-    "AstronomicalDusk": "2022-01-01T11:04:02.000Z",
-    "CivilDawn": "2022-01-01T20:23:28.000Z",
-    "CivilDusk": "2022-01-01T10:07:52.000Z",
-    "NauticalDawn": "2022-01-01T19:55:44.000Z",
-    "NauticalDusk": "2022-01-01T10:35:38.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T19:27:21.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T11:04:02.000Z",
+    "CivilDawnUtc": "2022-01-01T20:23:28.000Z",
+    "CivilDuskUtc": "2022-01-01T10:07:52.000Z",
+    "NauticalDawnUtc": "2022-01-01T19:55:44.000Z",
+    "NauticalDuskUtc": "2022-01-01T10:35:38.000Z"
   },
   {
     "Country": "Papua New Guinea",
@@ -382,12 +382,12 @@
     "Latitude": -9.4647,
     "Longitude": 147.1925,
     "Offset": 10.0,
-    "AstronomicalDawn": "2022-01-01T18:39:05.000Z",
-    "AstronomicalDusk": "2022-01-01T09:52:49.000Z",
-    "CivilDawn": "2022-01-01T19:33:18.000Z",
-    "CivilDusk": "2022-01-01T08:58:33.000Z",
-    "NauticalDawn": "2022-01-01T19:06:24.000Z",
-    "NauticalDusk": "2022-01-01T09:25:29.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T18:39:05.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T09:52:49.000Z",
+    "CivilDawnUtc": "2022-01-01T19:33:18.000Z",
+    "CivilDuskUtc": "2022-01-01T08:58:33.000Z",
+    "NauticalDawnUtc": "2022-01-01T19:06:24.000Z",
+    "NauticalDuskUtc": "2022-01-01T09:25:29.000Z"
   },
   {
     "Country": "Australia",
@@ -395,12 +395,12 @@
     "Latitude": -30.8996,
     "Longitude": 135.3,
     "Offset": 10.5,
-    "AstronomicalDawn": "2022-01-01T18:23:09.000Z",
-    "AstronomicalDusk": "2022-01-01T11:44:10.000Z",
-    "CivilDawn": "2022-01-01T19:32:55.000Z",
-    "CivilDusk": "2022-01-01T10:34:17.000Z",
-    "NauticalDawn": "2022-01-01T18:59:16.000Z",
-    "NauticalDusk": "2022-01-01T11:07:59.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T18:23:09.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T11:44:10.000Z",
+    "CivilDawnUtc": "2022-01-01T19:32:55.000Z",
+    "CivilDuskUtc": "2022-01-01T10:34:17.000Z",
+    "NauticalDawnUtc": "2022-01-01T18:59:16.000Z",
+    "NauticalDuskUtc": "2022-01-01T11:07:59.000Z"
   },
   {
     "Country": "New Caledonia",
@@ -408,12 +408,12 @@
     "Latitude": -22.2625,
     "Longitude": 166.4443,
     "Offset": 11.0,
-    "AstronomicalDawn": "2022-01-01T16:49:24.000Z",
-    "AstronomicalDusk": "2022-01-01T09:08:33.000Z",
-    "CivilDawn": "2022-01-01T17:50:11.000Z",
-    "CivilDusk": "2022-01-01T08:07:43.000Z",
-    "NauticalDawn": "2022-01-01T17:20:23.000Z",
-    "NauticalDusk": "2022-01-01T08:37:32.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T16:49:24.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T09:08:33.000Z",
+    "CivilDawnUtc": "2022-01-01T17:50:11.000Z",
+    "CivilDuskUtc": "2022-01-01T08:07:43.000Z",
+    "NauticalDawnUtc": "2022-01-01T17:20:23.000Z",
+    "NauticalDuskUtc": "2022-01-01T08:37:32.000Z"
   },
   {
     "Country": "Marshall Islands",
@@ -421,12 +421,12 @@
     "Latitude": 7.103,
     "Longitude": 171.38,
     "Offset": 12.0,
-    "AstronomicalDawn": "2022-01-01T17:33:00.000Z",
-    "AstronomicalDusk": "2022-01-01T07:45:12.000Z",
-    "CivilDawn": "2022-01-01T18:25:13.000Z",
-    "CivilDusk": "2022-01-01T06:52:58.000Z",
-    "NauticalDawn": "2022-01-01T17:59:05.000Z",
-    "NauticalDusk": "2022-01-01T07:19:07.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T17:33:00.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T07:45:12.000Z",
+    "CivilDawnUtc": "2022-01-01T18:25:13.000Z",
+    "CivilDuskUtc": "2022-01-01T06:52:58.000Z",
+    "NauticalDawnUtc": "2022-01-01T17:59:05.000Z",
+    "NauticalDuskUtc": "2022-01-01T07:19:07.000Z"
   },
   {
     "Country": "New Zealand",
@@ -434,12 +434,12 @@
     "Latitude": -41.3,
     "Longitude": 174.7833,
     "Offset": 13.0,
-    "AstronomicalDawn": "2022-01-01T14:45:45.000Z",
-    "AstronomicalDusk": "2022-01-01T10:05:55.000Z",
-    "CivilDawn": "2022-01-01T16:19:28.000Z",
-    "CivilDusk": "2022-01-01T08:31:56.000Z",
-    "NauticalDawn": "2022-01-01T15:36:33.000Z",
-    "NauticalDusk": "2022-01-01T09:14:56.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T14:45:45.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T10:05:55.000Z",
+    "CivilDawnUtc": "2022-01-01T16:19:28.000Z",
+    "CivilDuskUtc": "2022-01-01T08:31:56.000Z",
+    "NauticalDawnUtc": "2022-01-01T15:36:33.000Z",
+    "NauticalDuskUtc": "2022-01-01T09:14:56.000Z"
   },
   {
     "Country": "New Zealand",
@@ -447,12 +447,12 @@
     "Latitude": -44.0263,
     "Longitude": -176.3696,
     "Offset": 13.75,
-    "AstronomicalDawn": "2022-01-01T13:45:27.000Z",
-    "AstronomicalDusk": "2022-01-01T09:55:38.000Z",
-    "CivilDawn": "2022-01-01T15:32:00.000Z",
-    "CivilDusk": "2022-01-01T08:08:40.000Z",
-    "NauticalDawn": "2022-01-01T14:44:52.000Z",
-    "NauticalDusk": "2022-01-01T08:55:55.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T13:45:27.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T09:55:38.000Z",
+    "CivilDawnUtc": "2022-01-01T15:32:00.000Z",
+    "CivilDuskUtc": "2022-01-01T08:08:40.000Z",
+    "NauticalDawnUtc": "2022-01-01T14:44:52.000Z",
+    "NauticalDuskUtc": "2022-01-01T08:55:55.000Z"
   },
   {
     "Country": "Samoa",
@@ -460,11 +460,11 @@
     "Latitude": -13.8415,
     "Longitude": -171.7386,
     "Offset": 14.0,
-    "AstronomicalDawn": "2022-01-01T15:44:47.000Z",
-    "AstronomicalDusk": "2022-01-01T07:18:29.000Z",
-    "CivilDawn": "2022-01-01T16:40:38.000Z",
-    "CivilDusk": "2022-01-01T06:22:36.000Z",
-    "NauticalDawn": "2022-01-01T16:13:01.000Z",
-    "NauticalDusk": "2022-01-01T06:50:14.000Z"
+    "AstronomicalDawnUtc": "2022-01-01T15:44:47.000Z",
+    "AstronomicalDuskUtc": "2022-01-01T07:18:29.000Z",
+    "CivilDawnUtc": "2022-01-01T16:40:38.000Z",
+    "CivilDuskUtc": "2022-01-01T06:22:36.000Z",
+    "NauticalDawnUtc": "2022-01-01T16:13:01.000Z",
+    "NauticalDuskUtc": "2022-01-01T06:50:14.000Z"
   }
 ]
