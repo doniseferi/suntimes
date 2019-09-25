@@ -3,8 +3,8 @@ import { getTwilightAstronomicalStartTime } from './index';
 import januaryTwilightExpected from './testData/utcJanTwilight.json';
 
 suite('Get twilight date time', () => {
-  const set = [];
   test('returns the astronimcal dawn start time with an accuracy of 60 +/- seconds', () => {
+    const bucket = [];
     januaryTwilightExpected.forEach(expected => {
       const { ExpectedAstronomicalDawnUtc, Latitude, Longitude } = expected;
       const expectedDateTime = new Date(ExpectedAstronomicalDawnUtc);
@@ -18,15 +18,20 @@ suite('Get twilight date time', () => {
       const differenceInSeconds =
         (expectedDateTime.getTime() - actualDateTime.getTime()) / 1000;
 
-      if (differenceInSeconds > 60 || differenceInSeconds < -60) {
-        set.push({
-          differenceInSeconds,
+      if (differenceInSeconds < -60 || differenceInSeconds > 60) {
+        // const url = `https://www.timeanddate.com/time/zone/@${Latitude},${Longitude}`;
+        const twilightUrl = `https://www.timeanddate.com/sun/@${Latitude},${Longitude}?month=1&year=2022`;
+        const timeZoneUrl = `https://www.timeanddate.com/time/zone/@46.7811,-56.1764`;
+        const s = {
+          twilightUrl,
+          timeZoneUrl,
           actualDateTime,
+          differenceInSeconds,
           expected
-        });
+        };
+        bucket.push(s);
       }
     });
-    const newSet = set.sort((a, b) => a.Offset - b.Offset);
-    console.log(JSON.stringify(newSet));
+    console.log(JSON.stringify(bucket));
   });
 });
