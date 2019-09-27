@@ -292,7 +292,7 @@
         "City": "Waitangi",
         "Latitude": -44.0263,
         "Longitude": -176.3696,
-        "ExpectedTimeUtc": "2019-01-02T07:31:15.000Z",
+        "ExpectedTimeUtc": "2019-01-01T07:32:00.000Z",
         "Offset": 13.75
     }
 ]

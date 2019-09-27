@@ -1,15 +1,15 @@
 import { suite, test } from 'mocha';
-import { getTwilightAstronomicalStartTime } from './index';
+import { assert } from 'chai';
+import { getTwilightAstronomicalStartDateTime, getTwilightCivilStartDateTime } from './index';
 import januaryTwilightExpected from './testData/utcJanTwilight.json';
 
 suite('Get twilight date time', () => {
-  test('returns the astronimcal dawn start time with an accuracy of 60 +/- seconds', () => {
-    const bucket = [];
+  test('returns the astronimcal dawn start time with an accuracy of 60 +/- seconds for 01/01/2022', () => {
     januaryTwilightExpected.forEach(expected => {
       const { ExpectedAstronomicalDawnUtc, Latitude, Longitude } = expected;
       const expectedDateTime = new Date(ExpectedAstronomicalDawnUtc);
 
-      const actualDateTime = getTwilightAstronomicalStartTime(
+      const actualDateTime = getTwilightAstronomicalStartDateTime(
         new Date(2022, 0, 1),
         Latitude,
         Longitude
@@ -18,20 +18,46 @@ suite('Get twilight date time', () => {
       const differenceInSeconds =
         (expectedDateTime.getTime() - actualDateTime.getTime()) / 1000;
 
-      if (differenceInSeconds < -60 || differenceInSeconds > 60) {
-        // const url = `https://www.timeanddate.com/time/zone/@${Latitude},${Longitude}`;
-        const twilightUrl = `https://www.timeanddate.com/sun/@${Latitude},${Longitude}?month=1&year=2022`;
-        const timeZoneUrl = `https://www.timeanddate.com/time/zone/@46.7811,-56.1764`;
-        const s = {
-          twilightUrl,
-          timeZoneUrl,
-          actualDateTime,
-          differenceInSeconds,
-          expected
-        };
-        bucket.push(s);
-      }
+      assert.closeTo(differenceInSeconds, 0, 60);
     });
-    console.log(JSON.stringify(bucket));
+  });
+  test('returns the civil dawn start time with an accuracy of 60 +/- seconds for 01/01/2022', () => {
+    januaryTwilightExpected.forEach(expected => {
+      const { ExpectedCivilDawnUtc, Latitude, Longitude } = expected;
+      const expectedDateTime = new Date(ExpectedCivilDawnUtc);
+
+      const actualDateTime = getTwilightCivilStartDateTime(
+        new Date(2022, 0, 1),
+        Latitude,
+        Longitude
+      );
+
+      const differenceInSeconds =
+        (expectedDateTime.getTime() - actualDateTime.getTime()) / 1000;
+
+      assert.closeTo(differenceInSeconds, 0, 60);
+    });
+  });
+
+  test('Solar twilight + eot + offset offset = next day', () => {
+    const problemLocation = {
+      City: 'Waitangi',
+      Latitude: -44.0263,
+      Longitude: -176.3696,
+      Offset: 13.75,
+      ExpectedAstronomicalDawnUtc: '2021-12-31T13:42:00.000Z'
+    };
+    const result = getTwilightAstronomicalStartDateTime(
+      new Date(2022, 0, 1),
+      problemLocation.Latitude,
+      problemLocation.Longitude
+    );
+
+    const expectedDate = new Date(problemLocation.ExpectedAstronomicalDawnUtc);
+
+    const differenceInSeconds =
+      expectedDate.getTime() - result.getTime() / 1000;
+
+    assert.closeTo(differenceInSeconds, 0, 60);
   });
 });

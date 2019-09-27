@@ -38,8 +38,18 @@ const twilightTimeBuilder = getTwilightTimeBuilder(
   toUtcDateTime
 );
 
-const getTwilightAstronomicalStartTime = twilightTimeBuilder.getTwilightAstronomicalStartDateTime;
-const getTwilightAstronomicalEndTime = twilightTimeBuilder.getTwilightAstronomicalEndDateTime;
+const getTwilightAstronomicalStartDateTime = twilightTimeBuilder.getTwilightAstronomicalStartDateTime;
+const getTwilightAstronomicalEndDateTime = twilightTimeBuilder.getTwilightAstronomicalEndDateTime;
+const getTwilightAstronomicalStartDecimalTime = twilightTimeBuilder.getTwilightAstronomicalStartTime;
+const getTwilightAstronomicalEndDecimalTime = twilightTimeBuilder.getTwilightAstronomicalEndTime;
+const getTwilightCivilStartDateTime = twilightTimeBuilder.getTwilightCivilStartDateTime;
+const getTwilightCivilEndDateTime = twilightTimeBuilder.getTwilightCivilEndDateTime;
+const getTwilightCivilStartDecimalTime = twilightTimeBuilder.getTwilightCivilStartTime;
+const getTwilightCivilEndDecimalTime = twilightTimeBuilder.getTwilightCivilEndTime;
+const getTwilightNauticalStartDateTime = twilightTimeBuilder.getTwilightNauticalStartDateTime;
+const getTwilightNauticalEndDateTime = twilightTimeBuilder.getTwilightNauticalEndDateTime;
+const getTwilightNauticalStartDecimalTime = twilightTimeBuilder.getTwilightNauticalStartTime;
+const getTwilightNauticalEndDecimalTime = twilightTimeBuilder.getTwilightNauticalEndTime;
 
 const getSunsetTime = getSunsetTimeBuilder(
   noonTime,
@@ -53,8 +63,18 @@ export {
   getSunriseTimeBuilder,
   getNoonTimeBuilder,
   getSunsetTimeBuilder,
-  getTwilightAstronomicalStartTime,
-  getTwilightAstronomicalEndTime,
+  getTwilightAstronomicalStartDateTime,
+  getTwilightAstronomicalEndDateTime,
+  getTwilightAstronomicalStartDecimalTime,
+  getTwilightAstronomicalEndDecimalTime,
+  getTwilightCivilStartDateTime,
+  getTwilightCivilEndDateTime,
+  getTwilightCivilStartDecimalTime,
+  getTwilightCivilEndDecimalTime,
+  getTwilightNauticalStartDateTime,
+  getTwilightNauticalEndDateTime,
+  getTwilightNauticalStartDecimalTime,
+  getTwilightNauticalEndDecimalTime,
   getSunriseTime,
   getNoonDateTime,
   getSunsetTime
