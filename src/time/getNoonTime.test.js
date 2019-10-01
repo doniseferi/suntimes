@@ -35,6 +35,9 @@ suite('Get Noon Time', () => {
       Offset: 13.75
     };
 
+    const noonNow = getNoonDateTime(new Date(2019, 8, 29), owenga.Longitude);
+    const utcs = noonNow.toUTCString();
+    console.log({ noonNow, utcs });
     const actualTime = getNoonDateTime(new Date(2019, 0, 1), owenga.Longitude).toUTCString();
     const expectedTime = new Date(owenga.ExpectedUtcDateTime);
 
@@ -45,6 +48,7 @@ suite('Get Noon Time', () => {
 
   test('algorithm to fix solar noon: offset = direction * longitude * 24 / 360', () => {
     // where direction is 1 for east, -1 for west, and longitude is in (-180,180)
+    // sing East = +0 = West = -0
     // https://stackoverflow.com/questions/1058342/rough-estimate-of-the-time-offset-from-gmt-from-latitude-longitude
     assert.isTrue(
       false
