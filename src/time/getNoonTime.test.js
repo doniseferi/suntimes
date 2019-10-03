@@ -34,21 +34,18 @@ suite('Get Noon Time', () => {
   });
 
   test('Solar noon + eot + offset offset = next day', () => {
-    const owenga = {
-      Latitude: -30.8996,
-      Longitude: 135.3,
-      ExpectedUtcDateTime: '2018-12-31T23:49:00.000Z',
-      Offset: 13.75
+    const russia = {
+      Latitude: 64.732857,
+      Longitude: 177.507812,
+      ExpectedTimeUtc: '2019-10-02T23:58:00.000Z',
+      Offset: 12.0
     };
 
-    const noonNow = getNoonDateTime(new Date(2019, 8, 29), owenga.Longitude);
-    const utcs = noonNow.toUTCString();
-    console.log({ noonNow, utcs });
-    const actualTime = getNoonDateTime(new Date(2019, 0, 1), owenga.Longitude).toUTCString();
-    const expectedTime = new Date(owenga.ExpectedUtcDateTime);
+    const noonNow = getNoonDateTime(new Date(2019, 9, 4), russia.Longitude);
+    const expectedTime = new Date(russia.ExpectedUtcDateTime);
 
     const differenceInSeconds =
-        (expectedTime.getTime() - actualTime.getTime()) / 1000;
+      (expectedTime.getTime() - noonNow.getTime()) / 1000;
     assert.closeTo(differenceInSeconds, 0, 60);
   });
 
