@@ -21,16 +21,22 @@ suite('Get Noon Time', () => {
       const expectedTime = new Date(expected.ExpectedTimeUtc);
       const targetDate = new Date(2019, 6, 1);
       const actualTime = getNoonDateTime(targetDate, expected.Longitude);
+
       const differenceInSeconds =
         (expectedTime.getTime() - actualTime.getTime()) / 1000;
+
+      if (differenceInSeconds > 60 || differenceInSeconds < -60) {
+        console.log(expected);
+      }
+
       assert.closeTo(differenceInSeconds, 0, 60);
     });
   });
 
   test('Solar noon + eot + offset offset = next day', () => {
     const owenga = {
-      Latitude: -44.0263,
-      Longitude: -176.3696,
+      Latitude: -30.8996,
+      Longitude: 135.3,
       ExpectedUtcDateTime: '2018-12-31T23:49:00.000Z',
       Offset: 13.75
     };

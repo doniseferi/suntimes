@@ -17,8 +17,18 @@ const getNoonTimeBuilder = (equationOfTime, toUtcDateTime) => {
   };
 
   const GetUtcOffset = longitude => {
-    console.log(longitude);
-    return 0;
+    const dir = longitude < 0 ? -1 : 1;
+
+    let posNo = Math.sqrt(Math.pow(longitude, 2));
+    if (posNo <= 7.5) {
+      return 0;
+    }
+
+    posNo -= 7.5;
+    let offset = posNo / 15;
+    if (posNo % 15 > 0) offset++;
+
+    return dir * Math.floor(offset);
   };
 
   return Object.freeze({

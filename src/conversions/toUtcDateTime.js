@@ -7,9 +7,27 @@ const toUtcDateTimeBuilder = toTime => {
       scientificDecimalTime
     );
 
-    return new Date(
-      Date.UTC(year, month, day, hours, minutes, seconds, milliseconds)
+    const value = Date.UTC(
+      year,
+      month,
+      day,
+      hours,
+      minutes,
+      seconds,
+      milliseconds
     );
+
+    const offsetInDays = scientificDecimalTime.offsetInDays;
+
+    const alter = addDays(offsetInDays, value);
+
+    return new Date(alter);
+  };
+
+  const addDays = (days, subject) => {
+    const date = new Date(subject.valueOf());
+    date.setDate(date.getDate() + days);
+    return date;
   };
 
   return Object.freeze({

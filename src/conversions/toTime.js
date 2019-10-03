@@ -1,4 +1,5 @@
-const toTime = (scientificDecimalTime) => {
+const toTime = (dateiInformation) => {
+  const scientificDecimalTime = dateiInformation.hour;
   if (!scientificDecimalTime || isNaN(scientificDecimalTime)) {
     throw new Error('Value is either null, undefined or not a number.');
   }
