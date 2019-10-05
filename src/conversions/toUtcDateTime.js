@@ -17,18 +17,18 @@ const toUtcDateTimeBuilder = toTime => {
       milliseconds
     );
 
-    // const offsetInDays = scientificDecimalTime.offsetInDays;
+    const offsetInDays = scientificDecimalTime.offsetInDays;
 
-    // const alter = addDays(offsetInDays, value);
+    const alter = addDays(offsetInDays, value);
 
-    return new Date(value);
+    return new Date(alter);
   };
 
-  // const addDays = (days, subject) => {
-  //   const date = new Date(subject.valueOf());
-  //   date.setDate(date.getDate() + days);
-  //   return date;
-  // };
+  const addDays = (days, subject) => {
+    const date = new Date(subject.valueOf());
+    date.setDate(date.getDate() + days);
+    return date;
+  };
 
   return Object.freeze({
     toUtcDateTime: (date, decimalTime) => toUtcDateTime(date, decimalTime)

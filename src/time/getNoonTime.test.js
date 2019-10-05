@@ -37,12 +37,12 @@ suite('Get Noon Time', () => {
     const russia = {
       Latitude: 64.732857,
       Longitude: 177.507812,
-      ExpectedTimeUtc: '2019-10-02T23:58:00.000Z',
+      ExpectedTimeUtc: '2019-09-30T23:59:00.000Z',
       Offset: 12.0
     };
 
-    const noonNow = getNoonDateTime(new Date(2019, 9, 4), russia.Longitude);
-    const expectedTime = new Date(russia.ExpectedUtcDateTime);
+    const noonNow = getNoonDateTime(new Date(2019, 9, 1), russia.Longitude);
+    const expectedTime = new Date(russia.ExpectedTimeUtc);
 
     const differenceInSeconds =
       (expectedTime.getTime() - noonNow.getTime()) / 1000;

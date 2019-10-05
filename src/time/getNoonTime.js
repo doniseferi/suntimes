@@ -4,12 +4,20 @@ const getNoonTimeBuilder = (equationOfTime, toUtcDateTime) => {
     longitude,
     utcOffset = GetUtcOffset(longitude)
   ) => {
-    const hour = 12 - (longitude / 15 + equationOfTime(date).hours);
-
+    let hour = 12 - (longitude / 15 + equationOfTime(date).hours);
     let offsetInDays = 0;
+    if (hour < 0) {
+      hour = hour + 24;
+      offsetInDays = -1;
+    }
+    if (hour >= 24) {
+      hour = hour - 24;
+      offsetInDays = +1;
+    }
     const offset = hour + utcOffset;
-    if (offset >= 23.99) offsetInDays = 1;
-    else if (offset < 0) offsetInDays = -1;
+
+    if (offset >= 23.99 && offsetInDays === 0) offsetInDays = 1;
+    else if (offset < 0 && offsetInDays === 0) offsetInDays = -1;
     return {
       hour,
       offsetInDays
