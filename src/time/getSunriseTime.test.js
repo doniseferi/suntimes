@@ -9,7 +9,11 @@ suite('Get Sunrise Time', () => {
     januarySunriseExpected.forEach(expected => {
       const { ExpectedTimeUtc, Latitude, Longitude } = expected;
       const expectedTime = new Date(ExpectedTimeUtc);
-      const actualDateTime = getSunriseTime(new Date(2019, 0, 1), Latitude, Longitude);
+      const actualDateTime = getSunriseTime(
+        new Date(2019, 0, 1),
+        Latitude,
+        Longitude
+      );
       const differenceInSeconds =
         (expectedTime.getTime() - actualDateTime.getTime()) / 1000;
       assert.closeTo(differenceInSeconds, 0, 60);

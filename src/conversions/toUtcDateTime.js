@@ -1,10 +1,10 @@
 const toUtcDateTimeBuilder = toTime => {
-  const toUtcDateTime = (date, scientificDecimalTime) => {
+  const toUtcDateTime = (date, timeInformation) => {
     const day = date.getDate();
     const month = date.getMonth();
     const year = date.getFullYear();
     const { hours, minutes, seconds, milliseconds } = toTime(
-      scientificDecimalTime
+      timeInformation.hour
     );
 
     const value = Date.UTC(
@@ -17,11 +17,9 @@ const toUtcDateTimeBuilder = toTime => {
       milliseconds
     );
 
-    const offsetInDays = scientificDecimalTime.offsetInDays;
+    const offsetInDays = timeInformation.offsetInDays;
 
-    const alter = addDays(offsetInDays, value);
-
-    return new Date(alter);
+    return offsetInDays !== 0 ? addDays(offsetInDays, value) : new Date(value);
   };
 
   const addDays = (days, subject) => {

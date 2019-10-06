@@ -1,38 +1,25 @@
-const getSunriseTimeBuilder = (getNoonTime, getHourAngle, toUtcDateTime) => {
-  const getSunriseTime = (
-    date,
-    latitude,
-    longitude,
-    utcOffset = getUtcOffset(longitude)
-  ) => {
-    const solarNoon = getNoonTime(date, longitude);
+const getSunriseTimeBuilder = (getNoonTimeUtc, getHourAngle) => {
+  const getSunriseTime = (date, latitude, longitude) => {
+    const solarNoonUtc = getNoonTimeUtc(date, longitude);
     const sunriseAngleOfSunOnHorizon = -0.833333333;
     const hourAngleAtSunrise = getHourAngle(
       date,
       latitude,
       sunriseAngleOfSunOnHorizon
     );
-    const hour = solarNoon.hour - hourAngleAtSunrise;
-    let offsetInDays = 0;
-    const offset = hour + utcOffset;
-    if (offset >= 23.99) offsetInDays = 1;
-    else if (offset < 0) offsetInDays = -1;
-    return {
-      hour,
-      offsetInDays
-    };
+    const inversedHourAngle = hourAngleAtSunrise * -1;
+    return addHours(solarNoonUtc, inversedHourAngle);
   };
 
-  const getUtcOffset = longitude => {
-    console.log(longitude);
-    return 0;
+  const addHours = (subject, scientificDecimalTime) => {
+    const date = new Date();
+    date.setTime(subject.getTime() + scientificDecimalTime * 60 * 60 * 1000);
+    return date;
   };
 
   return Object.freeze({
-    getSunriseDecimalTime: (date, latitude, longitude) =>
-      getSunriseTime(date, latitude, longitude),
-    getSunriseDateTime: (date, latitude, longitude) =>
-      toUtcDateTime(date, getSunriseTime(date, latitude, longitude))
+    getSunriseDateTimeUtc: (date, latitude, longitude) =>
+      getSunriseTime(date, latitude, longitude)
   });
 };
 

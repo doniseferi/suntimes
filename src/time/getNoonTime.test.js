@@ -25,10 +25,6 @@ suite('Get Noon Time', () => {
       const differenceInSeconds =
         (expectedTime.getTime() - actualTime.getTime()) / 1000;
 
-      if (differenceInSeconds > 60 || differenceInSeconds < -60) {
-        console.log(expected);
-      }
-
       assert.closeTo(differenceInSeconds, 0, 60);
     });
   });
@@ -41,20 +37,28 @@ suite('Get Noon Time', () => {
       Offset: 12.0
     };
 
-    const noonNow = getNoonDateTime(new Date(2019, 9, 1), russia.Longitude);
+    const actual = getNoonDateTime(new Date(2019, 9, 1), russia.Longitude);
     const expectedTime = new Date(russia.ExpectedTimeUtc);
 
     const differenceInSeconds =
-      (expectedTime.getTime() - noonNow.getTime()) / 1000;
+      (expectedTime.getTime() - actual.getTime()) / 1000;
     assert.closeTo(differenceInSeconds, 0, 60);
   });
 
-  test('algorithm to fix solar noon: offset = direction * longitude * 24 / 360', () => {
-    // where direction is 1 for east, -1 for west, and longitude is in (-180,180)
-    // sing East = +0 = West = -0
-    // https://stackoverflow.com/questions/1058342/rough-estimate-of-the-time-offset-from-gmt-from-latitude-longitude
-    assert.isTrue(
-      false
-    );
+  test('America Midway Islands', () => {
+    const midway = {
+      Latitude: 6.41686,
+      Longitude: -162.56024,
+      _date: new Date(2019, 0, 1),
+      expected: '2019-01-01T22:53:00.000Z',
+      offset: -11
+    };
+
+    const actual = getNoonDateTime(midway._date, midway.Longitude);
+    const expectedTime = new Date(midway.expected);
+
+    const differenceInSeconds =
+      (expectedTime.getTime() - actual.getTime()) / 1000;
+    assert.closeTo(differenceInSeconds, 0, 60);
   });
 });

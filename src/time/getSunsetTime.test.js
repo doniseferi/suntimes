@@ -9,9 +9,21 @@ suite('Get Sunset Time', () => {
     januarySunsetExpected.forEach(expected => {
       const { ExpectedTimeUtc, Latitude, Longitude } = expected;
       const expectedTime = new Date(ExpectedTimeUtc);
-      const actualDateTime = getSunsetTime(new Date(2019, 0, 1), Latitude, Longitude);
+      if (expected.City === 'Waitangi') {
+        console.log('w');
+      }
+      const actualDateTime = getSunsetTime(
+        new Date(2019, 0, 1),
+        Latitude,
+        Longitude
+      );
       const differenceInSeconds =
         (expectedTime.getTime() - actualDateTime.getTime()) / 1000;
+
+      if (differenceInSeconds > 60 || differenceInSeconds < -60) {
+        console.log(expected);
+      }
+
       assert.closeTo(differenceInSeconds, 0, 60);
     });
   });
