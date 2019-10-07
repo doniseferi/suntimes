@@ -1,5 +1,5 @@
 const getNoonTimeBuilder = (equationOfTime, toUtcDateTime) => {
-  const getNoonTime = (date, longitude) => {
+  const getNoonTime = (date, longitude, offset) => {
     let hour = 12 - (longitude / 15 + equationOfTime(date).hours);
     let offsetInDays = 0;
     if (hour < 0) {
@@ -9,6 +9,12 @@ const getNoonTimeBuilder = (equationOfTime, toUtcDateTime) => {
     if (hour >= 24) {
       hour = hour - 24;
       offsetInDays = +1;
+    }
+    if (offset != null && offset && hour > 24) {
+      console.log('');
+    }
+    if (offset != null && offset && hour > 24) {
+      console.log('');
     }
     return {
       hour,
@@ -24,7 +30,3 @@ const getNoonTimeBuilder = (equationOfTime, toUtcDateTime) => {
 };
 
 export default getNoonTimeBuilder;
-/*
-MAX NOON AT -179 23.658288259
-MAX NOON AT 179
-*/

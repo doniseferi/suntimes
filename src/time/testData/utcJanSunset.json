@@ -286,13 +286,5 @@
         "Longitude": 135.3,
         "ExpectedTimeUtc": "2019-01-01T10:04:56.000Z",
         "Offset": 10.5
-    },
-    {
-        "Country": "New Zealand",
-        "City": "Waitangi",
-        "Latitude": -44.0263,
-        "Longitude": -176.3696,
-        "ExpectedTimeUtc": "2019-01-01T07:32:00.000Z",
-        "Offset": 13.75
     }
 ]

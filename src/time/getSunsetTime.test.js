@@ -9,9 +9,6 @@ suite('Get Sunset Time', () => {
     januarySunsetExpected.forEach(expected => {
       const { ExpectedTimeUtc, Latitude, Longitude } = expected;
       const expectedTime = new Date(ExpectedTimeUtc);
-      if (expected.City === 'Waitangi') {
-        console.log('w');
-      }
       const actualDateTime = getSunsetTime(
         new Date(2019, 0, 1),
         Latitude,

@@ -12,9 +12,8 @@ const getSunsetTimeBuilder = (getNoonTime, getHourAngle) => {
   };
 
   const addHours = (subject, scientificDecimalTime) => {
-    const date = new Date();
-    date.setTime(subject.getTime() + scientificDecimalTime * 60 * 60 * 1000);
-    return date;
+    const time = subject.getTime() + scientificDecimalTime * 60 * 60 * 1000;
+    return new Date(time);
   };
 
   return Object.freeze({
