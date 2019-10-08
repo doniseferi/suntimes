@@ -388,31 +388,5 @@
     "ExpectedCivilDuskUtc": "2021-12-31T18:23:00.000Z",
     "ExpectedNauticalDawnUtc": "2021-12-31T17:57:00.000Z",
     "ExpectedNauticalDuskUtc": "2022-01-01T07:18:00.000Z"
-  },
-  {
-    "Country": "New Zealand",
-    "City": "Wellington",
-    "Latitude": -41.3,
-    "Longitude": 174.7833,
-    "Offset": 13.0,
-    "ExpectedAstronomicalDawnUtc": "2021-12-31T14:43:00.000Z",
-    "ExpectedAstronomicalDuskUtc": "2022-01-01T10:04:00.000Z",
-    "ExpectedCivilDawnUtc": "2022-01-01T08:30:00.000Z",
-    "ExpectedCivilDuskUtc": "2021-12-31T16:17:00.000Z",
-    "ExpectedNauticalDawnUtc": "2021-12-31T15:34:00.000Z",
-    "ExpectedNauticalDuskUtc": "2022-01-01T09:13:00.000Z"
-  },
-  {
-    "Country": "Samoa",
-    "City": "Apia",
-    "Latitude": -13.8415,
-    "Longitude": -171.7386,
-    "Offset": 14.0,
-    "ExpectedAstronomicalDawnUtc": "2021-12-31T15:42:00.000Z",
-    "ExpectedAstronomicalDuskUtc": "2022-01-01T07:17:00.000Z",
-    "ExpectedCivilDawnUtc": "2021-12-31T16:38:00.000Z",
-    "ExpectedCivilDuskUtc": "2022-01-01T06:21:00.000Z",
-    "ExpectedNauticalDawnUtc": "2021-12-31T16:11:00.000Z",
-    "ExpectedNauticalDuskUtc": "2022-01-01T06:49:00.000Z"
   }
 ]

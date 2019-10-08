@@ -130,6 +130,19 @@
     "ExpectedNauticalDuskUtc": "2007-07-01T01:16:40.000Z"
   },
   {
+    "Country":"Saint Pierre And Miquelon",
+    "City":"Saint-Pierre",
+    "Latitude":46.7811,
+    "Longitude":-56.1764,
+    "Offset":-3.5,
+    "ExpectedAstronomicalDawnUtc":"2022-01-01T09:39:00Z",
+    "ExpectedAstronomicalDuskUtc":"2022-01-01T21:57:00Z",
+    "ExpectedCivilDawnUtc":"2022-01-01T10:55:50",
+    "ExpectedCivilDuskUtc":"2022-01-01T10:54:00Z",
+    "ExpectedNauticalDawnUtc":"2022-01-01T10:16:00Z",
+    "ExpectedNauticalDuskUtc":"2022-01-01T21:20:00Z"
+  },
+  {
     "Country": "Brazil",
     "City": "Brasilia",
     "Latitude": -15.7833,
