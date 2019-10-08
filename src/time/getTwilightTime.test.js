@@ -90,7 +90,7 @@ suite('Get twilight date time', () => {
         (_expectedDateTime.getTime() - _actualDateTime.getTime()) / 1000;
 
       if (differenceInSeconds > 60 || differenceInSeconds < -60) {
-        const some = `https://www.timeanddate.com/worldclock/converter.html?iso=20220101T${_actualDateTime.getUTCHours()}${_actualDateTime.getUTCMinutes()}${_actualDateTime.getUTCSeconds()}&p1=1440`;
+        const some = `https://www.timeanddate.com/worldclock/converter.html?iso=${_actualDateTime.getUTCFullYear()}${_actualDateTime.getUTCMonth()}${_actualDateTime.getUTCDate()}T${_actualDateTime.getUTCHours()}${_actualDateTime.getUTCMinutes()}${_actualDateTime.getUTCSeconds()}&p1=1440`;
         const twilightUrl = `https://www.timeanddate.com/sun/@${Latitude},${Longitude}?month=1&year=2022`;
         const country = `${City}, ${Country}`;
         accum.push(JSON.stringify({
