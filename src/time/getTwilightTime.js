@@ -30,11 +30,11 @@ const getTwilightTimeBuilder = (
     return date;
   };
 
-  const getTwilightCivilStartDateTime = (date, latitude, longitude) =>
-    getDateTimeUtc(civilAngle, date, latitude, longitude);
-
   const getTwilightCivilEndDateTime = (date, latitude, longitude) =>
     getDateTimeUtc(horizon, date, latitude, longitude);
+
+  const getTwilightCivilStartDateTime = (date, latitude, longitude) =>
+    getDateTimeUtc(civilAngle, date, latitude, longitude);
 
   const getTwilightNauticalEndDateTime = (date, latitude, longitude) =>
     getDateTimeUtc(civilAngle, date, latitude, longitude);
