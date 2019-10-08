@@ -1,5 +1,5 @@
 const getTwilightTimeBuilder = (
-  getNoonTime,
+  getNoonDateTime,
   getHourAngle,
   toUtcDateTime
 ) => {
@@ -7,8 +7,8 @@ const getTwilightTimeBuilder = (
     throw new Error(`Please satisfy a dependecy for ${dependency}`);
   };
 
-  if (!getNoonTime) {
-    raiseException(getNoonTime);
+  if (!getNoonDateTime) {
+    raiseException(getNoonDateTime);
   }
   if (!getHourAngle) {
     raiseException(getHourAngle);
@@ -23,9 +23,20 @@ const getTwilightTimeBuilder = (
   const astronomicalAngle = -18;
 
   const getScientificDecimalTime = (angle, date, latitude, longitude) => {
-    const solarNoon = getNoonTime(date, longitude);
+    const solarNoon = getNoonDateTime(date, longitude);
     const hourAngleAtSunrise = getHourAngle(date, latitude, angle);
     return solarNoon - hourAngleAtSunrise;
+  };
+  const getDateTimeUtc = (angle, date, latitude, longitude) => {
+    const solarNoonUtc = getNoonDateTime(date, longitude);
+    const twilightAngle = getHourAngle(date, latitude, angle);
+    const inversedHourAngle = twilightAngle * -1;
+    return addHours(solarNoonUtc, inversedHourAngle);
+  };
+  const addHours = (subject, scientificDecimalTime) => {
+    const date = new Date();
+    date.setTime(subject.getTime() + scientificDecimalTime * 60 * 60 * 1000);
+    return date;
   };
 
   const getTwilightCivilStartTime = (date, latitude, longitude) =>
@@ -44,7 +55,7 @@ const getTwilightTimeBuilder = (
     getScientificDecimalTime(nauticalAngle, date, latitude, longitude);
 
   const getTwilightAstronomicalStartTime = (date, latitude, longitude) =>
-    getScientificDecimalTime(astronomicalAngle, date, latitude, longitude);
+    getDateTimeUtc(astronomicalAngle, date, latitude, longitude);
 
   const getTwilightCivilStartDateTime = (date, latitude, longitude) =>
     toUtcDateTime(date, getTwilightCivilStartTime(civilAngle, date, latitude, longitude));
@@ -62,7 +73,7 @@ const getTwilightTimeBuilder = (
     toUtcDateTime(date, getTwilightAstronomicalEndTime(date, latitude, longitude));
 
   const getTwilightAstronomicalStartDateTime = (date, latitude, longitude) =>
-    toUtcDateTime(date, getTwilightAstronomicalStartTime(date, latitude, longitude));
+    getTwilightAstronomicalStartTime(date, latitude, longitude);
 
   return Object.freeze({
     getTwilightCivilStartDateTime: (date, latitude, longitude) => getTwilightCivilStartDateTime(date, latitude, longitude),

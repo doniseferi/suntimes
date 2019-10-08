@@ -17,14 +17,13 @@ const timeBuilder = getHourAngleBuilder(
 const getHourAngle = timeBuilder.getHourAngle;
 
 const noonTimeBuilder = getNoonTimeBuilder(equationOfTime, toUtcDateTime);
-const noonTime = noonTimeBuilder.getNoonTime;
 const getNoonDateTime = noonTimeBuilder.getNoonDateTime;
 
 const getSunriseTime = getSunriseTimeBuilder(getNoonDateTime, getHourAngle)
   .getSunriseDateTimeUtc;
 
 const twilightTimeBuilder = getTwilightTimeBuilder(
-  noonTime,
+  getNoonDateTime,
   getHourAngle,
   toUtcDateTime
 );

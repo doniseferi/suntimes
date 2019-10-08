@@ -200,14 +200,6 @@
         "Offset": 12.0
     },
     {
-        "Country": "Samoa",
-        "City": "Apia",
-        "Latitude": -13.8415,
-        "Longitude": -171.7386,
-        "ExpectedTimeUtc": "2019-07-01T23:30:52.000Z",
-        "Offset": 13.0
-    },
-    {
         "Country": "Canada",
         "City": "Trepassey",
         "Latitude": 46.737,
@@ -254,13 +246,5 @@
         "Longitude": 135.3,
         "ExpectedTimeUtc": "2019-07-01T03:02:33.000Z",
         "Offset": 9.5
-    },
-    {
-        "Country": "New Zealand",
-        "City": "Waitangi",
-        "Latitude": -44.0263,
-        "Longitude": -176.3696,
-        "ExpectedTimeUtc": "2019-07-01T23:49:24.000Z",
-        "Offset": 12.75
     }
 ]

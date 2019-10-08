@@ -10,12 +10,6 @@ const getNoonTimeBuilder = (equationOfTime, toUtcDateTime) => {
       hour = hour - 24;
       offsetInDays = +1;
     }
-    if (offset != null && offset && hour > 24) {
-      console.log('');
-    }
-    if (offset != null && offset && hour > 24) {
-      console.log('');
-    }
     return {
       hour,
       offsetInDays

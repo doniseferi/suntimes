@@ -403,19 +403,6 @@
     "ExpectedNauticalDuskUtc": "2022-01-01T09:13:00.000Z"
   },
   {
-    "Country": "New Zealand",
-    "City": "Waitangi",
-    "Latitude": -44.0263,
-    "Longitude": -176.3696,
-    "Offset": 13.75,
-    "ExpectedAstronomicalDawnUtc": "2021-12-31T13:42:00.000Z",
-    "ExpectedAstronomicalDuskUtc": "2022-01-01T09:54:00.000Z",
-    "ExpectedCivilDawnUtc": "2021-12-31T15:29:00.000Z",
-    "ExpectedCivilDuskUtc": "2022-01-01T08:07:00.000Z",
-    "ExpectedNauticalDawnUtc": "2021-12-31T14:42:00.000Z",
-    "ExpectedNauticalDuskUtc": "2022-01-01T08:54:00.000Z"
-  },
-  {
     "Country": "Samoa",
     "City": "Apia",
     "Latitude": -13.8415,
