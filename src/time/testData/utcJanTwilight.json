@@ -385,7 +385,7 @@
     "ExpectedAstronomicalDawnUtc": "2021-12-31T17:31:00.000Z",
     "ExpectedAstronomicalDuskUtc": "2022-01-01T07:44:00.000Z",
     "ExpectedCivilDawnUtc": "2022-01-01T06:52:00.000Z",
-    "ExpectedCivilDuskUtc": "2021-12-31T18:23:00.000Z",
+    "ExpectedCivilDuskUtc": "2021-12-31T06:23:00.000Z",
     "ExpectedNauticalDawnUtc": "2021-12-31T17:57:00.000Z",
     "ExpectedNauticalDuskUtc": "2022-01-01T07:18:00.000Z"
   }
