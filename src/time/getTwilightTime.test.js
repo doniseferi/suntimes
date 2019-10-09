@@ -3,7 +3,7 @@ import { assert } from 'chai';
 import { getTwilightAstronomicalStartDateTime, getTwilightNauticalStartDateTime, getTwilightCivilStartDateTime } from './index';
 import januaryTwilightExpected from './testData/utcJanTwilight.json';
 
-const date = new Date(2022, 0, 1);
+const jan = new Date(2022, 0, 1);
 
 suite('Get twilight date time', () => {
   test('returns the astronimcal dawn start time with an accuracy of 60 +/- seconds for 01/01/2022', () => {
@@ -12,7 +12,7 @@ suite('Get twilight date time', () => {
       const expectedDateTime = new Date(ExpectedAstronomicalDawnUtc);
 
       const actualDateTime = getTwilightAstronomicalStartDateTime(
-        date,
+        jan,
         Latitude,
         Longitude
       );
@@ -30,7 +30,7 @@ suite('Get twilight date time', () => {
       const expectedDateTime = new Date(ExpectedNauticalDawnUtc);
 
       const actualDateTime = getTwilightNauticalStartDateTime(
-        date,
+        jan,
         Latitude,
         Longitude
       );
@@ -48,7 +48,7 @@ suite('Get twilight date time', () => {
       const expectedDateTime = new Date(ExpectedCivilDawnUtc);
 
       const actualDateTime = getTwilightCivilStartDateTime(
-        date,
+        jan,
         Latitude,
         Longitude
       );
