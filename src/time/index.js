@@ -28,26 +28,26 @@ const twilightTimeBuilder = getTwilightTimeBuilder(
   toUtcDateTime
 );
 
-const getTwilightAstronomicalStartDateTime =
-  twilightTimeBuilder.getTwilightAstronomicalStartDateTime;
-const getTwilightAstronomicalEndDateTime =
-  twilightTimeBuilder.getTwilightAstronomicalEndDateTime;
+const getAstronomicalDawnStartDateTime =
+  twilightTimeBuilder.getAstronomicalDawnStartDateTime;
+const getAstronomicalDawnEndDateTime =
+  twilightTimeBuilder.getAstronomicalDawnEndDateTime;
 const getTwilightAstronomicalStartDecimalTime =
   twilightTimeBuilder.getTwilightAstronomicalStartTime;
 const getTwilightAstronomicalEndDecimalTime =
   twilightTimeBuilder.getTwilightAstronomicalEndTime;
-const getTwilightCivilStartDateTime =
-  twilightTimeBuilder.getTwilightCivilStartDateTime;
-const getTwilightCivilEndDateTime =
-  twilightTimeBuilder.getTwilightCivilEndDateTime;
+const getCivilDawnStartDateTime =
+  twilightTimeBuilder.getCivilDawnStartDateTime;
+const getCivilDawnEndDateTime =
+  twilightTimeBuilder.getCivilDawnEndDateTime;
 const getTwilightCivilStartDecimalTime =
   twilightTimeBuilder.getTwilightCivilStartTime;
 const getTwilightCivilEndDecimalTime =
   twilightTimeBuilder.getTwilightCivilEndTime;
-const getTwilightNauticalStartDateTime =
-  twilightTimeBuilder.getTwilightNauticalStartDateTime;
-const getTwilightNauticalEndDateTime =
-  twilightTimeBuilder.getTwilightNauticalEndDateTime;
+const getNauticalDawnStartDateTime =
+  twilightTimeBuilder.getNauticalDawnStartDateTime;
+const getNauticalDawnEndDateTime =
+  twilightTimeBuilder.getNauticalDawnEndDateTime;
 const getTwilightNauticalStartDecimalTime =
   twilightTimeBuilder.getTwilightNauticalStartTime;
 const getTwilightNauticalEndDecimalTime =
@@ -62,16 +62,16 @@ export {
   getSunriseTimeBuilder,
   getNoonTimeBuilder,
   getSunsetTimeBuilder,
-  getTwilightAstronomicalStartDateTime,
-  getTwilightAstronomicalEndDateTime,
+  getAstronomicalDawnStartDateTime,
+  getAstronomicalDawnEndDateTime,
   getTwilightAstronomicalStartDecimalTime,
   getTwilightAstronomicalEndDecimalTime,
-  getTwilightCivilStartDateTime,
-  getTwilightCivilEndDateTime,
+  getCivilDawnStartDateTime,
+  getCivilDawnEndDateTime,
   getTwilightCivilStartDecimalTime,
   getTwilightCivilEndDecimalTime,
-  getTwilightNauticalStartDateTime,
-  getTwilightNauticalEndDateTime,
+  getNauticalDawnStartDateTime,
+  getNauticalDawnEndDateTime,
   getTwilightNauticalStartDecimalTime,
   getTwilightNauticalEndDecimalTime,
   getSunriseTime,

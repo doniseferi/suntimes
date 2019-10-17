@@ -1,17 +1,21 @@
 import { suite, test } from 'mocha';
 import { assert } from 'chai';
-import { getTwilightAstronomicalStartDateTime, getTwilightNauticalStartDateTime, getTwilightCivilStartDateTime } from './index';
+import {
+  getAstronomicalDawnStartDateTime,
+  getNauticalDawnStartDateTime,
+  getCivilDawnStartDateTime
+} from './index';
 import januaryTwilightExpected from './testData/utcJanTwilight.json';
 
 const jan = new Date(2022, 0, 1);
 
-suite('Get twilight date time', () => {
+suite('Get twilight dawn date time', () => {
   test('returns the astronimcal dawn start time with an accuracy of 60 +/- seconds for 01/01/2022', () => {
     januaryTwilightExpected.forEach(expected => {
       const { ExpectedAstronomicalDawnUtc, Latitude, Longitude } = expected;
       const expectedDateTime = new Date(ExpectedAstronomicalDawnUtc);
 
-      const actualDateTime = getTwilightAstronomicalStartDateTime(
+      const actualDateTime = getAstronomicalDawnStartDateTime(
         jan,
         Latitude,
         Longitude
@@ -29,7 +33,7 @@ suite('Get twilight date time', () => {
       const { ExpectedNauticalDawnUtc, Latitude, Longitude } = expected;
       const expectedDateTime = new Date(ExpectedNauticalDawnUtc);
 
-      const actualDateTime = getTwilightNauticalStartDateTime(
+      const actualDateTime = getNauticalDawnStartDateTime(
         jan,
         Latitude,
         Longitude
@@ -47,7 +51,7 @@ suite('Get twilight date time', () => {
       const { ExpectedCivilDawnUtc, Latitude, Longitude } = expected;
       const expectedDateTime = new Date(ExpectedCivilDawnUtc);
 
-      const actualDateTime = getTwilightCivilStartDateTime(
+      const actualDateTime = getCivilDawnStartDateTime(
         jan,
         Latitude,
         Longitude
