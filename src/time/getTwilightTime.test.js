@@ -3,7 +3,8 @@ import { assert } from 'chai';
 import {
   getAstronomicalDawnStartDateTime,
   getNauticalDawnStartDateTime,
-  getCivilDawnStartDateTime
+  getCivilDawnStartDateTime,
+  getAstronomicalDuskStartDateTime
 } from './index';
 import januaryTwilightExpected from './testData/utcJanTwilight.json';
 
@@ -52,6 +53,26 @@ suite('Get twilight dawn date time', () => {
       const expectedDateTime = new Date(ExpectedCivilDawnUtc);
 
       const actualDateTime = getCivilDawnStartDateTime(
+        jan,
+        Latitude,
+        Longitude
+      );
+
+      const differenceInSeconds =
+        (expectedDateTime.getTime() - actualDateTime.getTime()) / 1000;
+
+      assert.closeTo(differenceInSeconds, 0, 60);
+    });
+  });
+});
+
+suite('Get twilight dusk date time', () => {
+  test('returns the astronimcal dusk start time with an accuracy of 60 +/- seconds for 01/01/2022', () => {
+    januaryTwilightExpected.forEach(expected => {
+      const { ExpectedAstronomicalDuskUtc, Latitude, Longitude } = expected;
+      const expectedDateTime = new Date(ExpectedAstronomicalDuskUtc);
+
+      const actualDateTime = getAstronomicalDuskStartDateTime(
         jan,
         Latitude,
         Longitude

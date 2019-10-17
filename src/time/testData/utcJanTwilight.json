@@ -338,19 +338,6 @@
     "ExpectedNauticalDuskUtc": "2022-01-01T09:24:00.000Z"
   },
   {
-    "Country": "Australia",
-    "City": "Kingoonya",
-    "Latitude": -30.8996,
-    "Longitude": 135.3,
-    "Offset": 10.5,
-    "ExpectedAstronomicalDawnUtc": "2021-12-31T18:21:00.000Z",
-    "ExpectedAstronomicalDuskUtc": "2022-01-01T11:42:00.000Z",
-    "ExpectedCivilDawnUtc": "2021-12-31T19:30:00.000Z",
-    "ExpectedCivilDuskUtc": "2022-01-01T10:33:00.000Z",
-    "ExpectedNauticalDawnUtc": "2021-12-31T18:57:00.000Z",
-    "ExpectedNauticalDuskUtc": "2022-01-01T11:06:00.000Z"
-  },
-  {
     "Country": "New Caledonia",
     "City": "Noumea",
     "Latitude": -22.2625,

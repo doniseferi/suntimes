@@ -18,11 +18,16 @@ const getTwilightTimeBuilder = (
   const nauticalAngle = -12;
   const astronomicalAngle = -18;
 
-  const getDateTimeUtc = (angle, date, latitude, longitude) => {
+  const getDateTimeUtc = (angle, date, latitude, longitude, non = null) => {
     const solarNoonUtc = getNoonDateTime(date, longitude);
     const twilightAngle = getHourAngle(date, latitude, angle);
     const inversedHourAngle = twilightAngle * -1;
     return addHours(solarNoonUtc, inversedHourAngle);
+  };
+  const getDateTimeUtc2 = (angle, date, latitude, longitude, non = null) => {
+    const solarNoonUtc = getNoonDateTime(date, longitude);
+    const twilightAngle = getHourAngle(date, latitude, angle);
+    return addHours(solarNoonUtc, twilightAngle);
   };
   const addHours = (subject, scientificDecimalTime) => {
     const date = new Date();
@@ -48,13 +53,24 @@ const getTwilightTimeBuilder = (
   const getAstronomicalDawnStartDateTime = (date, latitude, longitude) =>
     getDateTimeUtc(astronomicalAngle, date, latitude, longitude);
 
+  const getAstronomicalDuskStartDateTime = (date, latitude, longitude) =>
+    getDateTimeUtc2(astronomicalAngle, date, latitude, longitude);
+
   return Object.freeze({
-    getCivilDawnStartDateTime: (date, latitude, longitude) => getCivilDawnStartDateTime(date, latitude, longitude),
-    getCivilDawnEndDateTime: (date, latitude, longitude) => getCivilDawnEndDateTime(date, latitude, longitude),
-    getNauticalDawnStartDateTime: (date, latitude, longitude) => getNauticalDawnStartDateTime(date, latitude, longitude),
-    getNauticalDawnEndDateTime: (date, latitude, longitude) => getNauticalDawnEndDateTime(date, latitude, longitude),
-    getAstronomicalDawnStartDateTime: (date, latitude, longitude) => getAstronomicalDawnStartDateTime(date, latitude, longitude),
-    getAstronomicalDawnEndDateTime: (date, latitude, longitude) => getAstronomicalDawnEndDateTime(date, latitude, longitude)
+    getCivilDawnStartDateTime: (date, latitude, longitude) =>
+      getCivilDawnStartDateTime(date, latitude, longitude),
+    getCivilDawnEndDateTime: (date, latitude, longitude) =>
+      getCivilDawnEndDateTime(date, latitude, longitude),
+    getNauticalDawnStartDateTime: (date, latitude, longitude) =>
+      getNauticalDawnStartDateTime(date, latitude, longitude),
+    getNauticalDawnEndDateTime: (date, latitude, longitude) =>
+      getNauticalDawnEndDateTime(date, latitude, longitude),
+    getAstronomicalDawnStartDateTime: (date, latitude, longitude) =>
+      getAstronomicalDawnStartDateTime(date, latitude, longitude),
+    getAstronomicalDawnEndDateTime: (date, latitude, longitude) =>
+      getAstronomicalDawnEndDateTime(date, latitude, longitude),
+    getAstronomicalDuskStartDateTime: (date, latitude, longitude) =>
+      getAstronomicalDuskStartDateTime(date, latitude, longitude)
   });
 };
 
