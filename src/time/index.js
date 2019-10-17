@@ -24,8 +24,7 @@ const getSunriseTime = getSunriseTimeBuilder(getNoonDateTime, getHourAngle)
 
 const twilightTimeBuilder = getTwilightTimeBuilder(
   getNoonDateTime,
-  getHourAngle,
-  toUtcDateTime
+  getHourAngle
 );
 
 const getAstronomicalDawnStartDateTime =
@@ -54,6 +53,15 @@ const getTwilightNauticalEndDecimalTime =
   twilightTimeBuilder.getTwilightNauticalEndTime;
 const getAstronomicalDuskStartDateTime =
   twilightTimeBuilder.getAstronomicalDuskStartDateTime;
+const getAstronomicalDuskEndDateTime = twilightTimeBuilder.getAstronomicalDuskEndDateTime;
+const getNauticalDuskEndDateTime =
+  twilightTimeBuilder.getNauticalDuskEndDateTime;
+const getNauticalDuskStartDateTime =
+  twilightTimeBuilder.getNauticalDuskStartDateTime;
+const getCivilDuskEndDateTime =
+  twilightTimeBuilder.getCivilDuskEndDateTime;
+const getCivilDuskStartDateTime =
+  twilightTimeBuilder.getCivilDuskStartDateTime;
 
 const getSunsetTime = getSunsetTimeBuilder(getNoonDateTime, getHourAngle)
   .getSunsetDateTimeUtc;
@@ -79,5 +87,10 @@ export {
   getSunriseTime,
   getNoonDateTime,
   getSunsetTime,
-  getAstronomicalDuskStartDateTime
+  getAstronomicalDuskStartDateTime,
+  getAstronomicalDuskEndDateTime,
+  getNauticalDuskEndDateTime,
+  getNauticalDuskStartDateTime,
+  getCivilDuskEndDateTime,
+  getCivilDuskStartDateTime
 };

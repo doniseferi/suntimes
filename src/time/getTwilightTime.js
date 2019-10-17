@@ -56,6 +56,21 @@ const getTwilightTimeBuilder = (
   const getAstronomicalDuskStartDateTime = (date, latitude, longitude) =>
     getDateTimeUtc2(astronomicalAngle, date, latitude, longitude);
 
+  const getAstronomicalDuskEndDateTime = (date, latitude, longitude) =>
+    getDateTimeUtc2(nauticalAngle, date, latitude, longitude);
+
+  const getNauticalDuskEndDateTime = (date, latitude, longitude) =>
+    getDateTimeUtc2(civilAngle, date, latitude, longitude);
+
+  const getNauticalDuskStartDateTime = (date, latitude, longitude) =>
+    getDateTimeUtc2(nauticalAngle, date, latitude, longitude);
+
+  const getCivilDuskEndDateTime = (date, latitude, longitude) =>
+    getDateTimeUtc2(horizon, date, latitude, longitude);
+
+  const getCivilDuskStartDateTime = (date, latitude, longitude) =>
+    getDateTimeUtc2(civilAngle, date, latitude, longitude);
+
   return Object.freeze({
     getCivilDawnStartDateTime: (date, latitude, longitude) =>
       getCivilDawnStartDateTime(date, latitude, longitude),
@@ -70,7 +85,17 @@ const getTwilightTimeBuilder = (
     getAstronomicalDawnEndDateTime: (date, latitude, longitude) =>
       getAstronomicalDawnEndDateTime(date, latitude, longitude),
     getAstronomicalDuskStartDateTime: (date, latitude, longitude) =>
-      getAstronomicalDuskStartDateTime(date, latitude, longitude)
+      getAstronomicalDuskStartDateTime(date, latitude, longitude),
+    getAstronomicalDuskEndDateTime: (date, latitude, longitude) =>
+      getAstronomicalDuskEndDateTime(date, latitude, longitude),
+    getNauticalDuskStartDateTime: (date, latitude, longitude) =>
+      getNauticalDuskStartDateTime(date, latitude, longitude),
+    getNauticaluskEndDateTime: (date, latitude, longitude) =>
+      getNauticalDuskEndDateTime(date, latitude, longitude),
+    getCivilDuskStartDateTime: (date, latitude, longitude) =>
+      getCivilDuskStartDateTime(date, latitude, longitude),
+    getCivilDuskEndDateTime: (date, latitude, longitude) =>
+      getCivilDuskEndDateTime(date, latitude, longitude)
   });
 };
 
