@@ -99,7 +99,7 @@
     "ExpectedAstronomicalDawnUtc": "2022-01-01T09:39:00.000Z",
     "ExpectedAstronomicalDuskUtc": "2022-01-01T21:57:00.000Z",
     "ExpectedCivilDawnUtc": "2022-01-01T10:54:00.000Z",
-    "ExpectedCivilDuskUtc": "2022-01-01T10:54:00.000Z",
+    "ExpectedCivilDuskUtc": "2022-01-01T20:42:00.000Z",
     "ExpectedNauticalDawnUtc": "2022-01-01T10:16:00.000Z",
     "ExpectedNauticalDuskUtc": "2022-01-01T21:20:00.000Z"
   },
@@ -112,7 +112,7 @@
     "ExpectedAstronomicalDawnUtc": "2022-01-01T07:23:00.000Z",
     "ExpectedAstronomicalDuskUtc": "2022-01-01T23:07:00.000Z",
     "ExpectedCivilDawnUtc": "2022-01-01T08:19:00.000Z",
-    "ExpectedCivilDuskUtc": "2022-01-01T08:19:00.000Z",
+    "ExpectedCivilDuskUtc": "2022-01-01T22:10:00.000Z",
     "ExpectedNauticalDawnUtc": "2022-01-01T07:52:00.000Z",
     "ExpectedNauticalDuskUtc": "2022-01-01T22:38:00.000Z"
   },
@@ -229,7 +229,7 @@
     "ExpectedAstronomicalDawnUtc": "2021-12-31T23:36:00.000Z",
     "ExpectedAstronomicalDuskUtc": "2022-01-01T13:50:00.000Z",
     "ExpectedCivilDawnUtc": "2022-01-01T00:29:00.000Z",
-    "ExpectedCivilDuskUtc": "2022-01-01T00:29:00.000Z",
+    "ExpectedCivilDuskUtc": "2022-01-01T12:58:00.000Z",
     "ExpectedNauticalDawnUtc": "2022-01-01T00:02:00.000Z",
     "ExpectedNauticalDuskUtc": "2022-01-01T13:24:00.000Z"
   },
@@ -255,7 +255,7 @@
     "ExpectedAstronomicalDawnUtc": "2021-12-31T23:46:00.000Z",
     "ExpectedAstronomicalDuskUtc": "2022-01-01T12:58:00.000Z",
     "ExpectedCivilDawnUtc": "2022-01-01T00:43:00.000Z",
-    "ExpectedCivilDuskUtc": "2022-01-01T00:43:00.000Z",
+    "ExpectedCivilDuskUtc": "2022-01-01T12:00:00.000Z",
     "ExpectedNauticalDawnUtc": "2022-01-01T00:14:00.000Z",
     "ExpectedNauticalDuskUtc": "2022-01-01T12:29:00.000Z"
   },
@@ -268,7 +268,7 @@
     "ExpectedAstronomicalDawnUtc": "2021-12-31T22:51:00.000Z",
     "ExpectedAstronomicalDuskUtc": "2022-01-01T12:26:00.000Z",
     "ExpectedCivilDawnUtc": "2021-12-31T23:46:00.000Z",
-    "ExpectedCivilDuskUtc": "2021-12-31T23:46:00.000Z",
+    "ExpectedCivilDuskUtc": "2022-01-01T11:31:00.000Z",
     "ExpectedNauticalDawnUtc": "2021-12-31T23:18:00.000Z",
     "ExpectedNauticalDuskUtc": "2022-01-01T11:59:00.000Z"
   },
@@ -281,7 +281,7 @@
     "ExpectedAstronomicalDawnUtc": "2021-12-31T22:23:00.000Z",
     "ExpectedAstronomicalDuskUtc": "2022-01-01T12:02:00.000Z",
     "ExpectedCivilDawnUtc": "2021-12-31T23:17:00.000Z",
-    "ExpectedCivilDuskUtc": "2021-12-31T23:17:00.000Z",
+    "ExpectedCivilDuskUtc": "2022-01-01T11:08:00.000Z",
     "ExpectedNauticalDawnUtc": "2021-12-31T22:50:00.000Z",
     "ExpectedNauticalDuskUtc": "2022-01-01T11:36:00.000Z"
   },
@@ -294,7 +294,7 @@
     "ExpectedAstronomicalDawnUtc": "2021-12-31T22:48:00.000Z",
     "ExpectedAstronomicalDuskUtc": "2022-01-01T11:02:00.000Z",
     "ExpectedCivilDawnUtc": "2022-01-01T00:06:01.000Z",
-    "ExpectedCivilDuskUtc": "2022-01-01T00:06:01.000Z",
+    "ExpectedCivilDuskUtc": "2022-01-01T09:45:00.000Z",
     "ExpectedNauticalDawnUtc": "2021-12-31T23:26:00.000Z",
     "ExpectedNauticalDuskUtc": "2022-01-01T10:25:00.000Z"
   },
@@ -307,7 +307,7 @@
     "ExpectedAstronomicalDawnUtc": "2021-12-31T19:59:00.000Z",
     "ExpectedAstronomicalDuskUtc": "2022-01-01T10:10:00.000Z",
     "ExpectedCivilDawnUtc": "2021-12-31T20:51:00.000Z",
-    "ExpectedCivilDuskUtc": "2021-12-31T20:51:00.000Z",
+    "ExpectedCivilDuskUtc": "2022-01-01T09:18:00.000Z",
     "ExpectedNauticalDawnUtc": "2021-12-31T20:25:00.000Z",
     "ExpectedNauticalDuskUtc": "2022-01-01T09:44:00.000Z"
   },
@@ -333,7 +333,7 @@
     "ExpectedAstronomicalDawnUtc": "2021-12-31T18:37:00.000Z",
     "ExpectedAstronomicalDuskUtc": "2022-01-01T09:51:00.000Z",
     "ExpectedCivilDawnUtc": "2021-12-31T19:31:00.000Z",
-    "ExpectedCivilDuskUtc": "2021-12-31T19:31:00.000Z",
+    "ExpectedCivilDuskUtc": "2022-01-01T08:57:00.000Z",
     "ExpectedNauticalDawnUtc": "2021-12-31T19:04:00.000Z",
     "ExpectedNauticalDuskUtc": "2022-01-01T09:24:00.000Z"
   },
@@ -359,7 +359,7 @@
     "ExpectedAstronomicalDawnUtc": "2021-12-31T17:31:00.000Z",
     "ExpectedAstronomicalDuskUtc": "2022-01-01T07:44:00.000Z",
     "ExpectedCivilDawnUtc": "2021-12-31T18:23:00.000Z",
-    "ExpectedCivilDuskUtc": "2021-12-31T06:23:00.000Z",
+    "ExpectedCivilDuskUtc": "2022-01-01T06:52:00.000Z",
     "ExpectedNauticalDawnUtc": "2021-12-31T17:57:00.000Z",
     "ExpectedNauticalDuskUtc": "2022-01-01T07:18:00.000Z"
   }
