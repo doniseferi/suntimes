@@ -1,6 +1,6 @@
 import { suite, test } from 'mocha';
 import { assert } from 'chai';
-import { equationOfTime } from './index';
+import equationOfTime from './index';
 import equationOfTimeTestData from './testData/equationOfTimeTestData.json';
 
 suite('Equation of time', () => {

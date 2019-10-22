@@ -1,8 +1,8 @@
 import getDeclinationOfTheSun from './src/declination/index';
-import equationOfTimeFormatter, { equationOfTime } from './src/equationOfTime/index';
+import equationOfTime from './src/equationOfTime/index';
 
 const sun = () => Object.freeze({
-  equationOfTime: (date) => equationOfTimeFormatter(date),
+  equationOfTime: (date) => equationOfTime(date),
   equationOfTimeValue: (date) => equationOfTime(date),
   getDeclinationOfTheSun: date => getDeclinationOfTheSun(date)
 });

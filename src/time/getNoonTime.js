@@ -1,6 +1,6 @@
 const getNoonTimeBuilder = (equationOfTime, toUtcDateTime) => {
-  const getNoonTime = (date, longitude, offset) => {
-    let hour = 12 - (longitude / 15 + equationOfTime(date).hours);
+  const getNoonTime = (date, longitude) => {
+    let hour = 12 - (getHourDifference(longitude) + getEquationOfTimeInHours(equationOfTime, date));
     let offsetInDays = 0;
     if (hour < 0) {
       hour = hour + 24;
@@ -15,6 +15,10 @@ const getNoonTimeBuilder = (equationOfTime, toUtcDateTime) => {
       offsetInDays
     };
   };
+
+  const getEquationOfTimeInHours = (equationOfTime, date) => equationOfTime(date) / 60;
+
+  const getHourDifference = longitude => longitude / 15;
 
   return Object.freeze({
     getNoonDateTime: (date, longitude) =>

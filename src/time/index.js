@@ -1,7 +1,7 @@
 import equationOfTime from '../equationOfTime/index';
 import getDeclinationOfTheSun from '../declination/index';
 import { toUtcDateTime } from '../conversions/index';
-import { sine, cosine, arccosine } from '../maths/index';
+import { sine, cosine, arccosine } from '../angles/index';
 import getNoonTimeBuilder from './getNoonTime';
 import getSunriseTimeBuilder from './getSunriseTime';
 import getSunsetTimeBuilder from './getSunsetTime';
