@@ -1,6 +1,6 @@
 const getTwilightTimeBuilder = (
   getNoonDateTime,
-  getHourAngle
+  getHourAngleSinceNoon
 ) => {
   const raiseException = (dependency) => {
     throw new Error(`Please satisfy a dependecy for ${dependency}`);
@@ -9,8 +9,8 @@ const getTwilightTimeBuilder = (
   if (!getNoonDateTime) {
     raiseException(getNoonDateTime);
   }
-  if (!getHourAngle) {
-    raiseException(getHourAngle);
+  if (!getHourAngleSinceNoon) {
+    raiseException(getHourAngleSinceNoon);
   }
 
   const horizon = -0.57;
@@ -20,13 +20,13 @@ const getTwilightTimeBuilder = (
 
   const getDateTimeUtc = (angle, date, latitude, longitude, non = null) => {
     const solarNoonUtc = getNoonDateTime(date, longitude);
-    const twilightAngle = getHourAngle(date, latitude, angle);
+    const twilightAngle = getHourAngleSinceNoon(date, latitude, angle);
     const inversedHourAngle = twilightAngle * -1;
     return addHours(solarNoonUtc, inversedHourAngle);
   };
   const getDateTimeUtc2 = (angle, date, latitude, longitude, non = null) => {
     const solarNoonUtc = getNoonDateTime(date, longitude);
-    const twilightAngle = getHourAngle(date, latitude, angle);
+    const twilightAngle = getHourAngleSinceNoon(date, latitude, angle);
     return addHours(solarNoonUtc, twilightAngle);
   };
   const addHours = (subject, scientificDecimalTime) => {

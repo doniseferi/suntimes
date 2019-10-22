@@ -14,17 +14,17 @@ const timeBuilder = getHourAngleBuilder(
   arccosine,
   getDeclinationOfTheSun
 );
-const getHourAngle = timeBuilder.getHourAngle;
+const getHourAngleSinceNoon = timeBuilder.getHourAngleSinceNoon;
 
 const noonTimeBuilder = getNoonTimeBuilder(equationOfTime, toUtcDateTime);
 const getNoonDateTime = noonTimeBuilder.getNoonDateTime;
 
-const getSunriseTime = getSunriseTimeBuilder(getNoonDateTime, getHourAngle)
+const getSunriseTime = getSunriseTimeBuilder(getNoonDateTime, getHourAngleSinceNoon)
   .getSunriseDateTimeUtc;
 
 const twilightTimeBuilder = getTwilightTimeBuilder(
   getNoonDateTime,
-  getHourAngle
+  getHourAngleSinceNoon
 );
 
 const getAstronomicalDawnStartDateTime =
@@ -63,11 +63,11 @@ const getCivilDuskEndDateTime =
 const getCivilDuskStartDateTime =
   twilightTimeBuilder.getCivilDuskStartDateTime;
 
-const getSunsetTime = getSunsetTimeBuilder(getNoonDateTime, getHourAngle)
+const getSunsetTime = getSunsetTimeBuilder(getNoonDateTime, getHourAngleSinceNoon)
   .getSunsetDateTimeUtc;
 
 export {
-  getHourAngle,
+  getHourAngleSinceNoon,
   getTwilightTimeBuilder,
   getSunriseTimeBuilder,
   getNoonTimeBuilder,
