@@ -1,6 +1,6 @@
 import { suite, test } from 'mocha';
 import { assert } from 'chai';
-import { toTime } from './index';
+import { toTime } from '../index';
 
 suite('Scientific decimal time to time', () => {
   test('returns hours', () => {
