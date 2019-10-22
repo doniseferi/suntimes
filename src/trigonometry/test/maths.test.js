@@ -1,7 +1,13 @@
 import { describe, test } from 'mocha';
 import { assert } from 'chai';
-import { sine, cosine, arcsine, arccosine } from './index';
-import { degreesToRadians, radiansToDegrees } from './angleConversions';
+import {
+  sine,
+  cosine,
+  arcsine,
+  arccosine,
+  degreesToRadians,
+  radiansToDegrees
+} from '../index';
 
 const _1DegInRadians = 0.017453292519943295;
 const _1RadInDegrees = 57.29577951308232;

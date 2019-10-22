@@ -8,4 +8,4 @@ const arcsine = builder.arcsine;
 const arccosine = builder.arccosine;
 
 export default trigonometryBuilder;
-export { cosine, sine, arcsine, arccosine };
+export { cosine, sine, arcsine, arccosine, degreesToRadians, radiansToDegrees };

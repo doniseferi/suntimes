@@ -1,7 +1,7 @@
 import { suite, test } from 'mocha';
 import { assert } from 'chai';
-import equationOfTime from './index';
-import equationOfTimeTestData from './testData/equationOfTimeTestData.json';
+import equationOfTime from '../index';
+import equationOfTimeTestData from './equationOfTimeTestData.json';
 
 suite('Equation of time', () => {
   test('returns the correct equation of time with a margin of error of +/- 4 seconds', () => {
