@@ -1,4 +1,4 @@
-const getNoonTimeBuilder = (equationOfTime, toUtcDateTime) => {
+const getNoonTimeFactory = (equationOfTime, toUtcDateTime) => {
   const getNoonTime = (date, longitude) => {
     let hour = 12 - (getHourDifference(longitude) + getEquationOfTimeInHours(equationOfTime, date));
     let offsetInDays = 0;
@@ -27,4 +27,4 @@ const getNoonTimeBuilder = (equationOfTime, toUtcDateTime) => {
   });
 };
 
-export default getNoonTimeBuilder;
+export default getNoonTimeFactory;

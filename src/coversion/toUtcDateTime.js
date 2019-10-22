@@ -1,4 +1,4 @@
-const toUtcDateTimeBuilder = toTime => {
+const toUtcDateTimeFactory = toTime => {
   const toUtcDateTime = (date, timeInformation) => {
     const day = date.getDate();
     const month = date.getMonth();
@@ -33,4 +33,4 @@ const toUtcDateTimeBuilder = toTime => {
   });
 };
 
-export default toUtcDateTimeBuilder;
+export default toUtcDateTimeFactory;

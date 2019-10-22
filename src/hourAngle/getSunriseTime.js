@@ -1,4 +1,4 @@
-const getSunriseTimeBuilder = (getNoonTimeUtc, getHourAngleSinceNoon) => {
+const getSunriseTimeFactory = (getNoonTimeUtc, getHourAngleSinceNoon) => {
   const getSunriseTime = (date, latitude, longitude) => {
     const solarNoonUtc = getNoonTimeUtc(date, longitude);
     const sunriseAngleOfSunOnHorizon = -0.833333333;
@@ -23,4 +23,4 @@ const getSunriseTimeBuilder = (getNoonTimeUtc, getHourAngleSinceNoon) => {
   });
 };
 
-export default getSunriseTimeBuilder;
+export default getSunriseTimeFactory;

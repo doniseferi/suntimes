@@ -2,76 +2,76 @@ import equationOfTime from '../equationOfTime/index';
 import getDeclinationOfTheSun from '../declination/index';
 import { toUtcDateTime } from '../coversion/index';
 import { sine, cosine, arccosine } from '../trigonometry/index';
-import getNoonTimeBuilder from './getNoonTime';
-import getSunriseTimeBuilder from './getSunriseTime';
-import getSunsetTimeBuilder from './getSunsetTime';
-import getHourAngleBuilder from './getHourAngle';
-import getTwilightTimeBuilder from './getTwilightTime';
+import getNoonTimeFactory from './getNoonTime';
+import getSunriseTimeFactory from './getSunriseTime';
+import getSunsetTimeFactory from './getSunsetTime';
+import getHourAngleFactory from './getHourAngle';
+import getTwilightTimeFactory from './getTwilightTime';
 
-const timeBuilder = getHourAngleBuilder(
+const timeFactory = getHourAngleFactory(
   sine,
   cosine,
   arccosine,
   getDeclinationOfTheSun
 );
-const getHourAngleSinceNoon = timeBuilder.getHourAngleSinceNoon;
+const getHourAngleSinceNoon = timeFactory.getHourAngleSinceNoon;
 
-const noonTimeBuilder = getNoonTimeBuilder(equationOfTime, toUtcDateTime);
-const getNoonDateTime = noonTimeBuilder.getNoonDateTime;
+const noonTimeFactory = getNoonTimeFactory(equationOfTime, toUtcDateTime);
+const getNoonDateTime = noonTimeFactory.getNoonDateTime;
 
-const getSunriseTime = getSunriseTimeBuilder(getNoonDateTime, getHourAngleSinceNoon)
+const getSunriseTime = getSunriseTimeFactory(getNoonDateTime, getHourAngleSinceNoon)
   .getSunriseDateTimeUtc;
 
-const twilightTimeBuilder = getTwilightTimeBuilder(
+const twilightTimeFactory = getTwilightTimeFactory(
   getNoonDateTime,
   getHourAngleSinceNoon
 );
 
 const getAstronomicalDawnStartDateTime =
-  twilightTimeBuilder.getAstronomicalDawnStartDateTime;
+  twilightTimeFactory.getAstronomicalDawnStartDateTime;
 const getAstronomicalDawnEndDateTime =
-  twilightTimeBuilder.getAstronomicalDawnEndDateTime;
+  twilightTimeFactory.getAstronomicalDawnEndDateTime;
 const getTwilightAstronomicalStartDecimalTime =
-  twilightTimeBuilder.getTwilightAstronomicalStartTime;
+  twilightTimeFactory.getTwilightAstronomicalStartTime;
 const getTwilightAstronomicalEndDecimalTime =
-  twilightTimeBuilder.getTwilightAstronomicalEndTime;
+  twilightTimeFactory.getTwilightAstronomicalEndTime;
 const getCivilDawnStartDateTime =
-  twilightTimeBuilder.getCivilDawnStartDateTime;
+  twilightTimeFactory.getCivilDawnStartDateTime;
 const getCivilDawnEndDateTime =
-  twilightTimeBuilder.getCivilDawnEndDateTime;
+  twilightTimeFactory.getCivilDawnEndDateTime;
 const getTwilightCivilStartDecimalTime =
-  twilightTimeBuilder.getTwilightCivilStartTime;
+  twilightTimeFactory.getTwilightCivilStartTime;
 const getTwilightCivilEndDecimalTime =
-  twilightTimeBuilder.getTwilightCivilEndTime;
+  twilightTimeFactory.getTwilightCivilEndTime;
 const getNauticalDawnStartDateTime =
-  twilightTimeBuilder.getNauticalDawnStartDateTime;
+  twilightTimeFactory.getNauticalDawnStartDateTime;
 const getNauticalDawnEndDateTime =
-  twilightTimeBuilder.getNauticalDawnEndDateTime;
+  twilightTimeFactory.getNauticalDawnEndDateTime;
 const getTwilightNauticalStartDecimalTime =
-  twilightTimeBuilder.getTwilightNauticalStartTime;
+  twilightTimeFactory.getTwilightNauticalStartTime;
 const getTwilightNauticalEndDecimalTime =
-  twilightTimeBuilder.getTwilightNauticalEndTime;
+  twilightTimeFactory.getTwilightNauticalEndTime;
 const getAstronomicalDuskStartDateTime =
-  twilightTimeBuilder.getAstronomicalDuskStartDateTime;
-const getAstronomicalDuskEndDateTime = twilightTimeBuilder.getAstronomicalDuskEndDateTime;
+  twilightTimeFactory.getAstronomicalDuskStartDateTime;
+const getAstronomicalDuskEndDateTime = twilightTimeFactory.getAstronomicalDuskEndDateTime;
 const getNauticalDuskEndDateTime =
-  twilightTimeBuilder.getNauticalDuskEndDateTime;
+  twilightTimeFactory.getNauticalDuskEndDateTime;
 const getNauticalDuskStartDateTime =
-  twilightTimeBuilder.getNauticalDuskStartDateTime;
+  twilightTimeFactory.getNauticalDuskStartDateTime;
 const getCivilDuskEndDateTime =
-  twilightTimeBuilder.getCivilDuskEndDateTime;
+  twilightTimeFactory.getCivilDuskEndDateTime;
 const getCivilDuskStartDateTime =
-  twilightTimeBuilder.getCivilDuskStartDateTime;
+  twilightTimeFactory.getCivilDuskStartDateTime;
 
-const getSunsetTime = getSunsetTimeBuilder(getNoonDateTime, getHourAngleSinceNoon)
+const getSunsetTime = getSunsetTimeFactory(getNoonDateTime, getHourAngleSinceNoon)
   .getSunsetDateTimeUtc;
 
 export {
   getHourAngleSinceNoon,
-  getTwilightTimeBuilder,
-  getSunriseTimeBuilder,
-  getNoonTimeBuilder,
-  getSunsetTimeBuilder,
+  getTwilightTimeFactory,
+  getSunriseTimeFactory,
+  getNoonTimeFactory,
+  getSunsetTimeFactory,
   getAstronomicalDawnStartDateTime,
   getAstronomicalDawnEndDateTime,
   getTwilightAstronomicalStartDecimalTime,

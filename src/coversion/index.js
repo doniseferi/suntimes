@@ -1,11 +1,11 @@
 import toTime from './toTime';
-import toUtcDateTimeBuilder from './toUtcDateTime';
+import toUtcDateTimeFactory from './toUtcDateTime';
 
-const toUtcDateTime = toUtcDateTimeBuilder(toTime)
+const toUtcDateTime = toUtcDateTimeFactory(toTime)
   .toUtcDateTime;
 
 export {
-  toUtcDateTimeBuilder,
+  toUtcDateTimeFactory,
   toTime,
   toUtcDateTime
 };

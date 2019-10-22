@@ -1,11 +1,11 @@
 import { degreesToRadians, radiansToDegrees } from './angleConversions';
-import trigonometryBuilder from './trigonometry';
+import trigonometryFactory from './trigonometry';
 
-const builder = trigonometryBuilder(degreesToRadians, radiansToDegrees);
-const cosine = builder.cosine;
-const sine = builder.sine;
-const arcsine = builder.arcsine;
-const arccosine = builder.arccosine;
+const factory = trigonometryFactory(degreesToRadians, radiansToDegrees);
+const cosine = factory.cosine;
+const sine = factory.sine;
+const arcsine = factory.arcsine;
+const arccosine = factory.arccosine;
 
-export default trigonometryBuilder;
+export default trigonometryFactory;
 export { cosine, sine, arcsine, arccosine, degreesToRadians, radiansToDegrees };

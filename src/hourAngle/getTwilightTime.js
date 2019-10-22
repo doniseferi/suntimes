@@ -1,4 +1,4 @@
-const getTwilightTimeBuilder = (
+const getTwilightTimeFactory = (
   getNoonDateTime,
   getHourAngleSinceNoon
 ) => {
@@ -99,4 +99,4 @@ const getTwilightTimeBuilder = (
   });
 };
 
-export default getTwilightTimeBuilder;
+export default getTwilightTimeFactory;

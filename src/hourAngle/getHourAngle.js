@@ -1,4 +1,4 @@
-const getHourAngleBuilder = (
+const getHourAngleFactory = (
   sine,
   cosine,
   arccosine,
@@ -17,4 +17,4 @@ const getHourAngleBuilder = (
   });
 };
 
-export default getHourAngleBuilder;
+export default getHourAngleFactory;

@@ -1,4 +1,4 @@
-const declinationOfTheSunBuilder = (sine, cosine, arcsine, getDayOfTheYear) => {
+const declinationOfTheSunFactory = (sine, cosine, arcsine, getDayOfTheYear) => {
   const errorMessage = (functionName) => `Please provide a function for ${functionName}.`;
   if (!sine) {
     throw new Error(errorMessage('sine'));
@@ -40,4 +40,4 @@ const declinationOfTheSunBuilder = (sine, cosine, arcsine, getDayOfTheYear) => {
   });
 };
 
-export default declinationOfTheSunBuilder;
+export default declinationOfTheSunFactory;

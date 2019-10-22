@@ -1,4 +1,4 @@
-const trigonometryBuilder = (degreesToRadians, radiansToDegrees) => {
+const trigonometryFactory = (degreesToRadians, radiansToDegrees) => {
   if (!degreesToRadians || degreesToRadians === null || degreesToRadians === undefined) {
     throw new Error('degrees to radians');
   }
@@ -19,4 +19,4 @@ const trigonometryBuilder = (degreesToRadians, radiansToDegrees) => {
   });
 };
 
-export default trigonometryBuilder;
+export default trigonometryFactory;
