@@ -1,8 +1,8 @@
 const trigonometryFactory = (degreesToRadians, radiansToDegrees) => {
-  if (!degreesToRadians || degreesToRadians === null || degreesToRadians === undefined) {
+  if (degreesToRadians == null) {
     throw new Error('degrees to radians');
   }
-  if (!radiansToDegrees || radiansToDegrees === null || radiansToDegrees === undefined) {
+  if (radiansToDegrees == null) {
     throw new Error('radians to degrees');
   }
 

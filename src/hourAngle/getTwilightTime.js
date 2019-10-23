@@ -18,7 +18,7 @@ const getTwilightTimeFactory = (
   const nauticalAngle = -12;
   const astronomicalAngle = -18;
 
-  const getDateTimeUtc = (angle, date, latitude, longitude, non = null) => {
+  const getDateTimeUtc = (angle, date, latitude, longitude) => {
     const solarNoonUtc = getNoonDateTime(date, longitude);
     const twilightAngle = getHourAngleSinceNoon(date, latitude, angle);
     const inversedHourAngle = twilightAngle * -1;
