@@ -3,8 +3,6 @@ import getDeclinationOfTheSun from '../declination/index';
 import { toUtcDateTime } from '../coversion/index';
 import { sine, cosine, arccosine } from '../trigonometry/index';
 import getNoonTimeFactory from './getNoonTime';
-import getSunriseTimeFactory from './getSunriseTime';
-import getSunsetTimeFactory from './getSunsetTime';
 import getHourAngleFactory from './getHourAngle';
 import getTwilightTimeFactory from './getTwilightTime';
 
@@ -18,9 +16,6 @@ const getHourAngleSinceNoon = timeFactory.getHourAngleSinceNoon;
 
 const noonTimeFactory = getNoonTimeFactory(equationOfTime, toUtcDateTime);
 const getNoonDateTime = noonTimeFactory.getNoonDateTime;
-
-const getSunriseTime = getSunriseTimeFactory(getNoonDateTime, getHourAngleSinceNoon)
-  .getSunriseDateTimeUtc;
 
 const twilightTimeFactory = getTwilightTimeFactory(
   getNoonDateTime,
@@ -63,15 +58,10 @@ const getCivilDuskEndDateTime =
 const getCivilDuskStartDateTime =
   twilightTimeFactory.getCivilDuskStartDateTime;
 
-const getSunsetTime = getSunsetTimeFactory(getNoonDateTime, getHourAngleSinceNoon)
-  .getSunsetDateTimeUtc;
-
 export {
   getHourAngleSinceNoon,
   getTwilightTimeFactory,
-  getSunriseTimeFactory,
   getNoonTimeFactory,
-  getSunsetTimeFactory,
   getAstronomicalDawnStartDateTime,
   getAstronomicalDawnEndDateTime,
   getTwilightAstronomicalStartDecimalTime,
@@ -84,9 +74,7 @@ export {
   getNauticalDawnEndDateTime,
   getTwilightNauticalStartDecimalTime,
   getTwilightNauticalEndDecimalTime,
-  getSunriseTime,
   getNoonDateTime,
-  getSunsetTime,
   getAstronomicalDuskStartDateTime,
   getAstronomicalDuskEndDateTime,
   getNauticalDuskEndDateTime,

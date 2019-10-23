@@ -1,6 +1,6 @@
 import { suite, test } from 'mocha';
 import { assert } from 'chai';
-import getSunriseTime from '../time/index';
+import { getSunriseDateTimeUtc } from '../time/index';
 import januarySunriseExpected from './testData/utcJanSunrise.json';
 import julySunriseExpected from './testData/utcJulySunrise.json';
 
@@ -9,7 +9,7 @@ suite('Get Sunrise Time', () => {
     januarySunriseExpected.forEach(expected => {
       const { ExpectedTimeUtc, Latitude, Longitude } = expected;
       const expectedTime = new Date(ExpectedTimeUtc);
-      const actualDateTime = getSunriseTime(
+      const actualDateTime = getSunriseDateTimeUtc(
         new Date(2019, 0, 1),
         Latitude,
         Longitude
@@ -24,7 +24,7 @@ suite('Get Sunrise Time', () => {
     julySunriseExpected.forEach(expected => {
       const { ExpectedTimeUtc, Latitude, Longitude } = expected;
       const expectedTime = new Date(ExpectedTimeUtc);
-      const actualTime = getSunriseTime(
+      const actualTime = getSunriseDateTimeUtc(
         new Date(2019, 6, 1),
         Latitude,
         Longitude

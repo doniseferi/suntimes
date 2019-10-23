@@ -36,7 +36,7 @@ const getDateTimeUtcFactory = (getNoonDateTimeUtc, getHourAngleSinceNoon) => {
     toDateTimeUtc(
       date,
       longitude,
-      getHourAngleSinceNoon(date, latitude, longitude, angle)
+      getHourAngleSinceNoon(date, latitude, angle)
     );
 
   const toDateTimeUtc = (date, longitude, hourAngle) => {

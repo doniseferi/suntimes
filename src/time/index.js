@@ -19,7 +19,18 @@ const getHourAngleFromNoon = hourAngleFactory.getHourAngleSinceNoon;
 
 const factory = getDateTimeUtcFactory(getNoonDateTime, getHourAngleFromNoon);
 
-const sunriseAngle = -0.833333333;
+const getDateTimeUtcOfAngleBeforeNoon = factory.getDateTimeUtcOfAngleBeforeNoon;
+const getDateTimeUtcOfAngleAfterNoon = factory.getDateTimeUtcOfAngleAfterNoon;
 
-export default (date, latitude, longitude) =>
-  factory.getDateTimeUtcOfAngleBeforeNoon(sunriseAngle, date, latitude, longitude);
+const sunriseAngle = -0.833333333;
+const getSunriseDateTimeUtc = (date, latitude, longitude) =>
+  getDateTimeUtcOfAngleBeforeNoon(sunriseAngle, date, latitude, longitude);
+
+const sunsetAngle = -0.833333333;
+const getSunsetDateTimeUtc = (date, latitude, longitude) =>
+  getDateTimeUtcOfAngleAfterNoon(sunsetAngle, date, latitude, longitude);
+
+export {
+  getSunriseDateTimeUtc,
+  getSunsetDateTimeUtc
+};
