@@ -1,6 +1,6 @@
 import { suite, test } from 'mocha';
 import { assert } from 'chai';
-import { getNoonDateTime } from './index';
+import { getNoonDateTimeUtc } from './index';
 import januaryNoonExpected from './testData/utcJanNoon.json';
 import julyNoonExpected from './testData/utcJulyNoon.json';
 
@@ -9,7 +9,7 @@ suite('Get Noon Time', () => {
     januaryNoonExpected.forEach(expected => {
       const targetDate = new Date(2019, 0, 1);
       const expectedTime = new Date(expected.ExpectedTimeUtc);
-      const actualTime = getNoonDateTime(targetDate, expected.Longitude);
+      const actualTime = getNoonDateTimeUtc(targetDate, expected.Longitude);
       const differenceInSeconds =
         (expectedTime.getTime() - actualTime.getTime()) / 1000;
       assert.closeTo(differenceInSeconds, 0, 60);
@@ -20,7 +20,7 @@ suite('Get Noon Time', () => {
     julyNoonExpected.forEach(expected => {
       const targetDate = new Date(2019, 6, 1);
       const expectedTime = new Date(expected.ExpectedTimeUtc);
-      const actualTime = getNoonDateTime(targetDate, expected.Longitude);
+      const actualTime = getNoonDateTimeUtc(targetDate, expected.Longitude);
 
       const differenceInSeconds =
         (expectedTime.getTime() - actualTime.getTime()) / 1000;
@@ -38,7 +38,7 @@ suite('Get Noon Time', () => {
       Offset: 12.0
     };
 
-    const actual = getNoonDateTime(targetDate, anadyrRussia.Longitude);
+    const actual = getNoonDateTimeUtc(targetDate, anadyrRussia.Longitude);
     const expectedTime = new Date(anadyrRussia.ExpectedTimeUtc);
 
     const differenceInSeconds =
@@ -54,7 +54,7 @@ suite('Get Noon Time', () => {
       ExpectedTimeUtc: '2019-01-01T23:49:00.000Z'
     };
 
-    const actual = getNoonDateTime(targetDate, bakerIslandUsa.Longitude);
+    const actual = getNoonDateTimeUtc(targetDate, bakerIslandUsa.Longitude);
     const expectedTime = new Date(bakerIslandUsa.ExpectedTimeUtc);
 
     const differenceInSeconds =

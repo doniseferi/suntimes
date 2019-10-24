@@ -2,7 +2,7 @@ import equationOfTime from '../equationOfTime/index';
 import getDeclinationOfTheSun from '../declination/index';
 import { toUtcDateTime } from '../coversion/index';
 import { sine, cosine, arccosine } from '../trigonometry/index';
-import getNoonTimeFactory from './getNoonTime';
+import getNoonHourAngleFactory from './getNoonHourAngle';
 import getHourAngleFactory from './getHourAngle';
 
 const timeFactory = getHourAngleFactory(
@@ -14,7 +14,7 @@ const timeFactory = getHourAngleFactory(
 
 const getHourAngleSinceNoon = timeFactory.getHourAngleSinceNoon;
 
-const noonTimeFactory = getNoonTimeFactory(equationOfTime, toUtcDateTime);
-const getNoonDateTime = noonTimeFactory.getNoonDateTime;
+const noonTimeFactory = getNoonHourAngleFactory(equationOfTime, toUtcDateTime);
+const getNoonDateTimeUtc = noonTimeFactory.getNoonDateTimeUtc;
 
-export { getHourAngleSinceNoon, getNoonTimeFactory, getNoonDateTime };
+export { getHourAngleSinceNoon, getNoonHourAngleFactory, getNoonDateTimeUtc };

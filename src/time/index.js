@@ -4,10 +4,10 @@ import equationOfTime from '../equationOfTime/index';
 import getDeclinationOfTheSun from '../declination/index';
 import { sine, cosine, arccosine } from '../trigonometry/index';
 import { toUtcDateTime } from '../coversion/index';
-import { getNoonTimeFactory } from '../hourAngle/index';
+import { getNoonHourAngleFactory } from '../hourAngle/index';
 
-const noonTimeFactory = getNoonTimeFactory(equationOfTime, toUtcDateTime);
-const getNoonDateTime = noonTimeFactory.getNoonDateTime;
+const noonTimeFactory = getNoonHourAngleFactory(equationOfTime, toUtcDateTime);
+const getNoonDateTimeUtc = noonTimeFactory.getNoonDateTimeUtc;
 
 const hourAngleFactory = getHourAngleFactory(
   sine,
@@ -17,7 +17,7 @@ const hourAngleFactory = getHourAngleFactory(
 );
 const getHourAngleFromNoon = hourAngleFactory.getHourAngleSinceNoon;
 
-const factory = getDateTimeUtcFactory(getNoonDateTime, getHourAngleFromNoon);
+const factory = getDateTimeUtcFactory(getNoonDateTimeUtc, getHourAngleFromNoon);
 
 const getDateTimeUtcOfAngleBeforeNoon = factory.getDateTimeUtcOfAngleBeforeNoon;
 const getDateTimeUtcOfAngleAfterNoon = factory.getDateTimeUtcOfAngleAfterNoon;

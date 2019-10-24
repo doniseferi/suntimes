@@ -1,5 +1,5 @@
-const getNoonTimeFactory = (equationOfTime, toUtcDateTime) => {
-  const getNoonTime = (date, longitude) => {
+const getNoonHourAngleFactory = (equationOfTime, toUtcDateTime) => {
+  const getNoonHourAngle = (date, longitude) => {
     let hour = 12 - (getHourDifference(longitude) + getEquationOfTimeInHours(equationOfTime, date));
     let offsetInDays = 0;
     if (hour < 0) {
@@ -21,10 +21,10 @@ const getNoonTimeFactory = (equationOfTime, toUtcDateTime) => {
   const getHourDifference = longitude => longitude / 15;
 
   return Object.freeze({
-    getNoonDateTime: (date, longitude) =>
-      toUtcDateTime(date, getNoonTime(date, longitude)),
-    getNoonTime: (date, longitude) => getNoonTime(date, longitude)
+    getNoonDateTimeUtc: (date, longitude) =>
+      toUtcDateTime(date, getNoonHourAngle(date, longitude)),
+    getNoonHourAngle: (date, longitude) => getNoonHourAngle(date, longitude)
   });
 };
 
-export default getNoonTimeFactory;
+export default getNoonHourAngleFactory;
