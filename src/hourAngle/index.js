@@ -5,16 +5,18 @@ import { sine, cosine, arccosine } from '../trigonometry/index';
 import getNoonHourAngleFactory from './getNoonHourAngle';
 import getHourAngleFactory from './getHourAngle';
 
-const timeFactory = getHourAngleFactory(
+const hourAngleFactory = getHourAngleFactory(
   sine,
   cosine,
   arccosine,
   getDeclinationOfTheSun
 );
 
-const getHourAngleSinceNoon = timeFactory.getHourAngleSinceNoon;
+const getHourAngleSinceNoon = hourAngleFactory.getHourAngleSinceNoon;
 
-const noonTimeFactory = getNoonHourAngleFactory(equationOfTime, toUtcDateTime);
-const getNoonDateTimeUtc = noonTimeFactory.getNoonDateTimeUtc;
+const noonHourAngleFactory = getNoonHourAngleFactory(equationOfTime);
+const getNoonHourAngle = noonHourAngleFactory.getNoonHourAngle;
+const getNoonDateTimeUtc = (date, longitude) =>
+  toUtcDateTime(date, getNoonHourAngle(date, longitude));
 
 export { getHourAngleSinceNoon, getNoonHourAngleFactory, getNoonDateTimeUtc };
