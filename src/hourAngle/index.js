@@ -19,4 +19,10 @@ const getNoonHourAngle = noonHourAngleFactory.getNoonHourAngle;
 const getNoonDateTimeUtc = (date, longitude) =>
   toUtcDateTime(date, getNoonHourAngle(date, longitude));
 
-export { getHourAngleSinceNoon, getNoonHourAngleFactory, getNoonDateTimeUtc };
+export {
+  getHourAngleFactory,
+  getHourAngleSinceNoon,
+  getNoonHourAngleFactory,
+  getNoonHourAngle,
+  getNoonDateTimeUtc
+};
