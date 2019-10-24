@@ -1,12 +1,12 @@
 import { suite, test } from 'mocha';
 import { assert } from 'chai';
 import {
-  getAstronomicalDawnStartDateTime,
-  getNauticalDawnStartDateTime,
-  getCivilDawnStartDateTime,
-  getAstronomicalDuskStartDateTime,
-  getNauticalDuskStartDateTime,
-  getCivilDuskStartDateTime
+  getAstronomicalDawnStartDateTimeUtc,
+  getNauticalDawnStartDateTimeUtc,
+  getCivilDawnStartDateTimeUtc,
+  getAstronomicalDuskStartDateTimeUtc,
+  getNauticalDuskStartDateTimeUtc,
+  getCivilDuskStartDateTimeUtc
 } from '../time/index';
 import januaryTwilightExpected from './testData/utcJanTwilight.json';
 
@@ -18,7 +18,7 @@ suite('Get twilight dawn date time', () => {
       const { ExpectedAstronomicalDawnUtc, Latitude, Longitude } = expected;
       const expectedDateTime = new Date(ExpectedAstronomicalDawnUtc);
 
-      const actualDateTime = getAstronomicalDawnStartDateTime(
+      const actualDateTime = getAstronomicalDawnStartDateTimeUtc(
         jan,
         Latitude,
         Longitude
@@ -36,7 +36,7 @@ suite('Get twilight dawn date time', () => {
       const { ExpectedNauticalDawnUtc, Latitude, Longitude } = expected;
       const expectedDateTime = new Date(ExpectedNauticalDawnUtc);
 
-      const actualDateTime = getNauticalDawnStartDateTime(
+      const actualDateTime = getNauticalDawnStartDateTimeUtc(
         jan,
         Latitude,
         Longitude
@@ -54,7 +54,7 @@ suite('Get twilight dawn date time', () => {
       const { ExpectedCivilDawnUtc, Latitude, Longitude } = expected;
       const expectedDateTime = new Date(ExpectedCivilDawnUtc);
 
-      const actualDateTime = getCivilDawnStartDateTime(
+      const actualDateTime = getCivilDawnStartDateTimeUtc(
         jan,
         Latitude,
         Longitude
@@ -74,7 +74,7 @@ suite('Get twilight dusk date time', () => {
       const { ExpectedAstronomicalDuskUtc, Latitude, Longitude } = expected;
       const expectedDateTime = new Date(ExpectedAstronomicalDuskUtc);
 
-      const actualDateTime = getAstronomicalDuskStartDateTime(
+      const actualDateTime = getAstronomicalDuskStartDateTimeUtc(
         jan,
         Latitude,
         Longitude
@@ -92,7 +92,7 @@ suite('Get twilight dusk date time', () => {
       const { ExpectedNauticalDuskUtc, Latitude, Longitude } = expected;
       const expectedDateTime = new Date(ExpectedNauticalDuskUtc);
 
-      const actualDateTime = getNauticalDuskStartDateTime(
+      const actualDateTime = getNauticalDuskStartDateTimeUtc(
         jan,
         Latitude,
         Longitude
@@ -110,7 +110,7 @@ suite('Get twilight dusk date time', () => {
       const { ExpectedCivilDuskUtc, Latitude, Longitude } = expected;
       const expectedDateTime = new Date(ExpectedCivilDuskUtc);
 
-      const actualDateTime = getCivilDuskStartDateTime(
+      const actualDateTime = getCivilDuskStartDateTimeUtc(
         jan,
         Latitude,
         Longitude

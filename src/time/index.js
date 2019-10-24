@@ -35,55 +35,55 @@ const getSunriseDateTimeUtc = (date, latitude, longitude) =>
 const getSunsetDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleAfterNoon(sunsetAngle, date, latitude, longitude);
 
-const getCivilDawnEndDateTime = (date, latitude, longitude) =>
+const getCivilDawnEndDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleBeforeNoon(horizon, date, latitude, longitude);
 
-const getCivilDawnStartDateTime = (date, latitude, longitude) =>
+const getCivilDawnStartDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleBeforeNoon(civilAngle, date, latitude, longitude);
 
-const getNauticalDawnEndDateTime = (date, latitude, longitude) =>
+const getNauticalDawnEndDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleBeforeNoon(civilAngle, date, latitude, longitude);
 
-const getNauticalDawnStartDateTime = (date, latitude, longitude) =>
+const getNauticalDawnStartDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleBeforeNoon(nauticalAngle, date, latitude, longitude);
 
-const getAstronomicalDawnEndDateTime = (date, latitude, longitude) =>
+const getAstronomicalDawnEndDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleBeforeNoon(nauticalAngle, date, latitude, longitude);
 
-const getAstronomicalDawnStartDateTime = (date, latitude, longitude) =>
+const getAstronomicalDawnStartDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleBeforeNoon(astronomicalAngle, date, latitude, longitude);
 
-const getAstronomicalDuskStartDateTime = (date, latitude, longitude) =>
+const getAstronomicalDuskStartDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleAfterNoon(astronomicalAngle, date, latitude, longitude);
 
-const getAstronomicalDuskEndDateTime = (date, latitude, longitude) =>
+const getAstronomicalDuskEndDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleAfterNoon(nauticalAngle, date, latitude, longitude);
 
-const getNauticalDuskEndDateTime = (date, latitude, longitude) =>
+const getNauticalDuskEndDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleAfterNoon(civilAngle, date, latitude, longitude);
 
-const getNauticalDuskStartDateTime = (date, latitude, longitude) =>
+const getNauticalDuskStartDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleAfterNoon(nauticalAngle, date, latitude, longitude);
 
-const getCivilDuskEndDateTime = (date, latitude, longitude) =>
+const getCivilDuskEndDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleAfterNoon(horizon, date, latitude, longitude);
 
-const getCivilDuskStartDateTime = (date, latitude, longitude) =>
+const getCivilDuskStartDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleAfterNoon(civilAngle, date, latitude, longitude);
 
 export {
   getSunriseDateTimeUtc,
   getSunsetDateTimeUtc,
-  getCivilDawnEndDateTime,
-  getCivilDawnStartDateTime,
-  getNauticalDawnEndDateTime,
-  getNauticalDawnStartDateTime,
-  getAstronomicalDawnEndDateTime,
-  getAstronomicalDawnStartDateTime,
-  getAstronomicalDuskStartDateTime,
-  getAstronomicalDuskEndDateTime,
-  getNauticalDuskEndDateTime,
-  getNauticalDuskStartDateTime,
-  getCivilDuskEndDateTime,
-  getCivilDuskStartDateTime
+  getCivilDawnEndDateTimeUtc,
+  getCivilDawnStartDateTimeUtc,
+  getNauticalDawnEndDateTimeUtc,
+  getNauticalDawnStartDateTimeUtc,
+  getAstronomicalDawnEndDateTimeUtc,
+  getAstronomicalDawnStartDateTimeUtc,
+  getAstronomicalDuskStartDateTimeUtc,
+  getAstronomicalDuskEndDateTimeUtc,
+  getNauticalDuskEndDateTimeUtc,
+  getNauticalDuskStartDateTimeUtc,
+  getCivilDuskEndDateTimeUtc,
+  getCivilDuskStartDateTimeUtc
 };
