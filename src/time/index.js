@@ -6,8 +6,9 @@ import { sine, cosine, arccosine } from '../trigonometry/index';
 import { toUtcDateTime } from '../coversion/index';
 import { getNoonHourAngleFactory } from '../hourAngle/index';
 
-const noonHourAngleFactory = getNoonHourAngleFactory(equationOfTime, toUtcDateTime);
-const getNoonDateTimeUtc = noonHourAngleFactory.getNoonDateTimeUtc;
+const noonHourAngleFactory = getNoonHourAngleFactory(equationOfTime);
+const getNoonHourAngle = noonHourAngleFactory.getNoonHourAngle;
+const getNoonDateTimeUtc = (date, longitude) => toUtcDateTime(date, getNoonHourAngle(date, longitude));
 
 const hourAngleFactory = getHourAngleFactory(
   sine,
