@@ -1,4 +1,13 @@
 const toUtcDateTimeFactory = toTime => {
+  if (!toTime) {
+    throw new Error(
+      `Unsatisfied Dependency Error:
+      Please provide a function for toTime.
+      This dependency takes in a scientific decimal time
+      and returns an object with the following properties: hours: Number, minutes: Number, seconds: Number and miliseconds: Number`
+    );
+  }
+
   const toUtcDateTime = (date, timeInformation) => {
     const day = date.getDate();
     const month = date.getMonth();
