@@ -3,7 +3,7 @@ import getHourAngleFactory from '../hourAngle/getHourAngle';
 import equationOfTime from '../equationOfTime/index';
 import getDeclinationOfTheSun from '../declination/index';
 import { sine, cosine, arccosine } from '../trigonometry/index';
-import { toUtcDateTime } from '../coversion/index';
+import { toUtcDateTime } from '../conversion/index';
 import { getNoonHourAngleFactory } from '../hourAngle/index';
 
 const noonHourAngleFactory = getNoonHourAngleFactory(equationOfTime);

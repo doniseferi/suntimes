@@ -1,6 +1,6 @@
 import equationOfTime from '../equationOfTime/index';
 import getDeclinationOfTheSun from '../declination/index';
-import { toUtcDateTime } from '../coversion/index';
+import { toUtcDateTime } from '../conversion/index';
 import { sine, cosine, arccosine } from '../trigonometry/index';
 import getNoonHourAngleFactory from './getNoonHourAngle';
 import getHourAngleFactory from './getHourAngle';
