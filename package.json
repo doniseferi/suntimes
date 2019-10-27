@@ -4,7 +4,7 @@
   "description": "A lightweight JavaScript library offering astronomical observational data on the sun",
   "main": "index.js",
   "scripts": {
-    "test": "semistandard && nyc mocha --opts support/mocha.opts src/**/*.test.js",
+    "test": "semistandard && mocha --opts support/mocha.opts src/**/*.test.js",
     "fix": "semistandard --fix"
   },
   "repository": {
