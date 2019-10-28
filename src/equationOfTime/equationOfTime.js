@@ -1,3 +1,5 @@
+// Fourier method for equation of time provided by Kevin Karney
+// accuratacy of -/+ 3 seconds between 2000 to 2050
 const equationOfTime = date => {
   if (!date) {
     throw new Error('Please provide a valid date');
