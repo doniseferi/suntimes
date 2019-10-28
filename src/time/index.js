@@ -73,6 +73,8 @@ const getCivilDuskStartDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleAfterNoon(civilAngle, date, latitude, longitude);
 
 export {
+  getDateTimeUtcOfAngleBeforeNoon,
+  getDateTimeUtcOfAngleAfterNoon,
   getSunriseDateTimeUtc,
   getSunsetDateTimeUtc,
   getCivilDawnEndDateTimeUtc,

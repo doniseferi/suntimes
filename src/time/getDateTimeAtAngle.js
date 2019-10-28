@@ -26,18 +26,34 @@ const getDateTimeUtcFactory = (getNoonDateTimeUtc, getHourAngleSinceNoon) => {
     angle,
     date,
     latitude,
-    longitude) =>
-    toDateTimeUtc(
+    longitude) => {
+    validate(
+      angle,
+      date,
+      latitude,
+      longitude,
+      'getDateTimeUtcOfAngleBeforeNoon'
+    );
+    return toDateTimeUtc(
       date,
       longitude,
       getHourAngleSinceNoon(date, latitude, angle) * -1);
+  };
+  const getDateTimeUtcOfAngleAfterNoon = (angle, date, latitude, longitude) => {
+    validate(
+      angle,
+      date,
+      latitude,
+      longitude,
+      'getDateTimeUtcOfAngleAfterNoon'
+    );
 
-  const getDateTimeUtcOfAngleAfterNoon = (angle, date, latitude, longitude) =>
-    toDateTimeUtc(
+    return toDateTimeUtc(
       date,
       longitude,
       getHourAngleSinceNoon(date, latitude, angle)
     );
+  };
 
   const toDateTimeUtc = (date, longitude, hourAngle) => {
     const solarNoonUtc = getNoonDateTimeUtc(date, longitude);
@@ -59,3 +75,21 @@ const getDateTimeUtcFactory = (getNoonDateTimeUtc, getHourAngleSinceNoon) => {
 };
 
 export default getDateTimeUtcFactory;
+const validate = (angle, date, latitude, longitude, methodName) => {
+  if (angle == null) {
+    throw new Error(`Please provide an angle for ${methodName}.`);
+  }
+  if (date == null) {
+    throw new Error(`Please provide the desired date for ${methodName}.`);
+  }
+  if (latitude == null || isNaN(latitude)) {
+    throw new Error(
+      `Please provide the latitude of the location for ${methodName}.`
+    );
+  }
+  if (longitude == null || isNaN(longitude)) {
+    throw new Error(
+      `Please provide the longitude of the location for ${methodName}.`
+    );
+  }
+};

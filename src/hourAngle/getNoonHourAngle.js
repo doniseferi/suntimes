@@ -7,6 +7,7 @@ const getNoonHourAngleFactory = (equationOfTime) => {
       and returns a Number`);
   }
 
+  // TODO REFACTOR AND TOUTCDATETIME AS THAT TAKES THIS AND OFFSET IN DAYS INTO ACCOUNT
   const getNoonHourAngle = (date, longitude) => {
     let hour =
       12 -

@@ -8,12 +8,16 @@ const toUtcDateTimeFactory = toTime => {
     );
   }
 
-  const toUtcDateTime = (date, timeInformation) => {
+  // TODO: REFACTOR FROM GETNOONANGLE AS THAT HAS HOUR ANGLE AND OFFSET IN DAYS
+  const toUtcDateTime = (date, hourAngle) => {
+    if (date == null) {
+      throw new Error('Please provide a date');
+    }
     const day = date.getDate();
     const month = date.getMonth();
     const year = date.getFullYear();
     const { hours, minutes, seconds, milliseconds } = toTime(
-      timeInformation.hour
+      hourAngle.hour
     );
 
     const value = Date.UTC(
@@ -26,7 +30,7 @@ const toUtcDateTimeFactory = toTime => {
       milliseconds
     );
 
-    const offsetInDays = timeInformation.offsetInDays;
+    const offsetInDays = hourAngle.offsetInDays;
 
     return offsetInDays !== 0 ? addDays(offsetInDays, value) : new Date(value);
   };
