@@ -1,4 +1,12 @@
 const getNoonHourAngleFactory = (equationOfTime) => {
+  if (equationOfTime == null) {
+    throw new Error(
+      `Unsatisfied Dependency Error:
+      Please provide a function for equationOfTime.
+      This dependency takes in a Date
+      and returns a Number`);
+  }
+
   const getNoonHourAngle = (date, longitude) => {
     let hour =
       12 -
