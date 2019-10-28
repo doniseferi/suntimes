@@ -1,16 +1,31 @@
 const declinationOfTheSunFactory = (sine, cosine, arcsine, getDayOfTheYear) => {
-  const errorMessage = (functionName) => `Please provide a function for ${functionName}.`;
+  const throwUnsatisfiedDependencyError = (
+    dependencyName,
+    dependencyParams,
+    depedencyReturnType
+  ) => {
+    throw new Error(
+      `Unsatisfied Dependency Error:
+      Please provide a function for ${dependencyName}.
+      This dependency takes in ${dependencyParams}
+      and returns ${depedencyReturnType}`
+    );
+  };
+
   if (!sine) {
-    throw new Error(errorMessage('sine'));
+    throwUnsatisfiedDependencyError('sine', 'x: Number', 'Number');
   }
+
   if (!cosine) {
-    throw new Error(errorMessage('cosine'));
+    throwUnsatisfiedDependencyError('cosine', 'x: Number', 'Number');
   }
+
   if (!arcsine) {
-    throw new Error(errorMessage('arcsine'));
+    throwUnsatisfiedDependencyError('arcsine', 'x: Number', 'Number');
   }
+
   if (!getDayOfTheYear) {
-    throw new Error(errorMessage('getDayOfTheYear'));
+    throwUnsatisfiedDependencyError('getDayOfTheYear', 'date: Date', 'Number');
   }
 
   const getDeclinationOfTheSun = date => {
