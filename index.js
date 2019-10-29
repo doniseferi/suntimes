@@ -22,7 +22,7 @@ import {
   getCivilDuskStartDateTimeUtc
 } from './src/time/index';
 
-const sun = () =>
+const sun =
   Object.freeze({
     equationOfTime: date => equationOfTime(date),
     equationOfTimeValue: date => equationOfTime(date),
@@ -68,3 +68,27 @@ const sun = () =>
   });
 
 export default sun;
+export {
+  getDeclinationOfTheSun,
+  equationOfTime,
+  getDayOfTheYear,
+  getHourAngleSinceNoon,
+  getNoonHourAngle,
+  getNoonDateTimeUtc,
+  getDateTimeUtcOfAngleBeforeNoon,
+  getDateTimeUtcOfAngleAfterNoon,
+  getSunriseDateTimeUtc,
+  getSunsetDateTimeUtc,
+  getCivilDawnEndDateTimeUtc,
+  getCivilDawnStartDateTimeUtc,
+  getNauticalDawnEndDateTimeUtc,
+  getNauticalDawnStartDateTimeUtc,
+  getAstronomicalDawnEndDateTimeUtc,
+  getAstronomicalDawnStartDateTimeUtc,
+  getAstronomicalDuskStartDateTimeUtc,
+  getAstronomicalDuskEndDateTimeUtc,
+  getNauticalDuskEndDateTimeUtc,
+  getNauticalDuskStartDateTimeUtc,
+  getCivilDuskEndDateTimeUtc,
+  getCivilDuskStartDateTimeUtc
+};
