@@ -1,7 +1,8 @@
 import { suite, test } from 'mocha';
 import { assert } from 'chai';
 import declinationOfTheSunTestData from './declinationOfTheSunTestData.json';
-import getDeclinationOfTheSun, { declinationOfTheSunFactory } from '../index';
+import { declinationOfTheSunFactory } from '../index';
+import { getDeclinationOfTheSun } from '../../../index';
 
 suite('Declination of the sun', () => {
   test('returns the correct value in degrees within +/- 0.4 degree accuracy', () => {
