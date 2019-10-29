@@ -1,6 +1,6 @@
 import { suite, test } from 'mocha';
 import { assert } from 'chai';
-import { getNoonDateTimeUtc } from '../index';
+import { getNoonDateTimeUtc } from '../../../index';
 import januaryNoonExpected from './utcJanNoon.json';
 import julyNoonExpected from './utcJulyNoon.json';
 

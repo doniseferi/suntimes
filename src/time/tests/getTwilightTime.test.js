@@ -7,7 +7,7 @@ import {
   getAstronomicalDuskStartDateTimeUtc,
   getNauticalDuskStartDateTimeUtc,
   getCivilDuskStartDateTimeUtc
-} from '../index';
+} from '../../../index';
 import januaryTwilightExpected from './utcJanTwilight.json';
 
 const jan = new Date(2022, 0, 1);
