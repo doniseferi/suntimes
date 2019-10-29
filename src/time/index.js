@@ -8,7 +8,8 @@ import { getNoonHourAngleFactory } from '../hourAngle/index';
 
 const noonHourAngleFactory = getNoonHourAngleFactory(equationOfTime);
 const getNoonHourAngle = noonHourAngleFactory.getNoonHourAngle;
-const getNoonDateTimeUtc = (date, longitude) => toUtcDateTime(date, getNoonHourAngle(date, longitude));
+const getNoonDateTimeUtc = (date, longitude) =>
+  toUtcDateTime(date, getNoonHourAngle(date, longitude));
 
 const hourAngleFactory = getHourAngleFactory(
   sine,
@@ -73,6 +74,7 @@ const getCivilDuskStartDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleAfterNoon(civilAngle, date, latitude, longitude);
 
 export {
+  getNoonDateTimeUtc,
   getDateTimeUtcOfAngleBeforeNoon,
   getDateTimeUtcOfAngleAfterNoon,
   getSunriseDateTimeUtc,

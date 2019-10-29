@@ -1,8 +1,8 @@
 import { suite, test } from 'mocha';
 import { assert } from 'chai';
-import { getNoonDateTimeUtc } from './index';
-import januaryNoonExpected from './testData/utcJanNoon.json';
-import julyNoonExpected from './testData/utcJulyNoon.json';
+import { getNoonDateTimeUtc } from '../index';
+import januaryNoonExpected from './utcJanNoon.json';
+import julyNoonExpected from './utcJulyNoon.json';
 
 suite('Get Noon Time', () => {
   test('returns noon time within a +/- 1 minute accuracy for the 01/01/2019', () => {
