@@ -38,11 +38,17 @@ const toUtcDateTimeFactory = toTime => {
       milliseconds
     );
 
-    return offsetInDays !== 0 ? addDays(offsetInDays, value) : new Date(value);
+    return (offsetInDays !== 0)
+      ? addDays(value, offsetInDays)
+      : new Date(value);
   };
 
   const getUtcOffsetInDays = scientificDecimalTime =>
-    scientificDecimalTime < 0 ? -1 : scientificDecimalTime >= 24 ? 1 : 0;
+    (scientificDecimalTime < 0)
+      ? -1
+      : (scientificDecimalTime >= 24)
+        ? 1
+        : 0;
 
   const getScientificDecimalTime = (hourAngle, offsetInDays) =>
     (offsetInDays < 0)
@@ -51,7 +57,7 @@ const toUtcDateTimeFactory = toTime => {
         ? hourAngle - 24
         : hourAngle;
 
-  const addDays = (days, subject) => {
+  const addDays = (subject, days) => {
     const date = new Date(subject.valueOf());
     date.setDate(date.getDate() + days);
     return date;
