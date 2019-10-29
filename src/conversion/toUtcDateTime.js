@@ -8,16 +8,24 @@ const toUtcDateTimeFactory = toTime => {
     );
   }
 
-  // TODO: REFACTOR FROM GETNOONANGLE AS THAT HAS HOUR ANGLE AND OFFSET IN DAYS
   const toUtcDateTime = (date, hourAngle) => {
     if (date == null) {
-      throw new Error('Please provide a date');
+      throw new Error(`Please provide the desired date 
+      to convert to a Utc Date Time value`);
     }
+    if (hourAngle == null || isNaN(hourAngle)) {
+      throw new Error(
+        `Please provide the hourAngle for the desired date 
+        to convert to a Utc Date Time value`);
+    }
+
+    const offsetInDays = getUtcOffsetInDays(hourAngle);
+    const scientifiedDecimalTIme = getScientificDecimalTime(hourAngle, offsetInDays);
     const day = date.getDate();
     const month = date.getMonth();
     const year = date.getFullYear();
     const { hours, minutes, seconds, milliseconds } = toTime(
-      hourAngle.hour
+      scientifiedDecimalTIme
     );
 
     const value = Date.UTC(
@@ -30,10 +38,18 @@ const toUtcDateTimeFactory = toTime => {
       milliseconds
     );
 
-    const offsetInDays = hourAngle.offsetInDays;
-
     return offsetInDays !== 0 ? addDays(offsetInDays, value) : new Date(value);
   };
+
+  const getUtcOffsetInDays = scientificDecimalTime =>
+    scientificDecimalTime < 0 ? -1 : scientificDecimalTime >= 24 ? 1 : 0;
+
+  const getScientificDecimalTime = (hourAngle, offsetInDays) =>
+    (offsetInDays < 0)
+      ? hourAngle + 24
+      : hourAngle >= 24
+        ? hourAngle - 24
+        : hourAngle;
 
   const addDays = (days, subject) => {
     const date = new Date(subject.valueOf());

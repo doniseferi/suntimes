@@ -1,6 +1,7 @@
 const toTime = scientificDecimalTime => {
   if (!scientificDecimalTime || isNaN(scientificDecimalTime)) {
-    throw new Error('Value is either null, undefined or not a number.');
+    throw new Error(
+      'Value is either null, undefined or not a number.');
   }
 
   const sexagesimal = 60;

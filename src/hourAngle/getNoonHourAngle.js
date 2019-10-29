@@ -7,25 +7,19 @@ const getNoonHourAngleFactory = (equationOfTime) => {
       and returns a Number`);
   }
 
-  // TODO REFACTOR AND TOUTCDATETIME AS THAT TAKES THIS AND OFFSET IN DAYS INTO ACCOUNT
   const getNoonHourAngle = (date, longitude) => {
-    let hour =
-      12 -
-      (getHourDifference(longitude) +
-        getEquationOfTimeInHours(equationOfTime, date));
-    let offsetInDays = 0;
-    if (hour < 0) {
-      hour = hour + 24;
-      offsetInDays = -1;
+    if (date == null) {
+      throw new Error(
+        'Please provide a date: Date to get the hour angle');
     }
-    if (hour >= 24) {
-      hour = hour - 24;
-      offsetInDays = +1;
+    if (longitude == null || isNaN(longitude)) {
+      throw new Error(
+        'Please provide the longitude: Number to get the noon hour angle');
     }
-    return {
-      hour,
-      offsetInDays
-    };
+
+    return (
+      12 - (getHourDifference(longitude) +
+      getEquationOfTimeInHours(equationOfTime, date)));
   };
 
   const getEquationOfTimeInHours = (equationOfTime, date) => equationOfTime(date) / 60;
