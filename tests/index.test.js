@@ -1,6 +1,6 @@
 import { suite, test } from 'mocha';
 import { assert } from 'chai';
-import sun from '../../index';
+import sun from '../index';
 
 suite('Index', () => {
   test('exports the sun object', () => {
