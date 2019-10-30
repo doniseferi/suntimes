@@ -1,15 +1,16 @@
 {
   "name": "sun",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "A simple library to get the exact date and time in utc for certain points of the day for any desired location and date.",
   "main": "index.js",
   "scripts": {
     "test": "semistandard && nyc mocha --opts support/mocha.opts **/*.test.js",
-    "fix": "semistandard --fix"
+    "fix": "semistandard --fix",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/doniseferi/sun.git"
+    "url": "https://github.com/doniseferi/sun.git"
   },
   "keywords": [
     "sun",
@@ -44,6 +45,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "mocha": "^6.2.0",
     "nyc": "^14.1.1",
-    "semistandard": "^14.1.0"
+    "semistandard": "^14.1.0",
+    "semantic-release": "^15.13.28"
   }
 }
