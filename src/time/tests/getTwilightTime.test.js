@@ -13,7 +13,7 @@ import januaryTwilightExpected from './utcJanTwilight.json';
 const jan = new Date(2022, 0, 1);
 
 suite('Get twilight dawn date time', () => {
-  test('returns the astronimcal dawn start time with an accuracy of 60 +/- seconds for 01/01/2022', () => {
+  test('returns the astronomical dawn start time with an accuracy of 60 +/- seconds for 01/01/2022', () => {
     januaryTwilightExpected.forEach(expected => {
       const { ExpectedAstronomicalDawnUtc, Latitude, Longitude } = expected;
       const expectedDateTime = new Date(ExpectedAstronomicalDawnUtc);
@@ -69,7 +69,7 @@ suite('Get twilight dawn date time', () => {
 });
 
 suite('Get twilight dusk date time', () => {
-  test('returns the astronimcal dusk start time with an accuracy of 60 +/- seconds for 01/01/2022', () => {
+  test('returns the astronomical dusk start time with an accuracy of 60 +/- seconds for 01/01/2022', () => {
     januaryTwilightExpected.forEach(expected => {
       const { ExpectedAstronomicalDuskUtc, Latitude, Longitude } = expected;
       const expectedDateTime = new Date(ExpectedAstronomicalDuskUtc);

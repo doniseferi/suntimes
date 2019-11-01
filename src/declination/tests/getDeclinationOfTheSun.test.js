@@ -17,7 +17,7 @@ suite('Declination of the sun', () => {
     const value = getDeclinationOfTheSun(new Date(Date.now()));
     assert.typeOf(value, 'number');
   });
-  test('throws an error if an ivnalid date is passed in', () => {
+  test('throws an error if an invalid date is passed in', () => {
     const expectedErrorMessage = 'Please provide a valid date';
     assert.throws(() => getDeclinationOfTheSun(null), expectedErrorMessage);
     assert.throws(() => getDeclinationOfTheSun(undefined), expectedErrorMessage);
@@ -25,7 +25,7 @@ suite('Declination of the sun', () => {
   });
 });
 suite('Declination Of The Sun Factory', () => {
-  test('thows an exception if you do not pass in all parameters', () => {
+  test('throws an exception if you do not pass in all parameters', () => {
     const stub = () => 1;
     assert.throws(() => declinationOfTheSunFactory(null, stub, stub, stub), 'Please provide a function for sine.');
     assert.throws(() => declinationOfTheSunFactory(stub, null, stub, stub), 'Please provide a function for cosine.');

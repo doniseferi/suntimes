@@ -4,7 +4,7 @@ const toUtcDateTimeFactory = toTime => {
       `Unsatisfied Dependency Error:
       Please provide a function for toTime.
       This dependency takes in a scientific decimal time
-      and returns an object with the following properties: hours: Number, minutes: Number, seconds: Number and miliseconds: Number`
+      and returns an object with the following properties: hours: Number, minutes: Number, seconds: Number and milliseconds: Number`
     );
   }
 

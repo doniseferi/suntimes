@@ -29,7 +29,7 @@ suite('Scientific decimal time to time', () => {
     assert.equal(toTime(0.0166667).seconds, 0);
   });
 
-  test('returns miliseconds', () => {
+  test('returns milliseconds', () => {
     assert.equal(
       toTime(0.0002775).milliseconds,
       999
