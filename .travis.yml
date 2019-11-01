@@ -1,5 +1,6 @@
-sude: false
 language: node_js
+install:
+- npm ci
 cache:
   directories:
   - "$HOME/.npm"
