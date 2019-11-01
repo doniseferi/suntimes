@@ -1,6 +1,6 @@
 {
   "name": "suntimes",
-  "version": "1.0.0-1",
+  "version": "1.0.0",
   "description": "A simple library to get the exact date and time in utc for certain points of the day for any desired location and date.",
   "main": "index.js",
   "scripts": {
