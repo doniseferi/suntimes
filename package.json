@@ -1,5 +1,5 @@
 {
-  "name": "sun",
+  "name": "suntimes",
   "version": "0.0.0-development",
   "description": "A simple library to get the exact date and time in utc for certain points of the day for any desired location and date.",
   "main": "index.js",
@@ -10,10 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/doniseferi/sun.git"
+    "url": "https://github.com/doniseferi/suntimes.git"
   },
   "keywords": [
     "sun",
+    "suntimes",
     "equationOfTime",
     "solar",
     "declination",
@@ -29,9 +30,9 @@
   "author": "Edonis Seferi",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/doniseferi/sun/issues"
+    "url": "https://github.com/doniseferi/suntimes/issues"
   },
-  "homepage": "https://github.com/doniseferi/sun#readme",
+  "homepage": "https://github.com/doniseferi/suntimes#readme",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
