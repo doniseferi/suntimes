@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "semistandard && nyc mocha --opts support/mocha.opts **/*.test.js",
-    "fix": "semistandard --fix",
-    "semantic-release": "semantic-release"
+    "fix": "semistandard --fix"
   },
   "repository": {
     "type": "git",
