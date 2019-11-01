@@ -1,5 +1,7 @@
 sude: false
 language: node_js
+before_script:
+  - npm install
 node_js:
   - "8"
   - "9"
@@ -9,3 +11,4 @@ cache:
   - node_modules
 script:
   - npm run test
+
