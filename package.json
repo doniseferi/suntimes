@@ -4,7 +4,7 @@
   "description": "A simple library to get the exact date and time in utc for certain points of the day for any desired location and date.",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --opts support/mocha.opts **/*.test.js",
+    "test": "semistandard && nyc --reporter=lcov --reporter=text --reporter=text-summary mocha --opts support/mocha.opts **/*.test.js",
     "fix": "semistandard --fix"
   },
   "repository": {
