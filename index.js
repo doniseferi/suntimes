@@ -22,7 +22,7 @@ import {
   getCivilDuskStartDateTimeUtc
 } from './src/time/index';
 
-const sun = Object.freeze({
+const suntimes = Object.freeze({
   equationOfTime: date => equationOfTime(date),
   equationOfTimeValue: date => equationOfTime(date),
   getDeclinationOfTheSun: date => getDeclinationOfTheSun(date),
@@ -65,7 +65,7 @@ const sun = Object.freeze({
     getCivilDuskStartDateTimeUtc(date, latitude, longitude)
 });
 
-export default sun;
+export default suntimes;
 export {
   getDeclinationOfTheSun,
   equationOfTime,

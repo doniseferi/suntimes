@@ -1,33 +1,85 @@
 import { suite, test } from 'mocha';
-import { assert } from 'chai';
-import sun from '../index';
+import { expect } from 'chai';
+import suntimes from '../index';
 
 suite('Index', () => {
-  test('exports the sun object', () => {
-    assert.isNotNull(sun);
+  test('exports the suntimes object', () => {
+    expect(suntimes)
+      .to.not.equal(null)
+      .and.not.to.equal(undefined);
   });
-  test('the sun object exports every method', () => {
-    assert.isNotNull(sun.getDeclinationOfTheSun);
-    assert.isNotNull(sun.equationOfTime);
-    assert.isNotNull(sun.getDayOfTheYear);
-    assert.isNotNull(sun.getHourAngleSinceNoon);
-    assert.isNotNull(sun.getNoonHourAngle);
-    assert.isNotNull(sun.getNoonDateTimeUtc);
-    assert.isNotNull(sun.getDateTimeUtcOfAngleBeforeNoon);
-    assert.isNotNull(sun.getDateTimeUtcOfAngleAfterNoon);
-    assert.isNotNull(sun.getSunriseDateTimeUtc);
-    assert.isNotNull(sun.getSunsetDateTimeUtc);
-    assert.isNotNull(sun.getCivilDawnEndDateTimeUtc);
-    assert.isNotNull(sun.getCivilDawnStartDateTimeUtc);
-    assert.isNotNull(sun.getNauticalDawnEndDateTimeUtc);
-    assert.isNotNull(sun.getNauticalDawnStartDateTimeUtc);
-    assert.isNotNull(sun.getAstronomicalDawnEndDateTimeUtc);
-    assert.isNotNull(sun.getAstronomicalDawnStartDateTimeUtc);
-    assert.isNotNull(sun.getAstronomicalDuskStartDateTimeUtc);
-    assert.isNotNull(sun.getAstronomicalDuskEndDateTimeUtc);
-    assert.isNotNull(sun.getNauticalDuskEndDateTimeUtc);
-    assert.isNotNull(sun.getNauticalDuskStartDateTimeUtc);
-    assert.isNotNull(sun.getCivilDuskEndDateTimeUtc);
-    assert.isNotNull(sun.getCivilDuskStartDateTimeUtc);
+  test('the suntimes object exports all methods', () => {
+    const { lat, lng, date, angle } = {
+      lat: 0,
+      lng: 0,
+      date: new Date(Date.now()),
+      angle: 0
+    };
+
+    expect(() =>
+      suntimes.getDeclinationOfTheSun(date)
+    ).to.not.be.null.and.not.throw();
+    expect(() =>
+      suntimes.getDeclinationOfTheSun(date)
+    ).to.not.be.null.and.not.throw();
+    expect(() => suntimes.equationOfTime(date)).to.not.be.null.and.not.throw();
+    expect(() => suntimes.getDayOfTheYear(date)).to.not.be.null.and.not.throw();
+    expect(() =>
+      suntimes.getHourAngleSinceNoon(date, lat, angle)
+    ).to.not.be.null.and.not.throw();
+    expect(() =>
+      suntimes.getNoonHourAngle(date, lng)
+    ).to.not.be.null.and.not.throw();
+    expect(() =>
+      suntimes.getNoonDateTimeUtc(date, lng)
+    ).to.not.be.null.and.not.throw();
+    expect(() =>
+      suntimes.getDateTimeUtcOfAngleBeforeNoon(angle, date, lat, lng)
+    ).to.not.be.null.and.not.throw();
+    expect(() =>
+      suntimes.getDateTimeUtcOfAngleAfterNoon(angle, date, lat, lng)
+    ).to.not.be.null.and.not.throw();
+    expect(() =>
+      suntimes.getSunriseDateTimeUtc(date, lat, lng)
+    ).to.not.be.null.and.not.throw();
+    expect(() =>
+      suntimes.getSunsetDateTimeUtc(date, lat, lng)
+    ).to.not.be.null.and.not.throw();
+    expect(() =>
+      suntimes.getCivilDawnEndDateTimeUtc(date, lat, lng)
+    ).to.not.be.null.and.not.throw();
+    expect(() =>
+      suntimes.getCivilDawnStartDateTimeUtc(date, lat, lng)
+    ).to.not.be.null.and.not.throw();
+    expect(() =>
+      suntimes.getNauticalDawnEndDateTimeUtc(date, lat, lng)
+    ).to.not.be.null.and.not.throw();
+    expect(() =>
+      suntimes.getNauticalDawnStartDateTimeUtc(date, lat, lng)
+    ).to.not.be.null.and.not.throw();
+    expect(() =>
+      suntimes.getAstronomicalDawnEndDateTimeUtc(date, lat, lng)
+    ).to.not.be.null.and.not.throw();
+    expect(() =>
+      suntimes.getAstronomicalDawnStartDateTimeUtc(date, lat, lng)
+    ).to.not.be.null.and.not.throw();
+    expect(() =>
+      suntimes.getAstronomicalDuskStartDateTimeUtc(date, lat, lng)
+    ).to.not.be.null.and.not.throw();
+    expect(() =>
+      suntimes.getAstronomicalDuskEndDateTimeUtc(date, lat, lng)
+    ).to.not.be.null.and.not.throw();
+    expect(() =>
+      suntimes.getNauticalDuskEndDateTimeUtc(date, lat, lng)
+    ).to.not.be.null.and.not.throw();
+    expect(() =>
+      suntimes.getNauticalDuskStartDateTimeUtc(date, lat, lng)
+    ).to.not.be.null.and.not.throw();
+    expect(() =>
+      suntimes.getCivilDuskEndDateTimeUtc(date, lat, lng)
+    ).to.not.be.null.and.not.throw();
+    expect(() =>
+      suntimes.getCivilDuskStartDateTimeUtc(date, lat, lng)
+    ).to.not.be.null.and.not.throw();
   });
 });
