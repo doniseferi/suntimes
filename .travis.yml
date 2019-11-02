@@ -1,10 +1,24 @@
 language: node_js
-before_install:
-  - npm i -g npm@6.11.3
-  - npm install
+os:
+  - windows
+  - linux
 node_js:
   - "8"
   - "9"
   - "10"
-cache:
-  npm: false
+  - "12"
+before_install: if [[ "$(npm -v)" != "6.11.3" ]] && [[ "${TRAVIS_OS_NAME}" != "windows" ]]; then npm install --global npm@6.11.3; fi
+install: npm ci
+before_script: |
+  if [[ "${TRAVIS_OS_NAME}" != "windows" ]]; then
+    checksum=$(md5sum package-lock.json)
+    npm install --package-lock-only
+    if ! echo ${checksum} | md5sum --quiet -c -; then
+      echo "package-lock.json was modified unexpectedly. Please rebuild it using npm@$(npm -v) and commit the changes."
+      exit 1
+    fi
+  fi
+  if [[ "${TRAVIS_OS_NAME}" == "windows" ]]; then
+    git config core.symlinks true
+    git reset --hard
+  fi
