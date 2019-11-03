@@ -38,7 +38,7 @@ const model = (date, set, expectedPropertyName, functionUnderTest) => ({
   functionUnderTest
 });
 
-test('returns times time within a +/- 1 minute accuracy', () => {
+test('The correct date time utc of all points are returned with a +/- 60 second accuracy', () => {
   const testData = [
     model(
       jan,
@@ -85,7 +85,6 @@ test('returns times time within a +/- 1 minute accuracy', () => {
       'ExpectedCivilDuskUtc',
       getCivilDuskStartDateTimeUtc
     )
-
   ];
   testData.forEach(set =>
     testGeneric(
