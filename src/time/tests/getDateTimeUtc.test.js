@@ -19,14 +19,19 @@ import januaryTwilightExpected from './utcJanTwilight.json';
 import januaryNoonExpected from './utcJanNoon.json';
 import julyNoonExpected from './utcJulyNoon.json';
 
-const testGeneric = (targetDate, testData, functionUnderTest, name) => {
-  testData.forEach(expected => {
+const assertTimesAreCloseToDelta = (testModel) => {
+  testModel.expectedSet.forEach(expected => {
     const { Latitude, Longitude } = expected;
-    const expectedDateTimeUtc = expected[name];
-    const expectedTime = new Date(expectedDateTimeUtc);
-    const actualDateTime = functionUnderTest(targetDate, Latitude, Longitude);
+    const expectedDateTimeUtc = new Date(
+      expected[testModel.expectedPropertyName]
+    );
+    const actualDateTimeUtc = testModel.functionUnderTest(
+      testModel.date,
+      Latitude,
+      Longitude
+    );
     const differenceInSeconds =
-      (expectedTime.getTime() - actualDateTime.getTime()) / 1000;
+      (expectedDateTimeUtc.getTime() - actualDateTimeUtc.getTime()) / 1000;
     assert.closeTo(differenceInSeconds, 0, 60);
   });
 };
@@ -34,70 +39,72 @@ const testGeneric = (targetDate, testData, functionUnderTest, name) => {
 const jan = new Date(2019, 0, 1);
 const jul = new Date(2019, 6, 1);
 // eslint-disable-next-line no-unused-vars
-const noonWrapper = (targetDate, Latitude, longitude) => getNoonDateTimeUtc(targetDate, longitude);
-const model = (date, set, expectedPropertyName, functionUnderTest) => ({
+const noonWrapper = (targetDate, latitude, longitude) => getNoonDateTimeUtc(targetDate, longitude);
+const testModel = (
   date,
-  expectedSet: set,
-  expectedPropertyName,
-  functionUnderTest
+  expectedSet,
+  functionUnderTest,
+  expectedPropertyName = 'ExpectedTimeUtc'
+) => ({
+  date,
+  expectedSet,
+  functionUnderTest,
+  expectedPropertyName
 });
 
 test('The correct date time utc of all points are returned with a +/- 60 second accuracy', () => {
-  const testData = [
-    model(jan, januaryNoonExpected, 'ExpectedTimeUtc', noonWrapper),
-    model(jul, julyNoonExpected, 'ExpectedTimeUtc', noonWrapper),
-    model(
+  const timeTestData = [
+    testModel(jan, januaryNoonExpected, noonWrapper),
+    testModel(jul, julyNoonExpected, noonWrapper),
+    testModel(
       jan,
       januarySunriseExpected,
-      'ExpectedTimeUtc',
       getSunriseDateTimeUtc
     ),
-    model(jul, julySunriseExpected, 'ExpectedTimeUtc', getSunriseDateTimeUtc),
-    model(jan, januarySunsetExpected, 'ExpectedTimeUtc', getSunsetDateTimeUtc),
-    model(jul, julySunsetExpected, 'ExpectedTimeUtc', getSunsetDateTimeUtc),
-    model(
+    testModel(jul, julySunriseExpected, getSunriseDateTimeUtc),
+    testModel(jan, januarySunsetExpected, getSunsetDateTimeUtc),
+    testModel(jul, julySunsetExpected, getSunsetDateTimeUtc),
+    testModel(
       new Date(2022, 0, 1),
       januaryTwilightExpected,
-      'ExpectedAstronomicalDawnUtc',
-      getAstronomicalDawnStartDateTimeUtc
+      getAstronomicalDawnStartDateTimeUtc,
+      'ExpectedAstronomicalDawnUtc'
     ),
-    model(
+    testModel(
       new Date(2022, 0, 1),
       januaryTwilightExpected,
-      'ExpectedNauticalDawnUtc',
-      getNauticalDawnStartDateTimeUtc
+      getNauticalDawnStartDateTimeUtc,
+      'ExpectedNauticalDawnUtc'
     ),
-    model(
+    testModel(
       new Date(2022, 0, 1),
       januaryTwilightExpected,
-      'ExpectedCivilDawnUtc',
-      getCivilDawnStartDateTimeUtc
+      getCivilDawnStartDateTimeUtc,
+      'ExpectedCivilDawnUtc'
     ),
-    model(
+    testModel(
       new Date(2022, 0, 1),
       januaryTwilightExpected,
-      'ExpectedAstronomicalDuskUtc',
-      getAstronomicalDuskStartDateTimeUtc
+      getAstronomicalDuskStartDateTimeUtc,
+      'ExpectedAstronomicalDuskUtc'
     ),
-    model(
+    testModel(
       new Date(2022, 0, 1),
       januaryTwilightExpected,
-      'ExpectedNauticalDuskUtc',
-      getNauticalDuskStartDateTimeUtc
+      getNauticalDuskStartDateTimeUtc,
+      'ExpectedNauticalDuskUtc'
     ),
-    model(
+    testModel(
       new Date(2022, 0, 1),
       januaryTwilightExpected,
-      'ExpectedCivilDuskUtc',
-      getCivilDuskStartDateTimeUtc
+      getCivilDuskStartDateTimeUtc,
+      'ExpectedCivilDuskUtc'
     )
   ];
-  testData.forEach(set =>
-    testGeneric(
-      set.date,
-      set.expectedSet,
-      set.functionUnderTest,
-      set.expectedPropertyName
-    )
-  );
+  timeTestData
+    .forEach(testModel =>
+      assertTimesAreCloseToDelta(
+        testModel
+      )
+    );
 });
