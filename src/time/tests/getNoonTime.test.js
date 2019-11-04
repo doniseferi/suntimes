@@ -1,34 +1,8 @@
 import { suite, test } from 'mocha';
 import { assert } from 'chai';
 import { getNoonDateTimeUtc } from '../../../index';
-import januaryNoonExpected from './utcJanNoon.json';
-import julyNoonExpected from './utcJulyNoon.json';
 
-suite('Get Noon Time', () => {
-  test('returns noon time within a +/- 1 minute accuracy for the 01/01/2019', () => {
-    januaryNoonExpected.forEach(expected => {
-      const targetDate = new Date(2019, 0, 1);
-      const expectedTime = new Date(expected.ExpectedTimeUtc);
-      const actualTime = getNoonDateTimeUtc(targetDate, expected.Longitude);
-      const differenceInSeconds =
-        (expectedTime.getTime() - actualTime.getTime()) / 1000;
-      assert.closeTo(differenceInSeconds, 0, 60);
-    });
-  });
-
-  test('returns noon time within a +/- 1 minute accuracy for the 01/07/2019', () => {
-    julyNoonExpected.forEach(expected => {
-      const targetDate = new Date(2019, 6, 1);
-      const expectedTime = new Date(expected.ExpectedTimeUtc);
-      const actualTime = getNoonDateTimeUtc(targetDate, expected.Longitude);
-
-      const differenceInSeconds =
-        (expectedTime.getTime() - actualTime.getTime()) / 1000;
-
-      assert.closeTo(differenceInSeconds, 0, 60);
-    });
-  });
-
+suite('Get Noon Time Utcs', () => {
   test('East most location with a 12 hour offset returns correct noon datetime in utc', () => {
     const targetDate = new Date(2019, 9, 1);
     const anadyrRussia = {

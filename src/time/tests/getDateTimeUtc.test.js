@@ -8,13 +8,16 @@ import {
   getCivilDawnStartDateTimeUtc,
   getAstronomicalDuskStartDateTimeUtc,
   getNauticalDuskStartDateTimeUtc,
-  getCivilDuskStartDateTimeUtc
+  getCivilDuskStartDateTimeUtc,
+  getNoonDateTimeUtc
 } from '../../../index';
 import januarySunriseExpected from './utcJanSunrise.json';
 import julySunriseExpected from './utcJulySunrise.json';
 import januarySunsetExpected from './utcJanSunset.json';
 import julySunsetExpected from './utcJulySunset.json';
 import januaryTwilightExpected from './utcJanTwilight.json';
+import januaryNoonExpected from './utcJanNoon.json';
+import julyNoonExpected from './utcJulyNoon.json';
 
 const testGeneric = (targetDate, testData, functionUnderTest, name) => {
   testData.forEach(expected => {
@@ -30,7 +33,8 @@ const testGeneric = (targetDate, testData, functionUnderTest, name) => {
 
 const jan = new Date(2019, 0, 1);
 const jul = new Date(2019, 6, 1);
-
+// eslint-disable-next-line no-unused-vars
+const noonWrapper = (targetDate, Latitude, longitude) => getNoonDateTimeUtc(targetDate, longitude);
 const model = (date, set, expectedPropertyName, functionUnderTest) => ({
   date,
   expectedSet: set,
@@ -40,6 +44,8 @@ const model = (date, set, expectedPropertyName, functionUnderTest) => ({
 
 test('The correct date time utc of all points are returned with a +/- 60 second accuracy', () => {
   const testData = [
+    model(jan, januaryNoonExpected, 'ExpectedTimeUtc', noonWrapper),
+    model(jul, julyNoonExpected, 'ExpectedTimeUtc', noonWrapper),
     model(
       jan,
       januarySunriseExpected,
