@@ -1,24 +1,18 @@
 language: node_js
-os:
-  - windows
-  - linux
 node_js:
-  - "8"
-  - "9"
-  - "10"
-  - "12"
-before_install: if [[ "$(npm -v)" != "6.11.3" ]] && [[ "${TRAVIS_OS_NAME}" != "windows" ]]; then npm install --global npm@6.11.3; fi
-install: npm ci
-before_script: |
-  if [[ "${TRAVIS_OS_NAME}" != "windows" ]]; then
-    checksum=$(md5sum package-lock.json)
-    npm install --package-lock-only
-    if ! echo ${checksum} | md5sum --quiet -c -; then
-      echo "package-lock.json was modified unexpectedly. Please rebuild it using npm@$(npm -v) and commit the changes."
-      exit 1
-    fi
-  fi
-  if [[ "${TRAVIS_OS_NAME}" == "windows" ]]; then
-    git config core.symlinks true
-    git reset --hard
-  fi
+  - 10
+cache:
+  directories:
+  - "$HOME/.npm"
+jobs:
+  include:
+    # Define the release stage that runs semantic-release
+    - stage: release
+      node_js: lts/*
+      # Advanced: optionally overwrite your default `script` step to skip the tests
+      # script: skip
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release
