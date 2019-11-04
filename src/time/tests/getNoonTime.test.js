@@ -8,8 +8,7 @@ suite('Get Noon Time Utcs', () => {
     const anadyrRussia = {
       Latitude: 64.732857,
       Longitude: 177.507812,
-      ExpectedTimeUtc: '2019-09-30T23:59:00.000Z',
-      Offset: 12.0
+      ExpectedTimeUtc: '2019-09-30T23:59:00.000Z'
     };
 
     const actual = getNoonDateTimeUtc(targetDate, anadyrRussia.Longitude);
@@ -20,7 +19,7 @@ suite('Get Noon Time Utcs', () => {
     assert.closeTo(differenceInSeconds, 0, 60);
   });
 
-  test('West most location with a 12 hour offset returns correct noon datetime in utc', () => {
+  test('West most location with a -12 hour offset returns correct noon datetime in utc', () => {
     const targetDate = new Date(2019, 0, 1);
     const bakerIslandUsa = {
       Latitude: 0.193627,
