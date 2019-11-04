@@ -19,7 +19,7 @@ import januaryTwilightExpected from './utcJanTwilight.json';
 import januaryNoonExpected from './utcJanNoon.json';
 import julyNoonExpected from './utcJulyNoon.json';
 
-const assertTimesAreCloseToDelta = (testModel) => {
+const assertTimesAreCloseToDelta = testModel => {
   testModel.expectedSet.forEach(expected => {
     const { Latitude, Longitude } = expected;
     const expectedDateTimeUtc = new Date(
@@ -36,10 +36,9 @@ const assertTimesAreCloseToDelta = (testModel) => {
   });
 };
 
-const jan = new Date(2019, 0, 1);
-const jul = new Date(2019, 6, 1);
 // eslint-disable-next-line no-unused-vars
-const noonWrapper = (targetDate, latitude, longitude) => getNoonDateTimeUtc(targetDate, longitude);
+const noonWrapper = (targetDate, latitude, longitude) =>
+  getNoonDateTimeUtc(targetDate, longitude);
 const testModel = (
   date,
   expectedSet,
@@ -52,18 +51,22 @@ const testModel = (
   expectedPropertyName
 });
 
-test('The correct date time utc of all points are returned with a +/- 60 second accuracy', () => {
-  const timeTestData = [
-    testModel(jan, januaryNoonExpected, noonWrapper),
-    testModel(jul, julyNoonExpected, noonWrapper),
+test('The correct date time utc of all expected points of a date are returned with a +/- 60 second accuracy', () => {
+  [
+    testModel(new Date(2019, 0, 1), januaryNoonExpected, noonWrapper),
+    testModel(new Date(2019, 6, 1), julyNoonExpected, noonWrapper),
     testModel(
-      jan,
+      new Date(2019, 0, 1),
       januarySunriseExpected,
       getSunriseDateTimeUtc
     ),
-    testModel(jul, julySunriseExpected, getSunriseDateTimeUtc),
-    testModel(jan, januarySunsetExpected, getSunsetDateTimeUtc),
-    testModel(jul, julySunsetExpected, getSunsetDateTimeUtc),
+    testModel(new Date(2019, 6, 1), julySunriseExpected, getSunriseDateTimeUtc),
+    testModel(
+      new Date(2019, 0, 1),
+      januarySunsetExpected,
+      getSunsetDateTimeUtc
+    ),
+    testModel(new Date(2019, 6, 1), julySunsetExpected, getSunsetDateTimeUtc),
     testModel(
       new Date(2022, 0, 1),
       januaryTwilightExpected,
@@ -100,11 +103,5 @@ test('The correct date time utc of all points are returned with a +/- 60 second 
       getCivilDuskStartDateTimeUtc,
       'ExpectedCivilDuskUtc'
     )
-  ];
-  timeTestData
-    .forEach(testModel =>
-      assertTimesAreCloseToDelta(
-        testModel
-      )
-    );
+  ].forEach(testModel => assertTimesAreCloseToDelta(testModel));
 });
