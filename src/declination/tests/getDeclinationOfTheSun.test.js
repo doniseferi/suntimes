@@ -1,8 +1,7 @@
 import { suite, test } from 'mocha';
 import { assert } from 'chai';
 import declinationOfTheSunTestData from './declinationOfTheSunTestData.json';
-import { declinationOfTheSunFactory } from '../index';
-import { getDeclinationOfTheSun } from '../../index';
+import getDeclinationOfTheSun, { declinationOfTheSunFactory } from '../index';
 
 suite('Declination of the sun', () => {
   test('returns the correct value in degrees within +/- 0.4 degree accuracy', () => {
@@ -12,10 +11,6 @@ suite('Declination of the sun', () => {
       const difference = result - declination;
       assert.closeTo(difference, 0, 0.4);
     });
-  });
-  test('returns the number', () => {
-    const value = getDeclinationOfTheSun(new Date(Date.now()));
-    assert.typeOf(value, 'number');
   });
   test('throws an error if an invalid date is passed in', () => {
     const expectedErrorMessage = 'Please provide a valid date';
