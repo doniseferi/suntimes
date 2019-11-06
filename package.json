@@ -5,7 +5,8 @@
   "main": "/dist/index.js",
   "scripts": {
     "test": "semistandard && nyc --reporter=lcov --reporter=text --reporter=text-summary mocha --opts support/mocha.opts **/*.test.js",
-    "fix": "semistandard --fix"
+    "fix": "semistandard --fix",
+    "build": "babel src --out-dir dist --delete-dir-on-start --copy-files"
   },
   "repository": {
     "type": "git",
