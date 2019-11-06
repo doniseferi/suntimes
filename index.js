@@ -67,6 +67,7 @@ const suntimes = Object.freeze({
 
 export default suntimes;
 export {
+  suntimes,
   getDeclinationOfTheSun,
   equationOfTime,
   getDayOfTheYear,
