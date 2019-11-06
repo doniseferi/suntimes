@@ -1,7 +1,7 @@
-import getDeclinationOfTheSun from './src/declination/index';
-import equationOfTime from './src/equationOfTime/index';
-import getDayOfTheYear from './src/dayOfTheYear/index';
-import { getHourAngleSinceNoon, getNoonHourAngle } from './src/hourAngle/index';
+import getDeclinationOfTheSun from './declination/index';
+import equationOfTime from './equationOfTime/index';
+import getDayOfTheYear from './dayOfTheYear/index';
+import { getHourAngleSinceNoon, getNoonHourAngle } from './hourAngle/index';
 import {
   getNoonDateTimeUtc,
   getDateTimeUtcOfAngleBeforeNoon,
@@ -20,7 +20,7 @@ import {
   getNauticalDuskStartDateTimeUtc,
   getCivilDuskEndDateTimeUtc,
   getCivilDuskStartDateTimeUtc
-} from './src/time/index';
+} from './time/index';
 
 const suntimes = Object.freeze({
   equationOfTime: date => equationOfTime(date),

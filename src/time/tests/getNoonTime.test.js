@@ -1,6 +1,6 @@
 import { suite, test } from 'mocha';
 import { assert } from 'chai';
-import { getNoonDateTimeUtc } from '../../../index';
+import { getNoonDateTimeUtc } from '../../index';
 
 suite('Get Noon Time Utcs', () => {
   test('East most location with a 12 hour offset returns correct noon datetime in utc', () => {

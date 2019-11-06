@@ -10,7 +10,7 @@ import {
   getNauticalDuskStartDateTimeUtc,
   getCivilDuskStartDateTimeUtc,
   getNoonDateTimeUtc
-} from '../../../index';
+} from '../../index';
 import januarySunriseExpected from './utcJanSunrise.json';
 import julySunriseExpected from './utcJulySunrise.json';
 import januarySunsetExpected from './utcJanSunset.json';

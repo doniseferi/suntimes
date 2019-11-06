@@ -2,7 +2,7 @@
   "name": "suntimes",
   "version": "2.1.0",
   "description": "A simple library to get the exact date and time in utc for certain points of the day for any desired location and date.",
-  "main": "index.js",
+  "main": "/dist/index.js",
   "scripts": {
     "test": "semistandard && nyc --reporter=lcov --reporter=text --reporter=text-summary mocha --opts support/mocha.opts **/*.test.js",
     "fix": "semistandard --fix"

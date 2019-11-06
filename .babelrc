@@ -1,15 +1,16 @@
 {
-    "presets": [
-        [
-            "@babel/preset-env",
-            {
-                "targets": {
-                    "esmodules": true
-                }
-            }
-        ]
-    ],
-    "plugins": [
-        "@babel/plugin-transform-modules-commonjs"
+    "ignore": ["'**/*.test.js'"],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "esmodules": true
+        }
+      }
     ]
+  ],
+  "plugins": ["@babel/plugin-transform-modules-commonjs"],
+  "sourceMaps": true,
+  "highlightCode": true
 }
