@@ -9,6 +9,10 @@ suite('Declination of the sun', () => {
       const { date, declination } = data;
       const result = getDeclinationOfTheSun(new Date(date));
       const difference = result - declination;
+      if (difference > 0.4 || difference < -0.4) {
+        console.log(new Date(date));
+        console.log(date);
+      }
       assert.closeTo(difference, 0, 0.4);
     });
   });
