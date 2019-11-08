@@ -2,19 +2,10 @@ import { suite, test } from 'mocha';
 import { assert } from 'chai';
 import declinationOfTheSunTestData from './declinationOfTheSunTestData.json';
 import getDeclinationOfTheSun, { declinationOfTheSunFactory } from '../index';
-import getDayOfTheYear from '../../dayOfTheYear/index';
+
+// const addMinutes = (date, minutes) => new Date(date.getTime() + minutes * 60000);
 
 suite('Declination of the sun', () => {
-  test('test day of year', () => {
-    const d = '2040-03-25T23:00:00.000Z';
-    const e = '2040-01-01T23:00:00.000Z';
-    var o = new Date(d);
-    var l = new Date(e);
-    const x = getDayOfTheYear(o);
-    const n = getDayOfTheYear(l);
-    console.log({ d, o, x });
-    console.log({ e, l, n });
-  });
   test('returns the correct value in degrees within +/- 0.4 degree accuracy', () => {
     declinationOfTheSunTestData.forEach(data => {
       const { date, declination } = data;
