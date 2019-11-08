@@ -3,8 +3,6 @@ import { assert } from 'chai';
 import declinationOfTheSunTestData from './declinationOfTheSunTestData.json';
 import getDeclinationOfTheSun, { declinationOfTheSunFactory } from '../index';
 
-// const addMinutes = (date, minutes) => new Date(date.getTime() + minutes * 60000);
-
 suite('Declination of the sun', () => {
   test('returns the correct value in degrees within +/- 0.4 degree accuracy', () => {
     declinationOfTheSunTestData.forEach(data => {
