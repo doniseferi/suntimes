@@ -6,7 +6,8 @@
   "scripts": {
     "test": "semistandard && nyc --reporter=lcov --reporter=text --reporter=text-summary mocha --opts support/mocha.opts **/*.test.js",
     "fix": "semistandard --fix",
-    "build": "babel src --out-dir dist --delete-dir-on-start"
+    "build": "babel src --out-dir dist --delete-dir-on-start && copyfiles package.json License.md README.md dist/",
+    "release": "npm run build && np"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,7 @@
     "@babel/preset-env": "^7.7.1",
     "@babel/register": "^7.7.0",
     "chai": "^4.2.0",
+    "copyfiles": "^2.1.1",
     "depcheck": "^0.9.0",
     "eslint": "^6.6.0",
     "eslint-config-semistandard": "^15.0.0",
