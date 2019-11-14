@@ -7,7 +7,7 @@
     "test": "semistandard && nyc mocha --opts support/mocha.opts **/*.test.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "fix": "semistandard --fix",
-    "build": "babel src --out-dir dist --delete-dir-on-start --ignore \"src/**/*.test.js\",\"src/**/test\" && copyfiles package.json License.md README.md dist/",
+    "build": "babel src --out-dir dist --delete-dir-on-start --ignore \"src/**/*.test.js\",\"src/**/test\" && copyfiles package.json License.md README.md logo.svg dist/",
     "release": "npm run build && np"
   },
   "repository": {
