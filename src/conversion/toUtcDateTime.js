@@ -64,7 +64,7 @@ const toUtcDateTimeFactory = toTime => {
   };
 
   return Object.freeze({
-    toUtcDateTime: (date, decimalTime) => toUtcDateTime(date, decimalTime)
+    toUtcDateTime
   });
 };
 

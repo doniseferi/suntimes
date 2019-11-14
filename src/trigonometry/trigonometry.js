@@ -12,10 +12,10 @@ const trigonometryFactory = (degreesToRadians, radiansToDegrees) => {
   const arccosine = x => radiansToDegrees(Math.acos(x));
 
   return Object.freeze({
-    sine: degrees => sine(degrees),
-    cosine: degrees => cosine(degrees),
-    arcsine: x => arcsine(x),
-    arccosine: x => arccosine(x)
+    sine,
+    cosine,
+    arcsine,
+    arccosine
   });
 };
 

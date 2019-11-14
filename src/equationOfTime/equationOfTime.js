@@ -1,5 +1,10 @@
-// Fourier method for equation of time provided by Kevin Karney
-// accuratacy of -/+ 3 seconds between 2000 to 2050
+/**
+ * Gets the equation of time for the date instance. The correction between standard clock time and the time based on the exact position of the sun in the sky represented as decimal time in minutes (e.g. 5.5 equal 5 minutes and 30 seconds).
+ *
+ * @param {Date} date - A date instance.
+ * @return {number} A number whose value is the equation of time in minutes decimal time for the Date represented by date.
+ *
+ */
 const equationOfTime = date => {
   if (!date) {
     throw new Error('Please provide a valid date');
@@ -23,11 +28,10 @@ const equationOfTime = date => {
   const pPhiRad2 = -1.38995 + cycle * 0.00013;
   const eotMins1 = ampMins1 * Math.sin(1 * (oThetaRad + pPhiRad1));
   const eotMins2 = ampMins2 * Math.sin(2 * (oThetaRad + pPhiRad2));
-  const eotMins3 = 0.3173 * Math.sin(3 * (oThetaRad - 0.94686));
+  const eotMin3 = 0.3173 * Math.sin(3 * (oThetaRad - 0.94686));
   const eotMins4 = 0.21922 * Math.sin(4 * (oThetaRad - 0.60716));
-  const eotMinutes = 0.00526 + eotMins1 + eotMins2 + eotMins3 + eotMins4;
 
-  return eotMinutes;
+  return 0.00526 + eotMins1 + eotMins2 + eotMin3 + eotMins4;
 };
 
 const toNegativeInt = number => toInt(number * -1);

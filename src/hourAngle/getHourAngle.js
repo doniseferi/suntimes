@@ -27,9 +27,21 @@ const getHourAngleFactory = (
     throwUnsatisfiedDependencyError('arccosine', 'x: Number', 'Number');
   }
   if (getDeclinationOfTheSun == null) {
-    throwUnsatisfiedDependencyError('getDeclinationOfTheSun', 'date: Date', 'Number');
+    throwUnsatisfiedDependencyError(
+      'getDeclinationOfTheSun',
+      'date: Date',
+      'Number'
+    );
   }
 
+  /**
+   * Gets the hour angle difference between noon and the angle value.
+   *
+   * @param {Date} date - A date instance.
+   * @param {number} latitude - A latitude value in the range of -90 to 90.
+   * @param {number} angle - An angle value.
+   * @returns {number} A number whose value represents the hour angle since noon for the date instance, latitude and angle value.
+   */
   const getHourAngleSinceNoon = (date, latitude, angle) => {
     const declinationOfTheSun = getDeclinationOfTheSun(date);
     const top = sine(angle) - sine(latitude) * sine(declinationOfTheSun);
@@ -39,7 +51,7 @@ const getHourAngleFactory = (
   };
 
   return Object.freeze({
-    getHourAngleSinceNoon: (date, latitude, angle) => getHourAngleSinceNoon(date, latitude, angle)
+    getHourAngleSinceNoon
   });
 };
 

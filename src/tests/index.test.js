@@ -19,9 +19,6 @@ suite('Index', () => {
     expect(() =>
       suntimes.getDeclinationOfTheSun(date)
     ).to.not.be.null.and.not.throw();
-    expect(() =>
-      suntimes.getDeclinationOfTheSun(date)
-    ).to.not.be.null.and.not.throw();
     expect(() => suntimes.equationOfTime(date)).to.not.be.null.and.not.throw();
     expect(() => suntimes.getDayOfTheYear(date)).to.not.be.null.and.not.throw();
     expect(() =>

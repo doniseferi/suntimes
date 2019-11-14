@@ -1,25 +1,35 @@
-const getNoonHourAngleFactory = (equationOfTime) => {
+const getNoonHourAngleFactory = equationOfTime => {
   if (equationOfTime == null) {
     throw new Error(
       `Unsatisfied Dependency Error:
       Please provide a function for equationOfTime.
       This dependency takes in a Date
-      and returns a Number`);
+      and returns a Number`
+    );
   }
 
+  /**
+   * Gets the noon hour angle for the date instance and longitude value.
+   *
+   * @param {Date} date - A date instance.
+   * @param {number} longitude - A longitude value in the range of -180 to 180.
+   * @returns {number} The noon hour angle expressed as a number between 0.00 and 23.9.
+   */
   const getNoonHourAngle = (date, longitude) => {
     if (date == null) {
-      throw new Error(
-        'Please provide a date: Date to get the hour angle');
+      throw new Error('Please provide a date: Date to get the hour angle');
     }
     if (longitude == null || isNaN(longitude)) {
       throw new Error(
-        'Please provide the longitude: Number to get the noon hour angle');
+        'Please provide the longitude: Number to get the noon hour angle'
+      );
     }
 
     return (
-      12 - (getHourDifference(longitude) +
-      getEquationOfTimeInHours(equationOfTime, date)));
+      12 -
+      (getHourDifference(longitude) +
+        getEquationOfTimeInHours(equationOfTime, date))
+    );
   };
 
   const getEquationOfTimeInHours = (equationOfTime, date) => equationOfTime(date) / 60;
@@ -27,7 +37,7 @@ const getNoonHourAngleFactory = (equationOfTime) => {
   const getHourDifference = longitude => longitude / 15;
 
   return Object.freeze({
-    getNoonHourAngle: (date, longitude) => getNoonHourAngle(date, longitude)
+    getNoonHourAngle
   });
 };
 
