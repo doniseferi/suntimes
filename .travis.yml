@@ -1,6 +1,15 @@
 language: node_js
+os:
+  - windows
+  - linux
+  - osx
 node_js:
+  - "node"
+  - 12
   - 10
+  - 8
 cache:
   directories:
-  - "$HOME/.npm"
+    - "$HOME/.npm"
+
+after_success: npm run coverage
