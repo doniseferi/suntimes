@@ -1,6 +1,6 @@
 # Bundle folder
 dist/
-# lib/
+lib/
 
 # Logs
 logs

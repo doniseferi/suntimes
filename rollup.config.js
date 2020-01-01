@@ -5,7 +5,7 @@ const config = {
   input: 'src/index.js',
   output: [
     {
-      file: pkg.module,
+      file: 'lib/suntimes.js',
       name: pkg.name,
       format: 'umd',
       exports: 'named',
