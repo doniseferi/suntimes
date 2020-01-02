@@ -1,5 +1,6 @@
 import babel from 'rollup-plugin-babel';
 import pkg from './package.json';
+import { terser } from 'rollup-plugin-terser';
 
 const config = {
   input: 'src/index.js',
@@ -15,6 +16,11 @@ const config = {
   plugins: [
     babel({
       exclude: 'node_modules/**'
+    }),
+    terser({
+      output: {
+        comments: 'all'
+      }
     })
   ]
 };

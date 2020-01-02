@@ -1,15 +1,5 @@
 {
   "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "targets": {
-          "node": true,
-          "esmodules": true
-        }
-      }
-    ]
-  ],
-  "sourceMaps": true,
-  "highlightCode": true
+    "@babel/preset-env"
+  ]
 }

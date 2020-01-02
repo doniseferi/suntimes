@@ -5,11 +5,11 @@
   "main": "lib/suntimes.js",
   "module": "src/suntimes",
   "scripts": {
-    "bundle": "rollup -c",
-    "test": "semistandard && nyc mocha --opts support/mocha.opts lib/**/*.test.js",
+    "bundle": "rimraf lib && rollup -c",
+    "test": "semistandard && nyc mocha --opts support/mocha.opts **/*.test.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "fix": "semistandard --fix",
-    "build": "babel src --out-dir dist --delete-dir-on-start --ignore \"src/**/*.test.js\",\"src/**/test\" && copyfiles package.json dist/",
+    "build": "npm run bundle && copyfiles package.json lib/",
     "release": "npm run build && np"
   },
   "repository": {
@@ -56,8 +56,10 @@
     "jsdoc-to-markdown": "^5.0.2",
     "mocha": "^6.2.2",
     "nyc": "^14.1.1",
+    "rimraf": "^3.0.0",
     "rollup": "^1.27.14",
     "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-terser": "^5.1.3",
     "semistandard": "^14.2.0"
   }
 }
