@@ -10,7 +10,7 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "fix": "semistandard --fix",
     "build": "npm run bundle && copyfiles package.json lib/",
-    "release": "npm run build && np"
+    "release": "npm run build && np --contents=lib"
   },
   "repository": {
     "type": "git",
