@@ -1,6 +1,6 @@
 {
   "name": "suntimes",
-  "version": "4.0.0-1",
+  "version": "4.0.0-2",
   "description": "A simple library to get the exact date and time in utc for certain points of the day for any desired location and date.",
   "main": "lib/suntimes.js",
   "module": "src/index",
@@ -9,8 +9,8 @@
     "test": "semistandard && nyc mocha --opts support/mocha.opts **/*.test.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "fix": "semistandard --fix",
-    "build": "npm run bundle",
-    "release": "np --contents=lib"
+    "pack": "npm run bundle && copyfiles README.md package.json License.md lib",
+    "release": "npm run pack && np --contents=lib"
   },
   "repository": {
     "type": "git",
