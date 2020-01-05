@@ -8,11 +8,9 @@ A simple library to get the exact date and time in [utc](https://en.wikipedia.or
 
 ## Install
 
-npm install suntimes
+```npm install suntimes```
 
 ## Api Reference
-
-The following functions are all members of the suntimes object however if you're using ECMAScript 6 modules as opposed to CommonJS modules they are also all name exported individually.
 
 ## Members
 
