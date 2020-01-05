@@ -1,7 +1,3 @@
-# src folder
-src/
-coverage/
-
 # Logs
 logs
 *.log

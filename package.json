@@ -9,8 +9,8 @@
     "test": "semistandard && nyc mocha --opts support/mocha.opts **/*.test.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "fix": "semistandard --fix",
-    "build": "npm run bundle",
-    "release": "np --contents=lib"
+    "pack": "npm run bundle && copyfiles README.md package.json License.md lib",
+    "release": "npm run pack && np --contents=lib"
   },
   "repository": {
     "type": "git",
