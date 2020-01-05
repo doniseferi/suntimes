@@ -10,8 +10,7 @@ const config = {
       name: pkg.name,
       format: 'umd',
       exports: 'named',
-      compact: true,
-      sourcemap: 'inline'
+      compact: true
     }
   ],
   plugins: [
