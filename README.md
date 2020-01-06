@@ -4,11 +4,12 @@
 
 # [![Build Status](https://travis-ci.com/doniseferi/suntimes.svg?branch=master)](https://travis-ci.com/doniseferi/suntimes) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/27de579f6fc84188ba0aac2601ec05f0)](https://www.codacy.com/manual/doniseferi/suntimes?utm_source=github.com&utm_medium=referral&utm_content=doniseferi/suntimes&utm_campaign=Badge_Grade) ![GitHub](https://img.shields.io/github/license/doniseferi/suntimes) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/doniseferi/suntimes) ![Snyk Vulnerabilities for npm package version](https://img.shields.io/snyk/vulnerabilities/npm/suntimes) ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/doniseferi/suntimes) ![GitHub last commit](https://img.shields.io/github/last-commit/doniseferi/suntimes) ![Coveralls github](https://img.shields.io/coveralls/github/doniseferi/suntimes) [![GitHub issues](https://img.shields.io/github/issues/doniseferi/suntimes)](https://github.com/doniseferi/suntimes/issues)
 
-A simple library to get the exact date and time in [utc](https://en.wikipedia.org/wiki/ISO_8601) for certain points of the day for any desired location and date.
+A tiny library to get the exact date and time in [utc](https://en.wikipedia.org/wiki/ISO_8601) for certain points of the day for any desired location and date.
 
 ## Install
 
 ```npm install suntimes```
+
 
 ## Api Reference
 
