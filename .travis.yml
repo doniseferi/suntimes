@@ -22,4 +22,4 @@ deploy:
   api_key: $NPM_KEY
   - on:
   - tags: true
-  - branch: master 
+  - branch: master
