@@ -5,11 +5,11 @@
   "main": "lib/suntimes.js",
   "scripts": {
     "bundle": "rimraf lib && rollup -c",
-    "test": "semistandard && nyc mocha --opts support/mocha.opts **/*.test.js",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "fix": "semistandard --fix",
     "pack": "npm run bundle",
-    "release": "standard-version"
+    "release": "standard-version",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "test": "semistandard && nyc mocha --opts support/mocha.opts **/*.test.js",
+    "fix": "semistandard --fix"
   },
   "repository": {
     "type": "git",
