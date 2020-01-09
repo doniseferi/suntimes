@@ -5,6 +5,7 @@ os:
   - osx
 node_js:
   - "node"
+  - lts/*
   - 12
   - 10
   - 8
@@ -12,4 +13,13 @@ cache:
   directories:
     - "$HOME/.npm"
 
-after_success: npm run coverage
+after_success: 
+  - npm run coverage
+
+deploy:
+  provider: npm
+  email: doni.seferi@gmail.com
+  api_key: $NPM_KEY
+  - on:
+  - tags: true
+  - branch: master 
