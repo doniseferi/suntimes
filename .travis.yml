@@ -13,6 +13,9 @@ cache:
   directories:
     - "$HOME/.npm"
 
+before_install: 
+    - npm i -g makeshift && makeshift -s @doniseferi -r https://registry.npmjs.org
+
 after_success: 
   - npm run coverage
 
