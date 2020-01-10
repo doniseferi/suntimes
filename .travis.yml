@@ -23,6 +23,6 @@ deploy:
   provider: npm
   email: doni.seferi@gmail.com
   api_key: $NPM_TOKEN
-  - on:
-  - tags: true
-  - branch: master
+  on:
+    tags: true
+    branch: master
