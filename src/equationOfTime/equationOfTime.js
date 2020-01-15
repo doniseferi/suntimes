@@ -1,10 +1,3 @@
-/**
- * Gets the equation of time for the date instance. The correction between standard clock time and the time based on the exact position of the sun in the sky represented as decimal time in minutes (e.g. 5.5 equal 5 minutes and 30 seconds).
- *
- * @param {Date} date - A date instance.
- * @return {number} A number whose value is the equation of time in minutes decimal time for the Date represented by date.
- *
- */
 const equationOfTime = date => {
   if (!date) {
     throw new Error('Please provide a valid date');

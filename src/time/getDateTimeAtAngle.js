@@ -47,15 +47,6 @@ const getDateTimeUtcFactory = (getNoonDateTimeUtc, getHourAngleSinceNoon) => {
     }
   };
 
-  /**
-   * Gets the date and time at an angle before noon for the angle value, date instance, latitude and longitude value.
-   *
-   * @param {number} angle - An angle value.
-   * @param {Date} date - A date instance.
-   * @param {number} latitude - A latitude value in the range of -90 to 90.
-   * @param {number} longitude A longitude value in the range of -180 to 180.
-   * @returns {string}  A string representing the time and date for an angle before noon in UTC, expressed in an ISO 8601 format.
-   */
   const getDateTimeUtcOfAngleBeforeNoon = (
     angle,
     date,
@@ -76,15 +67,6 @@ const getDateTimeUtcFactory = (getNoonDateTimeUtc, getHourAngleSinceNoon) => {
     );
   };
 
-  /**
-   * Gets the date and time at an angle after noon for the angle value, date instance, latitude and longitude value.
-   *
-   * @param {number} angle - An angle value.
-   * @param {Date} date - A date instance.
-   * @param {number} latitude - A latitude value in the range of -90 to 90.
-   * @param {number} longitude A longitude value in the range of -180 to 180.
-   * @returns {string}  A string representing the time and date for an angle after noon in UTC, expressed in an ISO 8601 format.
-   */
   const getDateTimeUtcOfAngleAfterNoon = (angle, date, latitude, longitude) => {
     validate(
       angle,

@@ -8,13 +8,6 @@ const getNoonHourAngleFactory = equationOfTime => {
     );
   }
 
-  /**
-   * Gets the noon hour angle for the date instance and longitude value.
-   *
-   * @param {Date} date - A date instance.
-   * @param {number} longitude - A longitude value in the range of -180 to 180.
-   * @returns {number} The noon hour angle expressed as a number between 0.00 and 23.9.
-   */
   const getNoonHourAngle = (date, longitude) => {
     if (date == null) {
       throw new Error('Please provide a date: Date to get the hour angle');

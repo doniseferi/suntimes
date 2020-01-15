@@ -28,12 +28,6 @@ const declinationOfTheSunFactory = (sine, cosine, arcsine, getDayOfTheYear) => {
     throwUnsatisfiedDependencyError('getDayOfTheYear', 'date: Date', 'Number');
   }
 
-  /**
-   * The angular distance of the sun north or south of the earth's equator.
-   *
-   * @param {Date} date - A date instance
-   * @returns {number} The declination in degrees where north is a positive value and south is a negative value within a range of range of -23.45 and 23.45.
-   */
   const getDeclinationOfTheSun = date => {
     if (!date) {
       throw new Error('Please provide a valid date');
