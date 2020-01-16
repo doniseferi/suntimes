@@ -17,11 +17,7 @@ const config = {
     babel({
       exclude: 'node_modules/**'
     }),
-    terser({
-      output: {
-        comments: 'all'
-      }
-    })
+    terser()
   ]
 };
 
