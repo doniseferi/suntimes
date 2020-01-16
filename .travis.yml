@@ -23,7 +23,7 @@ jobs:
     - stage: npm release
       node_js: lts/*
       script:
-        - script: echo "Deploying to npm ..."
+        - echo "Deploying to npm ..."
         - npm run build
       deploy:
         provider: npm
