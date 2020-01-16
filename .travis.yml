@@ -13,16 +13,22 @@ cache:
   directories:
     - "$HOME/.npm"
 
-before_install: 
-    - npm i -g makeshift && makeshift -s @doniseferi -r https://registry.npmjs.org
-
 after_success: 
   - npm run coverage
 
-deploy:
-  provider: npm
-  email: doni.seferi@gmail.com
-  api_key: $NPM_TOKEN
-  on:
-    tags: true
-    branch: master
+jobs:
+  include:
+    - stage: test
+      script: npm run test
+    - stage: npm release
+      node_js: lts/*
+      script: npm run build
+      deploy:
+        provider: npm
+        email: doni.seferi@gmail.com
+        api_key: $NPM_TOKEN
+        edge: true
+        skip_cleanup: true
+        on:
+          tags: true
+          branch: master
