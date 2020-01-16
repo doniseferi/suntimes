@@ -13,16 +13,18 @@ cache:
   directories:
     - "$HOME/.npm"
 
+script: echo "Running tests against $(node -v) ..."
+
 after_success: 
   - npm run coverage
 
 jobs:
   include:
-    - stage: test
-      script: npm run test
     - stage: npm release
       node_js: lts/*
-      script: npm run build
+      script:
+        - script: echo "Deploying to npm ..."
+        - npm run build
       deploy:
         provider: npm
         email: doni.seferi@gmail.com
