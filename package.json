@@ -3,9 +3,10 @@
   "version": "4.0.1",
   "description": "A tiny library to get the exact date and time in utc for certain points of the day for any desired location and date.",
   "main": "lib/suntimes.js",
+  "typings": "suntimes.d.ts",
   "scripts": {
     "bundle": "rimraf lib && rollup -c",
-    "pack": "npm run bundle",
+    "pack": "npm run bundle && copyfiles suntimes.d.ts lib",
     "release": "standard-version",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "test": "semistandard && nyc mocha --opts support/mocha.opts **/*.test.js",
@@ -42,6 +43,7 @@
     "@babel/preset-env": "^7.7.1",
     "@babel/register": "^7.7.0",
     "chai": "^4.2.0",
+    "copyfiles": "^2.1.1",
     "coveralls": "^3.0.7",
     "depcheck": "^0.9.0",
     "eslint": "^6.6.0",
@@ -61,6 +63,8 @@
     "semistandard": "^14.2.0",
     "standard-version": "^7.0.1"
   },
-  "files": [],
+  "files": [
+    "lib/suntimes.d.ts"
+  ],
   "dependencies": {}
 }
