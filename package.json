@@ -2,10 +2,10 @@
   "name": "suntimes",
   "version": "4.0.1",
   "description": "A tiny library to get the exact date and time in utc for certain points of the day for any desired location and date.",
-  "main": "lib/suntimes.js",
+  "main": "suntimes.js",
+  "typings": "suntimes.d.ts",
   "scripts": {
-    "bundle": "rimraf lib && rollup -c",
-    "pack": "npm run bundle",
+    "build": "rollup -c",
     "release": "standard-version",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "test": "semistandard && nyc mocha --opts support/mocha.opts **/*.test.js",
@@ -37,13 +37,12 @@
   },
   "homepage": "https://github.com/doniseferi/suntimes#readme",
   "devDependencies": {
-    "@babel/cli": "^7.7.0",
     "@babel/core": "^7.7.0",
     "@babel/preset-env": "^7.7.1",
     "@babel/register": "^7.7.0",
     "chai": "^4.2.0",
     "coveralls": "^3.0.7",
-    "depcheck": "^0.9.0",
+    "depcheck": "^0.9.1",
     "eslint": "^6.6.0",
     "eslint-config-semistandard": "^15.0.0",
     "eslint-config-standard": "^14.1.0",
@@ -51,16 +50,16 @@
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "jsdoc-to-markdown": "^5.0.2",
     "mocha": "^6.2.2",
     "nyc": "^14.1.1",
-    "rimraf": "^3.0.0",
     "rollup": "^1.27.14",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-terser": "^5.1.3",
     "semistandard": "^14.2.0",
     "standard-version": "^7.0.1"
   },
-  "files": [],
+  "files": [
+    "suntimes.d.ts"
+  ],
   "dependencies": {}
 }

@@ -6,7 +6,7 @@ const config = {
   input: 'src/index.js',
   output: [
     {
-      file: 'lib/suntimes.js',
+      file: 'suntimes.js',
       name: pkg.name,
       format: 'umd',
       exports: 'named',
@@ -17,11 +17,7 @@ const config = {
     babel({
       exclude: 'node_modules/**'
     }),
-    terser({
-      output: {
-        comments: 'all'
-      }
-    })
+    terser()
   ]
 };
 
