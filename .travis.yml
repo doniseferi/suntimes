@@ -25,12 +25,14 @@ jobs:
       script: 
         - echo "Deploying to npm ..."
         - npm run build
+        - npm run publish --dry-run
       deploy:
         provider: npm
         email: doni.seferi@gmail.com
         api_key: $NPM_TOKEN
         edge: true
         access: public
+        src: .
         skip_cleanup: true
         on: 
           branch: master
