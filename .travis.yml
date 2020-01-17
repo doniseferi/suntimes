@@ -1,27 +1,15 @@
 language: node_js
-os:
-  - windows
-  - linux
-  - osx
+os: linux
 node_js:
-  - "node"
-  - lts/*
-  - 12
-  - 10
-  - 8
-  
-cache:
-  directories:
-    - "$HOME/.npm"
-script:
-  - npm run build
-  - npm test
-  - npm run coverage
-
+  - "lts/*"
 jobs:
   include:
+    - stage: testing
+      after_success: # after test is run
+        - npm run coverage
     - stage: npm release
-      node_js: "lts/*"
+      before_deploy:
+      - npm run build
       deploy:
         provider: npm
         email: doni.seferi@gmail.com
