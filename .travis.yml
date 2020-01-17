@@ -13,8 +13,8 @@ jobs:
       deploy:
         provider: npm
         email: doni.seferi@gmail.com
-        api_key: $NPM_TOKEN
-        skip_cleanup: true
+        api_token: $NPM_TOKEN
+        cleanup: true
         edge: true
         access: public
         on: 
