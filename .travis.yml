@@ -22,17 +22,12 @@ jobs:
   include:
     - stage: npm release
       node_js: "lts/*"
-      script: 
-        - echo "Deploying to npm ..."
-        - npm run build
-        - npm publish --dry-run
       deploy:
         provider: npm
         email: doni.seferi@gmail.com
         api_key: $NPM_TOKEN
+        skip_cleanup: true
         edge: true
         access: public
-        src: .
-        skip_cleanup: true
         on: 
-          branch: master
+          all_branches: true
