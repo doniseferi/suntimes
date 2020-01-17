@@ -13,24 +13,21 @@ cache:
   directories:
     - "$HOME/.npm"
 
-script: echo "Running tests against $(node -v) ..."
-
 after_success: 
   - npm run coverage
 
 jobs:
   include:
     - stage: npm release
-      node_js: lts/*
-      script:
-        - echo "Deploying to npm ..."
-        - npm run build
+      node_js: "lts/*"
+      script: echo "Deploying to npm ..."
       deploy:
         provider: npm
         email: doni.seferi@gmail.com
         api_key: $NPM_TOKEN
         edge: true
+        access: public
         skip_cleanup: true
-        on:
+        on: 
           tags: true
           branch: master
