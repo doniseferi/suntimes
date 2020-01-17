@@ -19,3 +19,4 @@ jobs:
         access: public
         on: 
           branch: master
+          tags: true
