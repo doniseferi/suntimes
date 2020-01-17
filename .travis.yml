@@ -9,11 +9,13 @@ node_js:
   - 12
   - 10
   - 8
+  
 cache:
   directories:
     - "$HOME/.npm"
-
-after_success: 
+script:
+  - npm run build
+  - npm test
   - npm run coverage
 
 jobs:
@@ -22,7 +24,6 @@ jobs:
       node_js: "lts/*"
       script: 
         - echo "Deploying to npm ..."
-        - npm run build
       deploy:
         provider: npm
         email: doni.seferi@gmail.com
@@ -31,5 +32,4 @@ jobs:
         access: public
         skip_cleanup: true
         on: 
-          tags: true
           branch: master
