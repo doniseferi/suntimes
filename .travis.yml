@@ -20,7 +20,9 @@ jobs:
   include:
     - stage: npm release
       node_js: "lts/*"
-      script: echo "Deploying to npm ..."
+      script: 
+        - echo "Deploying to npm ..."
+        - npm run build
       deploy:
         provider: npm
         email: doni.seferi@gmail.com
