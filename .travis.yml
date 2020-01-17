@@ -25,7 +25,7 @@ jobs:
       script: 
         - echo "Deploying to npm ..."
         - npm run build
-        - npm run publish --dry-run
+        - npm publish --dry-run
       deploy:
         provider: npm
         email: doni.seferi@gmail.com
