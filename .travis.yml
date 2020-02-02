@@ -12,7 +12,7 @@ jobs:
       - npm run build
       deploy:
         provider: npm
-        email: doni.seferi@gmail.com
+        email: $NPM_EMAIL
         api_token: $NPM_TOKEN
         cleanup: true
         edge: true
