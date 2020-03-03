@@ -45,3 +45,8 @@ describe('Angle conversions', () => {
     assert.equal(radiansToDegrees(1), _1RadInDegrees);
   });
 });
+describe('Complex numbers', () => {
+  test('arccosine can handle complex numbers outside of the -1 to 1 range', () => {
+    assert.isNotNaN(arccosine(1.001));
+  });
+});

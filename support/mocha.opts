@@ -2,4 +2,3 @@
 --colors
 --require @babel/register
 --full-trace
---reporter markdown
