@@ -39,13 +39,7 @@ const getHourAngleFactory = (
     const top = sine(angle) - sine(latitude) * sine(declinationOfTheSun);
     const bottom = cosine(latitude) * cosine(declinationOfTheSun);
     const arc = top / bottom;
-    const value = (arc > 1)
-      ? 0
-      : (arc < -1)
-        ? Math.PI
-        : arccosine(arc);
-
-    return 0.0666666666666667 * value;
+    return 0.0666666666666667 * arccosine(arc);
   };
 
   return Object.freeze({

@@ -3,6 +3,11 @@ import { expect } from 'chai';
 import suntimes from '../index';
 
 suite('Index', () => {
+  test('', () => {
+    const val = suntimes.getDateTimeUtcOfAngleAfterNoon(67.50783637406113, new Date(2027, 11, 25), -53.7860374, -67.7002243
+    );
+    expect(val).not.null();
+  });
   test('exports the suntimes object', () => {
     expect(suntimes)
       .to.not.equal(null)
