@@ -47,6 +47,7 @@ describe('Angle conversions', () => {
 });
 describe('Complex numbers', () => {
   test('arccosine can handle complex numbers outside of the -1 to 1 range', () => {
-    assert.isNotNaN(arccosine(1.001));
+    assert.equal(arccosine(1.5), 55.14281325540597);
+    assert.equal(arccosine(2), 75.4561292902169);
   });
 });

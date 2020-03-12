@@ -227,7 +227,7 @@ expressed in an ISO 8601 format.
 
 ```js
 suntimes.getDateTimeUtcOfAngleBeforeNoon(
-  14,
+  45,
   new Date(2019, 0, 1),
   51.476852,
   -0.0005
@@ -254,7 +254,7 @@ Gets the date and time at an angle after noon for the angle value, date instance
 
 ```js
 suntimes.getDateTimeUtcOfAngleAfterNoon(
-  14,
+  45,
   new Date(2020, 1, 25),
   51.476852,
   -0.0005
