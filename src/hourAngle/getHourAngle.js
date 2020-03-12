@@ -7,13 +7,13 @@ const getHourAngleFactory = (
   const throwUnsatisfiedDependencyError = (
     dependencyName,
     dependencyParams,
-    depedencyReturnType
+    dependencyReturnType
   ) => {
     throw new Error(
       `Unsatisfied Dependency Error:
       Please provide a function for ${dependencyName}.
       This dependency takes in ${dependencyParams}
-      and returns ${depedencyReturnType}`
+      and returns ${dependencyReturnType}`
     );
   };
 
@@ -38,8 +38,8 @@ const getHourAngleFactory = (
     const declinationOfTheSun = getDeclinationOfTheSun(date);
     const top = sine(angle) - sine(latitude) * sine(declinationOfTheSun);
     const bottom = cosine(latitude) * cosine(declinationOfTheSun);
-
-    return 0.0666666666666667 * arccosine(top / bottom);
+    const arc = top / bottom;
+    return 0.0666666666666667 * arccosine(arc);
   };
 
   return Object.freeze({

@@ -20,12 +20,12 @@ const toUtcDateTimeFactory = toTime => {
     }
 
     const offsetInDays = getUtcOffsetInDays(hourAngle);
-    const scientifiedDecimalTime = getScientificDecimalTime(hourAngle, offsetInDays);
+    const scientificDecimalTime = getScientificDecimalTime(hourAngle, offsetInDays);
     const day = date.getDate();
     const month = date.getMonth();
     const year = date.getFullYear();
     const { hours, minutes, seconds, milliseconds } = toTime(
-      scientifiedDecimalTime
+      scientificDecimalTime
     );
 
     const value = Date.UTC(

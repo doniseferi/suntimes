@@ -15,7 +15,6 @@ suite('Index', () => {
       date: new Date(Date.now()),
       angle: 0
     };
-
     expect(() =>
       suntimes.getDeclinationOfTheSun(date)
     ).to.not.be.null.and.not.throw();
