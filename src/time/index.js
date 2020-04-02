@@ -26,7 +26,7 @@ const getDateTimeUtcOfAngleAfterNoon = factory.getDateTimeUtcOfAngleAfterNoon;
 
 const sunriseAngle = -0.833333333;
 const sunsetAngle = -0.833333333;
-const horizon = -0.57;
+const epsilon = 0.000000000000002;
 const civilAngle = -6;
 const nauticalAngle = -12;
 const astronomicalAngle = -18;
@@ -38,40 +38,40 @@ const getSunsetDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleAfterNoon(sunsetAngle, date, latitude, longitude);
 
 const getCivilDawnEndDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleBeforeNoon(horizon, date, latitude, longitude);
+  getDateTimeUtcOfAngleBeforeNoon(sunriseAngle, date, latitude, longitude);
 
 const getCivilDawnStartDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleBeforeNoon(civilAngle, date, latitude, longitude);
 
 const getNauticalDawnEndDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleBeforeNoon(civilAngle, date, latitude, longitude);
+  getDateTimeUtcOfAngleBeforeNoon(civilAngle - epsilon, date, latitude, longitude);
 
 const getNauticalDawnStartDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleBeforeNoon(nauticalAngle, date, latitude, longitude);
 
 const getAstronomicalDawnEndDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleBeforeNoon(nauticalAngle, date, latitude, longitude);
+  getDateTimeUtcOfAngleBeforeNoon(nauticalAngle - epsilon, date, latitude, longitude);
 
 const getAstronomicalDawnStartDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleBeforeNoon(astronomicalAngle, date, latitude, longitude);
 
 const getAstronomicalDuskStartDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleAfterNoon(astronomicalAngle, date, latitude, longitude);
+  getDateTimeUtcOfAngleAfterNoon(nauticalAngle - epsilon, date, latitude, longitude);
 
 const getAstronomicalDuskEndDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleAfterNoon(nauticalAngle, date, latitude, longitude);
+  getDateTimeUtcOfAngleAfterNoon(astronomicalAngle, date, latitude, longitude);
 
 const getNauticalDuskEndDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleAfterNoon(civilAngle, date, latitude, longitude);
-
-const getNauticalDuskStartDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleAfterNoon(nauticalAngle, date, latitude, longitude);
 
+const getNauticalDuskStartDateTimeUtc = (date, latitude, longitude) =>
+  getDateTimeUtcOfAngleAfterNoon(civilAngle - epsilon, date, latitude, longitude);
+
 const getCivilDuskEndDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleAfterNoon(horizon, date, latitude, longitude);
+  getDateTimeUtcOfAngleAfterNoon(civilAngle, date, latitude, longitude);
 
 const getCivilDuskStartDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleAfterNoon(civilAngle, date, latitude, longitude);
+  getDateTimeUtcOfAngleAfterNoon(sunsetAngle, date, latitude, longitude);
 
 export {
   getNoonDateTimeUtc,
