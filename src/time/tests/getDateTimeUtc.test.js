@@ -1,16 +1,6 @@
 import { test } from 'mocha';
 import { assert } from 'chai';
-import {
-  getSunriseDateTimeUtc,
-  getSunsetDateTimeUtc,
-  getAstronomicalDawnStartDateTimeUtc,
-  getNauticalDawnStartDateTimeUtc,
-  getCivilDawnStartDateTimeUtc,
-  getAstronomicalDuskStartDateTimeUtc,
-  getNauticalDuskStartDateTimeUtc,
-  getCivilDuskStartDateTimeUtc,
-  getNoonDateTimeUtc
-} from '../../index';
+import suntimes from '../../../suntimes';
 import januarySunriseExpected from './utcJanSunrise.json';
 import julySunriseExpected from './utcJulySunrise.json';
 import januarySunsetExpected from './utcJanSunset.json';
@@ -38,7 +28,7 @@ const assertTimesAreCloseToDelta = testModel => {
 
 // eslint-disable-next-line no-unused-vars
 const noonWrapper = (targetDate, latitude, longitude) =>
-  getNoonDateTimeUtc(targetDate, longitude);
+  suntimes.getNoonDateTimeUtc(targetDate, longitude);
 const testModel = (
   date,
   expectedSet,
@@ -58,49 +48,49 @@ test('The correct date time utc of all expected points of a date are returned wi
     testModel(
       new Date(2019, 0, 1),
       januarySunriseExpected,
-      getSunriseDateTimeUtc
+      suntimes.getSunriseDateTimeUtc
     ),
-    testModel(new Date(2019, 6, 1), julySunriseExpected, getSunriseDateTimeUtc),
+    testModel(new Date(2019, 6, 1), julySunriseExpected, suntimes.getSunriseDateTimeUtc),
     testModel(
       new Date(2019, 0, 1),
       januarySunsetExpected,
-      getSunsetDateTimeUtc
+      suntimes.getSunsetDateTimeUtc
     ),
-    testModel(new Date(2019, 6, 1), julySunsetExpected, getSunsetDateTimeUtc),
+    testModel(new Date(2019, 6, 1), julySunsetExpected, suntimes.getSunsetDateTimeUtc),
     testModel(
       new Date(2022, 0, 1),
       januaryTwilightExpected,
-      getAstronomicalDawnStartDateTimeUtc,
+      suntimes.getAstronomicalDawnStartDateTimeUtc,
       'ExpectedAstronomicalDawnUtc'
     ),
     testModel(
       new Date(2022, 0, 1),
       januaryTwilightExpected,
-      getNauticalDawnStartDateTimeUtc,
+      suntimes.getNauticalDawnStartDateTimeUtc,
       'ExpectedNauticalDawnUtc'
     ),
     testModel(
       new Date(2022, 0, 1),
       januaryTwilightExpected,
-      getCivilDawnStartDateTimeUtc,
+      suntimes.getCivilDawnStartDateTimeUtc,
       'ExpectedCivilDawnUtc'
     ),
     testModel(
       new Date(2022, 0, 1),
       januaryTwilightExpected,
-      getAstronomicalDuskStartDateTimeUtc,
+      suntimes.getAstronomicalDuskStartDateTimeUtc,
       'ExpectedAstronomicalDuskUtc'
     ),
     testModel(
       new Date(2022, 0, 1),
       januaryTwilightExpected,
-      getNauticalDuskStartDateTimeUtc,
+      suntimes.getNauticalDuskStartDateTimeUtc,
       'ExpectedNauticalDuskUtc'
     ),
     testModel(
       new Date(2022, 0, 1),
       januaryTwilightExpected,
-      getCivilDuskStartDateTimeUtc,
+      suntimes.getCivilDuskStartDateTimeUtc,
       'ExpectedCivilDuskUtc'
     )
   ].forEach(testModel => assertTimesAreCloseToDelta(testModel));
