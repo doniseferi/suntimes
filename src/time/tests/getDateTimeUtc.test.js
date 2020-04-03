@@ -1,6 +1,6 @@
 import { test } from 'mocha';
 import { assert } from 'chai';
-import suntimes from '../../../suntimes';
+import suntimes from '../../index';
 import januarySunriseExpected from './utcJanSunrise.json';
 import julySunriseExpected from './utcJulySunrise.json';
 import januarySunsetExpected from './utcJanSunset.json';

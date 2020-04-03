@@ -39,17 +39,21 @@ describe('Events that last all day/night', () => {
   });
   test('returns the sun is down when the sun is below the horizon for the entire day', () => {
     [{
+      latitude: 89.5250,
+      longitude: -30.4500,
+      date: new Date(Date.UTC(2042, 0, 1))
+    }, {
       latitude: 82.518689,
       longitude: -62.273199,
-      date: new Date(Date.UTC(2020, 5, 15))
+      date: new Date(Date.UTC(2020, 0, 1))
     }, {
-      latitude: 71.980070,
-      longitude: 102.474270,
-      date: new Date(Date.UTC(2037, 7, 2))
+      latitude: -81.308327,
+      longitude: 1.778737,
+      date: new Date(Date.UTC(2037, 6, 2))
     }, {
-      latitude: 78.222379,
-      longitude: 15.652313,
-      date: new Date(Date.UTC(2040, 3, 25))
+      latitude: -84.530649,
+      longitude: 148.240238,
+      date: new Date(Date.UTC(2040, 6, 25))
     }].forEach(upAllDay => {
       assert.equal(suntimes.getSunriseDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is down all day');
       assert.equal(suntimes.getCivilDawnEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun does reach angle x°');
