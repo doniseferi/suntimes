@@ -34,11 +34,25 @@ const getHourAngleFactory = (
     );
   }
 
+  const throwSunAltitudeBelowAngleError = () => {
+    throw new RangeError('The sun altitude never elevates above the angle specified');
+  };
+
+  const throwSunAltitudeAboveAngleError = () => {
+    throw new RangeError('The sun altitude never drops below the angle specified');
+  };
+
   const getHourAngleSinceNoon = (date, latitude, angle) => {
     const declinationOfTheSun = getDeclinationOfTheSun(date);
     const top = sine(angle) - sine(latitude) * sine(declinationOfTheSun);
     const bottom = cosine(latitude) * cosine(declinationOfTheSun);
     const arc = top / bottom;
+    if (arc < -1) {
+      throwSunAltitudeAboveAngleError();
+    }
+    if (arc > 1) {
+      throwSunAltitudeBelowAngleError();
+    }
     return 0.0666666666666667 * arccosine(arc);
   };
 

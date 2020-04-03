@@ -31,8 +31,18 @@ const civilAngle = -6;
 const nauticalAngle = -12;
 const astronomicalAngle = -18;
 
-const getSunriseDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleBeforeNoon(sunriseAngle, date, latitude, longitude);
+const getSunriseDateTimeUtc = (date, latitude, longitude) => {
+  try {
+    const result = getDateTimeUtcOfAngleBeforeNoon(sunriseAngle, date, latitude, longitude);
+    return result;
+  } catch (err) {
+    if (err.message === 'The sun altitude never drops below the angle specified') {
+      return 'The sun is up all day';
+    } else if (err.message === 'The sun altitude never elevates above the angle specified') {
+      return 'The sun is down all day';
+    }
+  }
+};
 
 const getSunsetDateTimeUtc = (date, latitude, longitude) =>
   getDateTimeUtcOfAngleAfterNoon(sunsetAngle, date, latitude, longitude);
