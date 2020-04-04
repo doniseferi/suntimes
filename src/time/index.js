@@ -31,57 +31,87 @@ const civilAngle = -6;
 const nauticalAngle = -12;
 const astronomicalAngle = -18;
 
-const getSunriseDateTimeUtc = (date, latitude, longitude) => {
+const longPersistingEventsHandler = (command, sunAltitudeAboveAngleErrorMessage, sunAltitudeBelowAngleErrorMessage) => {
   try {
-    const result = getDateTimeUtcOfAngleBeforeNoon(sunriseAngle, date, latitude, longitude);
-    return result;
+    return command();
   } catch (err) {
     if (err.message === 'The sun altitude never drops below the angle specified') {
-      return 'The sun is up all day';
+      return sunAltitudeAboveAngleErrorMessage;
     } else if (err.message === 'The sun altitude never elevates above the angle specified') {
-      return 'The sun is down all day';
+      return sunAltitudeBelowAngleErrorMessage;
+    } else {
+      throw err;
     }
   }
 };
 
+const getSunriseDateTimeUtc = (date, latitude, longitude) =>
+  longPersistingEventsHandler(() => getDateTimeUtcOfAngleBeforeNoon(sunriseAngle, date, latitude, longitude),
+    sunUpAllDayErrorMessage(date, latitude, longitude),
+    sunDownAllDayErrorMessage(date, latitude, longitude));
+
 const getSunsetDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleAfterNoon(sunsetAngle, date, latitude, longitude);
+  longPersistingEventsHandler(() => getDateTimeUtcOfAngleAfterNoon(sunsetAngle, date, latitude, longitude),
+    sunUpAllDayErrorMessage(date, latitude, longitude),
+    sunDownAllDayErrorMessage(date, latitude, longitude));
 
 const getCivilDawnEndDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleBeforeNoon(sunriseAngle, date, latitude, longitude);
+  longPersistingEventsHandler(() => getDateTimeUtcOfAngleBeforeNoon(sunriseAngle, date, latitude, longitude),
+    sunUpAllDayErrorMessage(date, latitude, longitude),
+    sunDownAllDayErrorMessage(date, latitude, longitude));
 
 const getCivilDawnStartDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleBeforeNoon(civilAngle, date, latitude, longitude);
+  longPersistingEventsHandler(() => getDateTimeUtcOfAngleBeforeNoon(civilAngle, date, latitude, longitude),
+    sunAltitudeAboveErrorMessage(date, latitude, longitude, civilAngle), sunAltitudeBelowErrorMessage(date, latitude, longitude, civilAngle));
 
 const getNauticalDawnEndDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleBeforeNoon(civilAngle - epsilon, date, latitude, longitude);
+  longPersistingEventsHandler(() => getDateTimeUtcOfAngleBeforeNoon(civilAngle - epsilon, date, latitude, longitude),
+    sunAltitudeAboveErrorMessage(date, latitude, longitude, civilAngle), sunAltitudeBelowErrorMessage(date, latitude, longitude, civilAngle));
 
 const getNauticalDawnStartDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleBeforeNoon(nauticalAngle, date, latitude, longitude);
+  longPersistingEventsHandler(() => getDateTimeUtcOfAngleBeforeNoon(nauticalAngle, date, latitude, longitude),
+    sunAltitudeAboveErrorMessage(date, latitude, longitude, nauticalAngle), sunAltitudeBelowErrorMessage(date, latitude, longitude, nauticalAngle));
 
 const getAstronomicalDawnEndDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleBeforeNoon(nauticalAngle - epsilon, date, latitude, longitude);
+  longPersistingEventsHandler(() => getDateTimeUtcOfAngleBeforeNoon(nauticalAngle - epsilon, date, latitude, longitude),
+    sunAltitudeAboveErrorMessage(date, latitude, longitude, nauticalAngle), sunAltitudeBelowErrorMessage(date, latitude, longitude, nauticalAngle));
 
 const getAstronomicalDawnStartDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleBeforeNoon(astronomicalAngle, date, latitude, longitude);
+  longPersistingEventsHandler(() => getDateTimeUtcOfAngleBeforeNoon(astronomicalAngle, date, latitude, longitude),
+    sunAltitudeAboveErrorMessage(date, latitude, longitude, astronomicalAngle), sunAltitudeBelowErrorMessage(date, latitude, longitude, astronomicalAngle));
 
 const getAstronomicalDuskStartDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleAfterNoon(nauticalAngle - epsilon, date, latitude, longitude);
+  longPersistingEventsHandler(() => getDateTimeUtcOfAngleAfterNoon(nauticalAngle - epsilon, date, latitude, longitude),
+    sunAltitudeAboveErrorMessage(date, latitude, longitude, nauticalAngle), sunAltitudeBelowErrorMessage(date, latitude, longitude, nauticalAngle));
 
 const getAstronomicalDuskEndDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleAfterNoon(astronomicalAngle, date, latitude, longitude);
+  longPersistingEventsHandler(() => getDateTimeUtcOfAngleAfterNoon(astronomicalAngle, date, latitude, longitude),
+    sunAltitudeAboveErrorMessage(date, latitude, longitude, astronomicalAngle), sunAltitudeBelowErrorMessage(date, latitude, longitude, astronomicalAngle));
 
 const getNauticalDuskEndDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleAfterNoon(nauticalAngle, date, latitude, longitude);
+  longPersistingEventsHandler(() => getDateTimeUtcOfAngleAfterNoon(nauticalAngle, date, latitude, longitude),
+    sunAltitudeAboveErrorMessage(date, latitude, longitude, nauticalAngle), sunAltitudeBelowErrorMessage(date, latitude, longitude, nauticalAngle));
 
 const getNauticalDuskStartDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleAfterNoon(civilAngle - epsilon, date, latitude, longitude);
+  longPersistingEventsHandler(() => getDateTimeUtcOfAngleAfterNoon(civilAngle - epsilon, date, latitude, longitude),
+    sunAltitudeAboveErrorMessage(date, latitude, longitude, civilAngle), sunAltitudeBelowErrorMessage(date, latitude, longitude, civilAngle));
 
 const getCivilDuskEndDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleAfterNoon(civilAngle, date, latitude, longitude);
+  longPersistingEventsHandler(() => getDateTimeUtcOfAngleAfterNoon(civilAngle, date, latitude, longitude),
+    sunAltitudeAboveErrorMessage(date, latitude, longitude, civilAngle), sunAltitudeBelowErrorMessage(date, latitude, longitude, civilAngle));
 
 const getCivilDuskStartDateTimeUtc = (date, latitude, longitude) =>
-  getDateTimeUtcOfAngleAfterNoon(sunsetAngle, date, latitude, longitude);
+  longPersistingEventsHandler(() => getDateTimeUtcOfAngleAfterNoon(sunsetAngle, date, latitude, longitude),
+    sunUpAllDayErrorMessage(date, latitude, longitude),
+    sunDownAllDayErrorMessage(date, latitude, longitude));
+
+const sunAltitudeAboveErrorMessage = (date, latitude, longitude, degrees) => `The sun's altitude does not drop to ${degrees}° on ${date.toDateString()} at latitude ${latitude} and longitude ${longitude}`;
+
+const sunAltitudeBelowErrorMessage = (date, latitude, longitude, degrees) => `The sun's altitude does not rise to ${degrees}° on ${date.toDateString()} at latitude ${latitude} and longitude ${longitude}`;
+
+const sunUpAllDayErrorMessage = (date, latitude, longitude) => `The sun is up all day on ${date.toDateString()} at latitude ${latitude} and longitude ${longitude}`;
+
+const sunDownAllDayErrorMessage = (date, latitude, longitude) => `The sun is down all day on ${date.toDateString()} at latitude ${latitude} and longitude ${longitude}`;
 
 export {
   getNoonDateTimeUtc,

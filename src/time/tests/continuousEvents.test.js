@@ -21,20 +21,26 @@ describe('Events that last all day/night', () => {
       longitude: 123.354750,
       date: new Date(Date.UTC(2002, 0, 27))
     }].forEach(upAllDay => {
-      assert.equal(suntimes.getSunriseDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is up all day');
-      assert.equal(suntimes.getCivilDawnEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is up all day');
-      assert.equal(suntimes.getCivilDawnStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is up all day');
-      assert.equal(suntimes.getNauticalDawnEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is up all day');
-      assert.equal(suntimes.getNauticalDawnStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is up all day');
-      assert.equal(suntimes.getAstronomicalDawnEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is up all day');
-      assert.equal(suntimes.getAstronomicalDawnStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is up all day');
-      assert.equal(suntimes.getAstronomicalDuskStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is up all day');
-      assert.equal(suntimes.getAstronomicalDuskEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is up all day');
-      assert.equal(suntimes.getNauticalDuskStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is up all day');
-      assert.equal(suntimes.getNauticalDuskEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is up all day');
-      assert.equal(suntimes.getCivilDuskStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is up all day');
-      assert.equal(suntimes.getCivilDuskEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is up all day');
-      assert.equal(suntimes.getSunsetDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is up all day');
+      assert.include(suntimes.getAstronomicalDawnStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), "The sun's altitude does not drop to -18°");
+      assert.include(suntimes.getAstronomicalDawnEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), "The sun's altitude does not drop to -12°");
+
+      assert.include(suntimes.getNauticalDawnStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), "The sun's altitude does not drop to -12°");
+      assert.include(suntimes.getNauticalDawnEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), "The sun's altitude does not drop to -6°");
+
+      assert.include(suntimes.getCivilDawnStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), "The sun's altitude does not drop to -6°");
+      assert.include(suntimes.getCivilDawnEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is up all day');
+
+      assert.include(suntimes.getSunriseDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is up all day');
+      assert.include(suntimes.getSunsetDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is up all day');
+
+      assert.include(suntimes.getCivilDuskStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is up all day');
+      assert.include(suntimes.getCivilDuskEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), "The sun's altitude does not drop to -6°");
+
+      assert.include(suntimes.getNauticalDuskStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), "The sun's altitude does not drop to -6°");
+      assert.include(suntimes.getNauticalDuskEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), "The sun's altitude does not drop to -12°");
+
+      assert.include(suntimes.getAstronomicalDuskStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), "The sun's altitude does not drop to -12°");
+      assert.include(suntimes.getAstronomicalDuskEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), "The sun's altitude does not drop to -18°");
     });
   });
   test('returns the sun is down when the sun is below the horizon for the entire day', () => {
@@ -54,17 +60,21 @@ describe('Events that last all day/night', () => {
       latitude: -84.530649,
       longitude: 148.240238,
       date: new Date(Date.UTC(2040, 6, 25))
-    }].forEach(upAllDay => {
-      assert.equal(suntimes.getSunriseDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is down all day');
-      assert.equal(suntimes.getCivilDawnEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun does reach angle x°');
-      assert.equal(suntimes.getCivilDawnStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun does reach angle x°');
-      assert.equal(suntimes.getNauticalDawnEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun does reach angle x°');
-      assert.equal(suntimes.getNauticalDawnStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun does reach angle x°');
-      assert.equal(suntimes.getNauticalDuskStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun does reach angle x°');
-      assert.equal(suntimes.getNauticalDuskEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun does reach angle x°');
-      assert.equal(suntimes.getCivilDuskStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun does reach angle x°');
-      assert.equal(suntimes.getCivilDuskEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun does reach angle x°');
-      assert.equal(suntimes.getSunsetDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude), 'The sun is down all day');
+    }].forEach(downAllDay => {
+      assert.include(suntimes.getNauticalDawnStartDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude), "The sun's altitude does not rise to -12°");
+      assert.include(suntimes.getNauticalDawnEndDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude), "The sun's altitude does not rise to -6°");
+
+      assert.include(suntimes.getCivilDawnStartDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude), "The sun's altitude does not rise to -6°");
+      assert.include(suntimes.getCivilDawnEndDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude), 'The sun is down all day');
+
+      assert.include(suntimes.getSunriseDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude), 'The sun is down all day');
+      assert.include(suntimes.getSunsetDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude), 'The sun is down all day');
+
+      assert.include(suntimes.getCivilDuskStartDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude), 'The sun is down all day');
+      assert.include(suntimes.getCivilDuskEndDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude), "The sun's altitude does not rise to -6°");
+
+      assert.include(suntimes.getNauticalDuskStartDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude), "The sun's altitude does not rise to -6°");
+      assert.include(suntimes.getNauticalDuskEndDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude), "The sun's altitude does not rise to -12°");
     });
   });
 });
