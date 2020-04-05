@@ -8,6 +8,32 @@ suite('Index', () => {
       .to.not.equal(null)
       .and.not.to.equal(undefined);
   });
+  test('all dates are returned in ISO 8601', () => {
+    const { latitude, longitude, date, angle } = {
+      latitude: 0,
+      longitude: 0,
+      date: new Date(Date.now()),
+      angle: 0
+    };
+    const iso8601Regex = /^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(.[0-9]+)?(Z)?$/;
+    expect(suntimes.getDateTimeUtcOfAngleBeforeNoon(angle, date, latitude, longitude)).to.match(iso8601Regex);
+    expect(suntimes.getDateTimeUtcOfAngleAfterNoon(angle, date, latitude, longitude)).to.match(iso8601Regex);
+    expect(suntimes.getSunriseDateTimeUtc(date, latitude, longitude)).to.match(iso8601Regex);
+    expect(suntimes.getSunsetDateTimeUtc(date, latitude, longitude)).to.match(iso8601Regex);
+    expect(suntimes.getCivilDawnEndDateTimeUtc(date, latitude, longitude)).to.match(iso8601Regex);
+    expect(suntimes.getCivilDawnStartDateTimeUtc(date, latitude, longitude)).to.match(iso8601Regex);
+    expect(suntimes.getNauticalDawnEndDateTimeUtc(date, latitude, longitude)).to.match(iso8601Regex);
+    expect(suntimes.getNauticalDawnStartDateTimeUtc(date, latitude, longitude)).to.match(iso8601Regex);
+    expect(suntimes.getAstronomicalDawnEndDateTimeUtc(date, latitude, longitude)).to.match(iso8601Regex);
+    expect(suntimes.getAstronomicalDawnStartDateTimeUtc(date, latitude, longitude)).to.match(iso8601Regex);
+    expect(suntimes.getAstronomicalDuskStartDateTimeUtc(date, latitude, longitude)).to.match(iso8601Regex);
+    expect(suntimes.getAstronomicalDuskEndDateTimeUtc(date, latitude, longitude)).to.match(iso8601Regex);
+    expect(suntimes.getNauticalDuskEndDateTimeUtc(date, latitude, longitude)).to.match(iso8601Regex);
+    expect(suntimes.getNauticalDuskStartDateTimeUtc(date, latitude, longitude)).to.match(iso8601Regex);
+    expect(suntimes.getCivilDuskEndDateTimeUtc(date, latitude, longitude)).to.match(iso8601Regex);
+    expect(suntimes.getCivilDuskStartDateTimeUtc(date, latitude, longitude)).to.match(iso8601Regex);
+    expect(suntimes.getNoonDateTimeUtc(date, longitude)).to.match(iso8601Regex);
+  });
   test('the suntimes object exports all methods', () => {
     const { lat, lng, date, angle } = {
       lat: 0,
