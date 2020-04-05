@@ -2,7 +2,7 @@ import { suite, test } from 'mocha';
 import { assert } from 'chai';
 import { getNoonDateTimeUtc } from '../../index';
 
-suite('Get Noon Time Utcs', () => {
+suite('Get Noon Time Utc', () => {
   test('East most location with a 12 hour offset returns correct noon datetime in utc', () => {
     const targetDate = new Date(2019, 9, 1);
     const anadyrRussia = {
@@ -15,7 +15,7 @@ suite('Get Noon Time Utcs', () => {
     const expectedTime = new Date(anadyrRussia.ExpectedTimeUtc);
 
     const differenceInSeconds =
-      (expectedTime.getTime() - actual.getTime()) / 1000;
+      (expectedTime.getTime() - new Date(actual).getTime()) / 1000;
     assert.closeTo(differenceInSeconds, 0, 60);
   });
 
@@ -31,7 +31,7 @@ suite('Get Noon Time Utcs', () => {
     const expectedTime = new Date(bakerIslandUsa.ExpectedTimeUtc);
 
     const differenceInSeconds =
-      (expectedTime.getTime() - actual.getTime()) / 1000;
+      (expectedTime.getTime() - new Date(actual).getTime()) / 1000;
     assert.closeTo(differenceInSeconds, 0, 60);
   });
 });

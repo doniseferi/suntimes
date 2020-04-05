@@ -85,7 +85,7 @@ const getDateTimeUtcFactory = (getNoonDateTimeUtc, getHourAngleSinceNoon) => {
   };
 
   const toDateTimeUtc = (date, longitude, hourAngle) => {
-    const solarNoonUtc = getNoonDateTimeUtc(date, longitude);
+    const solarNoonUtc = new Date(getNoonDateTimeUtc(date, longitude));
     return addHours(solarNoonUtc, hourAngle);
   };
 

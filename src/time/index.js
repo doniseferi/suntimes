@@ -9,7 +9,7 @@ import { getNoonHourAngleFactory } from '../hourAngle/index';
 const noonHourAngleFactory = getNoonHourAngleFactory(equationOfTime);
 const getNoonHourAngle = noonHourAngleFactory.getNoonHourAngle;
 const getNoonDateTimeUtc = (date, longitude) =>
-  toUtcDateTime(date, getNoonHourAngle(date, longitude));
+  toUtcDateTime(date, getNoonHourAngle(date, longitude)).toISOString();
 
 const hourAngleFactory = getHourAngleFactory(
   sine,
@@ -31,9 +31,10 @@ const civilAngle = -6;
 const nauticalAngle = -12;
 const astronomicalAngle = -18;
 
-const longPersistingEventsHandler = (command, sunAltitudeAboveAngleErrorMessage, sunAltitudeBelowAngleErrorMessage) => {
+// TODO: convert to switch statement
+const longPersistingEventsHandler = (date, sunAltitudeAboveAngleErrorMessage, sunAltitudeBelowAngleErrorMessage) => {
   try {
-    return command();
+    return date().toISOString();
   } catch (err) {
     if (err.message === 'The sun altitude never drops below the angle specified') {
       return sunAltitudeAboveAngleErrorMessage;

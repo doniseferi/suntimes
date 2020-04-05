@@ -21,7 +21,7 @@ const assertTimesAreCloseToDelta = testModel => {
       Longitude
     );
     const differenceInSeconds =
-      (expectedDateTimeUtc.getTime() - actualDateTimeUtc.getTime()) / 1000;
+      (expectedDateTimeUtc.getTime() - new Date(actualDateTimeUtc).getTime()) / 1000;
     assert.closeTo(differenceInSeconds, 0, 60);
   });
 };
