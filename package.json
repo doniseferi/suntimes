@@ -8,7 +8,7 @@
     "build": "rollup -c",
     "release": "standard-version",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "test": "semistandard && nyc mocha --opts support/mocha.opts **/*.test.js",
+    "test": "semistandard && npm run build && nyc mocha --opts support/mocha.opts **/*.test.js",
     "fix": "semistandard --fix"
   },
   "repository": {

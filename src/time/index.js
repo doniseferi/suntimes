@@ -11,8 +11,7 @@ import {
   sunAltitudeBelowErrorMessage,
   sunUpAllDayErrorMessage,
   sunDownAllDayErrorMessage
-}
-  from '../perpetualEvents/index';
+} from '../perpetualEvents/index';
 
 const noonHourAngleFactory = getNoonHourAngleFactory(equationOfTime);
 const getNoonHourAngle = noonHourAngleFactory.getNoonHourAngle;
