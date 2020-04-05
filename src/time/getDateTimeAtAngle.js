@@ -47,6 +47,7 @@ const getDateTimeUtcFactory = (getNoonDateTimeUtc, getHourAngleSinceNoon) => {
     }
   };
 
+  // todo: refactor
   const getDateTimeUtcOfAngleBeforeNoon = (
     angle,
     date,
@@ -65,9 +66,10 @@ const getDateTimeUtcFactory = (getNoonDateTimeUtc, getHourAngleSinceNoon) => {
       date,
       longitude,
       getHourAngleSinceNoon(date, latitude, angle) * -1
-    );
+    ).toISOString();
   };
 
+  // todo: refactor
   const getDateTimeUtcOfAngleAfterNoon = (angle, date, latitude, longitude) => {
     validate(
       angle,
@@ -81,7 +83,7 @@ const getDateTimeUtcFactory = (getNoonDateTimeUtc, getHourAngleSinceNoon) => {
       date,
       longitude,
       getHourAngleSinceNoon(date, latitude, angle)
-    );
+    ).toISOString();
   };
 
   const toDateTimeUtc = (date, longitude, hourAngle) => {

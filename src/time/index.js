@@ -34,7 +34,7 @@ const astronomicalAngle = -18;
 // TODO: convert to switch statement
 const longPersistingEventsHandler = (date, sunAltitudeAboveAngleErrorMessage, sunAltitudeBelowAngleErrorMessage) => {
   try {
-    return date().toISOString();
+    return date();
   } catch (err) {
     if (err.message === 'The sun altitude never drops below the angle specified') {
       return sunAltitudeAboveAngleErrorMessage;
