@@ -40,13 +40,13 @@ const astronomicalAngle = -18;
 
 const getDateTimeUtcOfAngleBeforeNoon = (angle, date, latitude, longitude) =>
   perpetualEventHandler(() => dateTimeUtcOfAngleBeforeNoon(angle, date, latitude, longitude),
-    sunAltitudeAboveErrorMessage(date, latitude, longitude, astronomicalAngle),
-    sunAltitudeBelowErrorMessage(date, latitude, longitude, astronomicalAngle));
+    sunAltitudeAboveErrorMessage(date, latitude, longitude, angle),
+    sunAltitudeBelowErrorMessage(date, latitude, longitude, angle));
 
 const getDateTimeUtcOfAngleAfterNoon = (angle, date, latitude, longitude) =>
   perpetualEventHandler(() => dateTimeUtcOfAngleAfterNoon(angle, date, latitude, longitude),
-    sunAltitudeAboveErrorMessage(date, latitude, longitude, astronomicalAngle),
-    sunAltitudeBelowErrorMessage(date, latitude, longitude, astronomicalAngle));
+    sunAltitudeAboveErrorMessage(date, latitude, longitude, angle),
+    sunAltitudeBelowErrorMessage(date, latitude, longitude, angle));
 
 const getSunriseDateTimeUtc = (date, latitude, longitude) =>
   perpetualEventHandler(() => dateTimeUtcOfAngleBeforeNoon(sunriseAndSunsetAngle, date, latitude, longitude),
