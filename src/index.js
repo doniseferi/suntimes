@@ -61,7 +61,7 @@ const suntimes = Object.freeze({
 * @throws {RangeError} The sun altitude never drops below the angle specified
 * @example <caption>Example usage of getHourAngleSinceNoon</caption>
 * // returns 5.54554469317797
-* suntimes.suntimes.getHourAngleSinceNoon(new Date(2025, 0, 18), 51.477730, -12);
+* suntimes.getHourAngleSinceNoon(new Date(2025, 0, 18), 51.477730, -12);
 */
   getHourAngleSinceNoon: (date, latitude, angle) => getHourAngleSinceNoon(date, latitude, angle),
 

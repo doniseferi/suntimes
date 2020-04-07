@@ -149,7 +149,7 @@ Gets the hour angle difference between noon and the angle value.
 **Example** *(Example usage of getHourAngleSinceNoon)*
 ```js
 // returns 5.54554469317797
-suntimes.suntimes.getHourAngleSinceNoon(new Date(2025, 0, 18), 51.477730, -12);
+suntimes.getHourAngleSinceNoon(new Date(2025, 0, 18), 51.477730, -12);
 ```
 <a name="getNoonHourAngle"></a>
 
