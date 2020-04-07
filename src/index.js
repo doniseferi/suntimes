@@ -21,19 +21,17 @@ import {
   getCivilDuskEndDateTimeUtc,
   getCivilDuskStartDateTimeUtc
 } from './time/index';
-/**
-* @function
-* @description
-* An intrinsic object that provides basic astronomy functionality for any given date and location.
+
+/** @description
+* An object that provides basic astronomy functionality for any given date and location.
 * @author Edonis Seferi <doni.seferi@gmail.com>
 * @module suntimes
 */
 const suntimes = Object.freeze({
-  /**
-* @function
+  /** @function
 * @description
 * The angular distance of the sun north or south of the earth's equator.
-* @example <caption>Example usage of getDeclinationOfTheSun.</caption>
+* @example dd;lExample usage of getDeclinationOfTheSun.</caption>
 * // returns -23.078780854838076
 * suntimes.getDeclinationOfTheSun(new Date(2019, 0, 1));
 * @param {Date} date - A date instance
@@ -41,8 +39,7 @@ const suntimes = Object.freeze({
 */
   getDeclinationOfTheSun: (date) => getDeclinationOfTheSun(date),
 
-  /**
-* @function
+  /** @function
 * @description
 * The correction between standard clock time and the time based on the exact position of the sun in the sky represented as decimal time in minutes.
 * @param {Date} date - A date instance.
@@ -53,11 +50,9 @@ const suntimes = Object.freeze({
 */
   equationOfTime: (date) => equationOfTime(date),
 
-  /**
-* @function
+  /** @function
 * @description
 * Gets the hour angle difference between noon and the angle value.
-*
 * @param {Date} date - A date instance.
 * @param {number} latitude - A latitude value in the range of -90 to 90.
 * @param {number} angle - An angle value.
@@ -70,8 +65,7 @@ const suntimes = Object.freeze({
 */
   getHourAngleSinceNoon: (date, latitude, angle) => getHourAngleSinceNoon(date, latitude, angle),
 
-  /**
-* @function
+  /** @function
 * @description
 * Gets the noon hour angle for the date and longitude value.
 * @param {Date} date - A date instance.
@@ -83,11 +77,9 @@ const suntimes = Object.freeze({
 */
   getNoonHourAngle: (date, longitude) => getNoonHourAngle(date, longitude),
 
-  /**
-* @function
+  /** @function
 * @description
 * Gets the noon date and time in UTC expressed in an ISO 8601 format for date and longitude value.
-*
 * @param {Date} date - A date instance.
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing noon date and time in UTC, expressed in an ISO 8601 format.
@@ -97,11 +89,9 @@ const suntimes = Object.freeze({
 */
   getNoonDateTimeUtc: (date, longitude) => getNoonDateTimeUtc(date, longitude),
 
-  /**
-* @function
+  /** @function
 * @description
 * Gets the date and time in UTC expressed in an ISO 8601 format for an angle before noon for the angle, date, latitude and longitude value.
-*
 * @param {number} angle - An angle value.
 * @param {Date} date - A date instance.
 * @param {number} latitude - A latitude value in the range of -90 to 90.
@@ -110,11 +100,9 @@ const suntimes = Object.freeze({
 */
   getDateTimeUtcOfAngleBeforeNoon: (angle, date, latitude, longitude) => getDateTimeUtcOfAngleBeforeNoon(angle, date, latitude, longitude),
 
-  /**
-* @function
+  /** @function
 * @description
 * Gets the date and time in UTC expressed in an ISO 8601 format for an angle after noon for the angle, date, latitude and longitude value.
-*
 * @param {number} angle - An angle value.
 * @param {Date} date - A date instance.
 * @param {number} latitude - A latitude value in the range of -90 to 90.
@@ -123,11 +111,9 @@ const suntimes = Object.freeze({
 */
   getDateTimeUtcOfAngleAfterNoon: (angle, date, latitude, longitude) => getDateTimeUtcOfAngleAfterNoon(angle, date, latitude, longitude),
 
-  /**
-* @function
+  /** @function
 * @description
 * Gets the sunrise date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
-*
 * @param {Date} date - A date instance.
 * @param {number} latitude - A latitude value in the range of -90 to 90.
 * @param {number} longitude - A longitude value in the range of -180 to 180.
@@ -144,11 +130,9 @@ const suntimes = Object.freeze({
 */
   getSunriseDateTimeUtc: (date, latitude, longitude) => getSunriseDateTimeUtc(date, latitude, longitude),
 
-  /**
-* @function
+  /** @function
 * @description
 * Gets the sunset date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
-*
 * @param {Date} date - A date instance.
 * @param {number} latitude - A latitude value in the range of -90 to 90.
 * @param {number} longitude - A longitude value in the range of -180 to 180.
@@ -165,11 +149,9 @@ const suntimes = Object.freeze({
 */
   getSunsetDateTimeUtc: (date, latitude, longitude) => getSunsetDateTimeUtc(date, latitude, longitude),
 
-  /**
-* @function
+  /** @function
 * @description
 * Gets the end of civil dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
-*
 * @param {Date} date - A date instance.
 * @param {number} latitude - A latitude value in the range of -90 to 90.
 * @param {number} longitude - A longitude value in the range of -180 to 180.
@@ -187,11 +169,9 @@ const suntimes = Object.freeze({
 */
   getCivilDawnEndDateTimeUtc: (date, latitude, longitude) => getCivilDawnEndDateTimeUtc(date, latitude, longitude),
 
-  /**
-* @function
+  /** @function
 * @description
 * Gets the start of civil dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
-*
 * @param {Date} date - A date instance.
 * @param {number} latitude - A latitude value in the range of -90 to 90.
 * @param {number} longitude - A longitude value in the range of -180 to 180.
@@ -208,11 +188,9 @@ const suntimes = Object.freeze({
 */
   getCivilDawnStartDateTimeUtc: (date, latitude, longitude) => getCivilDawnStartDateTimeUtc(date, latitude, longitude),
 
-  /**
-* @function
+  /** @function
 * @description
 * Gets the end of nautical dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
-*
 * @param {Date} date - A date instance.
 * @param {number} latitude - A latitude value in the range of -90 to 90.
 * @param {number} longitude - A longitude value in the range of -180 to 180.
@@ -229,11 +207,9 @@ const suntimes = Object.freeze({
 */
   getNauticalDawnEndDateTimeUtc: (date, latitude, longitude) => getNauticalDawnEndDateTimeUtc(date, latitude, longitude),
 
-  /**
-* @function
+  /** @function
 * @description
 * Gets the start of nautical dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
-*
 * @param {Date} date - A date instance.
 * @param {number} latitude - A latitude value in the range of -90 to 90.
 * @param {number} longitude - A longitude value in the range of -180 to 180.
@@ -250,11 +226,9 @@ const suntimes = Object.freeze({
 */
   getNauticalDawnStartDateTimeUtc: (date, latitude, longitude) => getNauticalDawnStartDateTimeUtc(date, latitude, longitude),
 
-  /**
-* @function
+  /** @function
 * @description
 * Gets the end of astronomical dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
-*
 * @param {Date} date - A date instance.
 * @param {number} latitude - A latitude value in the range of -90 to 90.
 * @param {number} longitude - A longitude value in the range of -180 to 180.
@@ -268,11 +242,9 @@ const suntimes = Object.freeze({
 */
   getAstronomicalDawnEndDateTimeUtc: (date, latitude, longitude) => getAstronomicalDawnEndDateTimeUtc(date, latitude, longitude),
 
-  /**
-* @function
+  /** @function
 * @description
 * Gets the start of astronomical dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
-*
 * @param {Date} date - A date instance.
 * @param {number} latitude - A latitude value in the range of -90 to 90.
 * @param {number} longitude - A longitude value in the range of -180 to 180.
@@ -286,11 +258,9 @@ const suntimes = Object.freeze({
 */
   getAstronomicalDawnStartDateTimeUtc: (date, latitude, longitude) => getAstronomicalDawnStartDateTimeUtc(date, latitude, longitude),
 
-  /**
-* @function
+  /** @function
 * @description
 * Gets the start of astronomical dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
-*
 * @param {Date} date - A date instance.
 * @param {number} latitude - A latitude value in the range of -90 to 90.
 * @param {number} longitude - A longitude value in the range of -180 to 180.
@@ -305,11 +275,9 @@ const suntimes = Object.freeze({
 */
   getAstronomicalDuskStartDateTimeUtc: (date, latitude, longitude) => getAstronomicalDuskStartDateTimeUtc(date, latitude, longitude),
 
-  /**
-* @function
+  /** @function
 * @description
 * Gets the end of astronomical dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
-*
 * @param {Date} date - A date instance.
 * @param {number} latitude - A latitude value in the range of -90 to 90.
 * @param {number} longitude - A longitude value in the range of -180 to 180.
@@ -324,11 +292,9 @@ const suntimes = Object.freeze({
 */
   getAstronomicalDuskEndDateTimeUtc: (date, latitude, longitude) => getAstronomicalDuskEndDateTimeUtc(date, latitude, longitude),
 
-  /**
-* @function
+  /** @function
 * @description
 * Gets the end of nautical dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
-*
 * @param {Date} date - A date instance.
 * @param {number} latitude - A latitude value in the range of -90 to 90.
 * @param {number} longitude - A longitude value in the range of -180 to 180.
@@ -345,11 +311,9 @@ const suntimes = Object.freeze({
 */
   getNauticalDuskEndDateTimeUtc: (date, latitude, longitude) => getNauticalDuskEndDateTimeUtc(date, latitude, longitude),
 
-  /**
-* @function
+  /** @function
 * @description
 * Gets the start of nautical dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
-*
 * @param {Date} date - A date instance.
 * @param {number} latitude - A latitude value in the range of -90 to 90.
 * @param {number} longitude - A longitude value in the range of -180 to 180.
@@ -366,11 +330,9 @@ const suntimes = Object.freeze({
 */
   getNauticalDuskStartDateTimeUtc: (date, latitude, longitude) => getNauticalDuskStartDateTimeUtc(date, latitude, longitude),
 
-  /**
-* @function
+  /** @function
 * @description
 * Gets the end of civil dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
-*
 * @param {Date} date - A date instance.
 * @param {number} latitude - A latitude value in the range of -90 to 90.
 * @param {number} longitude - A longitude value in the range of -180 to 180.
@@ -381,11 +343,9 @@ const suntimes = Object.freeze({
 */
   getCivilDuskEndDateTimeUtc: (date, latitude, longitude) => getCivilDuskEndDateTimeUtc(date, latitude, longitude),
 
-  /**
-* @function
+  /** @function
 * @description
 * Gets the start of civil dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
-*
 * @param {Date} date - A date instance.
 * @param {number} latitude - A latitude value in the range of -90 to 90.
 * @param {number} longitude - A longitude value in the range of -180 to 180.
