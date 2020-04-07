@@ -84,8 +84,8 @@ const suntimes = Object.freeze({
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing noon date and time in UTC, expressed in an ISO 8601 format.
 * @example <caption>Example usage of getNoonDateTimeUtc</caption>
-* // returns "2025-01-18T08:44:23.762Z"
-* suntimes.getNoonDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
+* // returns "2025-01-18T12:10:20.853Z"
+* suntimes.getNoonDateTimeUtc(new Date(2025, 0, 18), -0.010150);
 */
   getNoonDateTimeUtc: (date, longitude) => getNoonDateTimeUtc(date, longitude),
 
@@ -97,6 +97,15 @@ const suntimes = Object.freeze({
 * @param {number} latitude - A latitude value in the range of -90 to 90.
 * @param {number} longitude A longitude value in the range of -180 to 180.
 * @returns {string}  A string representing the time and date for an angle before noon in UTC, expressed in an ISO 8601 format.
+* @example <caption>Example usage of getDateTimeUtcOfAngleBeforeNoon</caption>
+* // returns "2025-01-18T05:57:45.720Z"
+* suntimes.getDateTimeUtcOfAngleBeforeNoon(-18, new Date(2025, 0, 18), 51.477730, -0.010150);
+@example
+* // returns "The sun's altitude does not drop to -18° on Wed Jun 18 2025 at latitude 51.47773 and longitude -0.01015"
+* suntimes.getDateTimeUtcOfAngleBeforeNoon(-18, new Date(2025, 5, 18), 51.477730, -0.010150)
+* @example
+* // returns "The sun's altitude does not rise to 18° on Wed Jun 18 2025 at latitude -51.47773 and longitude -0.01015"
+* suntimes.getDateTimeUtcOfAngleBeforeNoon(18, new Date(2025, 5, 18), -51.477730, -0.010150);
 */
   getDateTimeUtcOfAngleBeforeNoon: (angle, date, latitude, longitude) => getDateTimeUtcOfAngleBeforeNoon(angle, date, latitude, longitude),
 
@@ -108,6 +117,12 @@ const suntimes = Object.freeze({
 * @param {number} latitude - A latitude value in the range of -90 to 90.
 * @param {number} longitude A longitude value in the range of -180 to 180.
 * @returns {string} A string representing the time and date for an angle after noon in UTC, expressed in an ISO 8601 format.
+* @example
+* // returns "The sun's altitude does not drop to -18° on Sat Jan 18 2025 at latitude -51.47773 and longitude -0.01015"
+* suntimes.getDateTimeUtcOfAngleAfterNoon(-18, new Date(2025, 0, 18), -51.477730, -0.010150)
+* @example
+* // returns "The sun's altitude does not rise to 18° on Wed Jun 18 2025 at latitude -51.47773 and longitude -0.01015"
+* suntimes.getDateTimeUtcOfAngleAfterNoon(18, new Date(2025, 5, 18), -51.477730, -0.010150);
 */
   getDateTimeUtcOfAngleAfterNoon: (angle, date, latitude, longitude) => getDateTimeUtcOfAngleAfterNoon(angle, date, latitude, longitude),
 
@@ -157,7 +172,7 @@ const suntimes = Object.freeze({
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing the end of civil dawn date and time in UTC, expressed in an ISO 8601 format.
 * @example <caption>Example usage of getCivilDawnEndDateTimeUtc</caption>
-* // returns "2025-01-18T07:59:31.616Z"
+* // returns "2025-01-18T07:57:29.802Z"
 * suntimes.getCivilDawnEndDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 * @example
 * // returns "The sun is up all day on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
@@ -266,12 +281,11 @@ const suntimes = Object.freeze({
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing the start of astronomical dusk date and time in UTC, expressed in an ISO 8601 format.
 * @example <caption>Example usage of getAstronomicalDuskStartDateTimeUtc</caption>
-* // returns 1
+* // returns "2025-01-18T17:43:04.813Z"
 * suntimes.getAstronomicalDuskStartDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 * @example
 * // returns "The sun's altitude does not drop to -12° on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
 * suntimes.getAstronomicalDuskStartDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
-
 */
   getAstronomicalDuskStartDateTimeUtc: (date, latitude, longitude) => getAstronomicalDuskStartDateTimeUtc(date, latitude, longitude),
 
@@ -283,7 +297,7 @@ const suntimes = Object.freeze({
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing the end of astronomical dusk date and time in UTC, expressed in an ISO 8601 format.
 * @example <caption>Example usage of getAstronomicalDuskEndDateTimeUtc</caption>
-* // returns 1
+* // returns "2025-01-18T18:22:55.985Z"
 * suntimes.getAstronomicalDuskEndDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 * @example
 * // returns "The sun's altitude does not drop to -18° on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
@@ -300,7 +314,7 @@ const suntimes = Object.freeze({
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing the end of nautical dusk date and time in UTC, expressed in an ISO 8601 format.
 * @example <caption>Example usage of getNauticalDuskEndDateTimeUtc</caption>
-* // returns 1
+* // returns "2025-01-18T17:43:04.813Z"
 * suntimes.getNauticalDuskEndDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 * @example
 * // returns The sun's altitude does not rise to -12° on Thu Jan 01 2032 at latitude 89.525 and longitude -30.45
@@ -319,7 +333,7 @@ const suntimes = Object.freeze({
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing the start of nautical dusk date and time in UTC, expressed in an ISO 8601 format.
 * @example <caption>Example usage of getNauticalDuskStartDateTimeUtc</caption>
-* // returns 1
+* // returns "2025-01-18T17:01:25.924Z"
 * suntimes.getNauticalDuskStartDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 * @example
 * // returns The sun's altitude does not rise to -6° on Thu Jan 01 2032 at latitude 89.525 and longitude -30.45
@@ -338,7 +352,7 @@ const suntimes = Object.freeze({
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing the end of civil dusk date and time in UTC, expressed in an ISO 8601 format.
 * @example <caption>Example usage of getCivilDuskEndDateTimeUtc</caption>
-* // returns 1
+* // returns "2025-01-18T17:01:25.924Z"
 * suntimes.getCivilDuskEndDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 */
   getCivilDuskEndDateTimeUtc: (date, latitude, longitude) => getCivilDuskEndDateTimeUtc(date, latitude, longitude),
@@ -351,7 +365,7 @@ const suntimes = Object.freeze({
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing the start of civil dusk date and time in UTC, expressed in an ISO 8601 format.
 * @example <caption>Example usage of getCivilDuskStartDateTimeUtc</caption>
-* // returns 1
+* // returns "2025-01-18T16:23:11.903Z"
 * suntimes.getCivilDuskStartDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 */
   getCivilDuskStartDateTimeUtc: (date, latitude, longitude) => getCivilDuskStartDateTimeUtc(date, latitude, longitude)
