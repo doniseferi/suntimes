@@ -5,12 +5,12 @@
   "main": "suntimes.js",
   "typings": "suntimes.d.ts",
   "scripts": {
-    "typedef": "jsdoc -t node_modules/tsd-jsdoc/dist -r ./src/index.js",
     "readme": "jsdoc2md ./src/index.js",
+    "typedef": "jsdoc -t node_modules/tsd-jsdoc/dist -r ./src/index.js",
     "build": "rollup -c",
     "release": "standard-version",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "test": "semistandard && npm run build && nyc mocha **/*.test.js --colors --full-trace --require @babel/register",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "fix": "semistandard --fix"
   },
   "repository": {
