@@ -10,7 +10,7 @@
     "build": "rollup -c",
     "release": "standard-version",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "test": "semistandard && npm run build && nyc mocha --opts support/mocha.opts **/*.test.js",
+    "test": "semistandard && npm run build && nyc mocha **/*.test.js --colors --full-trace --require @babel/register",
     "fix": "semistandard --fix"
   },
   "repository": {
@@ -54,7 +54,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "jsdoc": "^3.6.3",
     "jsdoc-to-markdown": "^5.0.3",
-    "mocha": "^6.2.2",
+    "mocha": "^7.1.1",
     "nyc": "^14.1.1",
     "rollup": "^1.27.14",
     "rollup-plugin-babel": "^4.3.3",
