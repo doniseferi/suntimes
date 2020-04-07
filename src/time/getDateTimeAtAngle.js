@@ -28,23 +28,8 @@ const getDateTimeUtcFactory = (getNoonDateTimeUtc, getHourAngleSinceNoon) => {
     );
   }
 
-  const validate = (angle, date, latitude, longitude, methodName) => {
-    if (angle == null) {
-      throw new Error(`Please provide an angle for ${methodName}.`);
-    }
-    if (date == null) {
-      throw new Error(`Please provide the desired date for ${methodName}.`);
-    }
-    if (latitude == null || isNaN(latitude)) {
-      throw new Error(
-        `Please provide the latitude of the location for ${methodName}.`
-      );
-    }
-    if (longitude == null || isNaN(longitude)) {
-      throw new Error(
-        `Please provide the longitude of the location for ${methodName}.`
-      );
-    }
+  const throwError = (errorMessage) => {
+    throw new Error(errorMessage);
   };
 
   const getDateTimeUtcOfAngleBeforeNoon = (
@@ -52,40 +37,38 @@ const getDateTimeUtcFactory = (getNoonDateTimeUtc, getHourAngleSinceNoon) => {
     date,
     latitude,
     longitude
-  ) => {
-    validate(
-      angle,
-      date,
-      latitude,
-      longitude,
-      'getDateTimeUtcOfAngleBeforeNoon'
-    );
+  ) =>
+    isNaN(angle)
+      ? throwError('Please provide a numeric value for angle param')
+      : isNaN(Date.parse(date))
+        ? throwError('Please provide a valid date')
+        : isNaN(latitude)
+          ? throwError('Please provide a numeric value for latitude param')
+          : isNaN(longitude)
+            ? throwError('Please provide a numeric value for longitude param')
+            : toDateTimeUtc(
+              date,
+              longitude,
+              getHourAngleSinceNoon(date, latitude, angle) * -1
+            ).toISOString();
 
-    return toDateTimeUtc(
-      date,
-      longitude,
-      getHourAngleSinceNoon(date, latitude, angle) * -1
-    );
-  };
-
-  const getDateTimeUtcOfAngleAfterNoon = (angle, date, latitude, longitude) => {
-    validate(
-      angle,
-      date,
-      latitude,
-      longitude,
-      'getDateTimeUtcOfAngleAfterNoon'
-    );
-
-    return toDateTimeUtc(
-      date,
-      longitude,
-      getHourAngleSinceNoon(date, latitude, angle)
-    );
-  };
+  const getDateTimeUtcOfAngleAfterNoon = (angle, date, latitude, longitude) =>
+    isNaN(angle)
+      ? throwError('Please provide a numeric value for angle param')
+      : isNaN(Date.parse(date))
+        ? throwError('Please provide a valid date')
+        : isNaN(latitude)
+          ? throwError('Please provide a numeric value for latitude param')
+          : isNaN(longitude)
+            ? throwError('Please provide a numeric value for longitude param')
+            : toDateTimeUtc(
+              date,
+              longitude,
+              getHourAngleSinceNoon(date, latitude, angle)
+            ).toISOString();
 
   const toDateTimeUtc = (date, longitude, hourAngle) => {
-    const solarNoonUtc = getNoonDateTimeUtc(date, longitude);
+    const solarNoonUtc = new Date(getNoonDateTimeUtc(date, longitude));
     return addHours(solarNoonUtc, hourAngle);
   };
 

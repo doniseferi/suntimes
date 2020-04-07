@@ -1,8 +1,8 @@
 import { suite, test } from 'mocha';
 import { assert } from 'chai';
-import { getNoonDateTimeUtc } from '../../index';
+import suntimes from '../../../suntimes';
 
-suite('Get Noon Time Utcs', () => {
+suite('Get Noon Time Utc', () => {
   test('East most location with a 12 hour offset returns correct noon datetime in utc', () => {
     const targetDate = new Date(2019, 9, 1);
     const anadyrRussia = {
@@ -11,11 +11,11 @@ suite('Get Noon Time Utcs', () => {
       ExpectedTimeUtc: '2019-09-30T23:59:00.000Z'
     };
 
-    const actual = getNoonDateTimeUtc(targetDate, anadyrRussia.Longitude);
+    const actual = suntimes.getNoonDateTimeUtc(targetDate, anadyrRussia.Longitude);
     const expectedTime = new Date(anadyrRussia.ExpectedTimeUtc);
 
     const differenceInSeconds =
-      (expectedTime.getTime() - actual.getTime()) / 1000;
+      (expectedTime.getTime() - new Date(actual).getTime()) / 1000;
     assert.closeTo(differenceInSeconds, 0, 60);
   });
 
@@ -27,11 +27,11 @@ suite('Get Noon Time Utcs', () => {
       ExpectedTimeUtc: '2019-01-01T23:49:00.000Z'
     };
 
-    const actual = getNoonDateTimeUtc(targetDate, bakerIslandUsa.Longitude);
+    const actual = suntimes.getNoonDateTimeUtc(targetDate, bakerIslandUsa.Longitude);
     const expectedTime = new Date(bakerIslandUsa.ExpectedTimeUtc);
 
     const differenceInSeconds =
-      (expectedTime.getTime() - actual.getTime()) / 1000;
+      (expectedTime.getTime() - new Date(actual).getTime()) / 1000;
     assert.closeTo(differenceInSeconds, 0, 60);
   });
 });

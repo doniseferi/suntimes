@@ -1,4 +1,0 @@
---timeout 999999
---colors
---require @babel/register
---full-trace
