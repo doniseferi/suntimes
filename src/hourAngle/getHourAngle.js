@@ -60,7 +60,7 @@ const getHourAngleFactory = (
 * Gets the hour angle difference between noon and the angle value.
 * @example <caption>Example usage of getHourAngleSinceNoon</caption>
 * // returns 5.54554469317797
-* ```suntimes.getHourAngleSinceNoon(new Date(2025, 0, 18), 51.477730, -12);```
+* suntimes.getHourAngleSinceNoon(new Date(2025, 0, 18), 51.477730, -12);
 * @param {Date} date - A date instance.
 * @param {number} latitude - A latitude value in the range of -90 to 90.
 * @param {number} angle - An angle value.

@@ -2,7 +2,7 @@
 * The correction between standard clock time and the time based on the exact position of the sun in the sky represented as decimal time in minutes.
 * @example <caption>Example usage of equationOfTime.</caption>
 * // returns -10.306964615344999
-* ```suntimes.equationOfTime(new Date(2025, 0, 18));```
+* suntimes.equationOfTime(new Date(2025, 0, 18));
 * @param {Date} date - A date instance.
 * @returns {number} A number whose value is the equation of time in minutes decimal time for the Date represented by date.
 */
