@@ -6,7 +6,7 @@
   "typings": "suntimes.d.ts",
   "scripts": {
     "readme": "jsdoc2md ./src/index.js",
-    "typedef": "jsdoc -t node_modules/tsd-jsdoc/dist -r ./src/index.js",
+    "typedef": "jsdoc -t node_modules/tsd-jsdoc/dist -r ./src/",
     "build": "rollup -c",
     "release": "standard-version",
     "test": "semistandard && npm run build && nyc mocha **/*.test.js --colors --full-trace --require @babel/register",
