@@ -1,6 +1,23 @@
 import { describe, test } from 'mocha';
 import { assert } from 'chai';
-import suntimes from '../../index';
+import {
+  getDateTimeUtcOfAngleBeforeNoon,
+  getDateTimeUtcOfAngleAfterNoon,
+  getSunriseDateTimeUtc,
+  getSunsetDateTimeUtc,
+  getCivilDawnEndDateTimeUtc,
+  getCivilDawnStartDateTimeUtc,
+  getNauticalDawnEndDateTimeUtc,
+  getNauticalDawnStartDateTimeUtc,
+  getAstronomicalDawnEndDateTimeUtc,
+  getAstronomicalDawnStartDateTimeUtc,
+  getAstronomicalDuskStartDateTimeUtc,
+  getAstronomicalDuskEndDateTimeUtc,
+  getNauticalDuskEndDateTimeUtc,
+  getNauticalDuskStartDateTimeUtc,
+  getCivilDuskEndDateTimeUtc,
+  getCivilDuskStartDateTimeUtc
+} from '../../index';
 
 describe('Perptual events', () => {
   test('returns the sun is up when the sun is above the horizon for the entire day', () => {
@@ -22,46 +39,46 @@ describe('Perptual events', () => {
       date: new Date(Date.UTC(2002, 0, 27))
     }].forEach(upAllDay => {
       assert.include(
-        suntimes.getAstronomicalDawnStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
+        getAstronomicalDawnStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
         "The sun's altitude does not drop to -18°");
       assert.include(
-        suntimes.getAstronomicalDawnEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
+        getAstronomicalDawnEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
         "The sun's altitude does not drop to -12°");
       assert.include(
-        suntimes.getNauticalDawnStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
+        getNauticalDawnStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
         "The sun's altitude does not drop to -12°");
       assert.include(
-        suntimes.getNauticalDawnEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
+        getNauticalDawnEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
         "The sun's altitude does not drop to -6°");
       assert.include(
-        suntimes.getCivilDawnStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
+        getCivilDawnStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
         "The sun's altitude does not drop to -6°");
       assert.include(
-        suntimes.getCivilDawnEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
+        getCivilDawnEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
         'The sun is up all day');
       assert.include(
-        suntimes.getSunriseDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
+        getSunriseDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
         'The sun is up all day');
       assert.include(
-        suntimes.getSunsetDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
+        getSunsetDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
         'The sun is up all day');
       assert.include(
-        suntimes.getCivilDuskStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
+        getCivilDuskStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
         'The sun is up all day');
       assert.include(
-        suntimes.getCivilDuskEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
+        getCivilDuskEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
         "The sun's altitude does not drop to -6°");
       assert.include(
-        suntimes.getNauticalDuskStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
+        getNauticalDuskStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
         "The sun's altitude does not drop to -6°");
       assert.include(
-        suntimes.getNauticalDuskEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
+        getNauticalDuskEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
         "The sun's altitude does not drop to -12°");
       assert.include(
-        suntimes.getAstronomicalDuskStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
+        getAstronomicalDuskStartDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
         "The sun's altitude does not drop to -12°");
       assert.include(
-        suntimes.getAstronomicalDuskEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
+        getAstronomicalDuskEndDateTimeUtc(upAllDay.date, upAllDay.latitude, upAllDay.longitude),
         "The sun's altitude does not drop to -18°");
     });
   });
@@ -84,38 +101,38 @@ describe('Perptual events', () => {
       date: new Date(Date.UTC(2040, 6, 25))
     }].forEach(downAllDay => {
       assert.include(
-        suntimes.getNauticalDawnStartDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude),
+        getNauticalDawnStartDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude),
         "The sun's altitude does not rise to -12°");
       assert.include(
-        suntimes.getNauticalDawnEndDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude),
+        getNauticalDawnEndDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude),
         "The sun's altitude does not rise to -6°");
 
       assert.include(
-        suntimes.getCivilDawnStartDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude),
+        getCivilDawnStartDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude),
         "The sun's altitude does not rise to -6°");
       assert.include(
-        suntimes.getCivilDawnEndDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude),
+        getCivilDawnEndDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude),
         'The sun is down all day');
 
       assert.include(
-        suntimes.getSunriseDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude),
+        getSunriseDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude),
         'The sun is down all day');
       assert.include(
-        suntimes.getSunsetDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude),
+        getSunsetDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude),
         'The sun is down all day');
 
       assert.include(
-        suntimes.getCivilDuskStartDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude),
+        getCivilDuskStartDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude),
         'The sun is down all day');
       assert.include(
-        suntimes.getCivilDuskEndDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude),
+        getCivilDuskEndDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude),
         "The sun's altitude does not rise to -6°");
 
       assert.include(
-        suntimes.getNauticalDuskStartDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude),
+        getNauticalDuskStartDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude),
         "The sun's altitude does not rise to -6°");
       assert.include(
-        suntimes.getNauticalDuskEndDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude),
+        getNauticalDuskEndDateTimeUtc(downAllDay.date, downAllDay.latitude, downAllDay.longitude),
         "The sun's altitude does not rise to -12°");
     });
   });
@@ -123,14 +140,14 @@ describe('Perptual events', () => {
     const latitude = 71.980070;
     const longitude = 102.474270;
     const date = new Date(2037, 7, 2);
-    assert.include(suntimes.getDateTimeUtcOfAngleBeforeNoon(-6, date, latitude, longitude), "The sun's altitude does not drop to -6°");
-    assert.include(suntimes.getDateTimeUtcOfAngleAfterNoon(-6, date, latitude, longitude), "The sun's altitude does not drop to -6°");
+    assert.include(getDateTimeUtcOfAngleBeforeNoon(-6, date, latitude, longitude), "The sun's altitude does not drop to -6°");
+    assert.include(getDateTimeUtcOfAngleAfterNoon(-6, date, latitude, longitude), "The sun's altitude does not drop to -6°");
   });
   test('Angle based methods detail sun doesnt arrive at the specified point', () => {
     const latitude = 82.518689;
     const longitude = -62.273199;
     const date = new Date(2020, 0, 1);
-    assert.include(suntimes.getDateTimeUtcOfAngleBeforeNoon(-6, date, latitude, longitude), "The sun's altitude does not rise to -6°");
-    assert.include(suntimes.getDateTimeUtcOfAngleAfterNoon(-6, date, latitude, longitude), "The sun's altitude does not rise to -6°");
+    assert.include(getDateTimeUtcOfAngleBeforeNoon(-6, date, latitude, longitude), "The sun's altitude does not rise to -6°");
+    assert.include(getDateTimeUtcOfAngleAfterNoon(-6, date, latitude, longitude), "The sun's altitude does not rise to -6°");
   });
 });
