@@ -1,12 +1,12 @@
 {
   "name": "suntimes",
-  "version": "5.0.0",
+  "version": "5.0.1-3",
   "description": "A tiny library to get the exact date and time in utc for certain points of the day for any desired location and date.",
   "main": "suntimes.js",
   "typings": "suntimes.d.ts",
   "scripts": {
-    "readme": "jsdoc2md ./src/index.js",
-    "typedef": "jsdoc -t node_modules/tsd-jsdoc/dist -r ./src/index.js",
+    "readme": "jsdoc2md src/declination/getDeclinationOfTheSun.js src/equationOfTime/equationOfTime.js src/hourAngle/getHourAngle.js src/hourAngle/getNoonHourAngle.js src/time/index.js src/index.js",
+    "typedef": "jsdoc -t node_modules/tsd-jsdoc/dist -r ./src/",
     "build": "rollup -c",
     "release": "standard-version",
     "test": "semistandard && npm run build && nyc mocha **/*.test.js --colors --full-trace --require @babel/register",
