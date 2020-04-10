@@ -13,6 +13,7 @@ A tiny library to get the exact date and time in [utc](https://en.wikipedia.org/
 ## Api Reference
 
 * * *
+## Functions
 
 <dl>
 <dt><a href="#getDeclinationOfTheSun">getDeclinationOfTheSun(date)</a> ⇒ <code>number</code></dt>
@@ -55,7 +56,8 @@ A tiny library to get the exact date and time in [utc](https://en.wikipedia.org/
 <dd><p>Gets the start of nautical dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.</p>
 </dd>
 <dt><a href="#getAstronomicalDawnEndDateTimeUtc">getAstronomicalDawnEndDateTimeUtc(date, latitude, longitude)</a> ⇒ <code>string</code></dt>
-<dd><p>Gets the end of astronomical dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.</p></dd>
+<dd><p>Gets the end of astronomical dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.</p>
+</dd>
 <dt><a href="#getAstronomicalDawnStartDateTimeUtc">getAstronomicalDawnStartDateTimeUtc(date, latitude, longitude)</a> ⇒ <code>string</code></dt>
 <dd><p>Gets the start of astronomical dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.</p>
 </dd>
@@ -63,7 +65,8 @@ A tiny library to get the exact date and time in [utc](https://en.wikipedia.org/
 <dd><p>Gets the start of astronomical dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.</p>
 </dd>
 <dt><a href="#getAstronomicalDuskEndDateTimeUtc">getAstronomicalDuskEndDateTimeUtc(date, latitude, longitude)</a> ⇒ <code>string</code></dt>
-<dd><p>Gets the end of astronomical dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.</p></dd>
+<dd><p>Gets the end of astronomical dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.</p>
+</dd>
 <dt><a href="#getNauticalDuskEndDateTimeUtc">getNauticalDuskEndDateTimeUtc(date, latitude, longitude)</a> ⇒ <code>string</code></dt>
 <dd><p>Gets the end of nautical dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.</p>
 </dd>
@@ -78,7 +81,13 @@ A tiny library to get the exact date and time in [utc](https://en.wikipedia.org/
 </dd>
 </dl>
 
-* * *
+## Typedefs
+
+<dl>
+<dt><a href="#suntimes">suntimes</a> : <code>Object</code></dt>
+<dd></dd>
+</dl>
+
 <a name="getDeclinationOfTheSun"></a>
 
 ## getDeclinationOfTheSun(date) ⇒ <code>number</code>
@@ -96,7 +105,6 @@ The angular distance of the sun north or south of the earth's equator.
 // returns -23.078780854838076
 suntimes.getDeclinationOfTheSun(new Date(2019, 0, 1));
 ```
-* * *
 <a name="equationOfTime"></a>
 
 ## equationOfTime(date) ⇒ <code>number</code>
@@ -114,7 +122,6 @@ The correction between standard clock time and the time based on the exact posit
 // returns -10.306964615344999
 suntimes.equationOfTime(new Date(2025, 0, 18));
 ```
-* * *
 <a name="getHourAngleSinceNoon"></a>
 
 ## getHourAngleSinceNoon(date, latitude, angle) ⇒ <code>number</code>
@@ -139,7 +146,6 @@ Gets the hour angle difference between noon and the angle value.
 // returns 5.54554469317797
 suntimes.getHourAngleSinceNoon(new Date(2025, 0, 18), 51.477730, -12);
 ```
-* * *
 <a name="getNoonHourAngle"></a>
 
 ## getNoonHourAngle(date, longitude) ⇒ <code>number</code>
@@ -158,7 +164,6 @@ Gets the noon hour angle for the date and longitude value.
 // returns 12.17245941025575
 suntimes.getNoonHourAngle(new Date(2025, 0, 18), -0.010150);
 ```
-* * *
 <a name="getNoonDateTimeUtc"></a>
 
 ## getNoonDateTimeUtc(date, longitude) ⇒ <code>string</code>
@@ -177,7 +182,6 @@ Gets the noon date and time in UTC expressed in an ISO 8601 format for date and 
 // returns "2025-01-18T12:10:20.853Z"
 suntimes.getNoonDateTimeUtc(new Date(2025, 0, 18), -0.010150);
 ```
-* * *
 <a name="getDateTimeUtcOfAngleBeforeNoon"></a>
 
 ## getDateTimeUtcOfAngleBeforeNoon(angle, date, latitude, longitude) ⇒ <code>string</code>
@@ -208,7 +212,6 @@ suntimes.getDateTimeUtcOfAngleBeforeNoon(-18, new Date(2025, 5, 18), 51.477730, 
 // returns "The sun's altitude does not rise to 18° on Wed Jun 18 2025 at latitude -51.47773 and longitude -0.01015"
 suntimes.getDateTimeUtcOfAngleBeforeNoon(18, new Date(2025, 5, 18), -51.477730, -0.010150);
 ```
-* * *
 <a name="getDateTimeUtcOfAngleAfterNoon"></a>
 
 ## getDateTimeUtcOfAngleAfterNoon(angle, date, latitude, longitude) ⇒ <code>string</code>
@@ -239,7 +242,6 @@ suntimes.getDateTimeUtcOfAngleAfterNoon(-18, new Date(2025, 0, 18), -51.477730, 
 // returns "The sun's altitude does not rise to 18° on Wed Jun 18 2025 at latitude -51.47773 and longitude -0.01015"
 suntimes.getDateTimeUtcOfAngleAfterNoon(18, new Date(2025, 5, 18), -51.477730, -0.010150);
 ```
-* * *
 <a name="getSunriseDateTimeUtc"></a>
 
 ## getSunriseDateTimeUtc(date, latitude, longitude) ⇒ <code>string</code>
@@ -269,7 +271,6 @@ suntimes.getSunriseDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 // returns "The sun is down all day on Thu Jan 01 2032 at latitude 89.525 and longitude -30.45"
 suntimes.getSunriseDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
 ```
-* * *
 <a name="getSunsetDateTimeUtc"></a>
 
 ## getSunsetDateTimeUtc(date, latitude, longitude) ⇒ <code>string</code>
@@ -299,7 +300,6 @@ suntimes.getSunsetDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 // returns "The sun is down all day on Thu Jan 01 2032 at latitude 89.525 and longitude -30.45"
 suntimes.getSunsetDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
 ```
-* * *
 <a name="getCivilDawnEndDateTimeUtc"></a>
 
 ## getCivilDawnEndDateTimeUtc(date, latitude, longitude) ⇒ <code>string</code>
@@ -329,7 +329,6 @@ suntimes.getCivilDawnEndDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270)
 // returns "The sun is down all day on Thu Jan 01 2032 at latitude 89.525 and longitude -30.45
 suntimes.getCivilDawnEndDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
 ```
-* * *
 <a name="getCivilDawnStartDateTimeUtc"></a>
 
 ## getCivilDawnStartDateTimeUtc(date, latitude, longitude) ⇒ <code>string</code>
@@ -359,7 +358,6 @@ suntimes.getCivilDawnStartDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
 // returns "The sun's altitude does not drop to -6° on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
 suntimes.getCivilDawnStartDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
-* * *
 <a name="getNauticalDawnEndDateTimeUtc"></a>
 
 ## getNauticalDawnEndDateTimeUtc(date, latitude, longitude) ⇒ <code>string</code>
@@ -389,7 +387,6 @@ suntimes.getNauticalDawnEndDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
 // returns "The sun's altitude does not drop to -6° on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
 suntimes.getNauticalDawnEndDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
-* * *
 <a name="getNauticalDawnStartDateTimeUtc"></a>
 
 ## getNauticalDawnStartDateTimeUtc(date, latitude, longitude) ⇒ <code>string</code>
@@ -419,7 +416,6 @@ suntimes.getNauticalDawnStartDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.47
 // returns "The sun's altitude does not rise to -12° on Thu Jan 01 2032 at latitude 89.525 and longitude -30.45"
 suntimes.getNauticalDawnStartDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
 ```
-* * *
 <a name="getAstronomicalDawnEndDateTimeUtc"></a>
 
 ## getAstronomicalDawnEndDateTimeUtc(date, latitude, longitude) ⇒ <code>string</code>
@@ -444,7 +440,6 @@ suntimes.getAstronomicalDawnEndDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.
 // returns "The sun's altitude does not drop to -12° on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
 suntimes.getAstronomicalDawnEndDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
-* * *
 <a name="getAstronomicalDawnStartDateTimeUtc"></a>
 
 ## getAstronomicalDawnStartDateTimeUtc(date, latitude, longitude) ⇒ <code>string</code>
@@ -469,7 +464,6 @@ suntimes.getAstronomicalDawnStartDateTimeUtc(new Date(2025, 0, 18), 51.477730, -
 // returns "The sun's altitude does not drop to -18° on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
 suntimes.getAstronomicalDawnStartDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
-* * *
 <a name="getAstronomicalDuskStartDateTimeUtc"></a>
 
 ## getAstronomicalDuskStartDateTimeUtc(date, latitude, longitude) ⇒ <code>string</code>
@@ -494,7 +488,6 @@ suntimes.getAstronomicalDuskStartDateTimeUtc(new Date(2025, 0, 18), 51.477730, -
 // returns "The sun's altitude does not drop to -12° on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
 suntimes.getAstronomicalDuskStartDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
-* * *
 <a name="getAstronomicalDuskEndDateTimeUtc"></a>
 
 ## getAstronomicalDuskEndDateTimeUtc(date, latitude, longitude) ⇒ <code>string</code>
@@ -519,7 +512,6 @@ suntimes.getAstronomicalDuskEndDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.
 // returns "The sun's altitude does not drop to -18° on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
 suntimes.getAstronomicalDuskEndDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
-* * *
 <a name="getNauticalDuskEndDateTimeUtc"></a>
 
 ## getNauticalDuskEndDateTimeUtc(date, latitude, longitude) ⇒ <code>string</code>
@@ -549,7 +541,6 @@ suntimes.getNauticalDuskEndDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
 // returns "The sun's altitude does not drop to -12° on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
 suntimes.getNauticalDuskEndDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
-* * *
 <a name="getNauticalDuskStartDateTimeUtc"></a>
 
 ## getNauticalDuskStartDateTimeUtc(date, latitude, longitude) ⇒ <code>string</code>
@@ -579,7 +570,6 @@ suntimes.getNauticalDuskStartDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500
 // returns "The sun's altitude does not drop to -6° on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
 suntimes.getNauticalDuskStartDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
-* * *
 <a name="getCivilDuskEndDateTimeUtc"></a>
 
 ## getCivilDuskEndDateTimeUtc(date, latitude, longitude) ⇒ <code>string</code>
@@ -609,7 +599,6 @@ suntimes.getCivilDuskEndDateTimeUtc(new Date(2002, 0, 27), -75.100620, 123.35475
 // returns The sun's altitude does not rise to -6° on Thu Jan 01 2032 at latitude 89.525 and longitude -30.45
 suntimes.getCivilDuskEndDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
 ```
-* * *
 <a name="getCivilDuskStartDateTimeUtc"></a>
 
 ## getCivilDuskStartDateTimeUtc(date, latitude, longitude) ⇒ <code>string</code>
@@ -644,3 +633,28 @@ suntimes.getCivilDuskStartDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.47427
 // returns "The sun is down all day on Thu Jan 01 2032 at latitude 89.525 and longitude -30.45"
 suntimes.getCivilDuskStartDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
 ```
+<a name="suntimes"></a>
+
+## suntimes : <code>Object</code>
+**Kind**: global typedef
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| getNoonDateTimeUtc | [<code>getNoonDateTimeUtc</code>](#getNoonDateTimeUtc) |
+| getDateTimeUtcOfAngleBeforeNoon | [<code>getDateTimeUtcOfAngleBeforeNoon</code>](#getDateTimeUtcOfAngleBeforeNoon) |
+| getDateTimeUtcOfAngleAfterNoon | [<code>getDateTimeUtcOfAngleAfterNoon</code>](#getDateTimeUtcOfAngleAfterNoon) |
+| getSunriseDateTimeUtc | [<code>getSunriseDateTimeUtc</code>](#getSunriseDateTimeUtc) |
+| getSunsetDateTimeUtc | [<code>getSunsetDateTimeUtc</code>](#getSunsetDateTimeUtc) |
+| getCivilDawnEndDateTimeUtc | [<code>getCivilDawnEndDateTimeUtc</code>](#getCivilDawnEndDateTimeUtc) |
+| getCivilDawnStartDateTimeUtc | [<code>getCivilDawnStartDateTimeUtc</code>](#getCivilDawnStartDateTimeUtc) |
+| getNauticalDawnEndDateTimeUtc | [<code>getNauticalDawnEndDateTimeUtc</code>](#getNauticalDawnEndDateTimeUtc) |
+| getNauticalDawnStartDateTimeUtc | [<code>getNauticalDawnStartDateTimeUtc</code>](#getNauticalDawnStartDateTimeUtc) |
+| getAstronomicalDawnEndDateTimeUtc | [<code>getAstronomicalDawnEndDateTimeUtc</code>](#getAstronomicalDawnEndDateTimeUtc) |
+| getAstronomicalDawnStartDateTimeUtc | [<code>getAstronomicalDawnStartDateTimeUtc</code>](#getAstronomicalDawnStartDateTimeUtc) |
+| getAstronomicalDuskStartDateTimeUtc | [<code>getAstronomicalDuskStartDateTimeUtc</code>](#getAstronomicalDuskStartDateTimeUtc) |
+| getAstronomicalDuskEndDateTimeUtc | [<code>getAstronomicalDuskEndDateTimeUtc</code>](#getAstronomicalDuskEndDateTimeUtc) |
+| getNauticalDuskEndDateTimeUtc | [<code>getNauticalDuskEndDateTimeUtc</code>](#getNauticalDuskEndDateTimeUtc) |
+| getNauticalDuskStartDateTimeUtc | [<code>getNauticalDuskStartDateTimeUtc</code>](#getNauticalDuskStartDateTimeUtc) |
+| getCivilDuskEndDateTimeUtc | [<code>getCivilDuskEndDateTimeUtc</code>](#getCivilDuskEndDateTimeUtc) |
+| getCivilDuskStartDateTimeUtc | [<code>getCivilDuskStartDateTimeUtc</code>](#getCivilDuskStartDateTimeUtc) |

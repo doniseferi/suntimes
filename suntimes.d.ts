@@ -1,9 +1,7 @@
-
 // Type definitions for suntimes
 // Project: suntimes
-// Definitions by: Edonis Seferi https://github.com/doniseferi
+// Definitions ny: Edonis Seferi https://github.com/doniseferi
 
-export as namespace suntimes;
 /**
 * The angular distance of the sun north or south of the earth's equator.
 * @example <caption>Example usage of getDeclinationOfTheSun.</caption>
@@ -12,7 +10,7 @@ export as namespace suntimes;
 * @param {Date} date - A date instance
 * @returns {number} The declination in degrees where north is a positive value and south is a negative value within a range of range of -23.45 and 23.45.
  */
-export function getDeclinationOfTheSun(date: Date): number;
+declare function getDeclinationOfTheSun(date: Date): number;
 
 /**
 * The correction between standard clock time and the time based on the exact position of the sun in the sky represented as decimal time in minutes.
@@ -22,7 +20,7 @@ export function getDeclinationOfTheSun(date: Date): number;
 * @param {Date} date - A date instance.
 * @returns {number} A number whose value is the equation of time in minutes decimal time for the Date represented by date.
  */
-export function equationOfTime(date: Date): number;
+declare function equationOfTime(date: Date): number;
 
 /**
 * Gets the hour angle difference between noon and the angle value.
@@ -36,7 +34,7 @@ export function equationOfTime(date: Date): number;
 * @throws {RangeError} The sun altitude never drops below the angle specified.
 * @returns {number} A number whose value represents the hour angle since noon for the date, latitude and angle value.
  */
-export function getHourAngleSinceNoon(date: Date, latitude: number, angle: number): number;
+declare function getHourAngleSinceNoon(date: Date, latitude: number, angle: number): number;
 
 /**
 * Gets the noon hour angle for the date and longitude value.
@@ -47,7 +45,47 @@ export function getHourAngleSinceNoon(date: Date, latitude: number, angle: numbe
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {number} The noon hour angle expressed as a number between 0.00 and 23.9.
  */
-export function getNoonHourAngle(date: Date, longitude: number): number;
+declare function getNoonHourAngle(date: Date, longitude: number): number;
+
+/**
+ * @typedef {Object} suntimes
+ * @property {getNoonDateTimeUtc} getNoonDateTimeUtc
+ * @property {getDateTimeUtcOfAngleBeforeNoon} getDateTimeUtcOfAngleBeforeNoon
+ * @property {getDateTimeUtcOfAngleAfterNoon} getDateTimeUtcOfAngleAfterNoon
+ * @property {getSunriseDateTimeUtc} getSunriseDateTimeUtc
+ * @property {getSunsetDateTimeUtc} getSunsetDateTimeUtc
+ * @property {getCivilDawnEndDateTimeUtc} getCivilDawnEndDateTimeUtc
+ * @property {getCivilDawnStartDateTimeUtc} getCivilDawnStartDateTimeUtc
+ * @property {getNauticalDawnEndDateTimeUtc} getNauticalDawnEndDateTimeUtc
+ * @property {getNauticalDawnStartDateTimeUtc} getNauticalDawnStartDateTimeUtc
+ * @property {getAstronomicalDawnEndDateTimeUtc} getAstronomicalDawnEndDateTimeUtc
+ * @property {getAstronomicalDawnStartDateTimeUtc} getAstronomicalDawnStartDateTimeUtc
+ * @property {getAstronomicalDuskStartDateTimeUtc} getAstronomicalDuskStartDateTimeUtc
+ * @property {getAstronomicalDuskEndDateTimeUtc} getAstronomicalDuskEndDateTimeUtc
+ * @property {getNauticalDuskEndDateTimeUtc} getNauticalDuskEndDateTimeUtc
+ * @property {getNauticalDuskStartDateTimeUtc} getNauticalDuskStartDateTimeUtc
+ * @property {getCivilDuskEndDateTimeUtc} getCivilDuskEndDateTimeUtc
+ * @property {getCivilDuskStartDateTimeUtc} getCivilDuskStartDateTimeUtc
+ */
+declare type suntimes = {
+    getNoonDateTimeUtc: getNoonDateTimeUtc;
+    getDateTimeUtcOfAngleBeforeNoon: getDateTimeUtcOfAngleBeforeNoon;
+    getDateTimeUtcOfAngleAfterNoon: getDateTimeUtcOfAngleAfterNoon;
+    getSunriseDateTimeUtc: getSunriseDateTimeUtc;
+    getSunsetDateTimeUtc: getSunsetDateTimeUtc;
+    getCivilDawnEndDateTimeUtc: getCivilDawnEndDateTimeUtc;
+    getCivilDawnStartDateTimeUtc: getCivilDawnStartDateTimeUtc;
+    getNauticalDawnEndDateTimeUtc: getNauticalDawnEndDateTimeUtc;
+    getNauticalDawnStartDateTimeUtc: getNauticalDawnStartDateTimeUtc;
+    getAstronomicalDawnEndDateTimeUtc: getAstronomicalDawnEndDateTimeUtc;
+    getAstronomicalDawnStartDateTimeUtc: getAstronomicalDawnStartDateTimeUtc;
+    getAstronomicalDuskStartDateTimeUtc: getAstronomicalDuskStartDateTimeUtc;
+    getAstronomicalDuskEndDateTimeUtc: getAstronomicalDuskEndDateTimeUtc;
+    getNauticalDuskEndDateTimeUtc: getNauticalDuskEndDateTimeUtc;
+    getNauticalDuskStartDateTimeUtc: getNauticalDuskStartDateTimeUtc;
+    getCivilDuskEndDateTimeUtc: getCivilDuskEndDateTimeUtc;
+    getCivilDuskStartDateTimeUtc: getCivilDuskStartDateTimeUtc;
+};
 
 /**
 * Gets the noon date and time in UTC expressed in an ISO 8601 format for date and longitude value.
@@ -58,7 +96,7 @@ export function getNoonHourAngle(date: Date, longitude: number): number;
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing noon date and time in UTC, expressed in an ISO 8601 format.
  */
-export function getNoonDateTimeUtc(date: Date, longitude: number): string;
+declare function getNoonDateTimeUtc(date: Date, longitude: number): string;
 
 /**
 * Gets the date and time in UTC expressed in an ISO 8601 format for an angle before noon for the angle, date, latitude and longitude value.
@@ -77,7 +115,7 @@ export function getNoonDateTimeUtc(date: Date, longitude: number): string;
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string}  A string representing the time and date for an angle before noon in UTC, expressed in an ISO 8601 format.
  */
-export function getDateTimeUtcOfAngleBeforeNoon(angle: number, date: Date, latitude: number, longitude: number): string;
+declare function getDateTimeUtcOfAngleBeforeNoon(angle: number, date: Date, latitude: number, longitude: number): string;
 
 /**
 * Gets the date and time in UTC expressed in an ISO 8601 format for an angle after noon for the angle, date, latitude and longitude value.
@@ -96,7 +134,7 @@ export function getDateTimeUtcOfAngleBeforeNoon(angle: number, date: Date, latit
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing the time and date for an angle after noon in UTC, expressed in an ISO 8601 format.
  */
-export function getDateTimeUtcOfAngleAfterNoon(angle: number, date: Date, latitude: number, longitude: number): string;
+declare function getDateTimeUtcOfAngleAfterNoon(angle: number, date: Date, latitude: number, longitude: number): string;
 
 /**
 * Gets the sunrise date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
@@ -114,7 +152,7 @@ export function getDateTimeUtcOfAngleAfterNoon(angle: number, date: Date, latitu
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing sunrise date and time in UTC, expressed in an ISO 8601 format.
  */
-export function getSunriseDateTimeUtc(date: Date, latitude: number, longitude: number): string;
+declare function getSunriseDateTimeUtc(date: Date, latitude: number, longitude: number): string;
 
 /**
 * Gets the sunset date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
@@ -132,7 +170,7 @@ export function getSunriseDateTimeUtc(date: Date, latitude: number, longitude: n
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing sunset date and time in UTC, expressed in an ISO 8601 format.
  */
-export function getSunsetDateTimeUtc(date: Date, latitude: number, longitude: number): string;
+declare function getSunsetDateTimeUtc(date: Date, latitude: number, longitude: number): string;
 
 /**
 * Gets the end of civil dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
@@ -150,7 +188,7 @@ export function getSunsetDateTimeUtc(date: Date, latitude: number, longitude: nu
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing the end of civil dawn date and time in UTC, expressed in an ISO 8601 format.
  */
-export function getCivilDawnEndDateTimeUtc(date: Date, latitude: number, longitude: number): string;
+declare function getCivilDawnEndDateTimeUtc(date: Date, latitude: number, longitude: number): string;
 
 /**
 * Gets the start of civil dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
@@ -168,7 +206,7 @@ export function getCivilDawnEndDateTimeUtc(date: Date, latitude: number, longitu
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing the start of civil dawn date and time in UTC, expressed in an ISO 8601 format.
  */
-export function getCivilDawnStartDateTimeUtc(date: Date, latitude: number, longitude: number): string;
+declare function getCivilDawnStartDateTimeUtc(date: Date, latitude: number, longitude: number): string;
 
 /**
 * Gets the end of nautical dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
@@ -186,7 +224,7 @@ export function getCivilDawnStartDateTimeUtc(date: Date, latitude: number, longi
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing the end of nautical dawn date and time in UTC, expressed in an ISO 8601 format.
  */
-export function getNauticalDawnEndDateTimeUtc(date: Date, latitude: number, longitude: number): string;
+declare function getNauticalDawnEndDateTimeUtc(date: Date, latitude: number, longitude: number): string;
 
 /**
 * Gets the start of nautical dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
@@ -204,7 +242,7 @@ export function getNauticalDawnEndDateTimeUtc(date: Date, latitude: number, long
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing the start of nautical dawn date and time in UTC, expressed in an ISO 8601 format.
  */
-export function getNauticalDawnStartDateTimeUtc(date: Date, latitude: number, longitude: number): string;
+declare function getNauticalDawnStartDateTimeUtc(date: Date, latitude: number, longitude: number): string;
 
 /**
 * Gets the end of astronomical dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
@@ -219,7 +257,7 @@ export function getNauticalDawnStartDateTimeUtc(date: Date, latitude: number, lo
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing the end of astronomical dawn date and time in UTC, expressed in an ISO 8601 format.
  */
-export function getAstronomicalDawnEndDateTimeUtc(date: Date, latitude: number, longitude: number): string;
+declare function getAstronomicalDawnEndDateTimeUtc(date: Date, latitude: number, longitude: number): string;
 
 /**
 * Gets the start of astronomical dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
@@ -234,7 +272,7 @@ export function getAstronomicalDawnEndDateTimeUtc(date: Date, latitude: number, 
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing the start of astronomical dawn date and time in UTC, expressed in an ISO 8601 format.
  */
-export function getAstronomicalDawnStartDateTimeUtc(date: Date, latitude: number, longitude: number): string;
+declare function getAstronomicalDawnStartDateTimeUtc(date: Date, latitude: number, longitude: number): string;
 
 /**
 * Gets the start of astronomical dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
@@ -249,7 +287,7 @@ export function getAstronomicalDawnStartDateTimeUtc(date: Date, latitude: number
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing the start of astronomical dusk date and time in UTC, expressed in an ISO 8601 format.
  */
-export function getAstronomicalDuskStartDateTimeUtc(date: Date, latitude: number, longitude: number): string;
+declare function getAstronomicalDuskStartDateTimeUtc(date: Date, latitude: number, longitude: number): string;
 
 /**
 * Gets the end of astronomical dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
@@ -264,7 +302,7 @@ export function getAstronomicalDuskStartDateTimeUtc(date: Date, latitude: number
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing the end of astronomical dusk date and time in UTC, expressed in an ISO 8601 format.
  */
-export function getAstronomicalDuskEndDateTimeUtc(date: Date, latitude: number, longitude: number): string;
+declare function getAstronomicalDuskEndDateTimeUtc(date: Date, latitude: number, longitude: number): string;
 
 /**
 * Gets the end of nautical dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
@@ -282,7 +320,7 @@ export function getAstronomicalDuskEndDateTimeUtc(date: Date, latitude: number, 
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing the end of nautical dusk date and time in UTC, expressed in an ISO 8601 format.
  */
-export function getNauticalDuskEndDateTimeUtc(date: Date, latitude: number, longitude: number): string;
+declare function getNauticalDuskEndDateTimeUtc(date: Date, latitude: number, longitude: number): string;
 
 /**
 * Gets the start of nautical dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
@@ -300,7 +338,7 @@ export function getNauticalDuskEndDateTimeUtc(date: Date, latitude: number, long
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing the start of nautical dusk date and time in UTC, expressed in an ISO 8601 format.
  */
-export function getNauticalDuskStartDateTimeUtc(date: Date, latitude: number, longitude: number): string;
+declare function getNauticalDuskStartDateTimeUtc(date: Date, latitude: number, longitude: number): string;
 
 /**
 * Gets the end of civil dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
@@ -318,7 +356,7 @@ export function getNauticalDuskStartDateTimeUtc(date: Date, latitude: number, lo
 * @param {number} longitude - A longitude value in the range of -180 to 180.
 * @returns {string} A string representing the end of civil dusk date and time in UTC, expressed in an ISO 8601 format.
  */
-export function getCivilDuskEndDateTimeUtc(date: Date, latitude: number, longitude: number): string;
+declare function getCivilDuskEndDateTimeUtc(date: Date, latitude: number, longitude: number): string;
 
 /**
 * Gets the start of civil dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.
@@ -339,5 +377,5 @@ export function getCivilDuskEndDateTimeUtc(date: Date, latitude: number, longitu
 * // returns "The sun is down all day on Thu Jan 01 2032 at latitude 89.525 and longitude -30.45"
 * suntimes.getCivilDuskStartDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
  */
-export function getCivilDuskStartDateTimeUtc(date: Date, latitude: number, longitude: number): string;
+declare function getCivilDuskStartDateTimeUtc(date: Date, latitude: number, longitude: number): string;
 

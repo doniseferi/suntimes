@@ -5,7 +5,7 @@
   "main": "suntimes.js",
   "typings": "suntimes.d.ts",
   "scripts": {
-    "readme": "jsdoc2md src/declination/getDeclinationOfTheSun.js src/equationOfTime/equationOfTime.js src/hourAngle/getHourAngle.js src/hourAngle/getNoonHourAngle.js src/time/index.js",
+    "readme": "jsdoc2md src/declination/getDeclinationOfTheSun.js src/equationOfTime/equationOfTime.js src/hourAngle/getHourAngle.js src/hourAngle/getNoonHourAngle.js src/time/index.js src/index.js",
     "typedef": "jsdoc -t node_modules/tsd-jsdoc/dist -r ./src/",
     "build": "rollup -c",
     "release": "standard-version",
