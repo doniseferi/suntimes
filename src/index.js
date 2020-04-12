@@ -22,47 +22,26 @@ import {
   getCivilDuskStartDateTimeUtc
 } from './time/index';
 
-const suntimes = Object.freeze({
-  getNoonDateTimeUtc,
-  getDateTimeUtcOfAngleBeforeNoon,
-  getDateTimeUtcOfAngleAfterNoon,
+export {
   getSunriseDateTimeUtc,
   getSunsetDateTimeUtc,
+  getNoonDateTimeUtc,
   getCivilDawnEndDateTimeUtc,
   getCivilDawnStartDateTimeUtc,
   getNauticalDawnEndDateTimeUtc,
   getNauticalDawnStartDateTimeUtc,
   getAstronomicalDawnEndDateTimeUtc,
   getAstronomicalDawnStartDateTimeUtc,
-  getAstronomicalDuskStartDateTimeUtc,
   getAstronomicalDuskEndDateTimeUtc,
+  getAstronomicalDuskStartDateTimeUtc,
   getNauticalDuskEndDateTimeUtc,
   getNauticalDuskStartDateTimeUtc,
   getCivilDuskEndDateTimeUtc,
-  getCivilDuskStartDateTimeUtc
-});
-
-export default suntimes;
-export {
+  getCivilDuskStartDateTimeUtc,
   getDeclinationOfTheSun,
   equationOfTime,
   getHourAngleSinceNoon,
   getNoonHourAngle,
-  getNoonDateTimeUtc,
   getDateTimeUtcOfAngleBeforeNoon,
-  getDateTimeUtcOfAngleAfterNoon,
-  getSunriseDateTimeUtc,
-  getSunsetDateTimeUtc,
-  getCivilDawnEndDateTimeUtc,
-  getCivilDawnStartDateTimeUtc,
-  getNauticalDawnEndDateTimeUtc,
-  getNauticalDawnStartDateTimeUtc,
-  getAstronomicalDawnEndDateTimeUtc,
-  getAstronomicalDawnStartDateTimeUtc,
-  getAstronomicalDuskStartDateTimeUtc,
-  getAstronomicalDuskEndDateTimeUtc,
-  getNauticalDuskEndDateTimeUtc,
-  getNauticalDuskStartDateTimeUtc,
-  getCivilDuskEndDateTimeUtc,
-  getCivilDuskStartDateTimeUtc
+  getDateTimeUtcOfAngleAfterNoon
 };

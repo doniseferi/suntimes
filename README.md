@@ -4,7 +4,8 @@
 
 # [![Build Status](https://travis-ci.com/doniseferi/suntimes.svg?branch=master)](https://travis-ci.com/doniseferi/suntimes) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/27de579f6fc84188ba0aac2601ec05f0)](https://www.codacy.com/manual/doniseferi/suntimes?utm_source=github.com&utm_medium=referral&utm_content=doniseferi/suntimes&utm_campaign=Badge_Grade) ![GitHub](https://img.shields.io/github/license/doniseferi/suntimes) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/doniseferi/suntimes) ![Snyk Vulnerabilities for npm package version](https://img.shields.io/snyk/vulnerabilities/npm/suntimes) ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/doniseferi/suntimes) ![GitHub last commit](https://img.shields.io/github/last-commit/doniseferi/suntimes) ![Coveralls github](https://img.shields.io/coveralls/github/doniseferi/suntimes) [![GitHub issues](https://img.shields.io/github/issues/doniseferi/suntimes)](https://github.com/doniseferi/suntimes/issues)
 
-A tiny library to get the exact date and time in [utc](https://en.wikipedia.org/wiki/ISO_8601) for certain points of the day for any desired location and date.
+A tiny library to get the exact date and time in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format for certain points of the day for any desired location and date.
+
 
 ## Install
 
@@ -13,7 +14,7 @@ A tiny library to get the exact date and time in [utc](https://en.wikipedia.org/
 ## Api Reference
 
 * * *
-  
+
 ## Functions
 
 <dl>
@@ -21,7 +22,8 @@ A tiny library to get the exact date and time in [utc](https://en.wikipedia.org/
 <dd><p>The angular distance of the sun north or south of the earth&#39;s equator.</p>
 </dd>
 <dt><a href="#equationOfTime">equationOfTime(date)</a> ⇒ <code>number</code></dt>
-<dd><p>The correction between standard clock time and the time based on the exact position of the sun in the sky represented as decimal time in minutes.</p>
+<dd><p>The correction between standard clock time and the time based on the exact position of the sun in the sky represented as decimal
+time in minutes.</p>
 </dd>
 <dt><a href="#getHourAngleSinceNoon">getHourAngleSinceNoon(date, latitude, angle)</a> ⇒ <code>number</code></dt>
 <dd><p>Gets the hour angle difference between noon and the angle value.</p>
@@ -53,11 +55,11 @@ A tiny library to get the exact date and time in [utc](https://en.wikipedia.org/
 <dt><a href="#getNauticalDawnEndDateTimeUtc">getNauticalDawnEndDateTimeUtc(date, latitude, longitude)</a> ⇒ <code>string</code></dt>
 <dd><p>Gets the end of nautical dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.</p>
 </dd>
-<dt><a href="#getNauticalDawnStartDateTimeUtc">getNauticalDawnStartDateTimeUtc(date, latitude, longitude)</a> ⇒ <code>string</code></dt>
-<dd><p>Gets the start of nautical dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.</p>
+<dt><a href="#getNauticalDawnStartDateTimeUtc">getNauticalDawnStartDateTimeUtc(date, latitude, longitude)</a> ⇒ <code>string</code></dt><dd><p>Gets the start of nautical dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.</p>
 </dd>
 <dt><a href="#getAstronomicalDawnEndDateTimeUtc">getAstronomicalDawnEndDateTimeUtc(date, latitude, longitude)</a> ⇒ <code>string</code></dt>
-<dd><p>Gets the end of astronomical dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.</p>
+<dd><p>Gets the end of astronomical dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude
+value.</p>
 </dd>
 <dt><a href="#getAstronomicalDawnStartDateTimeUtc">getAstronomicalDawnStartDateTimeUtc(date, latitude, longitude)</a> ⇒ <code>string</code></dt>
 <dd><p>Gets the start of astronomical dawn date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.</p>
@@ -66,13 +68,13 @@ A tiny library to get the exact date and time in [utc](https://en.wikipedia.org/
 <dd><p>Gets the start of astronomical dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.</p>
 </dd>
 <dt><a href="#getAstronomicalDuskEndDateTimeUtc">getAstronomicalDuskEndDateTimeUtc(date, latitude, longitude)</a> ⇒ <code>string</code></dt>
-<dd><p>Gets the end of astronomical dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.</p>
+<dd><p>Gets the end of astronomical dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude
+value.</p>
 </dd>
 <dt><a href="#getNauticalDuskEndDateTimeUtc">getNauticalDuskEndDateTimeUtc(date, latitude, longitude)</a> ⇒ <code>string</code></dt>
 <dd><p>Gets the end of nautical dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.</p>
 </dd>
-<dt><a href="#getNauticalDuskStartDateTimeUtc">getNauticalDuskStartDateTimeUtc(date, latitude, longitude)</a> ⇒ <code>string</code></dt>
-<dd><p>Gets the start of nautical dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.</p>
+<dt><a href="#getNauticalDuskStartDateTimeUtc">getNauticalDuskStartDateTimeUtc(date, latitude, longitude)</a> ⇒ <code>string</code></dt><dd><p>Gets the start of nautical dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.</p>
 </dd>
 <dt><a href="#getCivilDuskEndDateTimeUtc">getCivilDuskEndDateTimeUtc(date, latitude, longitude)</a> ⇒ <code>string</code></dt>
 <dd><p>Gets the end of civil dusk date and time in UTC expressed in an ISO 8601 format for date instance, latitude and longitude value.</p>
@@ -91,14 +93,14 @@ The angular distance of the sun north or south of the earth's equator.
 **Kind**: global function
 **Returns**: <code>number</code> - The declination in degrees where north is a positive value and south is a negative value within a range of range of -23.45 and 23.45.
 
-| Param | Type | Description |
-| --- | --- | --- |
-| date | <code>Date</code> | A date instance |
+| Param | Type              | Description     |
+| ----- | ----------------- | --------------- |
+| date  | <code>Date</code> | A date instance |
 
-**Example** *(Example usage of getDeclinationOfTheSun.)*
+**Example** *(Example usage of getDeclinationOfTheSun)*
 ```js
 // returns -23.078780854838076
-suntimes.getDeclinationOfTheSun(new Date(2019, 0, 1));
+getDeclinationOfTheSun(new Date(2019, 0, 1));
 ```
 * * *
 <a name="equationOfTime"></a>
@@ -109,14 +111,14 @@ The correction between standard clock time and the time based on the exact posit
 **Kind**: global function
 **Returns**: <code>number</code> - A number whose value is the equation of time in minutes decimal time for the Date represented by date.
 
-| Param | Type | Description |
-| --- | --- | --- |
-| date | <code>Date</code> | A date instance. |
+| Param | Type              | Description      |
+| ----- | ----------------- | ---------------- |
+| date  | <code>Date</code> | A date instance. |
 
-**Example** *(Example usage of equationOfTime.)*
+**Example** *(Example usage of equationOfTime)*
 ```js
 // returns -10.306964615344999
-suntimes.equationOfTime(new Date(2025, 0, 18));
+equationOfTime(new Date(2025, 0, 18));
 ```
 * * *
 <a name="getHourAngleSinceNoon"></a>
@@ -132,16 +134,16 @@ Gets the hour angle difference between noon and the angle value.
 - <code>RangeError</code> The sun altitude never drops below the angle specified.
 
 
-| Param | Type | Description |
-| --- | --- | --- |
-| date | <code>Date</code> | A date instance. |
+| Param    | Type                | Description                                 |
+| -------- | ------------------- | ------------------------------------------- |
+| date     | <code>Date</code>   | A date instance.                            |
 | latitude | <code>number</code> | A latitude value in the range of -90 to 90. |
-| angle | <code>number</code> | An angle value. |
+| angle    | <code>number</code> | An angle value.                             |
 
 **Example** *(Example usage of getHourAngleSinceNoon)*
 ```js
 // returns 5.54554469317797
-suntimes.getHourAngleSinceNoon(new Date(2025, 0, 18), 51.477730, -12);
+getHourAngleSinceNoon(new Date(2025, 0, 18), 51.477730, -12);
 ```
 * * *
 <a name="getNoonHourAngle"></a>
@@ -152,15 +154,15 @@ Gets the noon hour angle for the date and longitude value.
 **Kind**: global function
 **Returns**: <code>number</code> - The noon hour angle expressed as a number between 0.00 and 23.9.
 
-| Param | Type | Description |
-| --- | --- | --- |
-| date | <code>Date</code> | A date instance. |
+| Param     | Type                | Description                                    |
+| --------- | ------------------- | ---------------------------------------------- |
+| date      | <code>Date</code>   | A date instance.                               |
 | longitude | <code>number</code> | A longitude value in the range of -180 to 180. |
 
 **Example** *(Example usage of getNoonHourAngle)*
 ```js
 // returns 12.17245941025575
-suntimes.getNoonHourAngle(new Date(2025, 0, 18), -0.010150);
+getNoonHourAngle(new Date(2025, 0, 18), -0.010150);
 ```
 * * *
 <a name="getNoonDateTimeUtc"></a>
@@ -171,15 +173,15 @@ Gets the noon date and time in UTC expressed in an ISO 8601 format for date and 
 **Kind**: global function
 **Returns**: <code>string</code> - A string representing noon date and time in UTC, expressed in an ISO 8601 format.
 
-| Param | Type | Description |
-| --- | --- | --- |
-| date | <code>Date</code> | A date instance. |
+| Param     | Type                | Description                                    |
+| --------- | ------------------- | ---------------------------------------------- |
+| date      | <code>Date</code>   | A date instance.                               |
 | longitude | <code>number</code> | A longitude value in the range of -180 to 180. |
 
 **Example** *(Example usage of getNoonDateTimeUtc)*
 ```js
 // returns "2025-01-18T12:10:20.853Z"
-suntimes.getNoonDateTimeUtc(new Date(2025, 0, 18), -0.010150);
+getNoonDateTimeUtc(new Date(2025, 0, 18), -0.010150);
 ```
 * * *
 <a name="getDateTimeUtcOfAngleBeforeNoon"></a>
@@ -190,58 +192,57 @@ Gets the date and time in UTC expressed in an ISO 8601 format for an angle befor
 **Kind**: global function
 **Returns**: <code>string</code> - A string representing the time and date for an angle before noon in UTC, expressed in an ISO 8601 format.
 
-| Param | Type | Description |
-| --- | --- | --- |
-| angle | <code>number</code> | An angle value. |
-| date | <code>Date</code> | A date instance. |
-| latitude | <code>number</code> | A latitude value in the range of -90 to 90. |
+| Param     | Type                | Description                                    |
+| --------- | ------------------- | ---------------------------------------------- |
+| angle     | <code>number</code> | An angle value.                                |
+| date      | <code>Date</code>   | A date instance.                               |
+| latitude  | <code>number</code> | A latitude value in the range of -90 to 90.    |
 | longitude | <code>number</code> | A longitude value in the range of -180 to 180. |
 
 **Example** *(Example usage of getDateTimeUtcOfAngleBeforeNoon)*
 ```js
 // returns "2025-01-18T05:57:45.720Z"
-suntimes.getDateTimeUtcOfAngleBeforeNoon(-18, new Date(2025, 0, 18), 51.477730, -0.010150);
+getDateTimeUtcOfAngleBeforeNoon(-18, new Date(2025, 0, 18), 51.477730, -0.010150);
 ```
 **Example** *(Example usage of getDateTimeUtcOfAngleBeforeNoon)*
 ```js
 // returns "The sun's altitude does not drop to -18° on Wed Jun 18 2025 at latitude 51.47773 and longitude -0.01015"
-suntimes.getDateTimeUtcOfAngleBeforeNoon(-18, new Date(2025, 5, 18), 51.477730, -0.010150);
+getDateTimeUtcOfAngleBeforeNoon(-18, new Date(2025, 5, 18), 51.477730, -0.010150);
 ```
 **Example** *(Example usage of getDateTimeUtcOfAngleBeforeNoon)*
 ```js
 // returns "The sun's altitude does not rise to 18° on Wed Jun 18 2025 at latitude -51.47773 and longitude -0.01015"
-suntimes.getDateTimeUtcOfAngleBeforeNoon(18, new Date(2025, 5, 18), -51.477730, -0.010150);
+getDateTimeUtcOfAngleBeforeNoon(18, new Date(2025, 5, 18), -51.477730, -0.010150);
 ```
 * * *
 <a name="getDateTimeUtcOfAngleAfterNoon"></a>
 
 ## getDateTimeUtcOfAngleAfterNoon(angle, date, latitude, longitude) ⇒ <code>string</code>
 Gets the date and time in UTC expressed in an ISO 8601 format for an angle after noon for the angle, date, latitude and longitude value.
-
 **Kind**: global function
 **Returns**: <code>string</code> - A string representing the time and date for an angle after noon in UTC, expressed in an ISO 8601 format.
 
-| Param | Type | Description |
-| --- | --- | --- |
-| angle | <code>number</code> | An angle value. |
-| date | <code>Date</code> | A date instance. |
-| latitude | <code>number</code> | A latitude value in the range of -90 to 90. |
+| Param     | Type                | Description                                    |
+| --------- | ------------------- | ---------------------------------------------- |
+| angle     | <code>number</code> | An angle value.                                |
+| date      | <code>Date</code>   | A date instance.                               |
+| latitude  | <code>number</code> | A latitude value in the range of -90 to 90.    |
 | longitude | <code>number</code> | A longitude value in the range of -180 to 180. |
 
 **Example** *(Example usage of getDateTimeUtcOfAngleAfterNoon)*
 ```js
 //returns "2025-06-18T14:33:42.689Z"
-suntimes.getDateTimeUtcOfAngleAfterNoon(8, new Date(2025, 5, 18), -51.477730, -0.010150);
+getDateTimeUtcOfAngleAfterNoon(8, new Date(2025, 5, 18), -51.477730, -0.010150);
 ```
 **Example** *(Example usage of getDateTimeUtcOfAngleAfterNoon)*
 ```js
 // returns "The sun's altitude does not drop to -18° on Sat Jan 18 2025 at latitude -51.47773 and longitude -0.01015"
-suntimes.getDateTimeUtcOfAngleAfterNoon(-18, new Date(2025, 0, 18), -51.477730, -0.010150);
+getDateTimeUtcOfAngleAfterNoon(-18, new Date(2025, 0, 18), -51.477730, -0.010150);
 ```
 **Example** *(Example usage of getDateTimeUtcOfAngleAfterNoon)*
 ```js
 // returns "The sun's altitude does not rise to 18° on Wed Jun 18 2025 at latitude -51.47773 and longitude -0.01015"
-suntimes.getDateTimeUtcOfAngleAfterNoon(18, new Date(2025, 5, 18), -51.477730, -0.010150);
+getDateTimeUtcOfAngleAfterNoon(18, new Date(2025, 5, 18), -51.477730, -0.010150);
 ```
 * * *
 <a name="getSunriseDateTimeUtc"></a>
@@ -252,26 +253,26 @@ Gets the sunrise date and time in UTC expressed in an ISO 8601 format for date i
 **Kind**: global function
 **Returns**: <code>string</code> - A string representing sunrise date and time in UTC, expressed in an ISO 8601 format.
 
-| Param | Type | Description |
-| --- | --- | --- |
-| date | <code>Date</code> | A date instance. |
-| latitude | <code>number</code> | A latitude value in the range of -90 to 90. |
+| Param     | Type                | Description                                    |
+| --------- | ------------------- | ---------------------------------------------- |
+| date      | <code>Date</code>   | A date instance.                               |
+| latitude  | <code>number</code> | A latitude value in the range of -90 to 90.    |
 | longitude | <code>number</code> | A longitude value in the range of -180 to 180. |
 
 **Example** *(Example usage of getSunriseDateTimeUtc)*
 ```js
 // returns "2025-01-18T07:57:29.802Z"
-suntimes.getSunriseDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
+getSunriseDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 ```
 **Example** *(Example usage of getSunriseDateTimeUtc)*
 ```js
 // returns "The sun is up all day on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
-suntimes.getSunriseDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
+getSunriseDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
 **Example** *(Example usage of getSunriseDateTimeUtc)*
 ```js
 // returns "The sun is down all day on Thu Jan 01 2032 at latitude 89.525 and longitude -30.45"
-suntimes.getSunriseDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
+getSunriseDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
 ```
 * * *
 <a name="getSunsetDateTimeUtc"></a>
@@ -282,26 +283,26 @@ Gets the sunset date and time in UTC expressed in an ISO 8601 format for date in
 **Kind**: global function
 **Returns**: <code>string</code> - A string representing sunset date and time in UTC, expressed in an ISO 8601 format.
 
-| Param | Type | Description |
-| --- | --- | --- |
-| date | <code>Date</code> | A date instance. |
-| latitude | <code>number</code> | A latitude value in the range of -90 to 90. |
+| Param                                                     | Type                                                                                                                                                                                                    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| date                                                                  | <code>Date</code>                           | A date instance.                                                                                                                                                                                                                                                                                                                                                                                                       |
+| latitude              | <code>number</code> | A latitude value in the range of -90 to 90.                                        |
 | longitude | <code>number</code> | A longitude value in the range of -180 to 180. |
 
 **Example** *(Example usage of getSunsetDateTimeUtc)*
 ```js
 // returns "2025-01-18T16:23:11.903Z"
-suntimes.getSunsetDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
+getSunsetDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 ```
 **Example** *(Example usage of getSunsetDateTimeUtc)*
 ```js
 // returns "The sun is up all day on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
-suntimes.getSunsetDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
+getSunsetDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
 **Example** *(Example usage of getSunsetDateTimeUtc)*
 ```js
 // returns "The sun is down all day on Thu Jan 01 2032 at latitude 89.525 and longitude -30.45"
-suntimes.getSunsetDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
+getSunsetDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
 ```
 * * *
 <a name="getCivilDawnEndDateTimeUtc"></a>
@@ -321,17 +322,17 @@ Gets the end of civil dawn date and time in UTC expressed in an ISO 8601 format 
 **Example** *(Example usage of getCivilDawnEndDateTimeUtc)*
 ```js
 // returns "2025-01-18T07:57:29.802Z"
-suntimes.getCivilDawnEndDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
+getCivilDawnEndDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 ```
 **Example** *(Example usage of getCivilDawnEndDateTimeUtc)*
 ```js
 // returns "The sun is up all day on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
-suntimes.getCivilDawnEndDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
+getCivilDawnEndDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
 **Example** *(Example usage of getCivilDawnEndDateTimeUtc)*
 ```js
 // returns "The sun is down all day on Thu Jan 01 2032 at latitude 89.525 and longitude -30.45
-suntimes.getCivilDawnEndDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
+getCivilDawnEndDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
 ```
 * * *
 <a name="getCivilDawnStartDateTimeUtc"></a>
@@ -342,6 +343,7 @@ Gets the start of civil dawn date and time in UTC expressed in an ISO 8601 forma
 **Kind**: global function
 **Returns**: <code>string</code> - A string representing the start of civil dawn date and time in UTC, expressed in an ISO 8601 format.
 
+
 | Param | Type | Description |
 | --- | --- | --- |
 | date | <code>Date</code> | A date instance. |
@@ -351,17 +353,17 @@ Gets the start of civil dawn date and time in UTC expressed in an ISO 8601 forma
 **Example** *(Example usage of getCivilDawnStartDateTimeUtc)*
 ```js
 // returns "2025-01-18T07:19:15.781Z"
-suntimes.getCivilDawnStartDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
+getCivilDawnStartDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 ```
 **Example** *(Example usage of getCivilDawnStartDateTimeUtc)*
 ```js
 // returns "The sun's altitude does not rise to -6° on Thu Jan 01 2032 at latitude 89.525 and longitude -30.45"
-suntimes.getCivilDawnStartDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
+getCivilDawnStartDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
 ```
 **Example** *(Example usage of getCivilDawnStartDateTimeUtc)*
 ```js
 // returns "The sun's altitude does not drop to -6° on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
-suntimes.getCivilDawnStartDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
+getCivilDawnStartDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
 * * *
 <a name="getNauticalDawnEndDateTimeUtc"></a>
@@ -381,17 +383,17 @@ Gets the end of nautical dawn date and time in UTC expressed in an ISO 8601 form
 **Example** *(Example usage of getNauticalDawnEndDateTimeUtc)*
 ```js
 // returns "2025-01-18T07:19:15.781Z"
-suntimes.getNauticalDawnEndDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
+getNauticalDawnEndDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 ```
 **Example** *(Example usage of getNauticalDawnEndDateTimeUtc)*
 ```js
 // returns "The sun's altitude does not rise to -6° on Thu Jan 01 2032 at latitude 89.525 and longitude -30.45"
-suntimes.getNauticalDawnEndDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
+getNauticalDawnEndDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
 ```
 **Example** *(Example usage of getNauticalDawnEndDateTimeUtc)*
 ```js
 // returns "The sun's altitude does not drop to -6° on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
-suntimes.getNauticalDawnEndDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
+getNauticalDawnEndDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
 * * *
 <a name="getNauticalDawnStartDateTimeUtc"></a>
@@ -411,17 +413,17 @@ Gets the start of nautical dawn date and time in UTC expressed in an ISO 8601 fo
 **Example** *(Example usage of getNauticalDawnStartDateTimeUtc)*
 ```js
 // returns "2025-01-18T06:37:36.892Z"
-suntimes.getNauticalDawnStartDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
+getNauticalDawnStartDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 ```
 **Example** *(Example usage of getNauticalDawnStartDateTimeUtc)*
 ```js
 // returns "The sun's altitude does not drop to -12° on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
-suntimes.getNauticalDawnStartDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
+getNauticalDawnStartDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
 **Example** *(Example usage of getNauticalDawnStartDateTimeUtc)*
 ```js
 // returns "The sun's altitude does not rise to -12° on Thu Jan 01 2032 at latitude 89.525 and longitude -30.45"
-suntimes.getNauticalDawnStartDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
+getNauticalDawnStartDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
 ```
 * * *
 <a name="getAstronomicalDawnEndDateTimeUtc"></a>
@@ -441,12 +443,12 @@ Gets the end of astronomical dawn date and time in UTC expressed in an ISO 8601 
 **Example** *(Example usage of getAstronomicalDawnEndDateTimeUtc)*
 ```js
 // returns "2025-01-18T06:37:36.892Z"
-suntimes.getAstronomicalDawnEndDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
+getAstronomicalDawnEndDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 ```
 **Example** *(Example usage of getAstronomicalDawnEndDateTimeUtc)*
 ```js
 // returns "The sun's altitude does not drop to -12° on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
-suntimes.getAstronomicalDawnEndDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
+getAstronomicalDawnEndDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
 * * *
 <a name="getAstronomicalDawnStartDateTimeUtc"></a>
@@ -466,12 +468,12 @@ Gets the start of astronomical dawn date and time in UTC expressed in an ISO 860
 **Example** *(Example usage of getAstronomicalDawnStartDateTimeUtc)*
 ```js
 // returns "2025-01-18T05:57:45.720Z"
-suntimes.getAstronomicalDawnStartDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
+getAstronomicalDawnStartDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 ```
 **Example** *(Example usage of getAstronomicalDawnStartDateTimeUtc)*
 ```js
 // returns "The sun's altitude does not drop to -18° on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
-suntimes.getAstronomicalDawnStartDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
+getAstronomicalDawnStartDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
 * * *
 <a name="getAstronomicalDuskStartDateTimeUtc"></a>
@@ -491,12 +493,12 @@ Gets the start of astronomical dusk date and time in UTC expressed in an ISO 860
 **Example** *(Example usage of getAstronomicalDuskStartDateTimeUtc)*
 ```js
 // returns "2025-01-18T17:43:04.813Z"
-suntimes.getAstronomicalDuskStartDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
+getAstronomicalDuskStartDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 ```
 **Example** *(Example usage of getAstronomicalDuskStartDateTimeUtc)*
 ```js
 // returns "The sun's altitude does not drop to -12° on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
-suntimes.getAstronomicalDuskStartDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
+getAstronomicalDuskStartDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
 * * *
 <a name="getAstronomicalDuskEndDateTimeUtc"></a>
@@ -516,12 +518,12 @@ Gets the end of astronomical dusk date and time in UTC expressed in an ISO 8601 
 **Example** *(Example usage of getAstronomicalDuskEndDateTimeUtc)*
 ```js
 // returns "2025-01-18T18:22:55.985Z"
-suntimes.getAstronomicalDuskEndDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
+getAstronomicalDuskEndDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 ```
 **Example** *(Example usage of getAstronomicalDuskEndDateTimeUtc)*
 ```js
 // returns "The sun's altitude does not drop to -18° on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
-suntimes.getAstronomicalDuskEndDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
+getAstronomicalDuskEndDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
 * * *
 <a name="getNauticalDuskEndDateTimeUtc"></a>
@@ -541,17 +543,17 @@ Gets the end of nautical dusk date and time in UTC expressed in an ISO 8601 form
 **Example** *(Example usage of getNauticalDuskEndDateTimeUtc)*
 ```js
 // returns "2025-01-18T17:43:04.813Z"
-suntimes.getNauticalDuskEndDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
+getNauticalDuskEndDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 ```
 **Example** *(Example usage of getNauticalDuskEndDateTimeUtc)*
 ```js
 // returns The sun's altitude does not rise to -12° on Thu Jan 01 2032 at latitude 89.525 and longitude -30.45
-suntimes.getNauticalDuskEndDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
+getNauticalDuskEndDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
 ```
 **Example** *(Example usage of getNauticalDuskEndDateTimeUtc)*
 ```js
 // returns "The sun's altitude does not drop to -12° on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
-suntimes.getNauticalDuskEndDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
+getNauticalDuskEndDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
 * * *
 <a name="getNauticalDuskStartDateTimeUtc"></a>
@@ -571,17 +573,17 @@ Gets the start of nautical dusk date and time in UTC expressed in an ISO 8601 fo
 **Example** *(Example usage of getNauticalDuskStartDateTimeUtc)*
 ```js
 // returns "2025-01-18T17:01:25.924Z"
-suntimes.getNauticalDuskStartDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
+getNauticalDuskStartDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 ```
 **Example** *(Example usage of getNauticalDuskStartDateTimeUtc)*
 ```js
 // returns The sun's altitude does not rise to -6° on Thu Jan 01 2032 at latitude 89.525 and longitude -30.45
-suntimes.getNauticalDuskStartDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
+getNauticalDuskStartDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
 ```
 **Example** *(Example usage of getNauticalDuskStartDateTimeUtc)*
 ```js
 // returns "The sun's altitude does not drop to -6° on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
-suntimes.getNauticalDuskStartDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
+getNauticalDuskStartDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
 * * *
 <a name="getCivilDuskEndDateTimeUtc"></a>
@@ -601,17 +603,17 @@ Gets the end of civil dusk date and time in UTC expressed in an ISO 8601 format 
 **Example** *(Example usage of getCivilDuskEndDateTimeUtc)*
 ```js
 // returns "2025-01-18T17:01:25.924Z"
-suntimes.getCivilDuskEndDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
+getCivilDuskEndDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 ```
 **Example** *(Example usage of getCivilDuskEndDateTimeUtc)*
 ```js
 returns "The sun's altitude does not drop to -6° on Wed Jun 18 2025 at  latitude -75.100620 and longitude 123.354750"
-suntimes.getCivilDuskEndDateTimeUtc(new Date(2002, 0, 27), -75.100620, 123.354750);
+getCivilDuskEndDateTimeUtc(new Date(2002, 0, 27), -75.100620, 123.354750);
 ```
-**Example** *(Example usage of getCivilDuskEndDateTimeUtc)*
+**Example** *(Example usage of getNauticalDuskEndDateTimeUtc)*
 ```js
 // returns The sun's altitude does not rise to -6° on Thu Jan 01 2032 at latitude 89.525 and longitude -30.45
-suntimes.getCivilDuskEndDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
+getCivilDuskEndDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
 ```
 * * *
 <a name="getCivilDuskStartDateTimeUtc"></a>
@@ -622,6 +624,7 @@ Gets the start of civil dusk date and time in UTC expressed in an ISO 8601 forma
 **Kind**: global function
 **Returns**: <code>string</code> - A string representing the start of civil dusk date and time in UTC, expressed in an ISO 8601 format.
 
+
 | Param | Type | Description |
 | --- | --- | --- |
 | date | <code>Date</code> | A date instance. |
@@ -631,20 +634,20 @@ Gets the start of civil dusk date and time in UTC expressed in an ISO 8601 forma
 **Example** *(Example usage of getCivilDuskStartDateTimeUtc)*
 ```js
 // returns "2025-01-18T16:23:11.903Z"
-suntimes.getCivilDuskStartDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
+getCivilDuskStartDateTimeUtc(new Date(2025, 0, 18), 51.477730, -0.010150);
 ```
 **Example** *(Example usage of getCivilDuskStartDateTimeUtc)*
 ```js
 returns "The sun's altitude does not rise to -6° on Wed Jun 18 2025 at  latitude -75.100620 and longitude 123.354750"
-suntimes.getCivilDuskStartDateTimeUtc(new Date(2002, 0, 27), -75.100620, 123.354750);
+getCivilDuskStartDateTimeUtc(new Date(2002, 0, 27), -75.100620, 123.354750);
 ```
 **Example** *(Example usage of getCivilDuskStartDateTimeUtc)*
 ```js
 // returns "The sun is up all day on Sun Aug 02 2037 at latitude 71.98007 and longitude 102.47427"
-suntimes.getCivilDuskStartDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
+getCivilDuskStartDateTimeUtc(new Date(2037, 7, 2), 71.980070, 102.474270);
 ```
 **Example** *(Example usage of getCivilDuskStartDateTimeUtc)*
 ```js
 // returns "The sun is down all day on Thu Jan 01 2032 at latitude 89.525 and longitude -30.45"
-suntimes.getCivilDuskStartDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
+getCivilDuskStartDateTimeUtc(new Date(2032, 0, 1), 89.5250, -30.4500);
 ```
