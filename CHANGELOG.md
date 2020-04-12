@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.0.0](https://github.com/doniseferi/suntimes/compare/v5.0.1...v6.0.0) (2020-04-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* removing default export
+
+* Remove default exports (#17) ([0dc453e](https://github.com/doniseferi/suntimes/commit/0dc453e50dfe05e3a155b38624e03038d7604ff3)), closes [#17](https://github.com/doniseferi/suntimes/issues/17)
+
 ### [5.0.1](https://github.com/doniseferi/suntimes/compare/v5.0.0...v5.0.1) (2020-04-10)
 
 ### [5.0.1-3](https://github.com/doniseferi/suntimes/compare/v5.0.1-2...v5.0.1-3) (2020-04-10)
