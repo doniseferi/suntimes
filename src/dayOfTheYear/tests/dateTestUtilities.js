@@ -18,4 +18,4 @@ const addDays = (date, days) => {
   return newDate;
 };
 
-export default getAllDatesForYear;
+export { getAllDatesForYear };

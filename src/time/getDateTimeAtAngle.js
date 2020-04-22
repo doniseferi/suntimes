@@ -84,4 +84,4 @@ const getDateTimeUtcFactory = (getNoonDateTimeUtc, getHourAngleSinceNoon) => {
   });
 };
 
-export default getDateTimeUtcFactory;
+export { getDateTimeUtcFactory };

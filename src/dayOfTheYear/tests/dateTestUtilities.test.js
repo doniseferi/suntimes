@@ -1,6 +1,6 @@
 import { suite, test } from 'mocha';
 import { assert } from 'chai';
-import getAllDatesForYear from './dateTestUtilities';
+import { getAllDatesForYear } from './dateTestUtilities';
 
 suite('Get all dates for a year', () => {
   test('returns every distinct date for a non leap year', () => {

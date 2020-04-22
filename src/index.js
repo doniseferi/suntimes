@@ -1,6 +1,6 @@
 // @ts-check
-import getDeclinationOfTheSun from './declination/index';
-import equationOfTime from './equationOfTime/index';
+import { getDeclinationOfTheSun } from './declination/index';
+import { equationOfTime } from './equationOfTime/index';
 import { getHourAngleSinceNoon, getNoonHourAngle } from './hourAngle/index';
 import {
   getNoonDateTimeUtc,

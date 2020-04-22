@@ -20,4 +20,4 @@ const toTime = scientificDecimalTime => {
 
 const toTimeUnit = (decimalValue, unitBase) => (decimalValue % 1) * unitBase;
 
-export default toTime;
+export { toTime };

@@ -39,4 +39,4 @@ const equationOfTime = date => {
 const toNegativeInt = number => toInt(number * -1);
 const toInt = number => Number.parseInt(number);
 
-export default equationOfTime;
+export { equationOfTime };

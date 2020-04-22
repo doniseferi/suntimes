@@ -4,5 +4,4 @@ const angleService = Object.freeze({
   degreesToRadians,
   radiansToDegrees
 });
-export default angleService;
-export { degreesToRadians, radiansToDegrees };
+export { angleService, degreesToRadians, radiansToDegrees };

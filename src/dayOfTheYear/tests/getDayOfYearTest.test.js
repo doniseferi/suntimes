@@ -1,7 +1,7 @@
 import { suite, test } from 'mocha';
 import { assert } from 'chai';
-import getDayOfTheYear from '../../dayOfTheYear/index';
-import getAllDatesForYear from './dateTestUtilities';
+import { getDayOfTheYear } from '../../dayOfTheYear/index';
+import { getAllDatesForYear } from './dateTestUtilities';
 import testData from './getDayOfTheYearTestData.json';
 
 suite('Get day of the year', () => {

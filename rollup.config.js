@@ -1,3 +1,4 @@
+
 import babel from 'rollup-plugin-babel';
 import pkg from './package.json';
 import { terser } from 'rollup-plugin-terser';
@@ -9,7 +10,6 @@ const config = {
       file: 'suntimes.js',
       name: pkg.name,
       format: 'umd',
-      exports: 'named',
       compact: true
     }
   ],

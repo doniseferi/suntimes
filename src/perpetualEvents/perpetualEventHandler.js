@@ -1,4 +1,4 @@
-export default (getIsoDateTime, sunAltitudeAboveAngleErrorMessage, sunAltitudeBelowAngleErrorMessage) => {
+const perpetualEventHandler = (getIsoDateTime, sunAltitudeAboveAngleErrorMessage, sunAltitudeBelowAngleErrorMessage) => {
   try {
     return getIsoDateTime();
   } catch (err) {
@@ -12,3 +12,5 @@ export default (getIsoDateTime, sunAltitudeAboveAngleErrorMessage, sunAltitudeBe
     }
   }
 };
+
+export { perpetualEventHandler };

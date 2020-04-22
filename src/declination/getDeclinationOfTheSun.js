@@ -65,4 +65,4 @@ const declinationOfTheSunFactory = (sine, cosine, arcsine, getDayOfTheYear) => {
   });
 };
 
-export default declinationOfTheSunFactory;
+export { declinationOfTheSunFactory };

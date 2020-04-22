@@ -1,7 +1,7 @@
-import getDateTimeUtcFactory from './getDateTimeAtAngle';
-import getHourAngleFactory from '../hourAngle/getHourAngle';
-import equationOfTime from '../equationOfTime/index';
-import getDeclinationOfTheSun from '../declination/index';
+import { getDateTimeUtcFactory } from './getDateTimeAtAngle';
+import { getHourAngleFactory } from '../hourAngle/getHourAngle';
+import { equationOfTime } from '../equationOfTime/index';
+import { getDeclinationOfTheSun } from '../declination/index';
 import { sine, cosine, arccosine } from '../trigonometry/index';
 import { toUtcDateTime } from '../conversion/index';
 import { getNoonHourAngleFactory } from '../hourAngle/index';
