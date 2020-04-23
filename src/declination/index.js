@@ -1,6 +1,6 @@
-import declinationOfTheSunFactory from './getDeclinationOfTheSun';
+import { declinationOfTheSunFactory } from './getDeclinationOfTheSun';
 import { sine, cosine, arcsine } from '../trigonometry/index';
-import getDayOfTheYear from '../dayOfTheYear/index';
+import { getDayOfTheYear } from '../dayOfTheYear/index';
 
 const getDeclinationOfTheSun = declinationOfTheSunFactory(
   sine,
@@ -9,5 +9,4 @@ const getDeclinationOfTheSun = declinationOfTheSunFactory(
   getDayOfTheYear
 ).getDeclinationOfTheSun;
 
-export default getDeclinationOfTheSun;
-export { declinationOfTheSunFactory };
+export { declinationOfTheSunFactory, getDeclinationOfTheSun };

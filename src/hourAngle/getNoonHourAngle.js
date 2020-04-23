@@ -44,4 +44,4 @@ const getNoonHourAngleFactory = equationOfTime => {
   });
 };
 
-export default getNoonHourAngleFactory;
+export { getNoonHourAngleFactory };

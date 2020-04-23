@@ -68,4 +68,4 @@ const toUtcDateTimeFactory = toTime => {
   });
 };
 
-export default toUtcDateTimeFactory;
+export { toUtcDateTimeFactory };

@@ -73,4 +73,4 @@ const getHourAngleFactory = (
   });
 };
 
-export default getHourAngleFactory;
+export { getHourAngleFactory };

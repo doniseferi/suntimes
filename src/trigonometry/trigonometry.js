@@ -19,4 +19,4 @@ const trigonometryFactory = (degreesToRadians, radiansToDegrees) => {
   });
 };
 
-export default trigonometryFactory;
+export { trigonometryFactory };

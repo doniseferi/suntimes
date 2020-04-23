@@ -9,9 +9,16 @@
     "typedef": "jsdoc -t node_modules/tsd-jsdoc/dist -r ./src/",
     "build": "rollup -c",
     "release": "standard-version",
-    "test": "semistandard && npm run build && nyc mocha **/*.test.js --colors --full-trace --require @babel/register",
+    "pretest": "semistandard && npm run build",
+    "test": "nyc mocha **/*.test.js --colors --full-trace --require @babel/register",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "fix": "semistandard --fix"
+  },
+  "semistandard": {
+    "ignore": [
+      "**/dist/",
+      "suntimes.js"
+    ]
   },
   "repository": {
     "type": "git",
@@ -20,17 +27,16 @@
   "keywords": [
     "sun",
     "suntimes",
-    "equationOfTime",
+    "astronomy",
+    "celestial",
     "solar",
-    "declination",
     "sunrise",
     "sunset",
-    "twilight",
+    "equationOfTime",
+    "declination",
     "dusk",
     "dawn",
-    "maths",
-    "astronomy",
-    "celestial"
+    "twilight"
   ],
   "author": "Edonis Seferi",
   "license": "ISC",

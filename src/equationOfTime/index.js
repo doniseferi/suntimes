@@ -1,3 +1,3 @@
-import equationOfTime from './equationOfTime';
+import { equationOfTime } from './equationOfTime';
 
-export default equationOfTime;
+export { equationOfTime };

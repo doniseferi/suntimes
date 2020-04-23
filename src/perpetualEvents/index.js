@@ -1,4 +1,4 @@
-import perpetualEventHandler from './perpetualEventHandler';
+import { perpetualEventHandler } from './perpetualEventHandler';
 import {
   sunAltitudeAboveErrorMessage,
   sunAltitudeBelowErrorMessage,

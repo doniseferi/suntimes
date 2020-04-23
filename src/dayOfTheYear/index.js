@@ -1,3 +1,3 @@
-import getDayOfTheYear from './getDayOfTheYear';
+import { getDayOfTheYear } from './getDayOfTheYear';
 
-export default getDayOfTheYear;
+export { getDayOfTheYear };

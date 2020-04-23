@@ -12,4 +12,4 @@ const getDayOfTheYear = date => {
   return Math.floor(diff / oneDay);
 };
 
-export default getDayOfTheYear;
+export { getDayOfTheYear };
